@@ -1,0 +1,97 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix dcterms: <http://purl.org/dc/terms#>.
+@prefix voaf: <http://purl.org/vocommons/voaf#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix rdfcv: <http://www.dr-thomashartmann.de/phd-thesis/rdf-validation/vocabularies/rdf-constraints-vocabulary#> .
+@prefix : <http://www.dr-thomashartmann.de/phd-thesis/rdf-validation/vocabularies/rdf-constraints-vocabulary> .
+
+
+#################################################################
+# Ontology
+#################################################################
+
+<http://www.dr-thomashartmann.de/phd-thesis/rdf-validation/vocabularies/rdf-constraints-vocabulary>
+    a owl:Ontology , voaf:Vocabulary ;
+    dcterms:title "RDF Constraints Vocabulary"@en ;
+	rdfs:label "RDF Constraints Vocabulary"@en ;
+    dcterms:contributor "Thomas Bosch" , "Kai Eckert" ;
+    dcterms:creator "Thomas Bosch" ;
+	dcterms:publisher "Thomas Bosch" ;
+    owl:versionInfo "1.0" ;
+	dcterms:description 
+		"The RDF-Constraints-Vocabulary (RDF-CV) is a simple lightweight vocabulary which can be used to describe constraints on RDF data of any constraint type in a generic way. Formal specification, HTML documentation, and UML class diagram online available at: https://github.com/github-thomas-hartmann/phd-thesis/tree/master/rdf-validation/vocabularies/rdf-constraints-vocabulary; 1. Publication: Bosch, T. & Eckert, K. (2015). Guidance, Please! Towards a Framework for RDF-based Constraint Languages. In Proceedings of the DCMI International Conference on Dublin Core and Metadata Applications (DC 2015) São Paulo, Brazil; 2. Publication: Bosch, T., Nolle, A., Acar, E., & Eckert, K. (2015b). RDF Validation Requirements - Evaluation and Logical Underpinning. Computing Research Repository (CoRR), abs/1501.03933. http://arxiv.org/abs/1501.03933"@en ;
+	rdfs:comment
+		"The RDF-Constraints-Vocabulary (RDF-CV) is a simple lightweight vocabulary which can be used to describe constraints on RDF data of any constraint type in a generic way. Formal specification, HTML documentation, and UML class diagram online available at: https://github.com/github-thomas-hartmann/phd-thesis/tree/master/rdf-validation/vocabularies/rdf-constraints-vocabulary; 1. Publication: Bosch, T. & Eckert, K. (2015). Guidance, Please! Towards a Framework for RDF-based Constraint Languages. In Proceedings of the DCMI International Conference on Dublin Core and Metadata Applications (DC 2015) São Paulo, Brazil; 2. Publication: Bosch, T., Nolle, A., Acar, E., & Eckert, K. (2015b). RDF Validation Requirements - Evaluation and Logical Underpinning. Computing Research Repository (CoRR), abs/1501.03933. http://arxiv.org/abs/1501.03933"@en ;
+	vann:preferredNamespacePrefix "rdfcv" ;
+	vann:preferredNamespaceUri "http://www.dr-thomashartmann.de/phd-thesis/rdf-validation/vocabularies/rdf-constraints-vocabulary" ;
+	dcterms:issued "2015-07-20" ;
+	dcterms:modified "2015-07-20" .
+
+#################################################################
+# Classes
+#################################################################
+
+rdfcv:SimpleConstraint 
+    a rdfs:Class, owl:Class;
+    rdfs:label "simple constraint"@en;
+	rdfs:comment "RDF constraints are either simple constraints or complex constraints. Simple constraints denotes the set of atomic constraints with respect to a single constraining element – we will come to the notion of a constraining element in a second. In contrast, there are complex constraints, i.e., the set of constraints which are created out of simple and/or other complex constraints. This structure therefore allows to build complex constraints out of other (simple or complex) constraints"@en ;
+    rdfs:isDefinedBy <http://www.dr-thomashartmann.de/phd-thesis/rdf-validation/vocabularies/rdf-constraints-vocabulary> .
+	
+#################################################################
+# Datatype properties
+#################################################################
+
+rdfcv:contextClass 
+    a rdf:Property, owl:DatatypeProperty;
+	rdfs:label "context class"@en;
+    rdfs:comment "The context class limits the constraint to individuals of a specific class. Depending on the constraining elements, a list of classes can be provided, for example to determine the valid classes for a value or to define a class intersection to be used in a constraint. A context class may be an rdfs:Class, an owl:Class (as sub-class of rdfs:Class), or an rdfs:Datatype which is both an instance of and a sub-class of rdfs:Class."@en;
+    rdfs:domain rdfcv:SimpleConstraint;
+    rdfs:range xsd:string;
+    rdfs:isDefinedBy <http://www.dr-thomashartmann.de/phd-thesis/rdf-validation/vocabularies/rdf-constraints-vocabulary> .
+	
+rdfcv:constrainingElement
+    a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "constraining element"@en;
+	rdfs:comment "The central property is the constraining element. The constraining element is an intuitive term which indicates the actual type of constraint. Constraining elements are for example taken from Description Logics, another concrete example would be the SPARQL function REGEX where a regular expression is checked against some property value. In most cases, constraining elements directly correspond to a constraint type, sometimes (as for REGEX) they are shared by several constraint types. Complex constraints again need several constraining elements to be expressed."@en;
+    rdfs:domain rdfcv:SimpleConstraint;
+    rdfs:range xsd:string;
+    rdfs:isDefinedBy <http://www.dr-thomashartmann.de/phd-thesis/rdf-validation/vocabularies/rdf-constraints-vocabulary> .
+	
+rdfcv:constrainingValue
+    a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "constraining value"@en;
+	rdfs:comment "The constraining value contains a literal value to be checked against; for instance in the case of the REGEX element, it contains the regular expression to be evaluated."@en;
+    rdfs:domain rdfcv:SimpleConstraint;
+    rdfs:range xsd:string;
+    rdfs:isDefinedBy <http://www.dr-thomashartmann.de/phd-thesis/rdf-validation/vocabularies/rdf-constraints-vocabulary> .
+
+#################################################################
+# Object properties
+#################################################################
+
+rdfcv:classes 
+    a rdf:Property, owl:ObjectProperty;
+    rdfs:label "classes"@en;
+	rdfs:comment "Depending on the constraining elements, a list of classes can be provided, for example to determine the valid classes for a value or to define a class intersection to be used in a constraint."@en;
+    rdfs:domain rdfcv:SimpleConstraint;
+    rdfs:range rdf:List;
+    rdfs:isDefinedBy <http://www.dr-thomashartmann.de/phd-thesis/rdf-validation/vocabularies/rdf-constraints-vocabulary> .
+	
+rdfcv:leftProperties
+    a rdf:Property, owl:ObjectProperty;
+    rdfs:label "left properties"@en;
+	rdfs:comment " leftProperties and rightProperties are lists usually containing properties the constraint is applied to. A typical example for a constraint type with a right hand side list of properties would be literal value comparison (R-43), where constraints like birthDate < deathDate can be expressed."@en;
+    rdfs:domain rdfcv:SimpleConstraint;
+    rdfs:range rdf:List;
+    rdfs:isDefinedBy <http://www.dr-thomashartmann.de/phd-thesis/rdf-validation/vocabularies/rdf-constraints-vocabulary> .
+	
+rdfcv:rightProperties
+    a rdf:Property, owl:ObjectProperty;
+    rdfs:label "right properties"@en;
+	rdfs:comment " leftProperties and rightProperties are lists usually containing properties the constraint is applied to. A typical example for a constraint type with a right hand side list of properties would be literal value comparison (R-43), where constraints like birthDate < deathDate can be expressed."@en;
+    rdfs:domain rdfcv:SimpleConstraint;
+    rdfs:range rdf:List;
+    rdfs:isDefinedBy <http://www.dr-thomashartmann.de/phd-thesis/rdf-validation/vocabularies/rdf-constraints-vocabulary> .
