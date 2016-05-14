@@ -55,3 +55,6 @@
 
 ***Publications***
 * Complete set of publications: [publications](https://github.com/github-thomas-hartmann/phd-thesis/tree/master/publications)
+
+***Research Data, Research Results, and Publications***
+* Link to  the KIT research data repository: [http://dx.doi.org/10.5445/BWDD/11](http://dx.doi.org/10.5445/BWDD/11)
