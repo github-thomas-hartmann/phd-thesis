@@ -56,7 +56,7 @@
 ***Chapter 9: Evaluating the Usability of Constraint Types for Assessing RDF Data Quality***
 * Implementations of all 115 constraints: [chapter/chapter-9/constraints](https://github.com/github-thomas-hartmann/phd-thesis/tree/master/chapter/chapter-9/constraints)
 * Evaluation results for each QB data set grouped by SPARQL endpoint: [chapter/chapter-9/evaluation/data-sets/QB](https://github.com/github-thomas-hartmann/phd-thesis/tree/master/chapter/chapter-9/evaluation/data-sets/QB)
-* Vocabulary implementations: [rdf-validation/vocabularies/implementations](https://github.com/github-thomas-hartmann/phd-thesis/tree/master/rdf-validation/vocabularies/implementations)
+* Vocabulary implementations: [chapter/chapter-9/vocabularies/implementations](https://github.com/github-thomas-hartmann/phd-thesis/tree/master/chapter/chapter-9/vocabularies/implementations)
 
 ***Appendix***
 * Link to appendix: [http://dx.doi.org/10.5445/IR/1000054062](http://dx.doi.org/10.5445/IR/1000054062)
