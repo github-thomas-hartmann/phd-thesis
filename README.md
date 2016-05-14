@@ -51,7 +51,7 @@
 * Implementations for all constraint types expressible by OWL 2 QL, OWL 2 DL, and DSP as well as for major constraint types representable by ReSh and ShEx:
   [chapter/chapter-8/constraint-types-implementations](https://github.com/github-thomas-hartmann/phd-thesis/tree/master/chapter/chapter-8/constraint-types-implementations)
 * Implementation of reasoning capabilities for all reasoning constraint types for which OWL 2 QL and OWL 2 DL reasoning may be performed: [chapter\chapter-8\reasoning-constraint-types-implementations/OWL2-Reasoning-2-SPIN.ttl](https://github.com/github-thomas-hartmann/phd-thesis/blob/master/chapter/chapter-8/reasoning-constraint-types-implementations/OWL2-Reasoning-2-SPIN.ttl)
-* Validation and reasoning implementations of constraint types: [rdf-validation/constraint-languages/implementations](https://github.com/github-thomas-hartmann/phd-thesis/tree/master/rdf-validation/constraint-languages/implementations)
+* Validation and reasoning implementations of constraint types:  [chapter/chapter-8/constraint-types-implementations](https://github.com/github-thomas-hartmann/phd-thesis/tree/master/chapter/chapter-8/constraint-types-implementations)
 
 ***Chapter 9: Evaluating the Usability of Constraint Types for Assessing RDF Data Quality***
 * Implementations of all 115 constraints: [chapter/chapter-9/constraints](https://github.com/github-thomas-hartmann/phd-thesis/tree/master/chapter/chapter-9/constraints)
