@@ -51,7 +51,7 @@
 * Vocabulary implementations: [rdf-validation/vocabularies/implementations](https://github.com/github-thomas-hartmann/phd-thesis/tree/master/rdf-validation/vocabularies/implementations)
 
 ***Appendix***
-* Link to appendix: [publications/technical-reports/2016-phd-thesis-appendix.pdf](https://github.com/github-thomas-hartmann/phd-thesis/blob/master/publications/technical-reports/2016-phd-thesis-appendix.pdf)
+* Link to appendix: [http://dx.doi.org/10.5445/IR/1000054062](http://dx.doi.org/10.5445/IR/1000054062)
 
 ***Publications***
 * Complete set of publications: [publications](https://github.com/github-thomas-hartmann/phd-thesis/tree/master/publications)
