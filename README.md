@@ -3,7 +3,7 @@
 ---
 
 * Title: **Validation Framework for RDF-based Constraint Languages**
-* Author: **Thomas Hartmann**
+* Author: **[Thomas Hartmann](http://www.dr-thomashartmann.de/)**
 * Date of Submission: 11.05.2016
 * University: [Karlsruhe Institute of Technology (KIT)](https://www.kit.edu/english/)
 * Chair: [Institute of Applied Informatics and Formal Description Methods](http://www.aifb.kit.edu/web/Hauptseite/en)
@@ -41,7 +41,7 @@
 * Evaluation results: [chapter/chapter-4/evaluation](https://github.com/github-thomas-hartmann/phd-thesis/tree/master/chapter/chapter-4/evaluation)
  
 ***Chapter 6: Consistent Validation across RDF-based Constraint Languages***
-* Constraint language implementations: [chapter-6/constraint-languages-implementations](https://github.com/github-thomas-hartmann/phd-thesis/tree/master/chapter-6/constraint-languages-implementations)
+* Constraint language implementations: [chapter-6/constraint-languages-implementations](https://github.com/github-thomas-hartmann/phd-thesis/tree/master/chapter/chapter-6/constraint-languages-implementations)
 
 ***Chapter 7: Validation Framework for RDF-based Constraint Languages***
 *  Formal specification, HTML documentation, and UML class diagram of the RDF Constraints Vocabulary (RDF-CV): [chapter/chapter-7/rdf-constraints-vocabulary](https://github.com/github-thomas-hartmann/phd-thesis/tree/master/chapter/chapter-7/rdf-constraints-vocabulary)
