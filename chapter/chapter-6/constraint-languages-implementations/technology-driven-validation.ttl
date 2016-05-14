@@ -1,0 +1,285 @@
+﻿# namespace declarations
+# ----------------------
+@prefix fn:        <http://www.w3.org/2005/xpath-functions#> .
+@prefix sparql:    <http://www.w3.org/TR/2013/REC-sparql11-query-20130321/#> .
+@prefix xsd:        <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:        <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:       <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:        <http://www.w3.org/2002/07/owl#> .
+@prefix sp:         <http://spinrdf.org/sp#> .
+@prefix spin:       <http://spinrdf.org/spin#> .
+@prefix smf:        <http://topbraid.org/sparqlmotionfunctions#> .
+@prefix spif:       <http://spinrdf.org/spif#> . 
+@prefix spl:        <http://spinrdf.org/spl#> .
+@prefix spinowl:    <http://topbraid.org/spin/spinowl> .
+@prefix spinx:      <http://spinrdf.org/spinx#> . 
+@prefix functions:  <http://www.example.org/functions#> .
+@prefix templates:  <http://www.example.org/templates#> .
+@prefix sparql:     <http://www.w3.org/TR/sparql11-query/#> .
+@prefix tdv:        <http://tdv#> .
+
+# class constraints
+# -----------------
+owl:Thing 
+	spin:constraint 
+		[   a tdv:vocabulary ] ,
+		[   a tdv:property-domains ] ,
+		[   a tdv:property-ranges ] .
+
+
+# Vocabulary
+# ----------
+tdv:vocabulary
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "Vocabulary|||||ERROR" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX tdv: <http://tdv#>
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?subject ;
+                    rdfs:label ?violationMessage ;
+                    spin:violationPath ?p .
+            }
+            WHERE {	  	
+				# data
+				# ----
+				
+				
+				# validation
+				# ----------
+				{
+					FILTER( ! REGEX( STR( ?p ), "^http://www.w3.org/2000/01/rdf-schema#" ) ) .
+					FILTER( ! REGEX( STR( ?p ), "^http://www.w3.org/1999/02/22-rdf-syntax-ns#" ) ) .	
+					FILTER( ! REGEX( STR( ?p ), "^http://spinrdf.org/sp#" ) ) .
+					FILTER( ! REGEX( STR( ?p ), "^http://spinrdf.org/spin#" ) ) .
+					FILTER( ! REGEX( STR( ?p ), "^http://spinrdf.org/spl#" ) ) .
+					FILTER( ! REGEX( STR( ?p ), "^http://www.w3.org/2002/07/owl#" ) ) .
+					FILTER( ! REGEX( STR( ?p ), "^http://spinrdf.org/spinx#" ) ) .
+					FILTER( ! REGEX( STR( ?p ), "^http://purl.org/dc/terms/" ) ) .
+					FILTER( ! REGEX( STR( ?p ), "^http://www.w3.org/1999/xhtml" ) ) .
+					FILTER( ! REGEX( STR( ?p ), "^http://purl.org/dc/elements/1.1/" ) ) .
+					FILTER( ! REGEX( STR( ?p ), "^http://www.w3.org/2004/02/skos/core#definition" ) ) .
+					FILTER( ! REGEX( STR( ?p ), "^http://rdfs.org/ns/void#" ) ) .
+					FILTER( ! REGEX( STR( ?p ), "^http://www.w3.org/2005/xpath-functions#" ) ) .
+					FILTER( ! REGEX( STR( ?p ), "^http://topbraid.org/sparqlmotionfunctions#" ) ) .
+					FILTER( ! REGEX( STR( ?p ), "^http://jena.hpl.hp.com/ARQ/function#" ) ) .
+					FILTER( ! REGEX( STR( ?p ), "^http://tdv#" ) ) .
+					FILTER( ! REGEX( STR( ?p ), "^http://purl.org/linked-data/cube/qb2spin#" ) ) .
+					FILTER( ! REGEX( STR( ?p ), "^http://www.w3.org/2001/XMLSchema#" ) ) .
+					FILTER( ! REGEX( STR( ?p ), "^http://xmlns.com/foaf/0.1" ) ) .
+				
+					?subject ?p ?o .
+					FILTER NOT EXISTS {
+						?p a rdf:Property .
+					}
+					
+					# violation message
+	                # -----------------
+	                BIND ( CONCAT( 
+	                    \"Vocabulary | The property '\", 
+	                    xsd:string( ?p ), 
+	                    \"' is not defined within a vocabulary.\" ) 
+	                    AS ?violationMessage ) . 
+	        	}
+	        	UNION
+	        	{
+	        		FILTER( ! REGEX( STR( ?c ), "^http://www.w3.org/2000/01/rdf-schema#" ) ) .
+					FILTER( ! REGEX( STR( ?c ), "^http://www.w3.org/1999/02/22-rdf-syntax-ns#" ) ) .	
+					FILTER( ! REGEX( STR( ?c ), "^http://spinrdf.org/sp#" ) ) .
+					FILTER( ! REGEX( STR( ?c ), "^http://spinrdf.org/spin#" ) ) .
+					FILTER( ! REGEX( STR( ?c ), "^http://spinrdf.org/spl#" ) ) .
+					FILTER( ! REGEX( STR( ?c ), "^http://www.w3.org/2002/07/owl#" ) ) .
+					FILTER( ! REGEX( STR( ?c ), "^http://spinrdf.org/spinx#" ) ) .
+					FILTER( ! REGEX( STR( ?c ), "^http://purl.org/dc/terms/" ) ) .
+					FILTER( ! REGEX( STR( ?c ), "^http://www.w3.org/1999/xhtml" ) ) .
+					FILTER( ! REGEX( STR( ?c ), "^http://purl.org/dc/elements/1.1/" ) ) .
+					FILTER( ! REGEX( STR( ?c ), "^http://www.w3.org/2004/02/skos/core#definition" ) ) .
+					FILTER( ! REGEX( STR( ?c ), "^http://rdfs.org/ns/void#" ) ) .
+					FILTER( ! REGEX( STR( ?c ), "^http://www.w3.org/2005/xpath-functions#" ) ) .
+					FILTER( ! REGEX( STR( ?c ), "^http://topbraid.org/sparqlmotionfunctions#" ) ) .
+					FILTER( ! REGEX( STR( ?c ), "^http://jena.hpl.hp.com/ARQ/function#" ) ) .
+					FILTER( ! REGEX( STR( ?c ), "^http://tdv#" ) ) .
+					FILTER( ! REGEX( STR( ?c ), "^http://purl.org/linked-data/cube/qb2spin#" ) ) .
+					FILTER( ! REGEX( STR( ?c ), "^http://www.w3.org/2001/XMLSchema#" ) ) .
+					FILTER( ! REGEX( STR( ?c ), "^http://xmlns.com/foaf/0.1" ) ) .
+	        	
+					?subject a ?c .
+					FILTER NOT EXISTS {
+						?c a owl:Class .
+					}
+					
+					# violation message
+	                # -----------------
+	                BIND ( CONCAT( 
+	                    \"Vocabulary | The class '\", 
+	                    xsd:string( ?c ), 
+	                    \"' is not defined within a vocabulary.\" ) 
+	                    AS ?violationMessage ) . 
+	        	}
+            }
+            """ ;
+    ] .
+    
+# Property Domains
+# ----------------
+tdv:property-domains
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "Property Domains|||||ERROR" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX tdv: <http://tdv#>
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?subject ;
+                    rdfs:label ?violationMessage ;
+                    spin:violationPath ?p .
+            }
+            WHERE {	 
+                { 
+				    # constraint
+					# ----------
+					?p
+					    a owl:ObjectProperty ;
+	    				rdfs:domain ?domain .
+							
+					# data
+					# ----
+					?subject ?p ?o .
+					
+					# validation
+					# ----------
+					FILTER NOT EXISTS { ?subject a ?domain } .
+	
+	                # violation message
+	                # -----------------
+	                BIND ( CONCAT( 
+	                    \"Property Domains | The individual '\", 
+	                    xsd:string( ?subject ), 
+	                    \"' has a '\", 
+	                    xsd:string( ?p ), 
+	                    \"' relationship, but is not assigned to the domain class '\", 
+	                    xsd:string( ?domain ))
+	                    AS ?violationMessage ) .
+                } 
+                UNION
+                {
+                	# constraint
+					# ----------
+					?p
+					    a owl:DatatypeProperty ;
+	    				rdfs:domain ?domain .
+							
+					# data
+					# ----
+					?subject ?p ?o .
+					
+					# validation
+					# ----------
+					FILTER NOT EXISTS { ?subject a ?domain } .
+	
+	                # violation message
+	                # -----------------
+	                BIND ( CONCAT( 
+	                    \"Property Domains | The individual '\", 
+	                    xsd:string( ?subject ), 
+	                    \"' has a '\", 
+	                    xsd:string( ?p ), 
+	                    \"' relationship, but is not assigned to the domain class '\", 
+	                    xsd:string( ?domain ))
+	                    AS ?violationMessage ) .
+                }
+            }
+            """ ;
+    ] .
+    
+# Property Ranges
+# ---------------
+tdv:property-ranges
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "Property Ranges|||||ERROR" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX tdv: <http://tdv#>
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?subject ;
+                    rdfs:label ?violationMessage ;
+                    spin:violationPath ?p .
+            }
+            WHERE {	  
+                {
+				    # constraint
+					# ----------
+					?p
+					    a rdf:Property , owl:ObjectProperty ;
+	    				rdfs:range ?range .
+							
+					# data
+					# ----
+					?subject ?p ?o .
+					
+					# validation
+					# ----------
+					FILTER NOT EXISTS { ?o a ?range } .
+	
+	                # violation message
+	                # -----------------
+	                BIND ( CONCAT( 
+	                    \"Property Ranges | The individual '\", 
+	                    xsd:string( ?subject ), 
+	                    \"' has a '\", 
+	                    xsd:string( ?p ), 
+	                    \"' relationship to the object '\", 
+	                    xsd:string( ?o ), 
+	                    \"', which is not assigned to the range class '\", 
+	                    xsd:string( ?range ))
+	                    AS ?violationMessage ) . 
+                }
+                UNION
+                {
+                	# constraint
+					# ----------
+					?property
+					    a rdf:Property , owl:DatatypeProperty ;
+	    				rdfs:range ?dt .
+							
+					# data
+					# ----
+					?subject ?property ?literal .
+					
+					# validation
+					# ----------
+					BIND ( ( DATATYPE ( ?literal ) ) AS ?datatype ) . 
+					FILTER ( ?datatype != ?dt ) .
+	
+	                # violation message
+	                # -----------------
+	                BIND ( CONCAT( 
+	                    \"Property Ranges | The individual '\", 
+	                    xsd:string( ?subject ), 
+	                    \"' has a '\", 
+	                    xsd:string( ?property ), 
+	                    \"' relationship to the literal '\", 
+	                    xsd:string( ?literal ), 
+	                    \"', which is of the datatype '\", 
+	                    xsd:string( ?datatype ),
+	                    \"', but not of the range datatype '\", 
+	                    xsd:string( ?dt ))
+	                    AS ?violationMessage ) . 
+                }
+            }
+            """ ;
+    ] .

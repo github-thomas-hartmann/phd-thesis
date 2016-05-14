@@ -13,6 +13,14 @@
 
 ---
 
+***Publications***
+* Complete set of publications: [publications](https://github.com/github-thomas-hartmann/phd-thesis/tree/master/publications)
+
+***Research Data, Research Results, and Publications***
+* Link to  the KIT research data repository: [http://dx.doi.org/10.5445/BWDD/11](http://dx.doi.org/10.5445/BWDD/11)
+
+---
+
 ***RDF Validation Requirements Database***
 * [http://purl.org/net/rdf-validation](http://purl.org/net/rdf-validation)
 
@@ -33,7 +41,7 @@
 * Evaluation results: [chapter/chapter-4/evaluation](https://github.com/github-thomas-hartmann/phd-thesis/tree/master/chapter/chapter-4/evaluation)
  
 ***Chapter 6: Consistent Validation across RDF-based Constraint Languages***
-* Constraint language implementations: [rdf-validation/constraint-languages/implementations](https://github.com/github-thomas-hartmann/phd-thesis/tree/master/rdf-validation/constraint-languages/implementations)
+* Constraint language implementations: [chapter-6/constraint-languages-implementations](https://github.com/github-thomas-hartmann/phd-thesis/tree/master/chapter-6/constraint-languages-implementations)
 
 ***Chapter 7: Validation Framework for RDF-based Constraint Languages***
 *  Formal specification, HTML documentation, and UML class diagram of the RDF Constraints Vocabulary (RDF-CV): [chapter/chapter-7/rdf-constraints-vocabulary](https://github.com/github-thomas-hartmann/phd-thesis/tree/master/chapter/chapter-7/rdf-constraints-vocabulary)
@@ -52,9 +60,3 @@
 
 ***Appendix***
 * Link to appendix: [http://dx.doi.org/10.5445/IR/1000054062](http://dx.doi.org/10.5445/IR/1000054062)
-
-***Publications***
-* Complete set of publications: [publications](https://github.com/github-thomas-hartmann/phd-thesis/tree/master/publications)
-
-***Research Data, Research Results, and Publications***
-* Link to  the KIT research data repository: [http://dx.doi.org/10.5445/BWDD/11](http://dx.doi.org/10.5445/BWDD/11)

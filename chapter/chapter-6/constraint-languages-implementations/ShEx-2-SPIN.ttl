@@ -1,0 +1,737 @@
+# baseURI: http://open-services.net/ns/core
+# imports: http://purl.org/dc/terms/
+# imports: http://spinrdf.org/spl
+
+@prefix oslc: <http://open-services.net/ns/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix spl: <http://spinrdf.org/spl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix se: <http://www.w3.org/2013/ShEx/Definition#> .
+
+<http://open-services.net/ns/core>
+  rdf:type owl:Ontology ;
+  owl:imports <http://purl.org/dc/terms/> ;
+  owl:imports <http://spinrdf.org/spl> ;
+.
+oslc:AllowedValues
+  rdf:type rdfs:Class ;
+  rdfs:comment "Defines a set of allowed values for a defined property. This type of resource is useful when defined properties take values in large sets of standard values that are used in multiple types of resources. For example, a list of standard country codes could be stored in an oslc:AllowedValues resource."^^xsd:string ;
+  rdfs:label "Allowed values"^^xsd:string ;
+.
+oslc:AllowedValuesConstraint
+  rdf:type spl:ConstraintTemplate ;
+  spin:body [
+      rdf:type sp:Construct ;
+      sp:text """
+        # Reports a constraint violation if ?this has any value that is not in the enumeration of allowed values
+        CONSTRUCT {
+            _:cv a spin:ConstraintViolation ;
+                spin:violationRoot ?this ;
+                spin:violationPath ?propertyDefinition ;
+                rdfs:label ?label;
+                spin:violationSource "test"^^xsd:string .
+        }
+        WHERE {
+            ?this ?propertyDefinition ?value .
+            FILTER NOT EXISTS {
+                ?allowedValues oslc:allowedValue ?value .
+            } .
+            BIND (CONCAT(
+                \"The value '\", 
+                xsd:string(?value), 
+                \"' is not allowed for property \", 
+                xsd:string(?propertyDefinition)
+                ) AS ?label) .
+        }
+        """^^xsd:string ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate oslc:allowedValues ;
+      spl:valueType oslc:AllowedValues ;
+      rdfs:comment "The resource containing a set of allowed values of the defined property."^^xsd:string ;
+    ] ;
+  spin:labelTemplate "The property {?propertyDefinition} must have one of the allowed values defined by {?allowedValues}."^^xsd:string ;
+  rdfs:label "Allowed values constraint"^^xsd:string ;
+  rdfs:subClassOf oslc:PropertyConstraintTemplate ;
+.
+oslc:Any
+  rdf:type rdfs:Class ;
+  rdfs:label "Any"^^xsd:string ;
+.
+oslc:Cardinality
+  rdf:type rdfs:Class ;
+  rdfs:label "Cardinality"^^xsd:string ;
+.
+oslc:Either
+  rdf:type oslc:Representation ;
+  rdfs:comment "There is no constraint on the representation of the object resource."^^xsd:string ;
+  rdfs:label "Either"^^xsd:string ;
+.
+oslc:Exactly-one
+  rdf:type oslc:Cardinality ;
+  oslc:maxCount 1 ;
+  oslc:minCount 1 ;
+  rdfs:comment "The defined property MUST occur exactly once. It is required and single-valued."^^xsd:string ;
+  rdfs:label "Exactly-one"^^xsd:string ;
+.
+oslc:Inline
+  rdf:type oslc:Representation ;
+  rdfs:comment "The representation of the object resource MUST be present in the representation of the described resource."^^xsd:string ;
+  rdfs:label "Inline"^^xsd:string ;
+.
+oslc:MaxSizeConstraint
+  rdf:type spl:ConstraintTemplate ;
+  spin:body [
+      rdf:type sp:Construct ;
+      sp:text """
+        # Reports a constraint violation if ?this has a literal value that has more characters than ?maxSize
+        CONSTRUCT {
+            _:cv a spin:ConstraintViolation ;
+                spin:violationRoot ?this ;
+                spin:violationPath ?propertyDefinition ;
+                rdfs:label ?label .
+        }
+        WHERE {
+            ?this ?propertyDefinition ?value .
+            FILTER isLiteral(?value) .
+            FILTER (STRLEN(xsd:string(?value)) > ?maxSize) .
+            BIND (CONCAT(\"Values of property \", xsd:string(?propertyDefinition), \" cannot have more than \", xsd:string(?maxSize), \" characters, but found \", xsd:string(?value)) AS ?label) .
+        }
+        """^^xsd:string ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate oslc:maxSize ;
+      spl:valueType xsd:integer ;
+      rdfs:comment "For string datatype properties, the maximum number of characters."^^xsd:string ;
+    ] ;
+  rdfs:label "Max size constraint"^^xsd:string ;
+  rdfs:subClassOf oslc:PropertyConstraintTemplate ;
+.
+oslc:OccursConstraint
+  rdf:type spl:ConstraintTemplate ;
+  spin:body [
+      rdf:type sp:Construct ;
+      sp:text """
+        # Reports a constraint violation if ?this has an unexpected number of values (cardinality)
+        CONSTRUCT {
+            _:cv a spin:ConstraintViolation ;
+                spin:violationRoot ?this ;
+                spin:violationPath ?propertyDefinition ;
+                rdfs:label ?label .
+        }
+        WHERE {
+            BIND (spl:objectCount(?this, ?propertyDefinition) AS ?count) .
+            BIND (spl:object(?occurs, oslc:minCount) AS ?minCount) .
+            BIND (spl:object(?occurs, oslc:maxCount) AS ?maxCount) .
+            FILTER ((bound(?minCount) && (?count < ?minCount)) || (bound(?maxCount) && (?count > ?maxCount))) .
+            BIND (CONCAT(\"Property \", xsd:string(?propertyDefinition), \" does not match specified cardinality \", xsd:string(?occurs)) AS ?label) .
+        }
+        """^^xsd:string ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate oslc:occurs ;
+      spl:valueType oslc:Cardinality ;
+      rdfs:comment "The number of times the defined property may occur."^^xsd:string ;
+    ] ;
+  rdfs:label "Occurs constraint"^^xsd:string ;
+  rdfs:subClassOf oslc:PropertyConstraintTemplate ;
+.
+oslc:One-or-many
+  rdf:type oslc:Cardinality ;
+  oslc:minCount 1 ;
+  rdfs:comment "The defined property MUST occur at least once. It is required and multi-valued."^^xsd:string ;
+  rdfs:label "One-or-many"^^xsd:string ;
+.
+oslc:Property
+  rdf:type spl:ConstraintTemplate ;
+  rdf:type spl:UnionTemplate ;
+  #spin:labelTemplate "Property {?propertyDefinition}"^^xsd:string ;
+  #rdfs:comment "This template serves as a single \"parent\" for all other OSLC constraint templates, so that RDF models only need to instantiate oslc:Property and put any number of other constraints into the same node."^^xsd:string ;
+  rdfs:label "Property"^^xsd:string ;
+  rdfs:subClassOf oslc:AllowedValuesConstraint ;
+  rdfs:subClassOf oslc:MaxSizeConstraint ;
+  rdfs:subClassOf oslc:OccursConstraint ;
+  rdfs:subClassOf oslc:RangeConstraint ;
+  rdfs:subClassOf oslc:ValueShapeConstraint ;
+  rdfs:subClassOf oslc:ValueTypeConstraint ;
+.
+oslc:PropertyConstraintTemplate
+  rdf:type spl:ConstraintTemplate ;
+  spin:abstract "true"^^xsd:boolean ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:optional "true"^^xsd:boolean ;
+      spl:predicate oslc:hidden ;
+      spl:valueType xsd:boolean ;
+      rdfs:comment "A hint that the defined property is not normally displayed by a user interface."^^xsd:string ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:optional "true"^^xsd:boolean ;
+      spl:predicate oslc:isMemberProperty ;
+      spl:valueType xsd:boolean ;
+      rdfs:comment "If true then the described resource is a container and the defined property is used for container membership."^^xsd:string ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:optional "true"^^xsd:boolean ;
+      spl:predicate oslc:name ;
+      spl:valueType xsd:string ;
+      rdfs:comment "oslc:name is used to specify the local name of the defined property. This is normally the portion of the defined property URI (see oslc:propertyDefinition) that follows the last hash (#) or slash (/)."^^xsd:string ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:optional "true"^^xsd:boolean ;
+      spl:predicate oslc:readOnly ;
+      spl:valueType xsd:boolean ;
+      rdfs:comment "See http://www.w3.org/Submission/2014/SUBM-shapes-20140211/#readOnly"^^xsd:string ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:optional "true"^^xsd:boolean ;
+      spl:predicate oslc:representation ;
+      spl:valueType oslc:Representation ;
+      rdfs:comment "For object properties, oslc:representation is used to specify how the object resource is represented."^^xsd:string ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate oslc:propertyDefinition ;
+      spl:valueType rdf:Property ;
+      rdfs:comment "The property that is being constrained."^^xsd:string ;
+    ] ;
+  rdfs:comment "This class groups together all templates that are constraining a given property."^^xsd:string ;
+  rdfs:label "Property constraint template"^^xsd:string ;
+  rdfs:subClassOf spl:ConstraintTemplates ;
+.
+oslc:RangeConstraint
+  rdf:type spl:ConstraintTemplate ;
+  spin:body [
+      rdf:type sp:Construct ;
+      sp:text """
+        # Reports a constraint violation if ?this has any value that does not have the given rdf:type
+        CONSTRUCT {
+            _:cv a spin:ConstraintViolation ;
+                spin:violationRoot ?this ;
+                spin:violationPath ?propertyDefinition ;
+                rdfs:label ?label .
+        }
+        WHERE {
+            {
+                FILTER (?range != oslc:Any) .
+            } .
+            ?this ?propertyDefinition ?value .
+            FILTER (!spl:instanceOf(?value, ?range)) .
+            BIND (CONCAT(\"Value \", xsd:string(?value), \" at property \", xsd:string(?propertyDefinition), \" does not have type \", xsd:string(?range)) AS ?label) .
+        }
+        """^^xsd:string ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate oslc:range ;
+      spl:valueType rdfs:Class ;
+      rdfs:comment "For object properties, oslc:range is used to specify an allowed rdf:type of the object resource."^^xsd:string ;
+    ] ;
+  rdfs:label "Range constraint"^^xsd:string ;
+  rdfs:subClassOf oslc:PropertyConstraintTemplate ;
+.
+oslc:Reference
+  rdf:type oslc:Representation ;
+  rdfs:comment "The representaton of the object resource MUST NOT be present in the representation of the described resource."^^xsd:string ;
+  rdfs:label "Reference"^^xsd:string ;
+.
+oslc:Representation
+  rdf:type rdfs:Class ;
+  rdfs:label "Representation"^^xsd:string ;
+.
+oslc:ValueShapeConstraint
+  rdf:type spl:ConstraintTemplate ;
+  spin:body [
+      rdf:type sp:Construct ;
+      sp:templates (
+          [
+            sp:object spin:ConstraintViolation ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "vio"^^xsd:string ;
+              ] ;
+          ]
+          [
+            sp:object spin:_this ;
+            sp:predicate spin:violationRoot ;
+            sp:subject [
+                sp:varName "vio"^^xsd:string ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "propertyDefinition"^^xsd:string ;
+              ] ;
+            sp:predicate spin:violationPath ;
+            sp:subject [
+                sp:varName "vio"^^xsd:string ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "label"^^xsd:string ;
+              ] ;
+            sp:predicate rdfs:label ;
+            sp:subject [
+                sp:varName "vio"^^xsd:string ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "s"^^xsd:string ;
+              ] ;
+            sp:predicate spin:violationDetail ;
+            sp:subject [
+                sp:varName "vio"^^xsd:string ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "o"^^xsd:string ;
+              ] ;
+            sp:predicate [
+                sp:varName "p"^^xsd:string ;
+              ] ;
+            sp:subject [
+                sp:varName "s"^^xsd:string ;
+              ] ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object [
+                sp:varName "value"^^xsd:string ;
+              ] ;
+            sp:predicate [
+                sp:varName "propertyDefinition"^^xsd:string ;
+              ] ;
+            sp:subject spin:_this ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type sp:bnode ;
+              ] ;
+            sp:variable [
+                sp:varName "vio"^^xsd:string ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "value"^^xsd:string ;
+              ] ;
+            sp:predicate rdf:first ;
+            sp:subject [
+                sp:varName "?0"^^xsd:string ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "?1"^^xsd:string ;
+              ] ;
+            sp:predicate rdf:rest ;
+            sp:subject [
+                sp:varName "?0"^^xsd:string ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "valueShape"^^xsd:string ;
+              ] ;
+            sp:predicate rdf:first ;
+            sp:subject [
+                sp:varName "?1"^^xsd:string ;
+              ] ;
+          ]
+          [
+            sp:object () ;
+            sp:predicate rdf:rest ;
+            sp:subject [
+                sp:varName "?1"^^xsd:string ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "?2"^^xsd:string ;
+              ] ;
+            sp:predicate spin:constructViolations ;
+            sp:subject [
+                sp:varName "?0"^^xsd:string ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "s"^^xsd:string ;
+              ] ;
+            sp:predicate rdf:first ;
+            sp:subject [
+                sp:varName "?2"^^xsd:string ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "?3"^^xsd:string ;
+              ] ;
+            sp:predicate rdf:rest ;
+            sp:subject [
+                sp:varName "?2"^^xsd:string ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "p"^^xsd:string ;
+              ] ;
+            sp:predicate rdf:first ;
+            sp:subject [
+                sp:varName "?3"^^xsd:string ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "?4"^^xsd:string ;
+              ] ;
+            sp:predicate rdf:rest ;
+            sp:subject [
+                sp:varName "?3"^^xsd:string ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "o"^^xsd:string ;
+              ] ;
+            sp:predicate rdf:first ;
+            sp:subject [
+                sp:varName "?4"^^xsd:string ;
+              ] ;
+          ]
+          [
+            sp:object () ;
+            sp:predicate rdf:rest ;
+            sp:subject [
+                sp:varName "?4"^^xsd:string ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type sp:concat ;
+                sp:arg1 "Value " ;
+                sp:arg2 [
+                    rdf:type xsd:string ;
+                    sp:arg1 [
+                        sp:varName "value"^^xsd:string ;
+                      ] ;
+                  ] ;
+                sp:arg3 " of property " ;
+                sp:arg4 [
+                    rdf:type xsd:string ;
+                    sp:arg1 [
+                        sp:varName "propertyDefinition"^^xsd:string ;
+                      ] ;
+                  ] ;
+                sp:arg5 " does not match the shape " ;
+                sp:arg6 [
+                    rdf:type xsd:string ;
+                    sp:arg1 [
+                        sp:varName "valueShape"^^xsd:string ;
+                      ] ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "label"^^xsd:string ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate oslc:valueShape ;
+      spl:valueType rdfs:Class ;
+      rdfs:comment "For object properties, oslc:valueShape is used to specify a link to resource shape that describes the object resource."^^xsd:string ;
+    ] ;
+  rdfs:label "Value shape constraint"^^xsd:string ;
+  rdfs:subClassOf oslc:PropertyConstraintTemplate ;
+.
+oslc:ValueTypeConstraint
+  rdf:type spl:ConstraintTemplate ;
+  spin:body [
+      rdf:type sp:Construct ;
+      sp:text """
+        # Reports a constraint violation if ?this has any value that does not have the given datatype
+        CONSTRUCT {
+            _:cv a spin:ConstraintViolation ;
+                spin:violationRoot ?this ;
+                spin:violationPath ?propertyDefinition ;
+                rdfs:label ?label .
+        }
+        WHERE {
+            ?this ?propertyDefinition ?value .
+            FILTER (datatype(?value) != ?valueType) .
+            BIND (CONCAT(\"Value \", xsd:string(?value), \" of property \", xsd:string(?propertyDefinition), \" does not have value type \", xsd:string(?valueType)) AS ?label) .
+        }
+        """^^xsd:string ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate oslc:valueType ;
+      spl:valueType rdfs:Datatype ;
+      rdfs:comment "For datatype properties, oslc:valueType specifies the literal value type. It MUST be one of the following individuals: rdf:XMLLiteral, xsd:boolean, xsd:dateTime, xsd:decimal, xsd:double, xsd:float, xsd:integer, xsd:string."^^xsd:string ;
+    ] ;
+  rdfs:label "Value type constraint"^^xsd:string ;
+  rdfs:subClassOf oslc:PropertyConstraintTemplate ;
+.
+oslc:Zero-or-many
+  rdf:type oslc:Cardinality ;
+  rdfs:comment "The defined property MAY occur any number of times. It is optional and multi-valued."^^xsd:string ;
+  rdfs:label "Zero-or-many"^^xsd:string ;
+.
+oslc:Zero-or-one
+  rdf:type oslc:Cardinality ;
+  oslc:maxCount 1 ;
+  rdfs:comment "The defined property MUST occur no more than once. It is optional and single-valued."^^xsd:string ;
+  rdfs:label "Zero-or-one"^^xsd:string ;
+.
+oslc:allowedValue
+  rdf:type rdf:Property ;
+  rdfs:domain oslc:AllowedValues ;
+  rdfs:label "allowed value"^^xsd:string ;
+.
+oslc:allowedValues
+  rdf:type rdf:Property ;
+  rdfs:label "allowed values"^^xsd:string ;
+  rdfs:subPropertyOf sp:arg ;
+.
+oslc:hidden
+  rdf:type rdf:Property ;
+  rdfs:label "hidden"^^xsd:string ;
+  rdfs:subPropertyOf sp:arg ;
+.
+oslc:isMemberProperty
+  rdf:type rdf:Property ;
+  rdfs:label "is member property"^^xsd:string ;
+  rdfs:subPropertyOf sp:arg ;
+.
+oslc:maxCount
+  rdf:type rdf:Property ;
+  rdfs:domain oslc:Cardinality ;
+  rdfs:label "max count"^^xsd:string ;
+  rdfs:range xsd:integer ;
+.
+oslc:maxSize
+  rdf:type rdf:Property ;
+  rdfs:label "max size"^^xsd:string ;
+  rdfs:subPropertyOf sp:arg ;
+.
+oslc:minCount
+  rdf:type rdf:Property ;
+  rdfs:domain oslc:Cardinality ;
+  rdfs:label "min count"^^xsd:string ;
+  rdfs:range xsd:integer ;
+.
+oslc:name
+  rdf:type rdf:Property ;
+  rdfs:label "name"^^xsd:string ;
+  rdfs:subPropertyOf sp:arg ;
+.
+oslc:occurs
+  rdf:type rdf:Property ;
+  rdfs:label "occurs"^^xsd:string ;
+  rdfs:subPropertyOf sp:arg ;
+.
+oslc:property
+  rdf:type rdf:Property ;
+  rdfs:comment "This sub-property of spin:constraint can be used to list the defined properties that are expected to be contained in described resources associated with this shape. The object of this property MUST be an oslc:Property resource whose representation is contained in the shape document."^^xsd:string ;
+  rdfs:label "property"^^xsd:string ;
+  rdfs:subPropertyOf spin:constraint ;
+.
+oslc:propertyDefinition
+  rdf:type rdf:Property ;
+  rdfs:label "property definition"^^xsd:string ;
+  rdfs:subPropertyOf sp:arg ;
+.
+oslc:range
+  rdf:type rdf:Property ;
+  rdfs:label "range"^^xsd:string ;
+  rdfs:subPropertyOf sp:arg ;
+.
+oslc:readOnly
+  rdf:type rdf:Property ;
+  rdfs:label "read only"^^xsd:string ;
+  rdfs:subPropertyOf sp:arg ;
+.
+oslc:representation
+  rdf:type rdf:Property ;
+  rdfs:label "representation"^^xsd:string ;
+  rdfs:subPropertyOf sp:arg ;
+.
+oslc:valueShape
+  rdf:type rdf:Property ;
+  rdfs:label "value shape"^^xsd:string ;
+  rdfs:subPropertyOf sp:arg ;
+.
+oslc:valueType
+  rdf:type rdf:Property ;
+  rdfs:label "value type"^^xsd:string ;
+  rdfs:subPropertyOf sp:arg ;
+.
+
+
+
+
+
+
+se:Property
+  rdf:type spl:ConstraintTemplate ;
+  rdf:type spl:UnionTemplate ;
+  spin:labelTemplate "Property {?propertyDefinition}"^^xsd:string ;
+  rdfs:comment "This template serves as a single \"parent\" for all other OSLC constraint templates, so that RDF models only need to instantiate oslc:Property and put any number of other constraints into the same node."^^xsd:string ;
+  rdfs:label "Property"^^xsd:string ;
+  rdfs:subClassOf se:OccursConstraint ;
+  rdfs:subClassOf se:Choice ;
+.
+
+se:OccursConstraint
+  rdf:type spl:ConstraintTemplate ;
+  spin:body [
+      rdf:type sp:Construct ;
+      sp:text """
+        # Reports a constraint violation if ?this has an unexpected number of values (cardinality)
+        CONSTRUCT {
+            _:cv a spin:ConstraintViolation ;
+                spin:violationRoot ?this ;
+                spin:violationPath ?propertyDefinition ;
+                rdfs:label ?label .
+        }
+        WHERE {
+			# max is empty
+			BIND( IF( isNumeric(?max), ?max, 0 ) AS ?maximum ) .
+            BIND (spl:objectCount(?this, ?propertyDefinition) AS ?count) .
+            FILTER ((bound(?min) && (?count < ?min)) || (bound(?maximum) && (?count > ?maximum) && (?maximum > 0))) .
+            BIND (CONCAT(
+			    \"Property '\", 
+				xsd:string(?propertyDefinition), 
+				\"' has cardinality \", 
+				xsd:string(?count), 
+				\", but does not match specified cardinality (min: \", 
+				xsd:string(?min),
+				\", max: \", 
+				xsd:string(?maximum),
+				\")\"
+				) AS ?label) .
+        }
+        """^^xsd:string ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate se:min ;
+      spl:valueType xsd:nonNegativeInteger ;
+      rdfs:comment "min"^^xsd:string ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate se:max ;
+      spl:valueType xsd:nonNegativeInteger ;
+      rdfs:comment "max"^^xsd:string ;
+    ] ;
+  rdfs:label "Occurs constraint"^^xsd:string ;
+  rdfs:subClassOf oslc:PropertyConstraintTemplate ;
+.
+
+se:min
+  rdf:type rdf:Property ;
+  rdfs:label "min"^^xsd:string ;
+  rdfs:subPropertyOf sp:arg ;
+.
+se:max
+  rdf:type rdf:Property ;
+  rdfs:label "max"^^xsd:string ;
+  rdfs:subPropertyOf sp:arg ;
+.
+
+
+
+
+
+se:PropertyGroupConstraintTemplate
+  rdf:type spl:ConstraintTemplate ;
+  spin:abstract "true"^^xsd:boolean ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate oslc:property ;
+      spl:valueType se:Property ;
+      rdfs:comment "constrained property group"^^xsd:string ;
+    ] ;
+  rdfs:comment ""^^xsd:string ;
+  rdfs:label "Property group constraint template"^^xsd:string ;
+  rdfs:subClassOf spl:ConstraintTemplates ;
+.
+
+se:Choice
+  rdf:type spl:ConstraintTemplate ;
+  spin:body [
+      rdf:type sp:Construct ;
+      sp:text """
+        CONSTRUCT {
+            _:cv a spin:ConstraintViolation ;
+                spin:violationRoot ?this ;
+                spin:violationPath ?propertyDefinition ;
+                rdfs:label ?label .
+        }
+        WHERE {
+            # left and right property present
+			?this 
+			    a ?shape ;
+			    ?p1 ?o1 ;
+			    ?p2 ?o2 .
+			?leftPropertyConstraint oslc:propertyDefinition ?p1 .
+			?rightPropertyConstraint oslc:propertyDefinition ?p2 .
+            BIND (CONCAT( 
+				xsd:string(?this),
+				\" (matching the shape '\", 
+				xsd:string(?shape),
+				\") can either have a '\",
+				xsd:string(?p1),
+				\"' property or a '\",
+				xsd:string(?p2),
+				\"' property, but has both.\"
+				) AS ?label) .
+        }
+        """^^xsd:string ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate se:leftPropertyConstraint ;
+      spl:valueType se:Property ;
+      rdfs:comment ""^^xsd:string ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate se:rightPropertyConstraint ;
+      spl:valueType se:Property ;
+      rdfs:comment ""^^xsd:string ;
+    ] ;
+  rdfs:label ""^^xsd:string ;
+  # rdfs:subClassOf se:PropertyGroupConstraintTemplate ;
+.
+
+se:leftPropertyConstraint
+  rdf:type rdf:Property ;
+  rdfs:label ""^^xsd:string ;
+  rdfs:subPropertyOf sp:arg ;
+.
+se:rightPropertyConstraint
+  rdf:type rdf:Property ;
+  rdfs:label ""^^xsd:string ;
+  rdfs:subPropertyOf sp:arg ;
+.
