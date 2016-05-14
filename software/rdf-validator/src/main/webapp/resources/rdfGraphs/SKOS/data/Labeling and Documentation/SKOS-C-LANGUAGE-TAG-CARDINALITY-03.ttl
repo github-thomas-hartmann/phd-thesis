@@ -1,0 +1,27 @@
+# SKOS-C-LANGUAGE-TAG-CARDINALITY-03
+# -----
+# Labeling and Documentation Issues - No Common Language:
+# Checks if all concepts have at least one common language (default: English), 
+# i.e. they have assigned at least one literal in the same language.
+
+:SubSubConcept 
+    a owl:Class ;
+    rdfs:subClassOf :SubConcept .
+:SubConcept 
+    a owl:Class ;
+    rdfs:subClassOf skos:Concept .
+
+# invalid data
+# -----
+:no-common-language-c1
+    a :SubSubConcept ;
+    skos:definition "1"@de ;
+    skos:definition "1"@fr .
+
+# valid data
+# -----
+:no-common-language-c2
+    a :SubSubConcept ;
+    skos:definition "2"@en ;
+    skos:definition "2"@de ;
+    skos:definition "2"@fr .

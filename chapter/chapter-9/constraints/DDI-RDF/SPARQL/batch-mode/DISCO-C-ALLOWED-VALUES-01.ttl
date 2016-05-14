@@ -1,0 +1,4 @@
+?subject 
+    a disco:CategoryStatistics ;
+    disco:computationBase ?computationBase .
+FILTER ( ?computationBase != 'valid' && ?computationBase != 'invalid' ) .

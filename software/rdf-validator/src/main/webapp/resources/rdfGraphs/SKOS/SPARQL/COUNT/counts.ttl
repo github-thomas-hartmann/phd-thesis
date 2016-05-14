@@ -1,0 +1,69 @@
+# triples
+# -----
+PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#> 
+PREFIX dcterms: <http://purl.org/dc/terms#> 
+PREFIX rdf:	    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+SELECT ( COUNT( ?s ) AS ?count ) 
+{ ?s ?p ?o . }
+
+# skos:ConceptScheme
+# -----
+PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#> 
+PREFIX dcterms: <http://purl.org/dc/terms#> 
+PREFIX rdf:	    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+SELECT ( COUNT( ?s ) AS ?count ) 
+{ ?s a [ rdfs:subClassOf* skos:ConceptScheme ] }
+
+# skos:Concept
+# -----
+PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#> 
+PREFIX dcterms: <http://purl.org/dc/terms#> 
+PREFIX rdf:	    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+SELECT ( COUNT( ?s ) AS ?count ) 
+{ ?s a [ rdfs:subClassOf* skos:Concept ] }
+
+# skos:broader
+# -----
+PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#> 
+PREFIX dcterms: <http://purl.org/dc/terms#> 
+PREFIX rdf:	    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+SELECT ( COUNT( ?s ) AS ?count ) 
+{ ?s skos:broader ?o . }
+
+# skos:broader
+# -----
+PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#> 
+PREFIX dcterms: <http://purl.org/dc/terms#> 
+PREFIX rdf:	    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+SELECT ( COUNT( ?s ) AS ?count ) 
+{ ?s skos:narrower ?o . }
+
+# skos:hasTopConcept
+# -----
+PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#> 
+PREFIX dcterms: <http://purl.org/dc/terms#> 
+PREFIX rdf:	    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+SELECT ( COUNT( ?s ) AS ?count ) 
+{ ?s skos:hasTopConcept ?o . }
+
+# skos:inScheme
+# -----
+PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#> 
+PREFIX dcterms: <http://purl.org/dc/terms#> 
+PREFIX rdf:	    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+SELECT ( COUNT( ?s ) AS ?count ) 
+{ ?s skos:inScheme ?o . }

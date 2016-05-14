@@ -1,0 +1,15 @@
+# ---------------
+# Statement Templates - Minimum occurrence constraint
+
+
+	# dsp:minOccur <= dsp:maxOccur
+	# -----
+	:ArtficialIntelligence
+		a swrc:Book, owl:Thing ;
+		dcterms:subject :ComputerScience , :SocialScience .
+	:ComputerScience
+		a skos:Concept, owl:Thing .
+	:SocialScience
+		a skos:Concept, owl:Thing .
+	
+# -----

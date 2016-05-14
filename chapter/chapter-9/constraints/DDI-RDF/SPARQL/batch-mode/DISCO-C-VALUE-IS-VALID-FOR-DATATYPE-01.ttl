@@ -1,0 +1,4 @@
+?subject ?p ?date .
+FILTER ( ?p = disco:startDate  || ?p = disco:endDate  || ?p = dcterms:date  ) .
+
+FILTER ( DATATYPE ( ?date ) != xsd:date ) .

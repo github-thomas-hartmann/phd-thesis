@@ -1,0 +1,15 @@
+	?subject disco:containsVariable ?o .
+	
+	# violation message
+	# -----------------
+	BIND ( CONCAT( 
+		"DISCO-C-CONTEXT-SPECIFIC-VALID-PROPERTIES-01" )
+		AS ?violationMessage ) . 
+	
+	# violation source
+	# ----------------
+	BIND ( CONCAT( "DISCO-C-CONTEXT-SPECIFIC-VALID-PROPERTIES-01" )AS ?violationSource ) . 
+	
+	# severity level
+	# --------------
+	BIND ( ( 'INFO' ) AS ?severityLevel ) .

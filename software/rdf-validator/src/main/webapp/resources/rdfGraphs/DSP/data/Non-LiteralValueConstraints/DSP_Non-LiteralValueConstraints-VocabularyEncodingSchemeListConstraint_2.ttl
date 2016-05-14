@@ -1,0 +1,15 @@
+# ---------------
+# Non-Literal Value Constraints - Vocabulary Encoding Scheme List Constraint
+
+	
+	:ArtficialIntelligence
+		a swrc:Book, owl:Thing ;
+		dcterms:subject :ComputerScience .
+	:ComputerScience
+		a skos:Concept, owl:Thing ;
+		dcam:memberOf :Subjects ; # --> constraint violation
+		skos:inScheme :Subjects . # --> constraint violation
+	:Subjects 
+		a skos:ConceptScheme, owl:Thing .
+	
+# -----

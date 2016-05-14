@@ -1,0 +1,4 @@
+?subject a disco:Questionnaire . 
+
+OPTIONAL { ?subject disco:question ?question . }
+FILTER ( ! BOUND( ?question ) ) .

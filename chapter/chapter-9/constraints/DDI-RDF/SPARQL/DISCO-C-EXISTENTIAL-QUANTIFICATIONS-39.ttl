@@ -1,0 +1,18 @@
+	?subject a disco:Question . 
+	
+	OPTIONAL { ?subject disco:questionText ?questionText . }
+	FILTER ( ! BOUND( ?questionText ) ) .
+	
+	# violation message
+	# -----------------
+	BIND ( CONCAT( 
+		"DISCO-C-EXISTENTIAL-QUANTIFICATIONS-39" )
+		AS ?violationMessage ) . 
+	
+	# violation source
+	# ----------------
+	BIND ( CONCAT( "DISCO-C-EXISTENTIAL-QUANTIFICATIONS-39" )AS ?violationSource ) . 
+	
+	# severity level
+	# --------------
+	BIND ( ( 'ERROR' ) AS ?severityLevel ) .

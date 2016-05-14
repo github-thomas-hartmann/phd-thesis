@@ -1,0 +1,77 @@
+@prefix : <http://constraints#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/#> .
+@prefix oslc: <http://open-services.net/ns/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix se: <http://www.w3.org/2013/ShEx/Definition#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+:Employee
+  rdf:type owl:Class ;
+  spin:constraint [
+      rdf:type se:Property ;
+      se:min "1"^^xsd:nonNegativeInteger ;
+      se:max ""^^xsd:nonNegativeInteger ;
+      oslc:propertyDefinition foaf:givenName ] ;
+  spin:constraint [
+      rdf:type oslc:Property ;
+      oslc:propertyDefinition foaf:givenName ;
+      oslc:valueType xsd:string ] ;
+  spin:constraint [
+      rdf:type se:Property ;
+      se:min "1"^^xsd:nonNegativeInteger ;
+      se:max "1"^^xsd:nonNegativeInteger ;
+      oslc:propertyDefinition foaf:familyName ] ;
+  spin:constraint [
+      rdf:type oslc:Property ;
+      oslc:propertyDefinition foaf:familyName ;
+      oslc:valueType xsd:string ] ;
+  spin:constraint [
+      rdf:type se:Property ;
+      se:min "0"^^xsd:nonNegativeInteger ;
+      se:max ""^^xsd:nonNegativeInteger ;
+      oslc:propertyDefinition foaf:phone ] ;
+  spin:constraint [
+      rdf:type oslc:Property ;
+      oslc:propertyDefinition foaf:phone ;
+      oslc:valueType xsd:string ] ;
+  spin:constraint [
+      rdf:type se:Property ;
+      se:min "0"^^xsd:nonNegativeInteger ;
+      se:max "1"^^xsd:nonNegativeInteger ;
+      oslc:propertyDefinition foaf:mbox ] ;
+  spin:constraint [
+      rdf:type oslc:Property ;
+      oslc:propertyDefinition foaf:mbox ;
+      oslc:valueType xsd:string ] ;
+  spin:constraint [
+      rdf:type se:Property ;
+      se:min "1"^^xsd:nonNegativeInteger ;
+	  se:max "2"^^xsd:nonNegativeInteger ;
+      oslc:propertyDefinition foaf:name ] ;
+  spin:constraint [
+      rdf:type oslc:Property ;
+      oslc:propertyDefinition foaf:name ;
+      oslc:valueType xsd:string ] ;
+  rdfs:label "Employee"^^xsd:string ;
+  rdfs:subClassOf owl:Thing .
+
+# valid data
+# ----------
+:Employee_1
+  rdf:type :Employee ;
+  foaf:givenName "given name"^^xsd:string ;
+  foaf:familyName "family name"^^xsd:string ;
+  foaf:name "name"^^xsd:string ;
+  rdfs:label "Employee_1"^^xsd:string .
+
+# invalid data
+# ------------
+:Employee_2
+  rdf:type :Employee ;
+  foaf:mbox "mbox 1"^^xsd:string ;
+  foaf:mbox "mbox 2"^^xsd:string ;
+  rdfs:label "Employee_1"^^xsd:string .

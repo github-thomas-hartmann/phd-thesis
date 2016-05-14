@@ -1,0 +1,27 @@
+# Property Ranges
+# -----
+
+
+# valid data
+# -----
+:catalog
+   a dcat:Catalog ;
+   dcat:dataset :dataset .
+:dataset
+    a dcat:Dataset .
+        
+:distribution
+    a dcat:Distribution ;
+    dcat:bytes '0'^^xsd:integer .
+        
+# invalid data
+# -----
+ :catalog_2
+    a dcat:Catalog ;
+    dcat:record :catalogRecord .
+:catalogRecord 
+    a dcat:Catalog .
+    
+:distribution_2
+    a dcat:Distribution ;
+    dcat:bytes '0'^^xsd:string .

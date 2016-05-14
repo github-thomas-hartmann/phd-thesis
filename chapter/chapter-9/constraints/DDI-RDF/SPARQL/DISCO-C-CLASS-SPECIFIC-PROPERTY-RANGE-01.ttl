@@ -1,0 +1,18 @@
+	?subject 
+	    a ?class ;
+	    disco:questionText ?questionText .
+	FILTER ( ?class != disco:Question ) .
+
+	# violation message
+	# -----------------
+	BIND ( CONCAT( 
+		"DISCO-C-CLASS-SPECIFIC-PROPERTY-RANGE-01" )
+		AS ?violationMessage ) . 
+	
+	# violation source
+	# ----------------
+	BIND ( CONCAT( "DISCO-C-CLASS-SPECIFIC-PROPERTY-RANGE-01" )AS ?violationSource ) . 
+	
+	# severity level
+	# --------------
+	BIND ( ( 'ERROR' ) AS ?severityLevel ) .

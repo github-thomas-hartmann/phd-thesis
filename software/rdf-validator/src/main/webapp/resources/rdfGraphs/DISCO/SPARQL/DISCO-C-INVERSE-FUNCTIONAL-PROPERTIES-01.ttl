@@ -1,0 +1,16 @@
+	?subject adms:identifier ?id1 , ?id2 . 
+	FILTER ( ?id1 != ?id2 ) .
+	
+	# violation message
+	# -----------------
+	BIND ( CONCAT( 
+		"DISCO-C-INVERSE-FUNCTIONAL-PROPERTIES-01" )
+		AS ?violationMessage ) . 
+	
+	# violation source
+	# ----------------
+	BIND ( CONCAT( "DISCO-C-INVERSE-FUNCTIONAL-PROPERTIES-01" )AS ?violationSource ) . 
+	
+	# severity level
+	# --------------
+	BIND ( ( 'ERROR' ) AS ?severityLevel ) .

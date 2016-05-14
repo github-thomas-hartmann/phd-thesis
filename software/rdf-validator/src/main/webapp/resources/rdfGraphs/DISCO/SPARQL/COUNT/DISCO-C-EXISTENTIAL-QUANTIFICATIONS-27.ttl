@@ -1,0 +1,4 @@
+?subject a disco:Study .
+
+OPTIONAL { ?subject disco:product ?logicalDataSet . }
+FILTER ( ! BOUND( ?logicalDataSet ) ) .

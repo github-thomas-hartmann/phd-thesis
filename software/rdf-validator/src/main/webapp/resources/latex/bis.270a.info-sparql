@@ -1,0 +1,57 @@
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lccccccccccc@{}}
+           & \multicolumn{11}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-12}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-01}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-02}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-03}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-04}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-05}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-06}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-07}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-08}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-09}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-10 (!)}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-11}}
+	\\ \midrule
+    \emph{http://bis.270a.info/sparql} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://bis.270a.info/sparql}}
+    \label{tab:evaluation-bis.270a.info-sparql}
+    \end{center}
+\end{table}
+
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lccccccccccc@{}}
+           & \multicolumn{11}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-12}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-01}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-02}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-03}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-04}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-05}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-06}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-07}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-08}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-09}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-10 (!)}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-11}}
+	\\ \midrule
+    \emph{BIS$\_$M$\_$IBLR} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{BIS$\_$M$\_$CIBL$\_$IB} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{BIS$\_$M$\_$CIBL$\_$UR} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{BIS$\_$EER} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{BIS$\_$TOTAL$\_$CREDIT} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{BIS$\_$M$\_$IBLN} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://bis.270a.info/sparql}} Data Sets
+    \label{tab:evaluation-0-bis.270a.info-sparql}
+    \end{center}
+\end{table}
+

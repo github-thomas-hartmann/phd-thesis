@@ -1,0 +1,6 @@
+    ?subject 
+        a qb:SliceKey;
+        qb:componentProperty ?prop .
+    ?dsd 
+        qb:sliceKey ?subject .
+    FILTER NOT EXISTS { ?dsd qb:component [ qb:componentProperty ?prop ] . }    

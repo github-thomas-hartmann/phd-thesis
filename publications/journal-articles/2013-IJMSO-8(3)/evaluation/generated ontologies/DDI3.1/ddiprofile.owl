@@ -1,0 +1,1490 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>	
+
+<!DOCTYPE rdf:RDF [
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+	<!ENTITY XMLSchemaMetamodelOntology "http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#" >
+]>
+	
+<rdf:RDF 
+     xmlns="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#"
+	 xml:base="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl"
+	 xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	 xmlns:owl="http://www.w3.org/2002/07/owl#"
+	 xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	 xmlns:XSDMetamodelOntology="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#">
+	
+	<owl:Ontology rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl">
+		<owl:versionIRI rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1:1.0.0.owl"/>
+		<owl:imports rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology:1.0.0.owl"/>
+	</owl:Ontology>
+	
+	
+	<!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Schema"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#attributeFormDefault_Schema_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">unqualified</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#elementFormDefault_Schema_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">qualified</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#targetNamespace_Schema_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">ddi:ddiprofile:3_1</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Schema_Import"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Import1-Import_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Schema_ComplexType"/>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#DDIProfileType-Type_ddi:ddiprofile:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#XMLPrefixMapType-Type_ddi:ddiprofile:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#UsedType-Type_ddi:ddiprofile:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#NotUsedType-Type_ddi:ddiprofile:3_1-Schema"/>
+						</owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Schema_Element"/>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#DDIProfile-Element_ddi:ddiprofile:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#DDIProfileName-Element_ddi:ddiprofile:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Used-Element_ddi:ddiprofile:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#NotUsed-Element_ddi:ddiprofile:3_1-Schema"/>
+						</owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Import1-Import_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Import1-Import_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Import"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#namespace_Import_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">ddi:reusable:3_1</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#schemaLocation_Import_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">reusable.xsd</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#DDIProfileType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#DDIProfileType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ComplexType"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#name_ComplexType_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">DDIProfileType</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_ComplexType_ComplexContent"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ComplexContent"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_ComplexContent_Extension"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Extension"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#base_Extension_Type"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:reusable:3_1.owl#MaintainableType-Type_ddi:reusable:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Extension_Sequence"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Sequence"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#sequence"/>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#DDIProfileName-Element-Reference1_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Label-Element-Reference2-ddi:reusable:3_1_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Description-Element-Reference3-ddi:reusable:3_1_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#XPathVersion-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#DDINamespace-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#XMLPrefixMap-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Instructions-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Choice8-Choice_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema"/>
+						</owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Sequence_Element"/>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#DDIProfileName-Element-Reference1_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Label-Element-Reference2-ddi:reusable:3_1_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Description-Element-Reference3-ddi:reusable:3_1_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#XPathVersion-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#DDINamespace-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#XMLPrefixMap-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Instructions-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema"/>
+						</owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Sequence_Choice"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Choice8-Choice_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#DDIProfileName-Element-Reference1_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#DDIProfileName-Element-Reference1_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#maxOccurs_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">unbounded</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#minOccurs_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">0</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ref_Element_Element"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#DDIProfileName-Element_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Label-Element-Reference2-ddi:reusable:3_1_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Label-Element-Reference2-ddi:reusable:3_1_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#maxOccurs_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">unbounded</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#minOccurs_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">0</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ref_Element_Element"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:reusable:3_1.owl#Label-Element_ddi:reusable:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Description-Element-Reference3-ddi:reusable:3_1_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Description-Element-Reference3-ddi:reusable:3_1_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#maxOccurs_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">unbounded</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#minOccurs_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">0</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ref_Element_Element"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:reusable:3_1.owl#Description-Element_ddi:reusable:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Element_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_Description-Element-Reference3-ddi:reusable:3_1_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_Description-Element-Reference3-ddi:reusable:3_1_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_Description-Element-Reference3-ddi:reusable:3_1_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_Description-Element-Reference3-ddi:reusable:3_1_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_Description-Element-Reference3-ddi:reusable:3_1_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_Description-Element-Reference3-ddi:reusable:3_1_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Provides a human-readable description of the profile. XHTML may be used, and it may be supplied in several language-versions.</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#XPathVersion-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#XPathVersion-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#default_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">1.0</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#name_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">XPathVersion</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#type_Element_Type"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/2001/XMLSchema.owl#decimal-Type_http://www.w3.org/2001/XMLSchema-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Element_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_XPathVersion-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_XPathVersion-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_XPathVersion-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_XPathVersion-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_XPathVersion-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_XPathVersion-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Provides the version of XPath used. Values are 1.0, 2.0 at this time.</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#DDINamespace-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#DDINamespace-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#minOccurs_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">0</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#name_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">DDINamespace</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#type_Element_Type"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/2001/XMLSchema.owl#decimal-Type_http://www.w3.org/2001/XMLSchema-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Element_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_DDINamespace-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_DDINamespace-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_DDINamespace-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_DDINamespace-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_DDINamespace-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_DDINamespace-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Provides the version of DDI schemas used. Values are 3.0, 3.1, etc.</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#XMLPrefixMap-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#XMLPrefixMap-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#maxOccurs_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">unbounded</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#name_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">XMLPrefixMap</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#type_Element_Type"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#XMLPrefixMapType-Type_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Element_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_XMLPrefixMap-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_XMLPrefixMap-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_XMLPrefixMap-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_XMLPrefixMap-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_XMLPrefixMap-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_XMLPrefixMap-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">For each XML namespace used in the profile's XPath expressions, the XML namespaces must have their prefix specified using this element.</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Instructions-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Instructions-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#maxOccurs_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">unbounded</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#minOccurs_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">0</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#name_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Instructions</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#type_Element_Type"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:reusable:3_1.owl#StructuredStringType-Type_ddi:reusable:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Element_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_Instructions-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_Instructions-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_Instructions-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_Instructions-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_Instructions-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_Instructions-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Provides human-readable instructions for the profile. XHTML may be used, and it may be supplied in several language-versions.</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Choice8-Choice_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Choice8-Choice_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Choice"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#maxOccurs_Choice_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">unbounded</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#minOccurs_Choice_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">0</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Choice_Element"/>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Used-Element-Reference1_Choice8-Choice_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#NotUsed-Element-Reference2_Choice8-Choice_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema"/>
+						</owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Used-Element-Reference1_Choice8-Choice_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Used-Element-Reference1_Choice8-Choice_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ref_Element_Element"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Used-Element_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Element_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_Used-Element-Reference1_Choice8-Choice_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_Used-Element-Reference1_Choice8-Choice_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_Used-Element-Reference1_Choice8-Choice_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_Used-Element-Reference1_Choice8-Choice_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_Used-Element-Reference1_Choice8-Choice_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_Used-Element-Reference1_Choice8-Choice_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Indicates an element in the DDI which is used by the profile.</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#NotUsed-Element-Reference2_Choice8-Choice_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#NotUsed-Element-Reference2_Choice8-Choice_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ref_Element_Element"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#NotUsed-Element_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Element_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_NotUsed-Element-Reference2_Choice8-Choice_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_NotUsed-Element-Reference2_Choice8-Choice_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_NotUsed-Element-Reference2_Choice8-Choice_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_NotUsed-Element-Reference2_Choice8-Choice_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_NotUsed-Element-Reference2_Choice8-Choice_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_NotUsed-Element-Reference2_Choice8-Choice_Sequence1-Sequence_Extension1-Extension_ComplexContent1-ComplexContent_DDIProfileType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Indicates an element in the DDI which is not used by the profile. You cannot make anything which is required in the DDI schemas not used, as this would produce invalid XML instances.</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#XMLPrefixMapType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#XMLPrefixMapType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ComplexType"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#name_ComplexType_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">XMLPrefixMapType</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_ComplexType_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_XMLPrefixMapType-Type_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_ComplexType_Sequence"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Sequence2-Sequence_XMLPrefixMapType-Type_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_XMLPrefixMapType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_XMLPrefixMapType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_XMLPrefixMapType-Type_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_XMLPrefixMapType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_XMLPrefixMapType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">For each XML namespace used in the profile's XPath expressions, the XML namespaces must have their prefix specified using this element.</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Sequence2-Sequence_XMLPrefixMapType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Sequence2-Sequence_XMLPrefixMapType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Sequence"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#sequence"/>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#XMLPrefix-Element_Sequence2-Sequence_XMLPrefixMapType-Type_ddi:ddiprofile:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#XMLNamespace-Element_Sequence2-Sequence_XMLPrefixMapType-Type_ddi:ddiprofile:3_1-Schema"/>
+						</owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Sequence_Element"/>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#XMLPrefix-Element_Sequence2-Sequence_XMLPrefixMapType-Type_ddi:ddiprofile:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#XMLNamespace-Element_Sequence2-Sequence_XMLPrefixMapType-Type_ddi:ddiprofile:3_1-Schema"/>
+						</owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#XMLPrefix-Element_Sequence2-Sequence_XMLPrefixMapType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#XMLPrefix-Element_Sequence2-Sequence_XMLPrefixMapType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#name_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">XMLPrefix</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#type_Element_Type"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/2001/XMLSchema.owl#string-Type_http://www.w3.org/2001/XMLSchema-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#XMLNamespace-Element_Sequence2-Sequence_XMLPrefixMapType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#XMLNamespace-Element_Sequence2-Sequence_XMLPrefixMapType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#name_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">XMLNamespace</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#type_Element_Type"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/2001/XMLSchema.owl#string-Type_http://www.w3.org/2001/XMLSchema-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#UsedType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#UsedType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ComplexType"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#name_ComplexType_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">UsedType</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_ComplexType_Sequence"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Sequence1-Sequence_UsedType-Type_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_ComplexType_Attribute"/>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#required-Attribute_UsedType-Type_ddi:ddiprofile:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#path-Attribute_UsedType-Type_ddi:ddiprofile:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#defaultValue-Attribute_UsedType-Type_ddi:ddiprofile:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#fixedValue-Attribute_UsedType-Type_ddi:ddiprofile:3_1-Schema"/>
+						</owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Sequence1-Sequence_UsedType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Sequence1-Sequence_UsedType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Sequence"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#sequence"/>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#AlternateName-Element_Sequence1-Sequence_UsedType-Type_ddi:ddiprofile:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Description-Element_Sequence1-Sequence_UsedType-Type_ddi:ddiprofile:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Instructions-Element_Sequence1-Sequence_UsedType-Type_ddi:ddiprofile:3_1-Schema"/>
+						</owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Sequence_Element"/>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#AlternateName-Element_Sequence1-Sequence_UsedType-Type_ddi:ddiprofile:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Description-Element_Sequence1-Sequence_UsedType-Type_ddi:ddiprofile:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Instructions-Element_Sequence1-Sequence_UsedType-Type_ddi:ddiprofile:3_1-Schema"/>
+						</owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#AlternateName-Element_Sequence1-Sequence_UsedType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#AlternateName-Element_Sequence1-Sequence_UsedType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#maxOccurs_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">unbounded</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#minOccurs_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">0</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#name_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">AlternateName</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#type_Element_Type"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:reusable:3_1.owl#InternationalStringType-Type_ddi:reusable:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Element_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_AlternateName-Element_Sequence1-Sequence_UsedType-Type_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_AlternateName-Element_Sequence1-Sequence_UsedType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_AlternateName-Element_Sequence1-Sequence_UsedType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_AlternateName-Element_Sequence1-Sequence_UsedType-Type_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_AlternateName-Element_Sequence1-Sequence_UsedType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_AlternateName-Element_Sequence1-Sequence_UsedType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Provides an alternate name for the element, for presentation purposes (not for use in the XML instance). It may be supplied in several language-versions.</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Description-Element_Sequence1-Sequence_UsedType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Description-Element_Sequence1-Sequence_UsedType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#maxOccurs_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">unbounded</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#minOccurs_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">0</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#name_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Description</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#type_Element_Type"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:reusable:3_1.owl#StructuredStringType-Type_ddi:reusable:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Element_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_Description-Element_Sequence1-Sequence_UsedType-Type_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_Description-Element_Sequence1-Sequence_UsedType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_Description-Element_Sequence1-Sequence_UsedType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_Description-Element_Sequence1-Sequence_UsedType-Type_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_Description-Element_Sequence1-Sequence_UsedType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_Description-Element_Sequence1-Sequence_UsedType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Provides a human-readable description of the profile. XHTML may be used, and it may be supplied in several language-versions.</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Instructions-Element_Sequence1-Sequence_UsedType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Instructions-Element_Sequence1-Sequence_UsedType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#maxOccurs_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">unbounded</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#minOccurs_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">0</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#name_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Instructions</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#type_Element_Type"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:reusable:3_1.owl#StructuredStringType-Type_ddi:reusable:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Element_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_Instructions-Element_Sequence1-Sequence_UsedType-Type_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_Instructions-Element_Sequence1-Sequence_UsedType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_Instructions-Element_Sequence1-Sequence_UsedType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_Instructions-Element_Sequence1-Sequence_UsedType-Type_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_Instructions-Element_Sequence1-Sequence_UsedType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_Instructions-Element_Sequence1-Sequence_UsedType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Provides human-readable instructions for the profile. XHTML may be used, and it may be supplied in several language-versions.</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#required-Attribute_UsedType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#required-Attribute_UsedType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Attribute"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#default_Attribute_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">false</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#name_Attribute_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">required</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#type_Attribute_Type"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/2001/XMLSchema.owl#boolean-Type_http://www.w3.org/2001/XMLSchema-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Attribute_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_required-Attribute_UsedType-Type_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_required-Attribute_UsedType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_required-Attribute_UsedType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_required-Attribute_UsedType-Type_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_required-Attribute_UsedType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_required-Attribute_UsedType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">If true indicates that an element described as optional in DDI is required by the profile.</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#path-Attribute_UsedType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#path-Attribute_UsedType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Attribute"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#name_Attribute_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">path</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#use_Attribute_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">required</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#type_Attribute_Type"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/2001/XMLSchema.owl#string-Type_http://www.w3.org/2001/XMLSchema-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Attribute_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_path-Attribute_UsedType-Type_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_path-Attribute_UsedType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_path-Attribute_UsedType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_path-Attribute_UsedType-Type_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_path-Attribute_UsedType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_path-Attribute_UsedType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Contains an XPath which points to an element or attribute in DDI instances which is used by the profile. All subelements of a used element are assumed to be supported unless explicitly addressed by the profile. The number of supported repetitions may be included in the XPath expression.</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#defaultValue-Attribute_UsedType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#defaultValue-Attribute_UsedType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Attribute"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#name_Attribute_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">defaultValue</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#use_Attribute_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">optional</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#type_Attribute_Type"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/2001/XMLSchema.owl#string-Type_http://www.w3.org/2001/XMLSchema-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Attribute_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_defaultValue-Attribute_UsedType-Type_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_defaultValue-Attribute_UsedType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_defaultValue-Attribute_UsedType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_defaultValue-Attribute_UsedType-Type_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_defaultValue-Attribute_UsedType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_defaultValue-Attribute_UsedType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">This field provides a default value for the specified element or attribute if it holds simple content, and the value must be a valid one per the DDI schemas. This assumes that the value is not specified in the DDI instance itself, which would override the default. The value should also be provided as part of the XPath expression supplied for the field.</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#fixedValue-Attribute_UsedType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#fixedValue-Attribute_UsedType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Attribute"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#default_Attribute_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">false</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#name_Attribute_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">fixedValue</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#type_Attribute_Type"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/2001/XMLSchema.owl#boolean-Type_http://www.w3.org/2001/XMLSchema-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Attribute_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_fixedValue-Attribute_UsedType-Type_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_fixedValue-Attribute_UsedType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_fixedValue-Attribute_UsedType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_fixedValue-Attribute_UsedType-Type_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_fixedValue-Attribute_UsedType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_fixedValue-Attribute_UsedType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">This field, if set to true, provides an indication that the default value supplied in the fixedValue attribute is the only one which is allowed for the profile - other values will be overriden with the default (a warning should be issued to the creator of the instance); the value must be a valid one per the DDI schemas.</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#NotUsedType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#NotUsedType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ComplexType"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#name_ComplexType_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">NotUsedType</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_ComplexType_SimpleContent"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#SimpleContent1-SimpleContent_NotUsedType-Type_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#SimpleContent1-SimpleContent_NotUsedType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#SimpleContent1-SimpleContent_NotUsedType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#SimpleContent"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_SimpleContent_Extension"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Extension1-Extension_SimpleContent1-SimpleContent_NotUsedType-Type_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Extension1-Extension_SimpleContent1-SimpleContent_NotUsedType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Extension1-Extension_SimpleContent1-SimpleContent_NotUsedType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Extension"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#base_Extension_Type"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/2001/XMLSchema.owl#string-Type_http://www.w3.org/2001/XMLSchema-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Extension_Attribute"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#path-Attribute_Extension1-Extension_SimpleContent1-SimpleContent_NotUsedType-Type_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#path-Attribute_Extension1-Extension_SimpleContent1-SimpleContent_NotUsedType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#path-Attribute_Extension1-Extension_SimpleContent1-SimpleContent_NotUsedType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Attribute"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#name_Attribute_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">path</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#use_Attribute_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">required</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#type_Attribute_Type"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/2001/XMLSchema.owl#string-Type_http://www.w3.org/2001/XMLSchema-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Attribute_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_path-Attribute_Extension1-Extension_SimpleContent1-SimpleContent_NotUsedType-Type_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_path-Attribute_Extension1-Extension_SimpleContent1-SimpleContent_NotUsedType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_path-Attribute_Extension1-Extension_SimpleContent1-SimpleContent_NotUsedType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_path-Attribute_Extension1-Extension_SimpleContent1-SimpleContent_NotUsedType-Type_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_path-Attribute_Extension1-Extension_SimpleContent1-SimpleContent_NotUsedType-Type_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_path-Attribute_Extension1-Extension_SimpleContent1-SimpleContent_NotUsedType-Type_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Contains an XPath which points to an element or attribute in DDI instances which is not used by the profile. All subelements of an unused element are assumed to be included unless explicitly addressed by the profile. The number of supported repetitions may be included in the XPath expression.</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#DDIProfile-Element_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#DDIProfile-Element_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#name_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">DDIProfile</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#type_Element_Type"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#DDIProfileType-Type_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Element_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_DDIProfile-Element_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_DDIProfile-Element_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_DDIProfile-Element_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_DDIProfile-Element_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_DDIProfile-Element_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_DDIProfile-Element_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Provides a description of which elements and attributes of the DDI are used in a particular profile of use. A profile of use is that set of fields used in a given instance, by a particular organization or agency, or supported by a DDI-conformant application. It uses XPath expressions which identify the used or unused fields in terms of the DDI instance.</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#DDIProfileName-Element_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#DDIProfileName-Element_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#name_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">DDIProfileName</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#type_Element_Type"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:reusable:3_1.owl#NameType-Type_ddi:reusable:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Used-Element_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Used-Element_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#name_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Used</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#type_Element_Type"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#UsedType-Type_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Element_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_Used-Element_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_Used-Element_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_Used-Element_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_Used-Element_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_Used-Element_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_Used-Element_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Describes an element in the DDI which is used by the profile.</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#NotUsed-Element_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#NotUsed-Element_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#name_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">NotUsed</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#type_Element_Type"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#NotUsedType-Type_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Element_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_NotUsed-Element_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_NotUsed-Element_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Annotation1-Annotation_NotUsed-Element_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_NotUsed-Element_ddi:ddiprofile:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_NotUsed-Element_ddi:ddiprofile:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:ddiprofile:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_NotUsed-Element_ddi:ddiprofile:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Describes an element in the DDI which is not used by the profile.</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+</rdf:RDF>

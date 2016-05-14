@@ -1,0 +1,22 @@
+	?subject a disco:Study .
+	
+	OPTIONAL { 
+	    ?summaryStatistics disco:statisticsVariable ?variable .
+	    ?logicalDataSet disco:variable ?variable .
+	    ?subject disco:product ?logicalDataSet .  
+	}
+	FILTER ( ! BOUND( ?summaryStatistics ) ) .
+	
+	# violation message
+	# -----------------
+	BIND ( CONCAT( 
+		"DISCO-C-EXISTENTIAL-QUANTIFICATIONS-25" )
+		AS ?violationMessage ) . 
+	
+	# violation source
+	# ----------------
+	BIND ( CONCAT( "DISCO-C-EXISTENTIAL-QUANTIFICATIONS-25" )AS ?violationSource ) . 
+	
+	# severity level
+	# --------------
+	BIND ( ( 'INFO' ) AS ?severityLevel ) .

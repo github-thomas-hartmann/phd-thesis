@@ -1,0 +1,15 @@
+# ---------------
+# Literal Value Constraints - Literal List Constraint
+
+
+	# different literal:
+	# -----
+	:TimBernersLee
+		a foaf:Person, owl:Thing ;
+		foaf:name "Albert Einstein" ; # --> constraint violation
+		foaf:name "Tim Berners-Lee"@en ;
+		foaf:name "Tim Berners-Lee"@de ;
+		foaf:name "Tim Berners-Lee" ;
+		foaf:name "Tim Berners-Lee"^^xsd:string .
+	
+# -----

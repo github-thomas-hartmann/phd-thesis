@@ -1,0 +1,18 @@
+	?subject a disco:SummaryStatistics .
+	
+	OPTIONAL { ?subject disco:statisticsVariable ?variable . }
+	FILTER ( ! BOUND( ?variable ) ) .
+	
+	# violation message
+	# -----------------
+	BIND ( CONCAT( 
+		"DISCO-C-EXISTENTIAL-QUANTIFICATIONS-34" )
+		AS ?violationMessage ) . 
+	
+	# violation source
+	# ----------------
+	BIND ( CONCAT( "DISCO-C-EXISTENTIAL-QUANTIFICATIONS-34" )AS ?violationSource ) . 
+	
+	# severity level
+	# --------------
+	BIND ( ( 'ERROR' ) AS ?severityLevel ) .

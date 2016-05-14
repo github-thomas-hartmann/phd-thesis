@@ -1,0 +1,8 @@
+# constraints
+# -----------
+
+:Publication 
+    a owl:Restriction , owl:Thing, owl2spin:ToInfer ;
+    owl:minQualifiedCardinality 1 ;
+    owl:onProperty :author ;
+    owl:onClass :Person .

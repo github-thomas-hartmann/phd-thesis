@@ -1,0 +1,15 @@
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lc@{}}
+           & \multicolumn{1}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-2}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{SKOS-C-STRUCTURE-10}}
+	\\ \midrule
+    \emph{http://202.45.139.84:10035/catalogs/fao/repositories/agrovoc} & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://202.45.139.84:10035/catalogs/fao/repositories/agrovoc}}
+    \label{tab:evaluation-202.45.139.84-10035-catalogs-fao-repositories-agrovoc}
+    \end{center}
+\end{table}

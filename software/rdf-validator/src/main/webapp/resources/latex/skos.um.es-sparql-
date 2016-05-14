@@ -1,0 +1,15 @@
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lc@{}}
+           & \multicolumn{1}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-2}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{SKOS-C-STRUCTURE-10}}
+	\\ \midrule
+    \emph{http://skos.um.es/sparql/} & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://skos.um.es/sparql/}}
+    \label{tab:evaluation-skos.um.es-sparql-}
+    \end{center}
+\end{table}

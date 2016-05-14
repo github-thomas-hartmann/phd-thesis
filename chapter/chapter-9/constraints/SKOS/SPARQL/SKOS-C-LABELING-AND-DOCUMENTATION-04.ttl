@@ -1,0 +1,4 @@
+# SKOS-C-LABELING-AND-DOCUMENTATION-04
+# -----
+# Unprintable Characters in Labels: 
+# pref/alt/hiddenlabels contain characters that are not alphanumeric characters or blanks.

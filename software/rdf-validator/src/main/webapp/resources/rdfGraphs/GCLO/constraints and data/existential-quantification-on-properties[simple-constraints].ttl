@@ -1,0 +1,15 @@
+# constraints
+# -----------
+[   a rdfcv:PropertyConstraint , rdfcv:SimpleConstraint ;
+    rdfcv:contextClass :ParentOfDaughter ;
+    rdfcv:leftProperties ( :parentOf ) ;
+    rdfcv:classes ( :Female ) ;
+    rdfcv:constrainingElement "existential restrictions" ] .
+
+# invalid data
+# ------------
+:Worf
+    a :ParentOfDaughter ;
+    :parentOf :Alexander .
+:Alexander
+    a :Male .

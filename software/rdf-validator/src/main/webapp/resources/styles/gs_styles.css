@@ -1,0 +1,25 @@
+@charset "UTF-8";
+/**
+ * GESIS Stylesheets
+ * based on YAML CSS Framework
+ *
+ * @copyright       GESIS Leibniz Instuitute for the Social Sciences
+ * @link            http://www.gesis.org
+ * @version         1.0.0
+ */
+
+/* import core styles */
+@import url(yaml/core/base.css);
+
+/* import screen layout */
+@import url(navigation/nav_shinybuttons.css);
+@import url(navigation/nav_vlist-trans.css);
+@import url(screen/basemod.css);
+@import url(screen/content.css);
+@import url(screen/calendar.css);
+@import url(screen/ttnews.css);
+@import url(screen/widgets.css);
+
+/* import print layout */
+@import url(yaml/print/print_003_draft.css);
+@import url(print/print.css);

@@ -1,0 +1,4 @@
+	?subject 
+	    skos:prefLabel ?label1 , ?label2 .
+	FILTER ( ?label1 != ?label2 ) .
+	FILTER ( ( LANG ( ?label1 ) ) = ( LANG ( ?label2 ) ) ) .

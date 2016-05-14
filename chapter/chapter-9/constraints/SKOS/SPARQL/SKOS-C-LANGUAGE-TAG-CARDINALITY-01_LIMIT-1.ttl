@@ -1,0 +1,45 @@
+# SKOS-C-LANGUAGE-TAG-CARDINALITY-01 
+# -----
+# Labeling and Documentation Issues - Omitted or Invalid Language Tags:
+# Some controlled vocabularies contain literals in natural
+# language, but without information what language has actually been used.
+# Language tags might also not conform to language standards, such as RFC 3066.
+
+PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#> 
+PREFIX dcterms: <http://purl.org/dc/terms#> 
+PREFIX rdf:	    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+SELECT ?subject ?violationMessage ?violationSource ?severityLevel
+WHERE {	  	
+	# data
+	# ----
+	?subject 
+		a [rdfs:subClassOf* skos:Concept] ;
+		?p ?l . 
+	BIND ( ( LANG ( ?l ) ) AS ?language ) . 
+	
+	# validation
+	# ----------
+	FILTER ( ?language = "" ) . 
+
+	# violation message
+	# -----
+	BIND ( CONCAT( 
+		"Omitted or invalid language tags of literals. | The language tag of the literal '", 
+		xsd:string( ?p ), 
+		"' with the value '", 
+		xsd:string( ?l ), 
+		"' is omitted.") 
+		AS ?violationMessage ) .  
+	
+	# violation source
+	# ----------------
+	BIND ( CONCAT( "SKOS-C-LANGUAGE-TAG-CARDINALITY-01" )AS ?violationSource ) .
+	
+	# severity level
+	# --------------
+	BIND ( ( 'WARNING' ) AS ?severityLevel ) .	
+}
+ORDER BY ?subject
+LIMIT 500

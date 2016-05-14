@@ -1,0 +1,14 @@
+    ?subject qb:dataSet ?dataSet .
+    ?obs2 qb:dataSet ?dataSet .
+    FILTER ( ?subject != ?obs2 ) .
+    
+    ?dataSet qb:structure ?structure .
+    ?structure qb:component ?component .
+    ?component 
+        a qb:ComponentSpecification ;
+        qb:componentProperty ?dim .
+    ?dim a qb:DimensionProperty .
+        
+    ?subject ?dim ?value1 .
+    ?obs2 ?dim ?value2 .
+    FILTER( ?value1 = ?value2 ) .

@@ -1,0 +1,20 @@
+# ---------------
+# Non-Literal Value Constraints - Syntax Encoding Scheme Constraint
+
+
+	# disallowed
+	# -----
+	:ArtficialIntelligence
+		a swrc:Book, owl:Thing ;
+		dcterms:subject :ComputerScience .
+	:ComputerScience
+		a skos:Concept, owl:Thing ;
+		dcam:memberOf :BookSubjects ;
+		skos:inScheme :BookSubjects ;
+		rdf:value "Computer Science" ; # no datatype IRI and no language tag --> datatype = xsd:string
+		rdf:value "Computer Science"^^xsd:string ;
+		rdf:value "Computer Science"^^xsd:normalizedString . # --> constraint violation
+	:BookSubjects
+		a skos:ConceptScheme, owl:Thing .
+	
+# -----

@@ -1,0 +1,29 @@
+    ?subject qb:dataSet ?dataset .
+    ?obs2 qb:dataSet ?dataset .
+    FILTER ( ?subject != ?obs2 )
+    
+#   ?dataset qb:structure/qb:component/qb:componentProperty ?dim .
+	?dataset qb:structure ?structure .
+    ?structure qb:component ?component .
+    ?component qb:componentProperty ?dim .
+    
+    ?dim a qb:DimensionProperty .
+    ?subject ?dim ?value1 .
+    ?obs2 ?dim ?value2 .
+    FILTER( ?value1 = ?value2 ) .
+	
+	# violation message
+	# -----------------
+	BIND ( CONCAT( 
+		"DATA-CUBE-C-DATA-MODEL-CONSISTENCY-05 | ",
+		"No duplicate observations: ",
+		"No two qb:Observations in the same qb:DataSet may have the same value for all dimensions." )
+		AS ?violationMessage ) .  
+		
+	# violation source
+	# ----------------
+	BIND ( CONCAT( "DATA-CUBE-C-DATA-MODEL-CONSISTENCY-05" )AS ?violationSource ) .
+	
+	# severity level
+	# --------------
+	BIND ( ( 'ERROR' ) AS ?severityLevel ) .

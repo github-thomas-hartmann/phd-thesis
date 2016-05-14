@@ -1,0 +1,16 @@
+    ?subject a qb:Observation .	
+    FILTER NOT EXISTS { ?subject qb:dataSet ?dataSet . }
+    
+	# violation message
+    # -----
+    BIND ( CONCAT( 
+        "DATA-CUBE-C-MINIMUM-QUALIFIED-CARDINALITY-RESTRICTIONS-02" )
+        AS ?violationMessage ) . 
+        
+    # violation source
+	# ----------------
+	BIND ( CONCAT( "DATA-CUBE-C-MINIMUM-QUALIFIED-CARDINALITY-RESTRICTIONS-02" )AS ?violationSource ) . 
+	
+	# severity level
+	# --------------
+	BIND ( ( 'ERROR' ) AS ?severityLevel ) .

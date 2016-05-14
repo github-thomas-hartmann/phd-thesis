@@ -1,0 +1,78 @@
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> . 
+@prefix :         <http://www.example.org/OWL2InstanceData#> .
+
+
+# ---------------
+# ObjectMinCardinality
+
+
+    # cardinality (concrete)
+    # -----        
+    # ObjectMinCardinality ( 3 :hasPet )
+    :ObjectMinCardinality_CE1 
+        a owl:Restriction ;
+        owl:minCardinality "3"^^xsd:nonNegativeInteger ;
+        owl:onProperty :hasPet . 
+    :ObjectMinCardinality_I1
+        a :ObjectMinCardinality_CE1 , owl:Thing ;
+        :hasPet :ObjectMinCardinality_I2 ;
+#       :hasPet :ObjectMinCardinality_I3 ; # commented --> constraint violation
+        :hasPet :ObjectMinCardinality_I4 .
+    :ObjectMinCardinality_I2
+        a owl:Thing .
+    :ObjectMinCardinality_I3
+        a owl:Thing .
+    :ObjectMinCardinality_I4
+        a owl:Thing .
+        
+    # cardinality 1 (concrete) 
+    # -----  
+    # ObjectMinCardinality ( 1 :hasPet )
+    :ObjectMinCardinality_CE1_1 
+        a owl:Restriction ;
+        owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty :hasPet . 
+    :ObjectMinCardinality_I1_1
+#       :hasPet :ObjectMinCardinality_I2_1 ; # commented --> constraint violation
+        a :ObjectMinCardinality_CE1_1 , owl:Thing .
+    :ObjectMinCardinality_I2_1
+        a owl:Thing .    
+    
+    # qualified cardinality (concrete)
+    # -----
+    # ObjectMinCardinality ( 2 :fatherOf :Man ) 
+    :ObjectMinCardinality_CE2 
+        a owl:Restriction ;
+        owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+        owl:onProperty :fatherOf ;
+        owl:onClass :Man . 
+    :ObjectMinCardinality_I5
+        a :ObjectMinCardinality_CE2 , owl:Thing ;
+        :fatherOf :ObjectMinCardinality_I6 ;
+#       :fatherOf :ObjectMinCardinality_I7 ; # commented --> constraint violation
+        :fatherOf :ObjectMinCardinality_I8 .
+    :ObjectMinCardinality_I6
+        a :Man , owl:Thing .
+    :ObjectMinCardinality_I7
+        a :Man , owl:Thing .
+    :ObjectMinCardinality_I8
+        a owl:Thing .
+        
+    # qualified cardinality 1 (concrete)
+    # -----
+    # ObjectMinCardinality ( 1 :fatherOf :Man ) 
+    :ObjectMinCardinality_CE2_1 
+        a owl:Restriction ;
+        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty :fatherOf ;
+        owl:onClass :Man . 
+    :ObjectMinCardinality_I5_1
+#       :fatherOf :ObjectMinCardinality_I6_1 ; # commented --> constraint violation
+        a :ObjectMinCardinality_CE2_1 , owl:Thing .
+    :ObjectMinCardinality_I6_1
+        a :Man , owl:Thing .   
+    
+# -----

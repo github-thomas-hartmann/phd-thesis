@@ -1,0 +1,36 @@
+# SKOS-C-LANGUAGE-TAG-CARDINALITY-03
+# -----
+# Labeling and Documentation Issues - No Common Language:
+# Checks if all concepts have at least one common language (default: English), 
+# i.e. they have assigned at least one literal in the same language.
+
+  	
+	# data
+	# ----
+	?subject 
+		a [rdfs:subClassOf* skos:Concept] .
+
+	# validation
+	# ----------
+	FILTER NOT EXISTS {
+		?subject ?p ?l .
+		BIND ( ( LANG ( ?l ) ) AS ?lang ) .
+		FILTER ( ?lang = "en" ) .
+	}
+
+	# violation message
+	# -----------------
+	BIND ( CONCAT( 
+		"Each concept must have at least 1 literal in the same common language (en) | ",
+		"The concept '",
+		xsd:string( ?subject ),
+		"' does not have a literal in the same common language (en)." ) 
+		AS ?violationMessage ) . 
+	
+	# violation source
+	# ----------------
+	BIND ( CONCAT( "SKOS-C-LANGUAGE-TAG-CARDINALITY-03" )AS ?violationSource ) .
+	
+	# severity level
+	# --------------
+	BIND ( ( 'INFO' ) AS ?severityLevel ) .	

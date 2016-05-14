@@ -1,0 +1,878 @@
+
+  
+    
+# Structural Issues - Orphan Concepts
+# ---------------------
+skosqc2spin:StructuralIssues-OrphanConcepts
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "Structural Issues - Orphan Concepts" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX skosqc2spin: <http://constraints.org/skosqc2spin#>
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?this ;
+                    rdfs:label ?violationMessage ;
+                    spin:violationPath ?p .
+            }
+            WHERE {	  
+            	# data
+            	# ----
+				?this a [rdfs:subClassOf* skos:Concept] .
+				    
+				# validation
+				# ----------
+				#FILTER NOT EXISTS {
+			    #    { { ?this skos:prefLabel ?l } UNION { ?this skos:altLabel ?l } . }
+			    #    UNION 
+			    #    { { ?this rdfs:label ?l } UNION { ?this dcterms:title ?l } . }
+			    #}
+
+#               violation message
+#               -----
+                BIND ( CONCAT( 
+                    \"The concept '\", 
+                    xsd:string( ?this ), 
+                    \"' does not have any associative or hierarchical relations.\",
+                    \" | XXXXX explanation XXXXX \") 
+                    AS ?violationMessage ) . 
+            }
+            """ ;
+    ] .
+    
+# Structural Issues - Disconnected Concept Clusters
+# Tarjan's algorithm
+# ---------------------
+skosqc2spin:StructuralIssues-DisconnectedConceptClusters
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "Structural Issues - Disconnected Concept Clusters" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX skosqc2spin: <http://constraints.org/skosqc2spin#>
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?this ;
+                    rdfs:label ?violationMessage ;
+                    spin:violationPath ?p .
+            }
+            WHERE {	  
+            	# data
+            	# ----
+				
+				    
+				# validation
+				# ----------
+				
+
+#               violation message
+#               -----
+                BIND ( CONCAT( 
+                    \"The concept '\", 
+                    xsd:string( ?this ), 
+                    \"' does not have any associative or hierarchical relations.\",
+                    \" | XXXXX explanation XXXXX \") 
+                    AS ?violationMessage ) . 
+            }
+            """ ;
+    ] .
+    
+# Structural Issues - Cyclic Hierarchical Relations
+# ---------------------
+skosqc2spin:StructuralIssues-CyclicHierarchicalRelations
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "Structural Issues - Cyclic Hierarchical Relations" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX skosqc2spin: <http://constraints.org/skosqc2spin#>
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?this ;
+                    rdfs:label ?violationMessage ;
+                    spin:violationPath skos:broader .
+            }
+            WHERE {	  
+            	# data
+            	# ----
+				?this a [rdfs:subClassOf* skos:Concept] .
+				    
+				# validation
+				# ----------
+				?this skos:broader* ?this .
+
+#               violation message
+#               -----
+                BIND ( CONCAT( 
+                    \"There is a cyclic relation between of the concept '\", 
+                    xsd:string( ?this ), 
+                    \"'. | XXXXX explanation XXXXX \") 
+                    AS ?violationMessage ) . 
+            }
+            """ ;
+    ] .
+    
+# Structural Issues - Valueless Associative Relations
+# ---------------------
+skosqc2spin:StructuralIssues-ValuelessAssociativeRelations
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "Structural Issues - Valueless Associative Relations" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX skosqc2spin: <http://constraints.org/skosqc2spin#>
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?this ;
+                    rdfs:label ?violationMessage ;
+                    spin:violationPath skos:related ;
+                    spin:violationPath skos:broader ;
+                    spin:violationPath skos:narrower .
+            }
+            WHERE {	  
+				?this 
+				    a [rdfs:subClassOf* skos:Concept] ;
+				    skos:related ?sibling ;
+				    skos:broader ?TopConcept ;
+                    skos:narrower ?BottomConcept .
+				
+				?sibling 
+				    a [rdfs:subClassOf* skos:Concept] ; 
+				    skos:related ?this ;
+				    skos:broader ?TopConcept ;
+                    skos:narrower ?BottomConcept .
+				
+				?TopConcept 
+				    a [rdfs:subClassOf* skos:Concept] .
+				    
+				?BottomConcept 
+				    a [rdfs:subClassOf* skos:Concept] .		 
+
+#               violation message
+#               -----
+                BIND ( CONCAT( 
+                    \"The concepts '\", 
+                    xsd:string( ?this ), 
+                    \"' and '\", 
+                    xsd:string( ?sibling ),
+                    \"' are siblings (having the same broader or narrower concepts), but are also connected by a not necessary associative relation (skos:related).\") 
+                    AS ?violationMessage ) . 
+            }
+            """ ;
+    ] .
+    
+# Structural Issues - Solely Transitively Related Concepts
+# ---------------------
+skosqc2spin:StructuralIssues-SolelyTransitivelyRelatedConcepts
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "Structural Issues - Solely Transitively Related Concepts" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX skosqc2spin: <http://constraints.org/skosqc2spin#>
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?this ;
+                    rdfs:label ?violationMessage ;
+                    spin:violationPath ?p .
+            }
+            WHERE {	  
+            	# data
+            	# ----
+				?this a [rdfs:subClassOf* skos:Concept] .
+				    
+				# validation
+				# ----------
+				# transitive SKOS properties
+				#FILTER EXISTS {
+			    #    { { ?this skos:prefLabel ?l } UNION { ?this skos:altLabel ?l } . }
+			    #    UNION 
+			    #    { { ?this rdfs:label ?l } UNION { ?this dcterms:title ?l } . }
+			    #}
+				# skos:broader and skos:narrower sub-properties
+				#FILTER NOT EXISTS {
+			    #    { { ?this skos:prefLabel ?l } UNION { ?this skos:altLabel ?l } . }
+			    #    UNION 
+			    #    { { ?this rdfs:label ?l } UNION { ?this dcterms:title ?l } . }
+			    #}
+
+#               violation message
+#               -----
+                BIND ( CONCAT( 
+                    \"The concept '\", 
+                    xsd:string( ?this ),
+                    \"' is only related to the concept '\", 
+                    xsd:string( ?concept ), 
+                    \"' by transitive propertes ('\",
+                    xsd:string( ?p ), 
+                    \"'), but not by skos:broader and skos:narrower sub-properties. | XXXXX explanation XXXXX \") ) 
+                    AS ?violationMessage ) . 
+            }
+            """ ;
+    ] .
+    
+# Structural Issues - Unidirectionally Related Concepts
+# ---------------------
+skosqc2spin:StructuralIssues-UnidirectionallyRelatedConcepts-1
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "Structural Issues - Unidirectionally Related Concepts" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX skosqc2spin: <http://constraints.org/skosqc2spin#>
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?this ;
+                    rdfs:label ?violationMessage ;
+                    spin:violationPath ?p .
+            }
+            WHERE {	  
+            	# data
+            	# ----
+            	?this ?p1 ?x . 
+				FILTER ( ?p1 = skos:broader ) .
+				    
+				# validation
+				# ----------
+				# for all inverse SKOS properties
+				# unidirectional relation --> constraint violation
+				?x ?p2 ?this . 
+				FILTER ( ?p2 = skos:narrower ) . 
+				
+#               violation message
+#               -----
+                BIND ( CONCAT( 
+                    \"The concept '\", 
+                    xsd:string( ?this ),
+                    \"' is related to the concept '\", 
+                    xsd:string( ?concept ), 
+                    \"' by the property ('\",
+                    xsd:string( ?p ), 
+                    \"')only unidirectionally. | XXXXX explanation XXXXX \") ) 
+                    AS ?violationMessage ) . 
+            }
+            """ ;
+    ] .
+    
+skosqc2spin:StructuralIssues-UnidirectionallyRelatedConcepts-2
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "Structural Issues - Unidirectionally Related Concepts" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX skosqc2spin: <http://constraints.org/skosqc2spin#>
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?this ;
+                    rdfs:label ?violationMessage ;
+                    spin:violationPath ?p .
+            }
+            WHERE {	  
+            	# data
+            	# ----
+            	?this ?p1 ?x . 
+				FILTER ( ?p1 = skos:hasTopConcept ) .
+				    
+				# validation
+				# ----------
+				# unidirectional relation --> constraint violation
+				?x ?p2 ?this . 
+				FILTER ( ?p2 = skos:topConceptOf ) . 
+				
+#               violation message
+#               -----
+                BIND ( CONCAT( 
+                    \"The concept '\", 
+                    xsd:string( ?this ),
+                    \"' is related to the concept '\", 
+                    xsd:string( ?concept ), 
+                    \"' by the property ('\",
+                    xsd:string( ?p ), 
+                    \"')only unidirectionally. | XXXXX explanation XXXXX \") ) 
+                    AS ?violationMessage ) . 
+            }
+            """ ;
+    ] .
+    
+# Structural Issues - Omitted Top Concepts
+# ---------------------
+skosqc2spin:StructuralIssues-OmittedTopConcepts
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "Structural Issues - Omitted Top Concepts" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX skosqc2spin: <http://constraints.org/skosqc2spin#>
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?this ;
+                    rdfs:label ?violationMessage ;
+                    spin:violationPath skos:hasTopConcept ;
+                    spin:violationPath skos:topConceptOf .
+            }
+            WHERE {	  
+            	# data
+            	# ----
+            	?this
+            	    a [rdfs:subClassOf* skos:ConceptScheme] .
+				    
+				# validation
+				# ----------
+				{
+					FILTER NOT EXISTS {
+					    ?this 
+					        skos:hasTopConcept ?concept .
+					    ?concept
+					        a [rdfs:subClassOf* skos:Concept] .
+					} 
+			    }
+			    UNION
+			    {
+					FILTER NOT EXISTS {
+					    ?concept
+					        a [rdfs:subClassOf* skos:Concept] ;
+					        skos:topConceptOf ?conceptScheme .
+					}
+			    }
+				
+#               violation message
+#               -----
+                BIND ( CONCAT( 
+                    \"The concept scheme '\", 
+                    xsd:string( ?this ),
+                    \"' does not have any top concept | A vocabulary should provide 'entry points' to the data ro provide 'efficient access' (SKOS primer) and guidance for human users.\") ) 
+                    AS ?violationMessage ) . 
+            }
+            """ ;
+    ] .
+    
+# Structural Issues - Hierarchical Redundancy
+# ---------------------
+skosqc2spin:StructuralIssues-HierarchicalRedundancy-1
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "Structural Issues - Hierarchical Redundancy" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX skosqc2spin: <http://constraints.org/skosqc2spin#>
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?this ;
+                    rdfs:label ?violationMessage ;
+                    spin:violationPath skos:broader .
+            }
+            WHERE {	  
+				?this 
+				    a [rdfs:subClassOf* skos:Concept] ;
+				    skos:broader ?B ;
+				    skos:broader ?C .
+				
+				?B 
+				    a [rdfs:subClassOf* skos:Concept] ; 
+				    skos:broader* ?C .
+				    
+				?C
+				    a [rdfs:subClassOf* skos:Concept] .	 
+				    
+				FILTER ( ?this != ?B ) .
+				FILTER ( ?this != ?C ) .
+				FILTER ( ?B != ?C ) .
+
+#               violation message
+#               -----
+                BIND ( CONCAT( 
+                    \"As stated in the SKOS reference document, skos:broader and skos:narrower are not transitive properties. | The SKOS concept '\", 
+                    xsd:string( ?this ), 
+                    \"' is directly related ( skos:broader ) to the SKOS concept '\", 
+                    xsd:string( ?B ),
+                    \"' and transitively related ( skos:broader ) to the SKOS concept '\", 
+                    xsd:string( ?C ),
+                    \"'.\") 
+                    AS ?violationMessage ) . 
+            }
+            """ ;
+    ] .
+# Structural Issues - Hierarchical Redundancy
+# ---------------------
+skosqc2spin:StructuralIssues-HierarchicalRedundancy-2
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "Structural Issues - Hierarchical Redundancy" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX skosqc2spin: <http://constraints.org/skosqc2spin#>
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?this ;
+                    rdfs:label ?violationMessage ;
+                    spin:violationPath skos:narrower .
+            }
+            WHERE {	  
+				?this 
+				    a [rdfs:subClassOf* skos:Concept] ;
+				    skos:narrower ?B ;
+				    skos:narrower ?C .
+				
+				?B 
+				    a [rdfs:subClassOf* skos:Concept] ; 
+				    skos:narrower* ?C .
+				    
+				?C
+				    a [rdfs:subClassOf* skos:Concept] .	 
+				    
+				FILTER ( ?this != ?B ) .
+				FILTER ( ?this != ?C ) .
+				FILTER ( ?B != ?C ) .
+
+#               violation message
+#               -----
+                BIND ( CONCAT( 
+                    \"As stated in the SKOS reference document, skos:broader and skos:narrower are not transitive properties. | The SKOS concept '\", 
+                    xsd:string( ?this ), 
+                    \"' is directly related ( skos:narrower ) to the SKOS concept '\", 
+                    xsd:string( ?B ),
+                    \"' and transitively related ( skos:narrower ) to the SKOS concept '\", 
+                    xsd:string( ?C ),
+                    \"'.\") 
+                    AS ?violationMessage ) . 
+            }
+            """ ;
+    ] .
+    
+# Structural Issues - Reflexive Relations
+# ---------------------
+skosqc2spin:StructuralIssues-ReflexiveRelations
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "Structural Issues - Reflexive Relations" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX skosqc2spin: <http://constraints.org/skosqc2spin#>
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?this ;
+                    rdfs:label ?violationMessage ;
+                    spin:violationPath ?p .
+            }
+            WHERE {	  
+            	# data
+            	# ----
+				?this a [rdfs:subClassOf* skos:Concept] .
+				    
+				# validation
+				# ----------
+				?this ?p ?this .
+
+#               violation message
+#               -----
+                BIND ( CONCAT( 
+                    \"Reflexive SKOS concepts are not allowed. | The SKOS concept '\", 
+                    xsd:string( ?this ), 
+                    \"' is related to itself via the property '\",
+                    xsd:string( ?p ),
+                    \"'.\") 
+                    AS ?violationMessage ) . 
+            }
+            """ ;
+    ] .
+    
+# Linked Data Specific Issues - Undefined SKOS Resources
+# ---------------------
+skosqc2spin:LinkedDataSpecificIssues-UndefinedSKOSResources-1
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "Linked Data Specific Issues - Undefined SKOS Resources" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX skosqc2spin: <http://constraints.org/skosqc2spin#>
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?this ;
+                    rdfs:label ?violationMessage ;
+                    spin:violationPath ?property .
+            }
+            WHERE {	  
+				# data
+				# ----
+				?this ?property ?x .
+				
+				# validation
+				# ----------
+				# deprecated SKOS elements ( appendix D of the SKOS reference )
+				FILTER ( ?property IN ( 
+				    skos:symbol, 
+				    skos:prefSymbol, 
+				    skos:altSymbol, 
+				    skos:CollectableProperty,
+				    skos:subject,
+				    skos:isSubjectOf,
+				    skos:primarySubject,
+				    skos:isPrimarySubjectOf,
+				    skos:subjectIndicator ) ) .	 
+
+#               violation message
+#               -----
+                BIND ( CONCAT( 
+                    \"The deprecated SKOS property '\", 
+                    xsd:string( ?property ),
+                    \"' is used.\") 
+                    AS ?violationMessage ) . 
+            }
+            """ ;
+    ] .
+    
+skosqc2spin:LinkedDataSpecificIssues-UndefinedSKOSResources-2
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "Linked Data Specific Issues - Undefined SKOS Resources" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX skosqc2spin: <http://constraints.org/skosqc2spin#>
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?this ;
+                    rdfs:label ?violationMessage ;
+                    spin:violationPath ?property .
+            }
+            WHERE {	  
+				# data
+				# ----
+				?this ?property ?x .
+				# property is a SKOS property
+				FILTER( REGEX( STR( ?property ), "^http://www.w3.org/2004/02/skos/core#", "i" ) ) 
+				
+				# validation
+				# ----------
+				# SKOS property is defined within SKOS namespace
+				FILTER ( ?property NOT IN ( 
+				    skos:altLabel, 
+				    skos:broadMatch,
+				    skos:broader,
+				    skos:broaderTransitive,
+				    skos:changeNote,
+				    skos:closeMatch,
+				    skos:definition,
+				    skos:editorialNote,
+				    skos:exactMatch,
+				    skos:example,
+				    skos:hasTopConcept,
+				    skos:hiddenLabel,
+				    skos:historyNote,
+				    skos:inScheme,
+				    skos:mappingRelation,
+				    skos:member,
+				    skos:memberList,
+				    skos:narrowMatch,
+				    skos:narrower,
+				    skos:narrowerTransitive,
+				    skos:notation,
+				    skos:note,
+				    skos:prefLabel,
+				    skos:related,
+				    skos:relatedMatch,
+				    skos:scopeNote,
+				    skos:semanticRelation,
+				    skos:topConceptOf ) ) .
+				# property is not a deprecated SKOS property ( appendix D of the SKOS reference )
+				FILTER ( ?property NOT IN ( 
+				    skos:symbol, 
+				    skos:prefSymbol, 
+				    skos:altSymbol, 
+				    skos:CollectableProperty,
+				    skos:subject,
+				    skos:isSubjectOf,
+				    skos:primarySubject,
+				    skos:isPrimarySubjectOf,
+				    skos:subjectIndicator ) ) .		 
+
+#               violation message
+#               -----
+                BIND ( CONCAT( 
+                    \"The vocabulary invents the new SKOS property '\", 
+                    xsd:string( ?property ),
+                    \"'.\") 
+                    AS ?violationMessage ) . 
+            }
+            """ ;
+    ] .
+    
+skosqc2spin:LinkedDataSpecificIssues-UndefinedSKOSResources-3
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "Linked Data Specific Issues - Undefined SKOS Resources" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX skosqc2spin: <http://constraints.org/skosqc2spin#>
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?this ;
+                    rdfs:label ?violationMessage ;
+                    spin:violationPath rdf:type .
+            }
+            WHERE {	  
+            	# data 
+            	# ----
+				?this a ?c . 
+
+				# validation
+				# ----------
+				# class has SKOS namespace prefix
+				FILTER( REGEX( STR( ?c ), "^http://www.w3.org/2004/02/skos/core#" ) ) .	
+				# SKOS class is NOT defined within SKOS namespace
+				FILTER ( ?c NOT IN ( 
+				    skos:Concept, 
+				    skos:Collection,
+				    skos:ConceptScheme,
+				    skos:OrderedCollection ) ) . 		
+				
+#               violation message
+#               -----
+                BIND ( CONCAT( 
+                    \"The vocabulary invents the new SKOS class '\", 
+                    xsd:string( ?c ),
+                    \"'.\") 
+                    AS ?violationMessage ) . 
+            }
+            """ ;
+    ] .
+    
+skosqc2spin:LinkedDataSpecificIssues-UndefinedSKOSResources-4
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "Linked Data Specific Issues - Undefined SKOS Resources" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX skosqc2spin: <http://constraints.org/skosqc2spin#>
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?this ;
+                    rdfs:label ?violationMessage ;
+                    spin:violationPath rdf:type .
+            }
+            WHERE {	  
+                # data
+                # ----
+				?this a ?subc .
+				?subc rdfs:subClassOf* ?c . 
+				
+				# validation
+				# ----------
+				# indirect class has SKOS namespace prefix
+				FILTER( REGEX( STR( ?c ), "^http://www.w3.org/2004/02/skos/core#" ) ) .	
+				# SKOS class is NOT defined within SKOS namespace
+				FILTER ( ?c NOT IN ( 
+				    skos:Concept, 
+				    skos:Collection,
+				    skos:ConceptScheme,
+				    skos:OrderedCollection ) ) . 
+
+#               violation message
+#               -----
+                BIND ( CONCAT( 
+                    \"The vocabulary invents the new SKOS class '\", 
+                    xsd:string( ?c ),
+                    \"'Test.\") 
+                    AS ?violationMessage ) . 
+            }
+            """ ;
+    ] .
+    
+# Linked Data Specific Issues - HTTP URI Scheme Violation
+# ---------------------
+skosqc2spin:LinkedDataSpecificIssues-HTTPURISchemeViolation
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "Linked Data Specific Issues - HTTP URI Scheme Violation" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX skosqc2spin: <http://constraints.org/skosqc2spin#>
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?this ;
+                    rdfs:label ?violationMessage .
+            }
+            WHERE {	  
+				# data
+				# ----
+				
+				# validation
+				# ----------
+				# URI does not start with 'http'
+				FILTER( REGEX( STR( ?this ), "^(?!http).+" ) ) .	 
+
+#               violation message
+#               -----
+                BIND ( CONCAT( 
+                    \"In the context of Linked Data, we restrict ourselves to using HTTP URIs only and avoid other URI schemes such as URNs and DOIs.\")
+                    AS ?violationMessage ) . 
+            }
+            """ ;
+    ] .
+    
+# SKOS Semi-Formal Consistency Issues - Inconsistent Preferred Labels
+# ---------------------
+skosqc2spin:SKOSSemiFormalConsistencyIssues-InconsistentPreferredLabels
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "SKOS Semi-Formal Consistency Issues - Inconsistent Preferred Labels" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX skosqc2spin: <http://constraints.org/skosqc2spin#>
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?this ;
+                    rdfs:label ?violationMessage ;
+                    spin:violationPath skos:prefLabel .
+            }
+            WHERE {	  	
+				# data
+				# ----
+				?this skos:prefLabel ?label1 .
+				?this skos:prefLabel ?label2 .
+				
+				BIND ( ( STR ( ?label1 ) ) AS ?label1Str ) .
+				BIND ( ( STR ( ?label2 ) ) AS ?label2Str ) . 
+				BIND ( ( LANG ( ?label1 ) ) AS ?language1 ) . 
+				BIND ( ( LANG ( ?label2 ) ) AS ?language2 ) . 
+				
+				# validation
+				# ----------
+				FILTER ( ?label1 != ?label2 ) .
+				FILTER ( ?label1Str != ?label2Str ) .
+				FILTER ( ?language1 = ?language2 ) .
+
+#               violation message
+#               -----
+                BIND ( CONCAT( 
+                    \"A resource has no more than one value of skos:prefLabel per language tag | The resource '\", 
+                    xsd:string( ?this ),
+                    \"' has more than one value of skos:prefLabel: '\",
+                    xsd:string( ?label1Str ), 
+                    \"' and '\",
+                    xsd:string( ?label2Str ),
+                    \"' for the language tag '\",
+                    xsd:string( ?language1 ), 
+                    \"'.\" 
+                    ) AS ?violationMessage ) . 
+            }
+            """ ;
+    ] .
+    
+skosqc2spin:cardinalityPropertyValuesOfSpecificLanguage
+    rdf:type spin:Function ;
+    rdfs:subClassOf spin:Functions ;
+    rdfs:label "cardinality property value of specific language" ;
+    rdfs:comment "cardinality property value of specific language" ;
+    spin:constraint [
+        rdf:type spl:Argument ;
+        spl:predicate sp:arg1 ;
+        spl:valueType rdf:subject ;
+        rdfs:comment "subject" ; 
+    ] ;
+    spin:constraint [
+        rdf:type spl:Argument ;
+        spl:predicate sp:arg2 ;
+        spl:valueType rdf:Property ;
+        rdfs:comment "property" ; 
+    ] ;
+    spin:constraint [
+        rdf:type spl:Argument ;
+        spl:predicate sp:arg3 ;
+        spl:valueType xsd:string ;
+        rdfs:comment "language" ; 
+    ] ;
+    spin:body [
+        rdf:type sp:Select ;
+        sp:text """
+            SELECT ( COUNT ( ?arg1 ) AS ?cardinality)
+            WHERE {
+                ?arg1 ?arg2 ?literal1 .
+                BIND ( ( LANG ( ?literal1 ) ) AS ?language1 ) .
+                FILTER ( ?language1 = ?arg3 ) .
+            }
+        """ ;
+    ] ;
+    spin:returnType xsd:nonNegativeInteger .
+    
+skosqc2spin:cardinalityPropertyValuesInCommonLanguage
+    rdf:type spin:Function ;
+    rdfs:subClassOf spin:Functions ;
+    rdfs:label "cardinality property values in common language" ;
+    rdfs:comment "cardinality property values in common language" ;
+    spin:constraint [
+        rdf:type spl:Argument ;
+        spl:predicate sp:arg1 ;
+        spl:valueType rdf:subject ;
+        rdfs:comment "subject" ; 
+    ] ;
+    spin:constraint [
+        rdf:type spl:Argument ;
+        spl:predicate sp:arg2 ;
+        spl:valueType xsd:string ;
+        rdfs:comment "language" ; 
+    ] ;
+    spin:body [
+        rdf:type sp:Select ;
+        sp:text """
+            SELECT ( COUNT ( ?arg1 ) AS ?cardinality)
+            WHERE {
+                ?arg1 ?p ?literal .
+                FILTER ( ?p != rdf:type ) .
+                BIND ( ( LANG ( ?literal ) ) AS ?language ) .
+                #FILTER ( ?language = ?arg2 ) .
+            }
+        """ ;
+    ] ;
+    spin:returnType xsd:nonNegativeInteger .

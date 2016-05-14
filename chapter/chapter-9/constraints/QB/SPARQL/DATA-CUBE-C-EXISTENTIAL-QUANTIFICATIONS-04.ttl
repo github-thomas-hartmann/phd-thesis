@@ -1,0 +1,16 @@
+	?subject a qb:SliceKey .
+   	FILTER NOT EXISTS { [ a qb:DataStructureDefinition ] qb:sliceKey ?subject . }
+
+	# violation message
+	# -----------------
+	BIND ( CONCAT( 
+		"DATA-CUBE-C-EXISTENTIAL-QUANTIFICATIONS-04" )
+		AS ?violationMessage ) . 
+	
+	# violation source
+	# ----------------
+	BIND ( CONCAT( "DATA-CUBE-C-EXISTENTIAL-QUANTIFICATIONS-04" )AS ?violationSource ) . 
+	
+	# severity level
+	# --------------
+	BIND ( ( 'WARNING' ) AS ?severityLevel ) .

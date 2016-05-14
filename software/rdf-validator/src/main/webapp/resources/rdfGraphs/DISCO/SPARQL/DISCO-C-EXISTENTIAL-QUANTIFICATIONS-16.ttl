@@ -1,0 +1,18 @@
+	?subject a disco:Study .
+	
+	OPTIONAL { ?subject dcterms:subject ?subject . }
+	FILTER ( ! BOUND( ?subject ) ) .
+	
+	# violation message
+	# -----------------
+	BIND ( CONCAT( 
+		"DISCO-C-EXISTENTIAL-QUANTIFICATIONS-16" )
+		AS ?violationMessage ) . 
+	
+	# violation source
+	# ----------------
+	BIND ( CONCAT( "DISCO-C-EXISTENTIAL-QUANTIFICATIONS-16" )AS ?violationSource ) . 
+	
+	# severity level
+	# --------------
+	BIND ( ( 'INFO' ) AS ?severityLevel ) .

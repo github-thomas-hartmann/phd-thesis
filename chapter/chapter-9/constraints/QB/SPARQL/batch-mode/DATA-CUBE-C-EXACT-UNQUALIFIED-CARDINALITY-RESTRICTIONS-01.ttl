@@ -1,0 +1,11 @@
+	{
+	    ?subject a qb:Slice .
+	    FILTER NOT EXISTS { ?subject qb:sliceStructure ?key } .
+	} 
+	UNION 
+	{
+	    ?subject 
+	        a qb:Slice ;
+	        qb:sliceStructure ?key1 , ?key2 ;
+	    FILTER ( ?key1 != ?key2 ) .
+	} 

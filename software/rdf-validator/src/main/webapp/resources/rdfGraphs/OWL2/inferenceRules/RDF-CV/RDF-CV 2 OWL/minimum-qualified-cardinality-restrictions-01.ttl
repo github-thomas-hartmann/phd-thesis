@@ -1,0 +1,40 @@
+# constraints
+# -----------
+
+:Publication 
+    a owl:Restriction ;
+    owl:minQualifiedCardinality 1 ;
+    owl:onProperty :author ;
+    owl:onClass :Person .
+
+[   a rdfcv:SimpleConstraint ;
+    rdfcv:contextClass :Publication ;
+    rdfcv:leftProperties ( :author ) ;
+    rdfcv:classes ( :Person ) ;
+    rdfcv:constrainingElement ">=" ;
+    rdfcv:constrainingValue 1 ] .
+
+# valid data
+# ------------
+:Kirk
+    a :StarFleetCaptain ;
+    :commandsVessel :Enterprise .
+:Enterprise
+    a :Vessel .
+    
+:Janeway
+    a :StarFleetCaptain ;
+    :commandsVessel :Voyager .
+:Voyager
+    a :Vessel .
+    
+# invalid data
+# ------------
+:Spock
+    a :StarFleetCaptain .
+    
+:Sisko
+    a :StarFleetCaptain ;
+    :commandsVessel :DS9 .
+:DS9
+    a :SpaceStation .

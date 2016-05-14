@@ -1,0 +1,722 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>	
+
+<!DOCTYPE rdf:RDF [
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+	<!ENTITY XMLSchemaMetamodelOntology "http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#" >
+]>
+	
+<rdf:RDF 
+     xmlns="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#"
+	 xml:base="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl"
+	 xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	 xmlns:owl="http://www.w3.org/2002/07/owl#"
+	 xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	 xmlns:XSDMetamodelOntology="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#">
+	
+	<owl:Ontology rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl">
+		<owl:versionIRI rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml:1.0.0.owl"/>
+		<owl:imports rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology:1.0.0.owl"/>
+	</owl:Ontology>
+	
+	
+	<!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#http://www.w3.org/1999/xhtml-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#http://www.w3.org/1999/xhtml-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Schema"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#blockDefault_Schema_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">#all</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#targetNamespace_Schema_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">http://www.w3.org/1999/xhtml</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Schema_Include"/>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Include3-Include_http://www.w3.org/1999/xhtml-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Include4-Include_http://www.w3.org/1999/xhtml-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Include5-Include_http://www.w3.org/1999/xhtml-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Include6-Include_http://www.w3.org/1999/xhtml-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Include7-Include_http://www.w3.org/1999/xhtml-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Include8-Include_http://www.w3.org/1999/xhtml-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Include9-Include_http://www.w3.org/1999/xhtml-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Include10-Include_http://www.w3.org/1999/xhtml-Schema"/>
+						</owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Schema_Annotation"/>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Annotation1-Annotation_http://www.w3.org/1999/xhtml-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Annotation2-Annotation_http://www.w3.org/1999/xhtml-Schema"/>
+						</owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Include3-Include_http://www.w3.org/1999/xhtml-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Include3-Include_http://www.w3.org/1999/xhtml-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Include"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#schemaLocation_Import_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">XHTML/xhtml-framework-1.xsd</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Include_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Annotation1-Annotation_Include3-Include_http://www.w3.org/1999/xhtml-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Annotation1-Annotation_Include3-Include_http://www.w3.org/1999/xhtml-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Annotation1-Annotation_Include3-Include_http://www.w3.org/1999/xhtml-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation1-Documentation_Annotation1-Annotation_Include3-Include_http://www.w3.org/1999/xhtml-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation2-Documentation_Annotation1-Annotation_Include3-Include_http://www.w3.org/1999/xhtml-Schema"/>
+						</owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation1-Documentation_Annotation1-Annotation_Include3-Include_http://www.w3.org/1999/xhtml-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation1-Documentation_Annotation1-Annotation_Include3-Include_http://www.w3.org/1999/xhtml-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">
+        Schema Framework Component Modules:
+            +  notations
+            +  datatypes
+            +  common attributes
+            +  character entities
+      </owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation2-Documentation_Annotation1-Annotation_Include3-Include_http://www.w3.org/1999/xhtml-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation2-Documentation_Annotation1-Annotation_Include3-Include_http://www.w3.org/1999/xhtml-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#source_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">http://www.w3.org/TR/xhtml-modularization/abstract_modules.html#s_commonatts</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Include4-Include_http://www.w3.org/1999/xhtml-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Include4-Include_http://www.w3.org/1999/xhtml-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Include"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#schemaLocation_Import_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">XHTML/xhtml-text-1.xsd</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Include_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Annotation1-Annotation_Include4-Include_http://www.w3.org/1999/xhtml-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Annotation1-Annotation_Include4-Include_http://www.w3.org/1999/xhtml-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Annotation1-Annotation_Include4-Include_http://www.w3.org/1999/xhtml-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation1-Documentation_Annotation1-Annotation_Include4-Include_http://www.w3.org/1999/xhtml-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation2-Documentation_Annotation1-Annotation_Include4-Include_http://www.w3.org/1999/xhtml-Schema"/>
+						</owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation1-Documentation_Annotation1-Annotation_Include4-Include_http://www.w3.org/1999/xhtml-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation1-Documentation_Annotation1-Annotation_Include4-Include_http://www.w3.org/1999/xhtml-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">
+        Text module
+
+        The Text module includes declarations for all core
+        text container elements and their attributes.
+
+            +  block phrasal
+            +  block structural
+            +  inline phrasal
+            +  inline structural
+
+        Elements defined here:
+          * address, blockquote, pre, h1, h2, h3, h4, h5, h6
+          * div, p
+          * abbr, acronym, cite, code, dfn, em, kbd, q, samp, strong, var
+          * br, span
+      </owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation2-Documentation_Annotation1-Annotation_Include4-Include_http://www.w3.org/1999/xhtml-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation2-Documentation_Annotation1-Annotation_Include4-Include_http://www.w3.org/1999/xhtml-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#source_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">http://www.w3.org/TR/2001/REC-xhtml-modularization-20010410/abstract_modules.html#s_textmodule</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Include5-Include_http://www.w3.org/1999/xhtml-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Include5-Include_http://www.w3.org/1999/xhtml-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Include"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#schemaLocation_Import_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">XHTML/xhtml-hypertext-1.xsd</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Include_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Annotation1-Annotation_Include5-Include_http://www.w3.org/1999/xhtml-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Annotation1-Annotation_Include5-Include_http://www.w3.org/1999/xhtml-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Annotation1-Annotation_Include5-Include_http://www.w3.org/1999/xhtml-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation1-Documentation_Annotation1-Annotation_Include5-Include_http://www.w3.org/1999/xhtml-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation2-Documentation_Annotation1-Annotation_Include5-Include_http://www.w3.org/1999/xhtml-Schema"/>
+						</owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation1-Documentation_Annotation1-Annotation_Include5-Include_http://www.w3.org/1999/xhtml-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation1-Documentation_Annotation1-Annotation_Include5-Include_http://www.w3.org/1999/xhtml-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">
+         Hypertext module
+
+         Elements defined here:
+          * a
+      </owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation2-Documentation_Annotation1-Annotation_Include5-Include_http://www.w3.org/1999/xhtml-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation2-Documentation_Annotation1-Annotation_Include5-Include_http://www.w3.org/1999/xhtml-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#source_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">http://www.w3.org/TR/2001/REC-xhtml-modularization-20010410/abstract_modules.html#s_hypertextmodule</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Include6-Include_http://www.w3.org/1999/xhtml-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Include6-Include_http://www.w3.org/1999/xhtml-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Include"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#schemaLocation_Import_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">XHTML/xhtml-list-1.xsd</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Include_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Annotation1-Annotation_Include6-Include_http://www.w3.org/1999/xhtml-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Annotation1-Annotation_Include6-Include_http://www.w3.org/1999/xhtml-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Annotation1-Annotation_Include6-Include_http://www.w3.org/1999/xhtml-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation1-Documentation_Annotation1-Annotation_Include6-Include_http://www.w3.org/1999/xhtml-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation2-Documentation_Annotation1-Annotation_Include6-Include_http://www.w3.org/1999/xhtml-Schema"/>
+						</owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation1-Documentation_Annotation1-Annotation_Include6-Include_http://www.w3.org/1999/xhtml-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation1-Documentation_Annotation1-Annotation_Include6-Include_http://www.w3.org/1999/xhtml-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">
+        Lists module
+
+        Elements defined here:
+          * dt, dd, dl, ol, ul, li
+      </owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation2-Documentation_Annotation1-Annotation_Include6-Include_http://www.w3.org/1999/xhtml-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation2-Documentation_Annotation1-Annotation_Include6-Include_http://www.w3.org/1999/xhtml-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#source_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">http://www.w3.org/TR/2001/REC-xhtml-modularization-20010410/abstract_modules.html#s_listmodule</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Include7-Include_http://www.w3.org/1999/xhtml-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Include7-Include_http://www.w3.org/1999/xhtml-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Include"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#schemaLocation_Import_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">XHTML/xhtml-bdo-1.xsd</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Include_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Annotation1-Annotation_Include7-Include_http://www.w3.org/1999/xhtml-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Annotation1-Annotation_Include7-Include_http://www.w3.org/1999/xhtml-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Annotation1-Annotation_Include7-Include_http://www.w3.org/1999/xhtml-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation1-Documentation_Annotation1-Annotation_Include7-Include_http://www.w3.org/1999/xhtml-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation2-Documentation_Annotation1-Annotation_Include7-Include_http://www.w3.org/1999/xhtml-Schema"/>
+						</owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation1-Documentation_Annotation1-Annotation_Include7-Include_http://www.w3.org/1999/xhtml-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation1-Documentation_Annotation1-Annotation_Include7-Include_http://www.w3.org/1999/xhtml-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">
+        Bidirectional element module
+
+        Elements defined here:
+          * bdo
+      </owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation2-Documentation_Annotation1-Annotation_Include7-Include_http://www.w3.org/1999/xhtml-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation2-Documentation_Annotation1-Annotation_Include7-Include_http://www.w3.org/1999/xhtml-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#source_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">http://www.w3.org/TR/xhtml-modularization/abstract_modules.html#s_bdomodule</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Include8-Include_http://www.w3.org/1999/xhtml-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Include8-Include_http://www.w3.org/1999/xhtml-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Include"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#schemaLocation_Import_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">XHTML/xhtml-pres-1.xsd</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Include_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Annotation1-Annotation_Include8-Include_http://www.w3.org/1999/xhtml-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Annotation1-Annotation_Include8-Include_http://www.w3.org/1999/xhtml-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Annotation1-Annotation_Include8-Include_http://www.w3.org/1999/xhtml-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation1-Documentation_Annotation1-Annotation_Include8-Include_http://www.w3.org/1999/xhtml-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation2-Documentation_Annotation1-Annotation_Include8-Include_http://www.w3.org/1999/xhtml-Schema"/>
+						</owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation1-Documentation_Annotation1-Annotation_Include8-Include_http://www.w3.org/1999/xhtml-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation1-Documentation_Annotation1-Annotation_Include8-Include_http://www.w3.org/1999/xhtml-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">
+        Presentational module
+
+         Elements defined here:
+           * hr, b, big, i, small,sub, sup, tt
+      </owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation2-Documentation_Annotation1-Annotation_Include8-Include_http://www.w3.org/1999/xhtml-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation2-Documentation_Annotation1-Annotation_Include8-Include_http://www.w3.org/1999/xhtml-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#source_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">http://www.w3.org/TR/xhtml-modularization/abstract_modules.html#s_presentationmodule</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Include9-Include_http://www.w3.org/1999/xhtml-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Include9-Include_http://www.w3.org/1999/xhtml-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Include"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#schemaLocation_Import_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">XHTML/xhtml-inlstyle-1.xsd</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Include_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Annotation1-Annotation_Include9-Include_http://www.w3.org/1999/xhtml-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Annotation1-Annotation_Include9-Include_http://www.w3.org/1999/xhtml-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Annotation1-Annotation_Include9-Include_http://www.w3.org/1999/xhtml-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation1-Documentation_Annotation1-Annotation_Include9-Include_http://www.w3.org/1999/xhtml-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation2-Documentation_Annotation1-Annotation_Include9-Include_http://www.w3.org/1999/xhtml-Schema"/>
+						</owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation1-Documentation_Annotation1-Annotation_Include9-Include_http://www.w3.org/1999/xhtml-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation1-Documentation_Annotation1-Annotation_Include9-Include_http://www.w3.org/1999/xhtml-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">
+        Style attribute module
+
+        Attribute defined here:
+          * style
+      </owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation2-Documentation_Annotation1-Annotation_Include9-Include_http://www.w3.org/1999/xhtml-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation2-Documentation_Annotation1-Annotation_Include9-Include_http://www.w3.org/1999/xhtml-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#source_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">http://www.w3.org/TR/xhtml-modularization/abstract_modules.html#s_styleattributemodule</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Include10-Include_http://www.w3.org/1999/xhtml-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Include10-Include_http://www.w3.org/1999/xhtml-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Include"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#schemaLocation_Import_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">XHTML/xhtml-table-1.xsd</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Include_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Annotation1-Annotation_Include10-Include_http://www.w3.org/1999/xhtml-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Annotation1-Annotation_Include10-Include_http://www.w3.org/1999/xhtml-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Annotation1-Annotation_Include10-Include_http://www.w3.org/1999/xhtml-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation1-Documentation_Annotation1-Annotation_Include10-Include_http://www.w3.org/1999/xhtml-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation2-Documentation_Annotation1-Annotation_Include10-Include_http://www.w3.org/1999/xhtml-Schema"/>
+						</owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation1-Documentation_Annotation1-Annotation_Include10-Include_http://www.w3.org/1999/xhtml-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation1-Documentation_Annotation1-Annotation_Include10-Include_http://www.w3.org/1999/xhtml-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">
+        Tables module
+
+        Elements defined here:
+          * table, caption, thead, tfoot, tbody, colgroup, col, tr, th, td
+      </owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation2-Documentation_Annotation1-Annotation_Include10-Include_http://www.w3.org/1999/xhtml-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation2-Documentation_Annotation1-Annotation_Include10-Include_http://www.w3.org/1999/xhtml-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#source_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">http://www.w3.org/TR/xhtml-modularization/abstract_modules.html#s_tablemodule</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Annotation1-Annotation_http://www.w3.org/1999/xhtml-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Annotation1-Annotation_http://www.w3.org/1999/xhtml-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation1-Documentation_Annotation1-Annotation_http://www.w3.org/1999/xhtml-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation2-Documentation_Annotation1-Annotation_http://www.w3.org/1999/xhtml-Schema"/>
+						</owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation1-Documentation_Annotation1-Annotation_http://www.w3.org/1999/xhtml-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation1-Documentation_Annotation1-Annotation_http://www.w3.org/1999/xhtml-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">
+      This schema includes all modules for XHTML1.1 Document Type.
+      $Id: ddi-xhtml11-modules-1.xsd,v 1.1 2007/02/08 16:03:11 jgager Exp $
+    </owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation2-Documentation_Annotation1-Annotation_http://www.w3.org/1999/xhtml-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation2-Documentation_Annotation1-Annotation_http://www.w3.org/1999/xhtml-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#source_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">XHTML/xhtml-copyright-1.xsd</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Annotation2-Annotation_http://www.w3.org/1999/xhtml-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Annotation2-Annotation_http://www.w3.org/1999/xhtml-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation1-Documentation_Annotation2-Annotation_http://www.w3.org/1999/xhtml-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation1-Documentation_Annotation2-Annotation_http://www.w3.org/1999/xhtml-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/1999/xhtml.owl#Documentation1-Documentation_Annotation2-Annotation_http://www.w3.org/1999/xhtml-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">
+     This schema includes all modules (and redefinitions)
+     for XHTML1.1 Document Type.
+     XHTML1.1 Document Type includes the following Modules
+
+       XHTML Core modules (Required for XHTML Family Conformance)
+            +  text
+            +  hypertext
+            +  lists
+            +  structure
+
+       Other XHTML modules
+            +  Edit
+            +  Bdo
+            +  Presentational
+            +  Link
+            +  Meta
+            +  Base
+            +  Scripting
+            +  Style
+            +  Image
+            +  Applet
+            +  Object
+            +  Param (Applet/Object modules require Param Module)
+            +  Tables
+            +  Forms
+            +  Client side image maps
+            +  Server side image maps
+
+    </owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+</rdf:RDF>

@@ -1,0 +1,18 @@
+	?subject a disco:Question . 
+	
+	OPTIONAL { ?subject skos:prefLabel ?questionNumber . }
+	FILTER ( ! BOUND( ?questionNumber ) ) .
+	
+	# violation message
+	# -----------------
+	BIND ( CONCAT( 
+		"DISCO-C-EXISTENTIAL-QUANTIFICATIONS-42" )
+		AS ?violationMessage ) . 
+	
+	# violation source
+	# ----------------
+	BIND ( CONCAT( "DISCO-C-EXISTENTIAL-QUANTIFICATIONS-42" )AS ?violationSource ) . 
+	
+	# severity level
+	# --------------
+	BIND ( ( 'INFO' ) AS ?severityLevel ) .

@@ -1,0 +1,632 @@
+@charset "UTF-8";
+/**
+ * Widget-Toolbox
+ */
+
+@media all {
+	
+/* GESIS Farben */
+.gs_blue { background-color:#58748f; }
+.gs_blue_50 { background-color:#acbac7; }
+.gs_blue_30 { background-color:#d4dbe3; }
+.gs_blue_15 { background-color:#eef1f4; }
+
+
+.gs_orange { background-color:#ff6100; }
+.gs_orange_50 { background-color:#ffb080; }
+.gs_orange_30 { background-color:#ffd7be; }
+.gs_orange_15 { background-color:#ffeee4; }
+
+.gs_sand_dk { background-color:#aca690; }
+.gs_sand_dk_50 { background-color:#d6d2c7; }
+.gs_sand_dk_30 { background-color:#eae8e3; }
+
+.gs_sand { background-color:#f6f4e7; }
+.gs_sand_50 { background-color:#faf9f3; }
+.gs_sand_30 { background-color:#fdfdf9; }
+
+.gs_fnt_blue { color:#496177; }
+	
+/* Dialogfelder allgemein */
+
+.dialogue-container {
+    background-color: #ededed;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    padding:0;
+}
+
+.dialogue-container h1 {
+	background:#d9d9d9;
+	color: #44596E;
+	font-size: 16px;
+	font-weight: bold;
+	line-height:22px;
+	padding: 4px 10px 4px 10px;
+	margin:0;
+	border-bottom:1px solid white;
+	/* CSS 3 */
+	text-shadow: 1px 1px white;
+}
+
+.dialogue-container h3 {
+	font-size: 14px;
+	font-weight: bold;
+	line-height:22px;
+	padding:0;
+	margin:0;
+}
+
+.dialogue-content, .dialogue-ts {
+	padding: 10px 10px 5px 10px;
+	color:#000;
+}
+
+.dialogue-content hr {
+	padding: 0;
+	margin: 25px 0 10px 0;
+	border: dotted 1px;
+	border-color: #fff;
+}
+
+.dialogue-content img {
+	float: left;
+	padding-right: 5px;
+}
+
+.dialogue-content a{
+   	border-bottom: none;
+	color: #496177;
+}
+
+.dialogue-content a:hover {
+   	border-bottom: none;
+}
+
+.dialogue-content form, .dialogue-ts form {
+	background:transparent;
+	padding:0;
+	margin:0;
+}
+
+.dialogue-content select, .dialogue-ts select {
+	width:100%;
+	max-width: 100%;
+	height:20px;
+}
+
+.dialogue-content ul, .dialogue-content ol, .dialogue-content dl {
+	padding:0;
+	margin:0 0 0 3px;
+}
+
+.dialogue-content ul li {
+	padding:5px 0 0 0;
+	margin:0;
+	list-style-type:none;
+}
+.dialogue-content strong {
+	color: #496177;
+}
+
+.dialogue-container hr {
+	background: white;
+	padding:0;
+	margin:0;
+	display:block;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	border-top-color: #d9d9d9;
+}
+
+/* Zusätze für Kontakte */
+
+.dialogue-container .contact {
+	padding:5px 10px 0 10px;
+}
+
+.dialogue-container .contactImg {
+	height:100px;
+}
+
+.dialogue-container .imgContainer {
+	width:100%;
+	overflow:hidden;
+	margin:0;
+	padding:0;
+	background-color: #d9d9d9;
+  text-align:center;
+}
+
+.vCard[href],
+.email[href] {
+  padding-left: 25px;
+	background-image: url(http://www.gesis.org/fileadmin/img/icons/gs_vcard.png);
+	background-position: left;
+	background-repeat: no-repeat;
+	border: none;
+}
+
+.vCard[href]:hover,
+.email[href]:hover {
+	border: none;
+}
+
+.vCard span:hover,
+.email span:hover {
+	color:#ff6100;
+	border-bottom: 1px dotted #ff6100;
+}
+
+.vCard span,
+.email span{
+  border-bottom: 1px dotted #44596e;
+}
+
+.email[href] {
+	background-image: url(http://www.gesis.org/fileadmin/img/icons/gs_mail.png);
+}
+
+
+
+
+/* Clear Content-Elements */
+.csc-default {
+	clear:both;
+}
+
+
+/* Form Styles */
+form {
+	background-color:#ededed;
+	padding:10px;
+	margin:15px 0 15px 0;
+	font-family:Helvetica,Arial,sans-serif;
+}
+
+form div {
+	clear:left;
+}
+
+form p {
+	margin: 0 0 0 140px;
+}
+
+form ul {
+	margin: 5px 0 5px 140px;
+}
+
+fieldset {
+	clear:both;
+}
+
+/* General values */
+input,
+textarea,
+select {
+	padding: 0;
+	width: 65%;
+	height: 20px;
+    max-width: 65%;
+	max-height: 100px;
+	margin: 5px 0;
+	border: 1px solid #aaa;
+}
+
+legend {
+	font-weight:bold;
+	color:#44596E;
+    font-size:14px;
+    font-weight:bold;
+    padding:5px 0 10px 0;
+}
+
+label {
+	display:block;
+	float:left;
+	padding-right:10px;
+	text-align:right;
+	width:130px;
+	margin: 5px 0;
+}
+
+select {
+	padding: 2px 0;
+	height:auto;
+}
+
+select[multiple] {
+	height: auto;
+}
+
+input + label {
+	display:inline;
+	float:none;
+	padding:0;
+	text-align:left;
+}
+
+
+input[type='checkbox'],
+input[type='radio'] {
+	width: 20px;
+	vertical-align: middle;
+	margin: 0 0 0 20px;
+}
+
+input[type='checkbox']:first-child,
+input[type='radio']:first-child {
+	margin: 0 0 0 140px;
+}
+
+input[type='image'] {
+	width:auto;
+}
+
+input[type='submit'],
+input[type='reset'] {
+	background: #ededed; /* old browsers */
+	background: -moz-linear-gradient(top, #ededed 0%, #d9d9d9 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ededed), color-stop(100%,#d9d9d9)); /* webkit */
+	filter: progid:DXImageTrans.Microsoft.gradient( startColorstr='#EDEDED', endColorstr='#D9D9D9',GradientType=0 ); /* ie */
+	/* DEBUG HR: --> color #666 ??? */
+	border-bottom-color: #666;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-left-color: #fff;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-right-color: #666;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-top-color: #fff;
+	border-top-style: solid;
+	border-top-width: 1px;
+	/* DEBUG HR --> Colog 333 ??? */
+	color:#333;
+	display: block;
+	float:right;
+	font-weight: bold;
+	height:auto;
+	margin: 20px 0 0 15px;
+	padding: 5px 15px;
+	text-align: center;
+	text-decoration: none;
+	text-shadow: 0px 1px 1px #fff;
+	width:auto;
+}
+
+input[type='submit']:hover,
+input[type='reset']:hover {
+	/* DEBUG HR: VERLAUF-Color prüfen komplett */
+	text-shadow: none;
+	color:#FFF;
+	text-decoration: none;
+	/* gradien blue */
+	background: #8C99a6; /* old browsers */
+	background: -moz-linear-gradient(top, #8C99a6 0%, #475c71 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8c99a6), color-stop(100%,#475c71)); /* webkit */
+	filter: progid:DXImageTrans.Microsoft.gradient( startColorstr='#8C99a6', endColorstr='#475c71',GradientType=0 ); /* ie */
+	border-top-color: #666;
+	border-right-color: #fff;
+	border-bottom-color: #fff;
+	border-left-color: #666;
+}
+
+input[type='image'] {
+	padding-left: 5px;
+	vertical-align:middle;
+	width:auto;
+	height:auto;
+	background:none;
+}
+
+/* Short formfields */
+form .short {
+	width: 15%;
+}
+
+/* SearchBox Widget */
+.searchContent input{
+	width: 95%;
+	max-width: 95%;
+}
+
+.searchContent input[type='image'] {
+	width:auto;
+	height:auto;
+	border:none;
+}
+
+/* Secure Download Icons */
+
+.tx-securedownload-pi1 img {
+	float:left;
+}
+
+
+.error p,
+.tx-powermail-pi1_mandatory {
+	color:#ff6100;
+	font-weight:bold;
+}
+
+input.powermail_captcha {
+	width:30%;
+	vertical-align:top;
+}
+
+.powermail_captcha_captcha {
+	margin: 0 0 0 5px;
+}
+
+.tx_powermail_pi1_form .style3 legend {
+	display:none;
+}
+	
+/* Spezialformatierungen für einzelne Content-Elemente */
+#c11150{
+	padding-top: 93px;
+}
+
+/* Fix für Bestellformulare */
+form table{
+	border:none;
+}
+
+form table td, form table th {
+	background:transparent;
+}
+
+form table .csc-mailform-label {
+	width:auto;
+}
+
+/* DEBUG HR --> iframes prüfen ??? */
+
+iframe.sofis {
+	border:none;
+	overflow:hidden;
+	width:220px;
+	height:180px;
+	background-color: #ededed;
+}
+
+iframe {
+	border:none;
+	overflow:hidden;
+	width:120px;
+	height:21px;
+}
+
+/* Suchfelder ohne Hintergrund */
+
+.searchContentNoBack {
+  padding: 0 0 0 30px;
+}
+
+.searchContentNoBack form {
+	background-color: transparent;
+	padding: 0;
+}
+
+/* GESIS Lifecycle */
+#lcTextbox {
+	height: 150px;
+	padding: 10px;
+	margin: 10px 0;
+	background-color:#ededed;
+}
+
+/* rgaccordion Styles */
+
+/* Toggle default */
+
+div.rgaccord1-nest {
+}
+
+h3.rgaccord1-toggle {
+	padding:2px 0 2px 15px;
+	color:#fff;
+	/* gradient blue */
+	background: #8C99a6; /* old browsers */
+	background: -moz-linear-gradient(top, #8C99a6 0%, #475c71 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left 30px, color-stop(0%,#8C99a6), color-stop(100%,#475c71)); /* webkit */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8C99a6', endColorstr='#475c71',GradientType=0 ); /* ie */
+	cursor:pointer;
+	line-height:26px;
+}
+
+span.rgaccord1-icon {	
+	background-image: url(../../../../img/widgets/gs_menu_close.png);
+	background-repeat: no-repeat;
+	background-position: right;
+	display: block;
+	width:100%;
+}
+
+/* Toggle act item */
+h3.act span {
+	background-image: url(../../../../img/widgets/gs_menu_open.png);
+	background-repeat: no-repeat;
+}
+
+/* the content */
+div.rgaccord1-content {
+	padding-bottom:15px;
+}
+
+/* remove margin of a CE */
+div.rgaccord1-content .ce {
+  margin-bottom:0;
+}
+
+/* remove the header inside the CE, twice is not nice */
+div.rgaccord1-content h1 {
+  display:none;
+}
+
+/* tx-imagecycle Styles */
+
+.tx-imagecycle-pi1-images {
+	display: none;
+	position: relative;
+	overflow: hidden;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.tx-imagecycle-pi1-images img {
+	display: block;
+}
+.tx-imagecycle-pi1-images li {
+	position: absolute;
+	margin: 0;
+	padding: 0;
+}
+.tx-imagecycle-pi1-images li, .tx-imagecycle-pi1-images a {
+	display: block;
+	position: relative;
+}
+.tx-imagecycle-pi1-images a:hover {
+	background: none;
+	border: 0! important;
+}
+.tx-imagecycle-pi1-images .imagecycle-caption {
+	position: absolute;
+	left: 0;
+	bottom: 0; 	/* remove the below 'width' line if you want the caption background to be just the width of the caption text */
+	width: 100%;
+	padding: 5px;
+	color: #000;
+	opacity: 0.8;
+	white-space: nowrap;
+	display: none;
+}
+.tx-imagecycle-pi1-pager {
+	margin: 0 0 5px 0;
+	text-align: center;
+}
+.tx-imagecycle-pi1-pager a {
+	border: 1px solid #ccc;
+	background: #fc0;
+	text-decoration: none;
+	margin: 0 5px;
+	padding: 3px 5px;
+}
+.tx-imagecycle-pi1-pager a.activeSlide {
+	background: #ea0;
+}
+/* DEBUG HR ENDE !!! */
+/***************************
+*  Default styles for the
+*        EXT rgtabs
+* by Ringer Georg (just2b)
+***************************/  
+
+/* wraps the hole tab */
+.rgtabs-wrapper {
+	margin-bottom:10px;
+	padding:10px;
+	overflow:hidden;
+	clear:both;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: none;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #D9D9D9;
+	border-right-color: #D9D9D9;
+	border-bottom-color: #D9D9D9;
+	border-left-color: #D9D9D9;
+}
+
+/* Tab-Menu ul */
+.rgtabs-menu  {
+  background:none repeat scroll 0 0 #D9D9D9;
+  margin:0;
+  padding:0;
+  height: 28px;
+  width: auto;
+  list-style:none;
+}
+
+/* Tab-Menu li */
+.rgtabs-menu  li {
+  border-left:1px solid #ededed;
+  border-right:1px solid #999;
+  list-style-type: none;
+  float: left;
+  margin: 0 !important;
+  padding: 0 !important;
+  cursor: pointer;
+}	
+
+/* Tab-Menu li.a */
+.rgtabs-menu li a {
+	font-weight:bold;
+  border-bottom:none;
+  display: block;
+  float: left;
+  color: #44596E;
+  font-family: arial;
+  padding: 0 12px 0 12px;
+  text-decoration: none;
+  height:27px;
+  line-height:27px;
+}
+
+/* Selected Tab */
+li.rgtabs-selected {
+    background: #666;
+}	
+
+.rgtabs-menu  li.rgtabs-selected a {
+  /* Gradient tab active */
+  background: #FF9F23; /* old browsers */
+  background: -moz-linear-gradient(top, #FF9F23 0%, #FF6301 100%); /* firefox */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FF9F23), color-stop(100%,#FF6301)); /* webkit */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FF9F23', endColorstr='#FF6301',GradientType=0 ); /* ie */
+  color: #fff;
+  border-bottom:1px solid #ff6100;
+}
+
+.tx-rgtabs-pi1 .rgtabs-menu li.rgtabs-selected a:hover, .tx-rgtabs-pi1 .rgtabs-menu li a:hover {
+  border-bottom:none;
+  /* Gradient tab hover blue */
+  background: #8C99A6; /* old browsers */
+  background: -moz-linear-gradient(top, #8C99A6 0%, #475C71 100%); /* firefox */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8C99A6), color-stop(100%,#475C71)); /* webkit */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8C99A6', endColorstr='#475C71',GradientType=0 ); /* ie */
+  color:#fff;
+}
+
+/* Next / Prev nav */
+.rgtabs-pageswrapper {
+	display:block;
+}
+
+span.hitpages, span.hitpagesSelectedItem {
+	margin-right: 3px;
+}
+
+/* Filesize */
+.filesize {
+	font-size:10px;
+}
+
+/* Date Picker*/
+.tx_powermail_pi1_fieldwrap_html .datepicker {
+	width: auto;
+	height: auto;
+	padding:3px;
+}
+
+/*  no styles after this line */
+}

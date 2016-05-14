@@ -1,0 +1,18 @@
+	?subject 
+	    disco:startDate ?startDate ;
+	    disco:endDate ?endDate .
+	FILTER ( ?startDate > ?endDate ) . 
+	
+	# violation message
+	# -----------------
+	BIND ( CONCAT( 
+		"DISCO-C-LITERAL-VALUE-COMPARISON-01" )
+		AS ?violationMessage ) . 
+	
+	# violation source
+	# ----------------
+	BIND ( CONCAT( "DISCO-C-LITERAL-VALUE-COMPARISON-01" )AS ?violationSource ) . 
+	
+	# severity level
+	# --------------
+	BIND ( ( 'ERROR' ) AS ?severityLevel ) .

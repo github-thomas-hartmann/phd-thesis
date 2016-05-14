@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+		
+		
+		all XSD constructs: 135
+		element: 31
+		complexType: 7

@@ -1,0 +1,42 @@
+# SKOS-C-LABELING-AND-DOCUMENTATION-06
+# -----
+# Labeling and Documentation Issues - Ambiguous Notation References:
+# Concepts within the same concept scheme should not
+# have identical skos:notation literals.
+
+ 	
+	# data
+	# ---- 
+	?subject 
+		skos:inScheme ?conceptScheme ;
+        skos:notation ?l .
+	?concept 
+		skos:inScheme ?conceptScheme ;
+        skos:notation ?l .
+	
+	# validation
+	# ----------
+    FILTER ( ?subject != ?concept ) .
+	
+	# violation message
+	# -----
+	BIND ( STR ( ?l ) AS ?l1_str ) .
+	BIND ( CONCAT( 
+		"Ambiguous Notation References: Concepts within the same concept scheme should not have identical skos:notation literals | The concept '",  
+		xsd:string( ?subject ), 
+		"' and the concept '",
+		xsd:string( ?concept ), 
+		"' within the same concept scheme '",
+		xsd:string( ?conceptScheme ), 
+		"' have an identical skos:notation literal '",
+		xsd:string( ?l_str ), 
+		"'."
+		) AS ?violationMessage ) . 
+	
+	# violation source
+	# ----------------
+	BIND ( CONCAT( "SKOS-C-LABELING-AND-DOCUMENTATION-06" )AS ?violationSource ) .
+	
+	# severity level
+	# --------------
+	BIND ( ( 'INFO' ) AS ?severityLevel ) .	

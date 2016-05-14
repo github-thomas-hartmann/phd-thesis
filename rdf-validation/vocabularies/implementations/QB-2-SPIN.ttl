@@ -1,0 +1,442 @@
+﻿# namespace declarations
+# ----------------------
+@prefix fn:        <http://www.w3.org/2005/xpath-functions#> .
+@prefix sparql:    <http://www.w3.org/TR/2013/REC-sparql11-query-20130321/#> .
+@prefix xsd:        <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:        <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:       <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:        <http://www.w3.org/2002/07/owl#> .
+@prefix sp:         <http://spinrdf.org/sp#> .
+@prefix spin:       <http://spinrdf.org/spin#> .
+@prefix smf:        <http://topbraid.org/sparqlmotionfunctions#> .
+@prefix spif:       <http://spinrdf.org/spif#> . 
+@prefix spl:        <http://spinrdf.org/spl#> .
+@prefix spinowl:    <http://topbraid.org/spin/spinowl> .
+@prefix spinx:      <http://spinrdf.org/spinx#> . 
+@prefix functions:  <http://www.example.org/functions#> .
+@prefix templates:  <http://www.example.org/templates#> .
+@prefix sparql:     <http://www.w3.org/TR/sparql11-query/#> .
+@prefix qb2spin:    <http://purl.org/linked-data/cube/qb2spin#> .
+@prefix qb:         <http://purl.org/linked-data/cube#> .
+@prefix void:       <http://rdfs.org/ns/void#> .
+@prefix skos:       <http://www.w3.org/2004/02/skos/core#> .
+
+# class constraints
+# -----------------
+owl:Thing 
+	spin:constraint 
+		[   a qb2spin:Test ] .
+#		[   a qb2spin:DATA-CUBE-C-VALUE-IS-VALID-FOR-DATATYPE-01 ] ,
+#        [   a qb2spin:DATA-CUBE-C-EXACT-QUALIFIED-CARDINALITY-RESTRICTIONS-01 ] ,
+#       [   a qb2spin:DATA-CUBE-C-EXACT-QUALIFIED-CARDINALITY-RESTRICTIONS-01_SPARQLEndpoint ] ,
+#        [   a qb2spin:DATA-CUBE-C-EXACT-QUALIFIED-CARDINALITY-RESTRICTIONS-02 ] ,
+#        [   a qb2spin:DATA-CUBE-C-EXISTENTIAL-QUANTIFICATIONS-03 ] ,
+#        [   a qb2spin:DATA-CUBE-C-EXISTENTIAL-QUANTIFICATIONS-01 ] ,
+#        [   a qb2spin:DATA-CUBE-C-EXISTENTIAL-QUANTIFICATIONS-02 ] ,
+#        [   a qb2spin:DATA-CUBE-C-DATA-MODEL-CONSISTENCY-01 ] ,
+#        [   a qb2spin:DATA-CUBE-C-EXISTENTIAL-QUANTIFICATIONS-04 ] .
+
+
+# Test
+# -----
+qb2spin:Test
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "Test|||||ERROR" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX qb2spin: <http://purl.org/linked-data/cube/qb2spin#> 
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?subject ;
+                    rdfs:label ?violationMessage .
+            }
+            WHERE {	
+                #?sparqlEndpoint void:sparqlEndpoint ?service .
+	    		SERVICE <http://worldbank.270a.info/sparql> {
+	    		
+					BIND ( ( ?subject ) AS ?subject ) . 
+					
+					?subject a qb:DataSet .	
+					
+					# violation message
+	                # -----
+	                BIND ( CONCAT( 
+	                    \"subject: \", 
+	                    xsd:string( ?subject ) )
+	                    AS ?violationMessage ) . 
+                }
+            }
+            LIMIT 1
+            """ ;
+    ] .
+
+# !!!!! NOT YET IMPLEMENTED !!!!!
+# DATA-CUBE-C-VALUE-IS-VALID-FOR-DATATYPE-01
+# -----
+qb2spin:DATA-CUBE-C-VALUE-IS-VALID-FOR-DATATYPE-01
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "DATA-CUBE-C-VALUE-IS-VALID-FOR-DATATYPE-01|||||ERROR" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX qb2spin: <http://purl.org/linked-data/cube/qb2spin#> 
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?subject ;
+                    rdfs:label ?violationMessage .
+            }
+            WHERE {	
+                ?sparqlEndpoint void:sparqlEndpoint ?service .
+	    		SERVICE ?service {
+	    		
+					
+	
+	                # violation message
+	                # -----
+	                BIND ( CONCAT( 
+	                    \"DATA-CUBE-C-VALUE-IS-VALID-FOR-DATATYPE-01\" )
+	                    AS ?violationMessage ) . 
+                }
+            }
+            LIMIT 10
+            """ ;
+    ] .
+    
+# DATA-CUBE-C-EXACT-QUALIFIED-CARDINALITY-RESTRICTIONS-01
+# -----
+qb2spin:DATA-CUBE-C-EXACT-QUALIFIED-CARDINALITY-RESTRICTIONS-01
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "DATA-CUBE-C-EXACT-QUALIFIED-CARDINALITY-RESTRICTIONS-01|||||ERROR" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX qb2spin: <http://purl.org/linked-data/cube/qb2spin#> 
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?subject ;
+                    rdfs:label ?violationMessage .
+            }
+            WHERE {	
+				{
+					?subject a qb:Observation .	
+					FILTER NOT EXISTS { ?subject qb:dataSet ?dataSet . }
+					
+					# violation message
+	                # -----
+	                BIND ( CONCAT( 
+	                    \"DATA-CUBE-C-EXACT-QUALIFIED-CARDINALITY-RESTRICTIONS-01\" )
+	                    AS ?violationMessage ) . 
+				}
+				UNION
+				{
+					?subject 
+					    a qb:Observation ;
+					    qb:dataSet ?dataSet1 , ?dataSet2 .
+			        FILTER ( ?dataSet1 != ?dataSet2 ) .
+			        
+			        # violation message
+	                # -----
+	                BIND ( CONCAT( 
+	                    \"DATA-CUBE-C-EXACT-QUALIFIED-CARDINALITY-RESTRICTIONS-01\" )
+	                    AS ?violationMessage ) . 
+				}
+            }
+            """ ;
+    ] .
+    
+# !!!!! SERVICE OVERLOAD !!!!!
+qb2spin:DATA-CUBE-C-EXACT-QUALIFIED-CARDINALITY-RESTRICTIONS-01_SPARQLEndpoint
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "DATA-CUBE-C-EXACT-QUALIFIED-CARDINALITY-RESTRICTIONS-01|||||ERROR" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX qb2spin: <http://purl.org/linked-data/cube/qb2spin#> 
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?subject ;
+                    rdfs:label ?violationMessage .
+            }
+            WHERE {	
+                ?sparqlEndpoint void:sparqlEndpoint ?service .
+	    		SERVICE ?service {
+					{
+						BIND ( ( ?subject ) AS ?subject ) . 
+					
+						?subject a qb:Observation .	
+						FILTER NOT EXISTS { ?subject qb:dataSet ?dataSet . }
+						
+						# violation message
+		                # -----
+		                BIND ( CONCAT( 
+		                    \"DATA-CUBE-C-EXACT-QUALIFIED-CARDINALITY-RESTRICTIONS-01\" )
+		                    AS ?violationMessage ) . 
+					}
+					UNION
+					{
+						BIND ( ( ?subject ) AS ?subject ) . 
+					
+						?subject 
+						    a qb:Observation ;
+						    qb:dataSet ?dataSet1 , ?dataSet2 .
+				        FILTER ( ?dataSet1 != ?dataSet2 ) .
+				        
+				        # violation message
+		                # -----
+		                BIND ( CONCAT( 
+		                    \"DATA-CUBE-C-EXACT-QUALIFIED-CARDINALITY-RESTRICTIONS-01\" )
+		                    AS ?violationMessage ) . 
+					}
+                }
+            }
+            LIMIT 1
+            """ ;
+    ] .
+    
+# DATA-CUBE-C-EXACT-QUALIFIED-CARDINALITY-RESTRICTIONS-02
+# -----
+qb2spin:DATA-CUBE-C-EXACT-QUALIFIED-CARDINALITY-RESTRICTIONS-02
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "DATA-CUBE-C-EXACT-QUALIFIED-CARDINALITY-RESTRICTIONS-02|||||ERROR" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX qb2spin: <http://purl.org/linked-data/cube/qb2spin#> 
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?subject ;
+                    rdfs:label ?violationMessage .
+            }
+            WHERE {	
+                ?sparqlEndpoint void:sparqlEndpoint ?service .
+	    		SERVICE ?service {
+					{
+						BIND ( ( ?subject ) AS ?subject ) .
+	    			
+	    				?subject a qb:DataSet .
+						FILTER NOT EXISTS { ?subject qb:structure ?dsd . }
+						
+						# violation message
+		                # -----
+		                BIND ( CONCAT( 
+		                    \"DATA-CUBE-C-EXACT-QUALIFIED-CARDINALITY-RESTRICTIONS-02\" )
+		                    AS ?violationMessage ) . 
+					}
+					UNION
+					{
+						BIND ( ( ?subject ) AS ?subject ) .
+					
+					    ?subject
+						    qb:structure ?dsd1 , ?dsd2 .
+				        FILTER ( ?dsd1 != ?dsd2 ) .
+				        
+				        # violation message
+		                # -----
+		                BIND ( CONCAT( 
+		                    \"DATA-CUBE-C-EXACT-QUALIFIED-CARDINALITY-RESTRICTIONS-02\" )
+		                    AS ?violationMessage ) . 
+					}
+                }
+            }
+            LIMIT 10
+            """ ;
+    ] .
+    
+# DATA-CUBE-C-EXISTENTIAL-QUANTIFICATIONS-03
+# -----
+qb2spin:DATA-CUBE-C-EXISTENTIAL-QUANTIFICATIONS-03
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "DATA-CUBE-C-EXISTENTIAL-QUANTIFICATIONS-03|||||ERROR" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX qb2spin: <http://purl.org/linked-data/cube/qb2spin#> 
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?subject ;
+                    rdfs:label ?violationMessage .
+            }
+            WHERE {	
+                ?sparqlEndpoint void:sparqlEndpoint ?service .
+	    		SERVICE ?service {
+	    			BIND ( ( ?subject ) AS ?subject ) . 
+	    		
+					?subject a qb:DataStructureDefinition .
+				    FILTER NOT EXISTS { ?subject qb:component [ qb:componentProperty [ a qb:MeasureProperty ] ] }
+	
+	                # violation message
+	                # -----
+	                BIND ( CONCAT( 
+	                    \"DATA-CUBE-C-EXISTENTIAL-QUANTIFICATIONS-03\" )
+	                    AS ?violationMessage ) . 
+                }
+            }
+            LIMIT 10
+            """ ;
+    ] .
+    
+# DATA-CUBE-C-EXISTENTIAL-QUANTIFICATIONS-01
+# -----
+qb2spin:DATA-CUBE-C-EXISTENTIAL-QUANTIFICATIONS-01
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "DATA-CUBE-C-EXISTENTIAL-QUANTIFICATIONS-01|||||ERROR" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX qb2spin: <http://purl.org/linked-data/cube/qb2spin#> 
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?subject ;
+                    rdfs:label ?violationMessage .
+            }
+            WHERE {	
+                ?sparqlEndpoint void:sparqlEndpoint ?service .
+	    		SERVICE ?service {
+	    			BIND ( ( ?subject ) AS ?subject ) . 
+	    		
+					?subject a qb:DimensionProperty .
+				    FILTER NOT EXISTS { ?subject rdfs:range [] . }
+	
+	                # violation message
+	                # -----
+	                BIND ( CONCAT( 
+	                    \"DATA-CUBE-C-EXISTENTIAL-QUANTIFICATIONS-01\" )
+	                    AS ?violationMessage ) . 
+                }
+            }
+            LIMIT 10
+            """ ;
+    ] .
+    
+# DATA-CUBE-C-EXISTENTIAL-QUANTIFICATIONS-02
+# -----
+qb2spin:DATA-CUBE-C-EXISTENTIAL-QUANTIFICATIONS-02
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "DATA-CUBE-C-EXISTENTIAL-QUANTIFICATIONS-02|||||ERROR" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX qb2spin: <http://purl.org/linked-data/cube/qb2spin#> 
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?subject ;
+                    rdfs:label ?violationMessage .
+            }
+            WHERE {	
+                ?sparqlEndpoint void:sparqlEndpoint ?service .
+	    		SERVICE ?service {
+	    			BIND ( ( ?subject ) AS ?subject ) . 
+	    		
+					?subject a qb:DimensionProperty ;
+				        rdfs:range <http://www.w3.org/2004/02/skos/core#Concept> .
+				    FILTER NOT EXISTS { ?subject qb:codeList [] . }
+	
+	                # violation message
+	                # -----
+	                BIND ( CONCAT( 
+	                    \"DATA-CUBE-C-EXISTENTIAL-QUANTIFICATIONS-02\" )
+	                    AS ?violationMessage ) . 
+                }
+            }
+            LIMIT 10
+            """ ;
+    ] .
+    
+# DATA-CUBE-C-DATA-MODEL-CONSISTENCY-01
+# -----
+qb2spin:DATA-CUBE-C-DATA-MODEL-CONSISTENCY-01
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "DATA-CUBE-C-DATA-MODEL-CONSISTENCY-01|||||WARNING" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX qb2spin: <http://purl.org/linked-data/cube/qb2spin#> 
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?subject ;
+                    rdfs:label ?violationMessage .
+            }
+            WHERE {	
+                ?sparqlEndpoint void:sparqlEndpoint ?service .
+	    		SERVICE ?service {
+	    			BIND ( ( ?subject ) AS ?subject ) . 
+	    		
+				    ?subject qb:component ?componentSpec .
+				    ?componentSpec qb:componentRequired "false"^^xsd:boolean ;
+				        qb:componentProperty ?component .
+				    FILTER NOT EXISTS { ?component a qb:AttributeProperty . }
+	
+	                # violation message
+	                # -----
+	                BIND ( CONCAT( 
+	                    \"DATA-CUBE-C-DATA-MODEL-CONSISTENCY-01\" )
+	                    AS ?violationMessage ) . 
+                }
+            }
+            LIMIT 10
+            """ ;
+    ] .
+    
+# DATA-CUBE-C-EXISTENTIAL-QUANTIFICATIONS-04
+# -----
+qb2spin:DATA-CUBE-C-EXISTENTIAL-QUANTIFICATIONS-04
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "DATA-CUBE-C-EXISTENTIAL-QUANTIFICATIONS-04|||||WARNING" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX qb2spin: <http://purl.org/linked-data/cube/qb2spin#> 
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?subject ;
+                    rdfs:label ?violationMessage .
+            }
+            WHERE {	
+                ?sparqlEndpoint void:sparqlEndpoint ?service .
+	    		SERVICE ?service {
+	    			BIND ( ( ?subject ) AS ?subject ) . 
+	    		
+				    ?subject a qb:SliceKey .
+   					FILTER NOT EXISTS { [ a qb:DataStructureDefinition ] qb:sliceKey ?subject }
+	
+	                # violation message
+	                # -----
+	                BIND ( CONCAT( 
+	                    \"DATA-CUBE-C-EXISTENTIAL-QUANTIFICATIONS-04\" )
+	                    AS ?violationMessage ) . 
+                }
+            }
+            LIMIT 10
+            """ ;
+    ] .

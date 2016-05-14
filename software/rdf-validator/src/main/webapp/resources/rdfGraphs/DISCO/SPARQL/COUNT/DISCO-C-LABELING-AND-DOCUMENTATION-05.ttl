@@ -1,0 +1,4 @@
+?subject a disco:Instrument .
+
+OPTIONAL { ?subject dcterms:description ?description . }
+FILTER ( ! BOUND( ?description ) ) .

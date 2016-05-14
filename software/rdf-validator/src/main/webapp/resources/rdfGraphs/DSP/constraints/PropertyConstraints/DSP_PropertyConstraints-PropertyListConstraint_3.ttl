@@ -1,0 +1,19 @@
+# ---------------
+# Property Constraints - Property List Constraint
+
+
+	# A property list constraint cannot occur together with a sub-property constraint
+	# -----
+	:personDescriptionTemplate
+		a dsp:DescriptionTemplate ;
+		dsp:minOccur "1"^^xsd:nonNegativeInteger ; 
+		dsp:maxOccur "infinity"^^xsd:nonNegativeInteger ; 
+		dsp:resourceClass foaf:Person ;
+		dsp:statementTemplate [
+			a dsp:LiteralStatementTemplate ;
+			dsp:minOccur "1"^^xsd:nonNegativeInteger ;
+			dsp:maxOccur "5"^^xsd:nonNegativeInteger ;
+			dsp:property foaf:familyName ; 
+			dsp:subPropertyOf foaf:name ] . # --> constraint violation
+	
+# -----

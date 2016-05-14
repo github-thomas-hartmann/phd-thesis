@@ -1,0 +1,1073 @@
+/*BUGFIXES*/
+/*Setting margin-left 0 for mainnavigation*/
+ul.MISSY_nav_main_marginFix
+{
+	margin-left: 0 !important;
+}
+
+/*addition of missinf font-family declaration for input elements*/
+input, select
+{
+	font-family: Helvetica,Arial,sans-serif;
+}
+
+/*ADDITIONS*/
+/*Top-margin for col1 to inline it with col3*/
+#col1_content
+{
+	margin: 30px 10px 10px 10px;
+}
+
+/*no top-margin for <form>elements. otherwise tab navigation on variable level doesnt work*/
+form
+{
+	margin: 0;
+	padding: 25px;
+	border-left: 1pt solid #aca690;
+	border-right: 1pt solid #aca690;
+}
+
+/*Alternative form, used on pages without tab-Navigation to get round corners*/
+form.MISSY_round
+{
+	border-radius: 4px;
+	border: 1pt solid #aca690;
+}
+
+/*Alternative form, used in left column without borders*/
+form.MISSY_formLeft
+{
+	border: none;
+	padding: 10px 5px;
+}
+
+/*headers with changed margin-bottom for left column*/
+
+h4.MISSY_leftHeader
+{
+	margin-bottom: 0;
+	float: left;
+}
+h5.MISSY_leftHeader
+{
+	margin: 15px 0 8px 0;
+}
+
+/*Surfpath-Navigation*/
+span#MISSY_breadcrumb
+{
+	display:inline-block;
+	float: left;
+	width: 600px;
+	max-width: 600px;
+	padding: 10px 15px 0 15px;
+	text-align: left;
+	vertical-align: middle;
+}
+
+h3.MISSY_breadcrumb
+{
+	display:inline-block;
+	float: left;
+	width: 600px;
+	max-width: 600px;
+	padding: 10px 15px 0 15px;
+	text-align: left;
+	vertical-align: middle;
+}
+
+/*Setting up label divs and input boxes for login page */
+
+label.MISSY_loginInput
+{
+	text-align: left;
+	float: none;
+} 
+
+input.MISSY_loginInput
+{
+	width: 250px;
+	padding: 0 2px;
+	text-align: left;
+}
+
+/*Setting up label divs and inputs for the data preparation area */
+
+fieldset legend
+{
+	padding: 10px 0;
+} 
+
+label.MISSY_dataPreparationInput
+{
+	display: inline-block;
+	width: 180px;
+	vertical-align: middle;
+	padding-right: 0;
+	margin: 0;
+
+} 
+
+input[type='text'].MISSY_dataPreparationInput, textarea.MISSY_dataPreparationInput
+{
+	width: 400px;
+	min-width: 400px;
+	text-align: left;
+	margin: 0;
+	float: none;
+	display: inline-block;
+	vertical-align: middle;
+	padding-left:2px;
+}
+
+input[type='text'].MISSY_searchInput
+{
+	width: 200px;
+	min-width: 200px;
+	text-align: left;
+	margin: 0;
+}
+
+input.legend {
+	background-color: #ffffff;
+	width: 100%;
+	min-width: 100%;
+	margin: 0;
+	padding: 0 2px;
+}
+
+input.legend_active {
+	border: 1px #bbbbbb solid;
+	background-color: #ffffff;
+}
+
+textarea.MISSY_dataPreparationInput
+{
+	height: 50px;
+	max-height: 500px;
+}
+
+div.MISSY_dataPreparationInput
+{
+	margin: 0;
+	float: none;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+input[type='radio'].MISSY_dataPreparationInput, input[type='checkbox'].MISSY_dataPreparationInput
+{
+	margin: 0;
+	float: none;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+
+/*Setting up label divs and inputs for the value labels page and table  */
+
+div.MISSY_tableValueLabels
+{
+	display: inline;
+	width: 400px;
+}
+
+label.MISSY_tableValueLabels
+{
+	float: none;
+	display: inline;
+	text-align: left;
+	padding: 0;
+	margin: 0 15px 0 0;
+	width: auto;
+} 
+
+select.MISSY_tableValueLabels
+{
+	width: 100px;
+	min-width: 100px;
+	text-align: left;
+	margin: 0;
+}
+
+/*Table specification*/
+table.MISSY_whiteTable
+{
+	background: #fff;
+	width: 660px;
+	margin: 0 auto;
+	border: 1pt solid #72777a;
+}
+
+td.MISSY_tableValueLabelsLeft, th.MISSY_tableValueLabelsLeft
+{
+	text-align: left;
+	vertical-align: middle;
+	padding:3px 6px;
+}
+
+td.MISSY_tableValueLabelsCenter, th.MISSY_tableValueLabelsCenter
+{
+	text-align: center;
+	vertical-align: middle;
+	padding:3px 6px;
+}
+
+td.MISSY_tableValueLabelsRight, th.MISSY_tableValueLabelsRight
+{
+	text-align: right;
+	vertical-align: middle;
+	padding:3px 6px;
+}
+
+th.MISSY_tableValueLabelsLeft, th.MISSY_tableValueLabelsCenter, th.MISSY_tableValueLabelsRight
+{
+	background: #fff;
+}
+
+tr:nth-child(odd)
+{
+	background:#f6f4e7;
+} 
+
+tr.MISSY_whiteTable:nth-child(odd) td
+{
+	background:#f6f4e7;
+} 
+
+tr.MISSY_whiteTable:nth-child(even) td
+{
+	background:#fff;
+} 
+
+/*Labels for Radiobuttons & Checkboxes [type='radio'].MISSY_dataPreparationInput */
+label.MISSY_radioCheckboxLabels
+{
+	margin: 0;
+	float: none;
+	display: inline-block;
+	vertical-align: middle;
+	width: auto;
+	margin-right: 15px;
+}
+
+select.MISSY_dataPreparationInputSmall
+{
+	width: 180px;
+	text-align: left;
+	margin: 0;
+	float: none;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+/*positioning cta-button to the left*/
+input.MISSY_loginSubmit
+{
+	float: left;
+	margin: 40px 0 10px 0;
+}
+
+input.MISSY_noMarginSubmit
+{
+	float: left;
+	margin: 0 10px 0 0;
+}
+
+
+/*crating instance for partner banners in main content area*/
+div.MISSY_partner
+{
+	margin: 50px 0;
+}
+img.MISSY_partner
+{
+	float: left; 
+}
+
+
+/*Tiles / Buttons for selection of data preparation area*/
+input.MISSY_selectionTiles
+{
+	width: 130px;
+	min-height: 130px; 
+
+	cursor: pointer;
+	
+	padding: 30px 10px 0 10px;
+	margin: 20px 30px 20px 15px; 
+
+	background: #aca690; /* old browsers */
+	background: -moz-linear-gradient(top, #f6f4e7 0%, #aca690 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f6f4e7), color-stop(100%,#aca690)); /* webkit */
+	filter: progid:DXImageTrans.Microsoft.gradient( startColorstr='#f6f4e7', endColorstr='#aca690',GradientType=0 ); /* ie */
+	background-image: -ms-linear-gradient(top, #F6F4E7 0%, #ACA690 100%);/* IE10 Consumer Preview */ 
+	background-image: -o-linear-gradient(top, #F6F4E7 0%, #ACA690 100%);/* Opera */ 
+	background-image: -webkit-linear-gradient(top, #F6F4E7 0%, #ACA690 100%);/* Webkit (Chrome 11+) */ 
+	background-image: linear-gradient(to bottom, #F6F4E7 0%, #ACA690 100%);/* W3C Markup, IE10 Release Preview */ 
+	
+	border-top: 1pt solid #f6f4e7;
+	border-right: 1pt solid #72777a;
+	border-bottom: 1pt solid #72777a;
+	border-left: 1pt solid #f6f4e7;
+	
+	box-shadow: 4px 4px 8px #999; 
+ 	 -moz-box-shadow: 4px 4px 8px #999; 
+	 -webkit-box-shadow: 4px 4px 8px #999; 
+	
+	white-space: normal;
+	text-align: left;
+	font-weight: bold; 
+	font-size: 14px; 
+
+	
+	float: left;
+	
+
+}
+
+input.MISSY_selectionTiles:hover
+{
+	color: #fff;
+	background: #58748f; /* old browsers */
+	background: -moz-linear-gradient(top, #58748f 0%, #d9d9d9 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#58748f), color-stop(100%,#d9d9d9)); /* webkit */
+	filter: progid:DXImageTrans.Microsoft.gradient( startColorstr='#58748f', endColorstr='#d9d9d9',GradientType=0 ); /* ie */
+	background-image: -ms-linear-gradient(top, #58748F 0%, #D9D9D9 100%);/* IE10 Consumer Preview */ 
+	background-image: -o-linear-gradient(top, #58748F 0%, #D9D9D9 100%);/* Opera */ 
+	background-image: -webkit-linear-gradient(top, #58748F 0%, #D9D9D9 100%);/* Webkit (Chrome 11+) */ 
+	background-image: linear-gradient(to bottom, #58748F 0%, #D9D9D9 100%);/* W3C Markup, IE10 Release Preview */ 
+}
+
+input.MISSY_selectionTiles_inactive
+{
+	width: 130px;
+	min-height: 130px; 
+
+	
+	padding: 30px 10px 0 10px;
+	margin: 20px 30px 20px 15px; 
+	color: #eee;
+	background: url(../images/to_come.png) #fff;
+	
+	border-top: 1pt solid #f6f4e7;
+	border-right: 2pt solid #aca690;
+	border-bottom: 2pt solid #aca690;
+	border-left: 1pt solid #f6f4e7;
+	
+	box-shadow: 4px 4px 8px #333; 
+ 	 -moz-box-shadow: 4px 4px 8px #333; 
+	 -webkit-box-shadow: 4px 4px 8px #333; 
+	 
+	 white-space: normal;
+	text-align: left;
+	font-weight: bold; 
+	font-size: 14px; 
+}
+
+/* a variable item in the list of variables */
+.variable_item {
+	text-decoration: none;
+}
+.variable_item_selected {
+	text-decoration: none;
+	font-weight: bold;
+	color: #ff6100 !important;
+}
+
+/*Alternative buttons for selection fields*/
+	
+input.MISSY_altButton
+{	
+	cursor: pointer;
+
+	background: #f6f4e7; 
+	box-shadow: 1px 1px 2px #999; 
+ 	 -moz-box-shadow: 1px 1px 2px #999; 
+	 -webkit-box-shadow: 1px 1px 2px #999; 
+	
+	border-top: 1pt solid #f6f4e7;
+	border-right: 1pt solid #72777a;
+	border-bottom: 1pt solid #72777a;
+	border-left: 1pt solid #f6f4e7;
+
+	
+	font-weight: bold; 
+	color: #66645A;
+	float: left;
+}
+
+input.MISSY_altButton_active
+{
+
+	color: #ff6100;
+	box-shadow: 0px 1px 6px #000; 
+ 	 -moz-box-shadow: 0px 1px 6px #000; 
+	 -webkit-box-shadow: 0px 1px 6px #000; 
+
+}
+
+input.MISSY_altButton_inactive
+{
+	background: #fff; /* old browsers */
+		box-shadow: 1px 1px 2px #666; 
+ 	 -moz-box-shadow: 1px 1px 2px #666; 
+	 -webkit-box-shadow: 1px 1px 2px #666; 
+	border-top: 1pt solid #f6f4e7;
+	border-right: 1pt solid #ccc;
+	border-bottom: 1pt solid #ccc;
+	border-left: 1pt solid #f6f4e7;	
+	
+	color: #ccc;
+}
+
+input.MISSY_altButton_small
+{
+	width: 30px;
+	min-width: 30px;
+	height: auto; 
+	
+	margin: 5px;
+	padding: 2px 4px;
+}
+
+input.MISSY_altButton_medium
+{
+	width: auto;
+	min-width: 120px;
+	overflow: visible;
+	height: auto; 
+	
+	margin: 0 0 10px 15px;
+	padding: 3px 5px;
+}
+
+/*small dropdown, i.e. for selection of study year*/
+select.MISSY_small
+{
+	width: 120px;
+	margin: 0 0 0 15px;
+}
+
+/*Specifications for table header in column1*/
+span.MISSY_tableHeader
+{
+	float: left; 
+}
+
+
+/*specifications for functional icons */
+img.MISSY_functionalIcon
+{
+height: 40px;
+width: 40px;
+vertical-align: middle;
+cursor:pointer;
+}
+
+img.MISSY_functionalIcon_small
+{
+height: 25px;
+width: 25px;
+vertical-align: middle;
+}
+
+/*area for additional functional elements in data preparation section*/
+div.MISSY_functionHeaderOuterTop
+{
+	text-align: right; 
+	background: #ededed; 
+	border: none;
+	height: 42px;
+	border-top-right-radius: 4px;
+	border-top: 1pt solid #aca690;
+	border-right: 1pt solid #aca690;
+	border-bottom: none;
+	border-left: 1pt solid #aca690;
+}
+
+div.MISSY_functionHeaderOuterBottom
+{
+	text-align: right; 
+	background: #ededed; 
+	border: none;
+	height: 42px;
+	border-bottom-right-radius: 4px;
+	border-bottom-left-radius: 4px;
+	border-top: none;
+	border-right: 1pt solid #aca690;
+	border-bottom: 1pt solid #aca690;
+	border-left: 1pt solid #aca690;
+}
+
+span.MISSY_functionHeaderInnerTop
+{
+	text-align: left; 
+	background: none; 
+	height: 40px;
+	display: inline-block;
+	border-bottom: 1pt solid #aca690;
+	border-left: 1pt solid #aca690;
+	border-bottom-left-radius: 4px;
+	}
+span.MISSY_functionHeaderInnerBottom
+{
+	text-align: left; 
+	background: none; 
+	height: 40px;
+	display: inline-block;
+	border-top: 1pt solid #aca690;
+	border-left: 1pt solid #aca690;
+	border-top-left-radius: 4px;
+}
+	
+	
+span.MISSY_smallText, div.MISSY_smallText
+{
+	font-size: 8pt; 
+}
+
+span.MISSY_iconHeaderSort
+{
+	float: left;
+	vertical-align: middle;
+}
+
+/*specification for onsitehelp icon*/
+img.MISSY_iconOnsitehelp
+{
+	width: 19px;
+	height: 19px;
+	vertical-align: middle;
+	float: none;
+	padding: 0 5px 0 0;
+}
+
+/*specification for add-icon*/
+img.MISSY_IconAdd
+{
+	width: 25px;
+	height: 25px;
+	float: none;
+	padding: 0;
+}
+
+/*additional spans for icon column, i.e. on variable level*/
+span.MISSY_iconColumn
+{
+	width: 30px;
+	float: none;
+	display: inline-block;
+	text-align: right;
+	vertical-align: middle;
+}
+
+span.MISSY_iconColumn2
+{
+
+	float: right;
+	display: block;
+	text-align: right;
+	margin-right: 80px;
+}
+
+
+/*Defining the margins for the input forms on a global level*/
+div.MISSY_formRow
+{
+	margin: 5px 0;
+	vertical-align: middle;
+}
+
+
+/*definitions for onmouseover onsitehelp*/
+
+ a.MISSY_onsiteHelp
+ {
+	 outline:none;
+	 display: inline-block;
+	 text-decoration: none;
+	 border: none;
+	 vertical-align: middle;
+ } 
+ 
+ a.MISSY_onsiteHelp:hover 
+ {
+	 text-decoration:none;
+	  border: none;
+	 vertical-align: middle;
+ } 
+ 
+ a.MISSY_onsiteHelp span 
+ { 
+	 z-index:10;
+	 display:none;
+	 padding:10px; 
+	 margin-top:-30px; 
+	 margin-left:28px; 
+	 width:200px; 
+	 line-height:16px; 
+ }
+ 
+ a.MISSY_onsiteHelp:hover span
+ { 
+	 display:inline; 
+	 position:absolute; 
+	 color:#000; 
+	 border:1px solid #aca690; 
+	background:#f6f4e7;
+ } 
+ 
+  h4.MISSY_onsiteHelp
+ {
+	 float:left;
+	 display: inline-block;
+	 margin: 5px 0 10px 0;
+ }
+ 
+ img.MISSY_onsiteHelpHeaderIcon
+ {
+ 	width: 30px;
+	height: 30px;
+	float: right;
+ }
+ 
+ .MISSY_onsiteHelpCallout 
+ {
+	 z-index:20;
+	 position:absolute;
+	 top:10px;
+	 border:0;
+	 left:-12px;
+ }
+ 
+ .MISSY_onsiteHelpCalloutReverse
+ {
+	 left:220px;
+ }
+ 
+ /*Lightbox specifications*/
+div.MIISY_thematicClassificationOuter
+{
+	background: #fff;
+}
+ 
+div.MIISY_thematicClassificationInner
+{
+	background: #fff;
+	width: 80%;
+	height: 300px;
+}
+
+/*Temporary classes to simulate the lightbox-effect an to display popups*/
+div.MISSY_lightbox
+{
+	display: none  
+}
+div.MISSY_lightbox2
+{
+	display: block;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 10000;
+	background: #ededed;
+	opacity: 0.5;
+	filter:Alpha(Opacity=0.5);
+}
+
+div.MISSY_popup
+{
+	display: none  
+}
+div.MISSY_popup2
+{
+	display: block; 
+	z-index:100001; 
+	position: fixed;
+	top:50%;
+	height: 440px;
+	margin-top: -220px;
+	left: 50%;
+	width: 500px;
+	margin-left: -250px;
+	color:#000; 
+	border:1px solid #aca690; 
+	background:#f6f4e7;	
+	border-radius: 4px;
+}
+div.MISSY_popupHeader
+{
+	text-align: center;
+	vertical-align: middle;
+	border-bottom: 1px solid #aca690; 
+	padding: 10px;
+}
+
+div.MISSY_popupContent
+{
+	padding: 0;
+}
+
+div.MISSY_popupFooter
+{
+	border-top: 1px solid #aca690; 
+	padding: 10px;
+}
+
+div.MISSY_themSelectionContent
+{
+	background: #fff;
+	width: 480px;
+	height: 200px;
+	max-height: 200px;
+	border: 1px solid #aca690; 
+	height: 250px;
+	overflow: scroll;
+}
+div#main_content{
+	overflow:visible;
+	float:left;
+	width:100%;
+	min-height:300px;
+}
+
+/* Start used style from old main.css */
+
+/* this style is used for input elements that need to mimic gesis submit/reset button style   */
+/* buttonSubmit-dialog, is used in jQuery-UI dialog pop up   */
+.buttonSubmit:hover ,.buttonSubmit-dialog:hover{
+	text-shadow: none !important;
+	color: #FFF !important;
+	text-decoration: none !important;
+	background: #8C99a6 !important;
+	background: -moz-linear-gradient(top, #8C99a6 0%, #475c71 100%) !important;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8c99a6), color-stop(100%,#475c71)) !important;
+	filter: progid:DXImageTrans.Microsoft.gradient( startColorstr='#8C99a6', endColorstr='#475c71',GradientType=0 ) !important;
+	border-top-color: #666 !important;
+	border-right-color: #fff !important;
+	border-bottom-color: #fff !important;
+	border-left-color: #666 !important;
+}
+.buttonSubmit, .buttonSubmit-dialog {
+	background: #ededed !important;
+	background: -moz-linear-gradient(top, #ededed 0%, #d9d9d9 100%) !important;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ededed), color-stop(100%,#d9d9d9)) !important;
+	filter: progid:DXImageTrans.Microsoft.gradient( startColorstr='#EDEDED', endColorstr='#D9D9D9',GradientType=0 ) !important;
+	border-bottom-color: #666 !important;
+	border-bottom-style: solid !important;
+	border-bottom-width: 1px !important;
+	border-left-color: #fff !important;
+	border-left-style: solid !important;
+	border-left-width: 1px !important;
+	border-right-color: #666 !important;
+	border-right-style: solid !important;
+	border-right-width: 1px !important;
+	border-top-color: #fff !important;
+	border-top-style: solid !important;
+	border-top-width: 1px !important;
+	color: #333 !important;
+	display: inline-block !important;
+	font-weight: bold !important;
+	height: auto !important;
+	text-align: center !important;
+	text-decoration: none !important;
+	text-shadow: 0px 1px 1px #fff !important;
+	width: auto !important;
+	border-radius: 0 !important;
+}
+.buttonSubmit{
+	margin: 20px 0 0 15px !important;
+	padding: 5px 15px !important;
+}
+.buttonSubmit-dialog{
+	margin: 0 12px 30px 0 !important;
+	padding: 0 6px !important;
+}
+
+/*table sorter style*/
+table.tablesorter thead tr .header {
+	background-image: url(../images/tablesorter-bg.gif);
+	background-repeat: no-repeat;
+	background-position: center right;
+	cursor: pointer;
+}
+
+table.tablesorter thead tr .headerSortUp {
+	background-image: url(../images/tablesorter-asc.gif);
+}
+table.tablesorter thead tr .headerSortDown {
+	background-image: url(../images/tablesorter-desc.gif);
+}
+/*end table sorter style*/
+
+/*tree container and tree navigation */
+.tree-container{
+	margin-top: 5px;
+	display: block;
+	float: left;
+	width: 100%;
+	padding: 0 0 6px 0;
+	height: 260px;
+	border: 1px solid #abadb3;
+}
+.tree-navigation{
+	display: block;
+	float: left;
+	width: 100%;
+	padding: 1%;
+	line-height: 150%;
+}
+/*end tree container and tree navigation */
+
+/* style on element, during ajax update */
+.ajax-loading-background{
+ 	background-color:#fff;
+ 	opacity:0.7;
+ 	position:absolute;
+ 	display:block;
+ 	z-index:998;
+ }
+ .ajax-loading-image{
+ 	background-image: url("../images/ajaxLoader.gif");
+	background-repeat: no-repeat;
+	background-position: center center;
+	position:absolute;
+ 	display:block;
+ 	z-index:999;
+ }
+/* end style on element, during ajax update */
+/* End used style from old main.css */
+
+/* start of dummy missy feedback style */
+div.MISSY_feedbackGen
+{
+	z-index:100002; 
+	position: fixed;
+	top:120px;
+}	
+div.MISSY_feedback
+{
+	right: -405px;
+}
+div.MISSY_feedback2
+{
+	right: 0px;
+}
+
+div.MISSY_feedbackLasche
+{
+	position: relative;
+	left: 2px;
+	z-index:100001; 
+	margin-top: 120px;
+	padding: 5px; 
+	color: #FFF;
+	height: 160px;
+	width: 30px;
+	border:2px solid #fff; 
+	background:#ff6100;	
+	border-bottom-left-radius: 8px;
+	border-top-left-radius: 8px;
+	border-right: none;
+	float: left;
+	display: inline-block;
+}
+div.MISSY_feedbackContentGen
+{
+	z-index:100000; 
+	padding: 5px; 
+	color: #FFF;
+	height: 480px;
+	width: 400px;
+	border:2px solid #fff; 
+	background:#ff6100;	
+	border-bottom-left-radius: 8px;
+	border-top-left-radius: 8px;
+	border-right: none;
+	display: inline-block;
+}
+div.MISSY_feedbackContent
+{
+	right:-400px;
+}
+div.MISSY_feedbackContent2
+{
+	right:0px;
+}
+div.MISSY_feedbackCloser
+{
+	display: none;
+}
+div.MISSY_feedbackCloser2
+{
+	z-index:100010; 
+	position: fixed;
+	top:275px;
+	right: 410px;
+	width: 40px;
+	height: 165px;
+}
+/* end of dummy missy feedback style */
+
+span.editableText{
+	width:100%;
+	min-height:16px;
+	display:block;
+}
+
+/* change the padding table on Administrator   */
+table#tableVariables td{
+	padding:1px;
+}
+
+ul.MISSY_keyword_list{
+	margin: 0;
+	padding: 0;
+	height:300px;
+	overflow:auto;
+}
+
+ul.MISSY_keyword_list li{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+ul.MISSY_keyword_list input{
+	margin: 0 !important;
+}
+
+form#feedback{padding:0}
+
+/* saving changes effect fron CONCEPT_SaveChanges.htm */
+.effect 
+{
+	width: 400px; 
+	height: 120px; 
+	background: #fff; 
+	position: fixed;
+	left: 50%;
+	margin-left: -200px;
+	top: 50%;
+	margin-top: -60px;
+	z-index:500;
+	border: 3pt solid #58748f;
+	display:none;
+}
+.effect h3 { 
+	margin: 0; padding: 0.4em; text-align: center; 
+}
+
+.effectSave{
+	background-image:url('../images/Check.png');
+	background-repeat:no-repeat;
+	background-position:center;
+}
+
+/* remove scroll on jquery dialog box*/
+.ui-dialog-content{
+	overflow:hidden !important;
+}
+
+/* additional style for gradient */
+#nav_main{
+	/* IE10 Consumer Preview */ 
+	background-image: -ms-linear-gradient(top, #EAE5CE 0%, #B0AA94 100%);
+	/* Opera */ 
+	background-image: -o-linear-gradient(top, #EAE5CE 0%, #B0AA94 100%);
+	/* Webkit (Chrome 11+) */ 
+	background-image: -webkit-linear-gradient(top, #EAE5CE 0%, #B0AA94 100%);
+	/* W3C Markup, IE10 Release Preview */ 
+	background-image: linear-gradient(to bottom, #EAE5CE 0%, #B0AA94 100%);
+}
+
+#nav_main ul li#current strong, #nav_main ul li#current a, #nav_main ul li#current a:active {
+	/* IE10 Consumer Preview */ 
+	background-image: -ms-linear-gradient(top, #FF9F23 0%, #FF6301 100%);
+	/* Opera */ 
+	background-image: -o-linear-gradient(top, #FF9F23 0%, #FF6301 100%);
+	/* Webkit (Chrome 11+) */ 
+	background-image: -webkit-linear-gradient(top, #FF9F23 0%, #FF6301 100%);
+	/* W3C Markup, IE10 Release Preview */ 
+	background-image: linear-gradient(to bottom, #FF9F23 0%, #FF6301 100%);
+}
+
+/* end additional style for gradient*/
+
+/* put inherit font style for input text and textarea */
+textarea, input[type=text] {
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+.error_message {
+	height: 23px; 
+	margin-left: 23px; 
+	font-weight: bold; 
+	color: #ff4040;
+}
+
+div.documentationContent {
+	background: #ededed;
+	padding: 25px;
+	border-left: 1pt solid #aca690;
+	border-right: 1pt solid #aca690;
+}
+
+/* create line separator between section */
+div.section-separator{
+	margin:10px 0;
+	height:18px;
+	width:100%;
+	border-bottom: 1px #d9d9d9 solid;
+}
+
+div.scroll-to-top{
+	float:right;
+	width:17px;
+	height:17px;
+	cursor:pointer;
+	background: transparent url(../images/gs_icon.up_blue_small.png) no-repeat center center;
+}
+
+.MISSY_invisible
+{
+	display: none !important;
+}
+
+.MISSY_visible
+{
+	display: block;
+}
+
+.MISSY_TimeoutWarning 
+{
+	width: 400px; 
+	height: 120px; 
+	background: #fff; 
+	position: absolute;
+	left: 50%;
+	margin-left: -200px;
+	top: 15%;
+	margin-top: -60px;
+	z-index:500;
+	border: 3pt solid #58748f;
+	display: block; 
+	position: fixed;
+	padding: 15px;
+	box-shadow:         3px 3px 2px 2px #666;
+	  -moz-box-shadow:    3px 3px 2px 2px #666;
+	  -webkit-box-shadow: 3px 3px 2px 2px #666;
+}
+.MISSY_TimeoutWarning  h1, .MISSY_TimeoutWarning  h2, .MISSY_TimeoutWarning  h3, .MISSY_TimeoutWarning  h4
+{ 
+	margin: 0; 
+	padding: 0.4em; 
+	text-align: center; 
+	color: red
+}
+.MISSY_FolderIcon{
+	width: 20px;
+	height: 20px;
+	margin-left: 5px;
+}

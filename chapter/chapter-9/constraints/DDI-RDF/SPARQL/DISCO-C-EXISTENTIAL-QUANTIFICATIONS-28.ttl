@@ -1,0 +1,18 @@
+	?subject a disco:LogicalDataSet .
+	
+	OPTIONAL { ?subject disco:dataFile ?dataFile . }
+	FILTER ( ! BOUND( ?dataFile ) ) .
+	
+	# violation message
+	# -----------------
+	BIND ( CONCAT( 
+		"DISCO-C-EXISTENTIAL-QUANTIFICATIONS-28" )
+		AS ?violationMessage ) . 
+	
+	# violation source
+	# ----------------
+	BIND ( CONCAT( "DISCO-C-EXISTENTIAL-QUANTIFICATIONS-28" )AS ?violationSource ) . 
+	
+	# severity level
+	# --------------
+	BIND ( ( 'WARNING' ) AS ?severityLevel ) .

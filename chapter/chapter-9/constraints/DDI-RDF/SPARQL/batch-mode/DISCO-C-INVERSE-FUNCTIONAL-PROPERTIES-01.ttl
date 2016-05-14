@@ -1,0 +1,2 @@
+?subject adms:identifier ?id1 , ?id2 . 
+FILTER ( ?id1 != ?id2 ) .

@@ -1,0 +1,15 @@
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lc@{}}
+           & \multicolumn{1}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-2}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{SKOS-C-STRUCTURE-10}}
+	\\ \midrule
+    \emph{http://poolparty.reegle.info/PoolParty/sparql/glossary} & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://poolparty.reegle.info/PoolParty/sparql/glossary}}
+    \label{tab:evaluation-poolparty.reegle.info-PoolParty-sparql-glossary}
+    \end{center}
+\end{table}

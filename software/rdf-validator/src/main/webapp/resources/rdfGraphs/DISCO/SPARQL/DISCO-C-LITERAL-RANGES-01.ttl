@@ -1,0 +1,16 @@
+	?subject disco:percentage ?percentage .
+	FILTER ( ?percentage >= 0 && ?percentage <= 100 ) .
+
+	# violation message
+	# -----------------
+	BIND ( CONCAT( 
+		"DISCO-C-LITERAL-RANGES-01" )
+		AS ?violationMessage ) . 
+	
+	# violation source
+	# ----------------
+	BIND ( CONCAT( "DISCO-C-LITERAL-RANGES-01" )AS ?violationSource ) . 
+	
+	# severity level
+	# --------------
+	BIND ( ( 'ERROR' ) AS ?severityLevel ) .

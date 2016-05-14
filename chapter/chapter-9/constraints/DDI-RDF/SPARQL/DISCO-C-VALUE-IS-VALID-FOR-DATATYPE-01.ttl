@@ -1,0 +1,18 @@
+	?subject ?p ?date .
+	FILTER ( ?p = disco:startDate  || ?p = disco:endDate  || ?p = dcterms:date  ) .
+	
+	FILTER ( DATATYPE ( ?date ) != xsd:date ) .
+	
+	# violation message
+	# -----------------
+	BIND ( CONCAT( 
+		"DISCO-C-VALUE-IS-VALID-FOR-DATATYPE-01" )
+		AS ?violationMessage ) . 
+	
+	# violation source
+	# ----------------
+	BIND ( CONCAT( "DISCO-C-VALUE-IS-VALID-FOR-DATATYPE-01" )AS ?violationSource ) . 
+	
+	# severity level
+	# --------------
+	BIND ( ( 'ERROR' ) AS ?severityLevel ) .

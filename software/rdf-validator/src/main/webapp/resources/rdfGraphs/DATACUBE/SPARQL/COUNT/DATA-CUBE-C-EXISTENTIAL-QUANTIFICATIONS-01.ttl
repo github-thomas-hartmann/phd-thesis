@@ -1,0 +1,2 @@
+	?subject a qb:DimensionProperty .
+	FILTER NOT EXISTS { ?subject rdfs:range [] . }

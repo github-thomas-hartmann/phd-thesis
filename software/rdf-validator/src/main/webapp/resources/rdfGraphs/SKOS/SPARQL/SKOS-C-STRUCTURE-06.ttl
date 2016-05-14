@@ -1,0 +1,184 @@
+# SKOS-C-STRUCTURE-06
+# -----
+# Structural Issues - Unidirectionally Related Concepts:
+# Reciprocal relations (skos:broader/skos:narrower, skos:hasTopConcept/skos:topConceptOf, 
+# skos:narrowerTransitive/skos:broaderTransitive, skos:narrowMatch/skos:broadMatch )
+# should be included in the controlled vocabularies to achieve better search
+# results using SPARQL in systems without reasoner support.
+# Implementation: This issue is checked without inference of owl:inverseOf
+# properties. We iterate over all triples and check for each property if an
+# inverse property is defined in the SKOS ontology and if the respective
+# statement using this property is included in the vocabulary. If not, the
+# resources associated with this property are returned.
+
+ 	
+	# data
+	# -----
+	?subject
+		a [rdfs:subClassOf* skos:Concept] .
+		
+	# validation
+	# -----
+	{
+		{
+			{
+				?subject skos:broader ?o .
+				?o a [rdfs:subClassOf* skos:Concept] .
+				FILTER NOT EXISTS {
+					?o skos:narrower ?subject .  
+				}
+				# violation message
+				# -----
+				BIND ( CONCAT( 
+					"The concept '", 
+					xsd:string( ?subject ),
+					"' is related to the concept '", 
+					 xsd:string( ?o ),
+					"' via the object property 'skos:broader' only unidirectionally.", 
+					" | Reciprocal relations should be included in the controlled vocabularies to achieve better search results using SPARQL in systems without reasoner support. ") 
+					AS ?violationMessage ) . 
+			}
+			UNION
+			{
+				?subject skos:hasTopConcept ?o .
+				?o a [rdfs:subClassOf* skos:Concept] .
+				FILTER NOT EXISTS {
+					?o skos:topConceptOf ?subject .  
+				}
+				# violation message
+				# -----
+				BIND ( CONCAT( 
+					"The concept '", 
+					xsd:string( ?subject ),
+					"' is related to the concept '", 
+					 xsd:string( ?o ),
+					"' via the object property 'skos:hasTopConcept' only unidirectionally.", 
+					" | Reciprocal relations should be included in the controlled vocabularies to achieve better search results using SPARQL in systems without reasoner support. ") 
+					AS ?violationMessage ) . 
+			}
+		}
+		UNION
+		{
+			{
+				?subject skos:narrowerTransitive ?o .
+				?o a [rdfs:subClassOf* skos:Concept] .
+				FILTER NOT EXISTS {
+					?o skos:broaderTransitive ?subject .  
+				}
+				# violation message
+				# -----
+				BIND ( CONCAT( 
+					"The concept '", 
+					xsd:string( ?subject ),
+					"' is related to the concept '", 
+					 xsd:string( ?o ),
+					"' via the object property 'skos:narrowerTransitive' only unidirectionally.", 
+					" | Reciprocal relations should be included in the controlled vocabularies to achieve better search results using SPARQL in systems without reasoner support. ") 
+					AS ?violationMessage ) . 
+			}
+			UNION
+			{
+				?subject skos:narrowMatch ?o .
+				?o a [rdfs:subClassOf* skos:Concept] .
+				FILTER NOT EXISTS {
+					?o skos:broadMatch ?subject .  
+				}
+				# violation message
+				# -----
+				BIND ( CONCAT( 
+					"The concept '", 
+					xsd:string( ?subject ),
+					"' is related to the concept '", 
+					 xsd:string( ?o ),
+					"' via the object property 'skos:narrowMatch' only unidirectionally.", 
+					" | Reciprocal relations should be included in the controlled vocabularies to achieve better search results using SPARQL in systems without reasoner support. ") 
+					AS ?violationMessage ) . 
+			}
+		}
+	}
+	UNION
+	{
+		{
+			{
+				?subject skos:narrower ?o .
+				?o a [rdfs:subClassOf* skos:Concept] .
+				FILTER NOT EXISTS {
+					?o skos:broader ?subject .  
+				}
+				# violation message
+				# -----
+				BIND ( CONCAT( 
+					"The concept '", 
+					xsd:string( ?subject ),
+					"' is related to the concept '", 
+					 xsd:string( ?o ),
+					"' via the object property 'skos:narrower' only unidirectionally.", 
+					" | Reciprocal relations should be included in the controlled vocabularies to achieve better search results using SPARQL in systems without reasoner support. ") 
+					AS ?violationMessage ) . 
+			}
+			UNION
+			{
+				?subject skos:topConceptOf ?o .
+				?o a [rdfs:subClassOf* skos:Concept] .
+				FILTER NOT EXISTS {
+					?o skos:hasTopConcept ?subject .  
+				}
+				# violation message
+				# -----
+				BIND ( CONCAT( 
+					"The concept '", 
+					xsd:string( ?subject ),
+					"' is related to the concept '", 
+					 xsd:string( ?o ),
+					"' via the object property 'skos:topConceptOf' only unidirectionally.", 
+					" | Reciprocal relations should be included in the controlled vocabularies to achieve better search results using SPARQL in systems without reasoner support. ") 
+					AS ?violationMessage ) . 
+			}
+		}
+		UNION
+		{
+			{
+				?subject skos:broaderTransitive ?o .
+				?o a [rdfs:subClassOf* skos:Concept] .
+				FILTER NOT EXISTS {
+					?o skos:narrowerTransitive ?subject .  
+				}
+				# violation message
+				# -----
+				BIND ( CONCAT( 
+					"The concept '", 
+					xsd:string( ?subject ),
+					"' is related to the concept '", 
+					 xsd:string( ?o ),
+					"' via the object property 'skos:broaderTransitive' only unidirectionally.", 
+					" | Reciprocal relations should be included in the controlled vocabularies to achieve better search results using SPARQL in systems without reasoner support. ") 
+					AS ?violationMessage ) . 
+			}
+			UNION
+			{
+				?subject skos:broadMatch ?o .
+				?o a [rdfs:subClassOf* skos:Concept] .
+				FILTER NOT EXISTS {
+					?o skos:narrowMatch ?subject .  
+				}
+				# violation message
+				# -----
+				BIND ( CONCAT( 
+					"The concept '", 
+					xsd:string( ?subject ),
+					"' is related to the concept '", 
+					 xsd:string( ?o ),
+					"' via the object property 'skos:broadMatch' only unidirectionally.", 
+					" | Reciprocal relations should be included in the controlled vocabularies to achieve better search results using SPARQL in systems without reasoner support. ") 
+					AS ?violationMessage ) . 
+			}
+		}
+	}
+			
+	# violation source
+	# ----------------
+	BIND ( CONCAT( "SKOS-C-STRUCTURE-06" )AS ?violationSource ) .
+	
+	# severity level
+	# --------------
+	BIND ( ( 'INFO' ) AS ?severityLevel ) .

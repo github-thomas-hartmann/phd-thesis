@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT library (book+, author*)>
+
+<!ELEMENT book (isbn, title, author-ref*)>
+<!ATTLIST book
+  id ID #REQUIRED
+>
+
+<!ELEMENT author-ref EMPTY>
+<!ATTLIST author-ref
+  id IDREF #REQUIRED
+>
+
+<!ELEMENT author (name)>
+<!ATTLIST author
+  id ID #REQUIRED
+>
+
+<!ELEMENT isbn (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT name (#PCDATA)>

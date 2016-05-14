@@ -1,0 +1,14 @@
+	# data
+	# -----
+	?subject
+		skos:inScheme ?conceptScheme ;
+		?p ?l .
+	?concept 
+		skos:inScheme ?conceptScheme ;
+		?p ?l .
+		
+	# validation
+	# -----
+	FILTER ( ?subject != ?concept ) .
+#	FILTER ( STR ( ?label1 ) = STR ( ?label2 ) ) .
+#	FILTER ( LANG ( ?label1 ) = LANG ( ?label2 ) ) . 

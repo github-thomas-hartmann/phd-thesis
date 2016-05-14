@@ -1,0 +1,15 @@
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lc@{}}
+           & \multicolumn{1}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-2}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{SKOS-C-STRUCTURE-10}}
+	\\ \midrule
+    \emph{http://svbotomcat01:8080/openrdf-sesame/repositories/sparql} & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://svbotomcat01:8080/openrdf-sesame/repositories/sparql}}
+    \label{tab:evaluation-svbotomcat01-8080-openrdf-sesame-repositories-sparql}
+    \end{center}
+\end{table}

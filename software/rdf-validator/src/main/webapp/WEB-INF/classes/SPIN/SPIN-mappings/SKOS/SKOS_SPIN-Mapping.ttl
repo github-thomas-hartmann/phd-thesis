@@ -1,0 +1,790 @@
+﻿# namespace declarations
+# ----------------------
+@prefix fn:        <http://www.w3.org/2005/xpath-functions#> .
+@prefix sparql:    <http://www.w3.org/TR/2013/REC-sparql11-query-20130321/#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms:   <http://purl.org/dc/terms#> .
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:       <http://www.w3.org/2002/07/owl#> .
+@prefix sp:        <http://spinrdf.org/sp#> .
+@prefix spin:      <http://spinrdf.org/spin#> .
+@prefix smf:       <http://topbraid.org/sparqlmotionfunctions#> .
+@prefix spif:      <http://spinrdf.org/spif#> . 
+@prefix spl:       <http://spinrdf.org/spl#> .
+@prefix spinowl:   <http://topbraid.org/spin/spinowl> .
+@prefix spinx:     <http://spinrdf.org/spinx#> . 
+@prefix functions: <http://www.example.org/functions#> .
+@prefix templates: <http://www.example.org/templates#> .
+@prefix sparql:    <http://www.w3.org/TR/sparql11-query/#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosqc2spin: <http://constraints.org/skosqc2spin#> .
+@prefix skosqc: <http://www.example.org/skosqc#> .
+
+#owl:Thing
+#	spin:constraint 
+#		[   a skosqc2spin:LabelingAndDocumentationIssues-AmbiguousNotationReferences-New ] .
+
+# class constraints
+# -----------------
+#skos:Collection
+#	spin:constraint 
+#	    [   a skosqc2spin:LabelingAndDocumentationIssues-OmittedOrInvalidLanguageTags ] ,
+#		[   a skosqc2spin:LabelingAndDocumentationIssues-UndocumentedConcepts ] ,
+#		[   a skosqc2spin:LabelingAndDocumentationIssues-MissingLabels ] ,
+#		[   a skosqc2spin:LabelingAndDocumentationIssues-EmptyLabels ] ,
+#		[   a skosqc2spin:StructuralIssues-ValuelessAssociativeRelations ] ,
+#		[   a skosqc2spin:StructuralIssues-UnidirectionallyRelatedConcepts ] ,
+#		[   a skosqc2spin:StructuralIssues-UnidirectionallyRelatedConcepts-1 ] ,
+#		[   a skosqc2spin:StructuralIssues-UnidirectionallyRelatedConcepts-2 ] ,
+#		[   a skosqc2spin:LinkedDataSpecificIssues-UndefinedSKOSResources-1 ] ,
+#		[   a skosqc2spin:LinkedDataSpecificIssues-UndefinedSKOSResources-2 ] ,
+#		[   a skosqc2spin:LinkedDataSpecificIssues-UndefinedSKOSResources-3 ] ,
+#		[   a skosqc2spin:LinkedDataSpecificIssues-UndefinedSKOSResources-4 ] ,
+#		[   a skosqc2spin:LinkedDataSpecificIssues-HTTPURISchemeViolation ] ,
+#		[   a skosqc2spin:SKOSSemiFormalConsistencyIssues-InconsistentPreferredLabels ] .
+skos:Concept
+	spin:constraint 
+#	    [   a skosqc2spin:LabelingAndDocumentationIssues-OmittedOrInvalidLanguageTags ] ,
+#	    [   a skosqc2spin:LabelingAndDocumentationIssues-IncompleteLanguageCoverage-1 ] ,
+#	    [   a skosqc2spin:LabelingAndDocumentationIssues-IncompleteLanguageCoverage-2 ] ,
+#	    [   a skosqc2spin:LabelingAndDocumentationIssues-IncompleteLanguageCoverage-3 ] ,
+#		[   a skosqc2spin:LabelingAndDocumentationIssues-UndocumentedConcepts ] ,
+#		[   a skosqc2spin:LabelingAndDocumentationIssues-NoCommonLanguage ] ,
+#		[   a skosqc2spin:LabelingAndDocumentationIssues-OverlappingLabels ] ,
+#		[   a skosqc2spin:LabelingAndDocumentationIssues-MissingLabels ] ,
+		[   a skosqc2spin:LabelingAndDocumentationIssues-EmptyLabels ] ,
+		[   a skosqc2spin:LabelingAndDocumentationIssues-AmbiguousNotationReferences-New ] .
+#		[   a skosqc2spin:StructuralIssues-ValuelessAssociativeRelations ] ,
+#		[   a skosqc2spin:StructuralIssues-HierarchicalRedundancy-1 ] ,
+#		[   a skosqc2spin:StructuralIssues-HierarchicalRedundancy-2 ] ,
+#		[   a skosqc2spin:StructuralIssues-ReflexiveRelations ] ,
+#		[   a skosqc2spin:StructuralIssues-OrphanConcepts ] ,
+#		[   a skosqc2spin:StructuralIssues-CyclicHierarchicalRelations ] ,
+#		[   a skosqc2spin:StructuralIssues-SolelyTransitivelyRelatedConcepts ] ,
+#		[   a skosqc2spin:StructuralIssues-UnidirectionallyRelatedConcepts-1 ] ,
+#		[   a skosqc2spin:StructuralIssues-UnidirectionallyRelatedConcepts-2 ] ,
+#		[   a skosqc2spin:LinkedDataSpecificIssues-UndefinedSKOSResources-1 ] ,
+#		[   a skosqc2spin:LinkedDataSpecificIssues-UndefinedSKOSResources-2 ] ,
+#		[   a skosqc2spin:LinkedDataSpecificIssues-UndefinedSKOSResources-3 ] ,
+#		[   a skosqc2spin:LinkedDataSpecificIssues-UndefinedSKOSResources-4 ] ,
+#		[   a skosqc2spin:LinkedDataSpecificIssues-HTTPURISchemeViolation ] ,
+#		[   a skosqc2spin:SKOSSemiFormalConsistencyIssues-InconsistentPreferredLabels ] .
+#skos:ConceptScheme
+#	spin:constraint 
+#	    [   a skosqc2spin:LabelingAndDocumentationIssues-OmittedOrInvalidLanguageTags ] ,
+#		[   a skosqc2spin:LabelingAndDocumentationIssues-UndocumentedConcepts ] ,
+#		[   a skosqc2spin:LabelingAndDocumentationIssues-MissingLabels ] ,
+#		[   a skosqc2spin:LabelingAndDocumentationIssues-EmptyLabels ] ,
+#		[   a skosqc2spin:StructuralIssues-ValuelessAssociativeRelations ] ,
+#		[   a skosqc2spin:StructuralIssues-UnidirectionallyRelatedConcepts ] ,
+#		[   a skosqc2spin:StructuralIssues-UnidirectionallyRelatedConcepts-1 ] ,
+#		[   a skosqc2spin:StructuralIssues-UnidirectionallyRelatedConcepts-2 ] ,
+#		[   a skosqc2spin:StructuralIssues-OmittedTopConcepts ] , 
+#		[   a skosqc2spin:LinkedDataSpecificIssues-UndefinedSKOSResources-1 ] ,
+#		[   a skosqc2spin:LinkedDataSpecificIssues-UndefinedSKOSResources-2 ] ,
+#		[   a skosqc2spin:LinkedDataSpecificIssues-UndefinedSKOSResources-3 ] ,
+#		[   a skosqc2spin:LinkedDataSpecificIssues-UndefinedSKOSResources-4 ] ,
+#		[   a skosqc2spin:LinkedDataSpecificIssues-HTTPURISchemeViolation ] ,
+#		[   a skosqc2spin:SKOSSemiFormalConsistencyIssues-InconsistentPreferredLabels ] .
+#skos:OrderedCollection
+#	spin:constraint 
+#	    [   a skosqc2spin:LabelingAndDocumentationIssues-OmittedOrInvalidLanguageTags ] ,
+#		[   a skosqc2spin:LabelingAndDocumentationIssues-UndocumentedConcepts ] ,
+#		[   a skosqc2spin:LabelingAndDocumentationIssues-MissingLabels ] ,
+#		[   a skosqc2spin:LabelingAndDocumentationIssues-EmptyLabels ] ,
+#		[   a skosqc2spin:StructuralIssues-ValuelessAssociativeRelations ] ,
+#		[   a skosqc2spin:StructuralIssues-UnidirectionallyRelatedConcepts ] ,
+#		[   a skosqc2spin:StructuralIssues-UnidirectionallyRelatedConcepts-1 ] ,
+#		[   a skosqc2spin:StructuralIssues-UnidirectionallyRelatedConcepts-2 ] ,
+#		[   a skosqc2spin:LinkedDataSpecificIssues-UndefinedSKOSResources-1 ] ,
+#		[   a skosqc2spin:LinkedDataSpecificIssues-UndefinedSKOSResources-2 ] ,
+#		[   a skosqc2spin:LinkedDataSpecificIssues-UndefinedSKOSResources-3 ] ,
+#		[   a skosqc2spin:LinkedDataSpecificIssues-UndefinedSKOSResources-4 ] ,
+#		[   a skosqc2spin:LinkedDataSpecificIssues-HTTPURISchemeViolation ] ,
+#		[   a skosqc2spin:SKOSSemiFormalConsistencyIssues-InconsistentPreferredLabels ] .
+
+# Labeling and Documentation Issues - Omitted or Invalid Language Tags
+# ---------------------
+skosqc2spin:LabelingAndDocumentationIssues-OmittedOrInvalidLanguageTags
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "Labeling and Documentation Issues - Omitted or Invalid Language Tags" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX skosqc2spin: <http://constraints.org/skosqc2spin#>
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?this ;
+                    rdfs:label ?violationMessage ;
+                    spin:violationPath ?p .
+            }
+            WHERE {	  
+			    # constraint
+				# ----------
+
+						
+				# data
+				# ----
+				?this 
+				    a [rdfs:subClassOf* skos:Concept] ;
+				    ?p ?l . 
+				BIND ( ( LANG ( ?l ) ) AS ?language ) . 
+				
+				# validation
+				# ----------
+				FILTER ( ?language = "" ) . 
+
+#               violation message
+#               -----
+                BIND ( CONCAT( 
+                    \"Omitted or invalid language tags of text literals | The language tag of the text literal '\", 
+                    xsd:string( ?l ), 
+                    \"' is omitted.\") 
+                    AS ?violationMessage ) . 
+            }
+            """ ;
+    ] .
+    
+# Labeling and Documentation Issues - Incomplete Language Coverage
+# ---------------------
+skosqc2spin:LabelingAndDocumentationIssues-IncompleteLanguageCoverage-1
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "Labeling and Documentation Issues - Incomplete Language Coverage" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX skosqc2spin: <http://constraints.org/skosqc2spin#>
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?this ;
+                    rdfs:label ?violationMessage ;
+                    spin:violationPath ?p .
+            }
+            WHERE {	  	
+				# data
+				# ----
+				?this 
+				    a [rdfs:subClassOf* skos:Concept] ;
+				    ?p ?label1 .
+				FILTER ( ?p != rdf:type ) .
+				BIND ( ( LANG ( ?label1 ) ) AS ?language1 ) .
+				FILTER ( ?language1 = "en" ) .
+
+				# validation
+				# ----------
+				BIND ( skosqc2spin:cardinalityPropertyValuesOfSpecificLanguage( ?this, ?p, "en" ) AS ?en ) .
+				BIND ( skosqc2spin:cardinalityPropertyValuesOfSpecificLanguage( ?this, ?p, "de" ) AS ?de ) .
+				BIND ( skosqc2spin:cardinalityPropertyValuesOfSpecificLanguage( ?this, ?p, "fr" ) AS ?fr ) .
+				FILTER ( ?de = 0 || ?fr = 0 ) .
+
+                # testing
+                # -------
+#                BIND ( CONCAT( 
+#                    \"label1: \", 
+#                    xsd:string( ?label1 ), 
+#                    \" | language1: \", 
+#                    xsd:string( ?language1 ), 
+#                    \" | number english property values: \", 
+#                    xsd:string( ?en ), 
+#                    \" | number german property values: \", 
+#                    xsd:string( ?de ), 
+#                    \" | number french property values: \", 
+#                    xsd:string( ?fr ), 
+#                    \"\") 
+#                    AS ?violationMessage ) . 
+
+				# violation message
+                # -----------------
+                BIND ( CONCAT( 
+                    \"The languages en, de, fr should be covered by each property of each SKOS concept | \",
+                    \"The property '\",
+                    xsd:string( ?p ),
+                    \"' has \",
+                    xsd:string( ?en ),
+                    \" english value(s), \",
+                    xsd:string( ?de ),
+                    \" german value(s), and \",
+                    xsd:string( ?fr ),
+                    \" french value(s)\",
+                    \".\") 
+                    AS ?violationMessage ) . 
+            }
+            """ ;
+    ] .
+    
+skosqc2spin:LabelingAndDocumentationIssues-IncompleteLanguageCoverage-2
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "Labeling and Documentation Issues - Incomplete Language Coverage" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX skosqc2spin: <http://constraints.org/skosqc2spin#>
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?this ;
+                    rdfs:label ?violationMessage ;
+                    spin:violationPath ?p .
+            }
+            WHERE {	  	
+				# data
+				# ----
+				?this 
+				    a [rdfs:subClassOf* skos:Concept] ;
+				    ?p ?label1 .
+				FILTER ( ?p != rdf:type ) .
+				BIND ( ( LANG ( ?label1 ) ) AS ?language1 ) .
+				FILTER ( ?language1 = "de" ) . 
+				
+				# validation
+				# ----------
+				BIND ( skosqc2spin:cardinalityPropertyValuesOfSpecificLanguage( ?this, ?p, "en" ) AS ?en ) .
+				BIND ( skosqc2spin:cardinalityPropertyValuesOfSpecificLanguage( ?this, ?p, "de" ) AS ?de ) .
+				BIND ( skosqc2spin:cardinalityPropertyValuesOfSpecificLanguage( ?this, ?p, "fr" ) AS ?fr ) .
+				FILTER ( ?en = 0 || ?fr = 0 ) .
+
+                # violation message
+                # -----------------
+                BIND ( CONCAT( 
+                    \"The languages en, de, fr should be covered by each property of each SKOS concept | \",
+                    \"The property '\",
+                    xsd:string( ?p ),
+                    \"' has \",
+                    xsd:string( ?en ),
+                    \" english value(s), \",
+                    xsd:string( ?de ),
+                    \" german value(s), and \",
+                    xsd:string( ?fr ),
+                    \" french value(s)\",
+                    \".\") 
+                    AS ?violationMessage ) . 
+            }
+            """ ;
+    ] .
+    
+skosqc2spin:LabelingAndDocumentationIssues-IncompleteLanguageCoverage-3
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "Labeling and Documentation Issues - Incomplete Language Coverage" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX skosqc2spin: <http://constraints.org/skosqc2spin#>
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?this ;
+                    rdfs:label ?violationMessage ;
+                    spin:violationPath ?p .
+            }
+            WHERE {	  	
+				# data
+				# ----
+				?this 
+				    a [rdfs:subClassOf* skos:Concept] ;
+				    ?p ?label1 .
+				FILTER ( ?p != rdf:type ) .
+				BIND ( ( LANG ( ?label1 ) ) AS ?language1 ) .
+				FILTER ( ?language1 = "fr" ) . 
+				
+				# validation
+				# ----------
+				BIND ( skosqc2spin:cardinalityPropertyValuesOfSpecificLanguage( ?this, ?p, "en" ) AS ?en ) .
+				BIND ( skosqc2spin:cardinalityPropertyValuesOfSpecificLanguage( ?this, ?p, "de" ) AS ?de ) .
+				BIND ( skosqc2spin:cardinalityPropertyValuesOfSpecificLanguage( ?this, ?p, "fr" ) AS ?fr ) .
+				FILTER ( ?en = 0 || ?de = 0 ) .
+
+                # violation message
+                # -----------------
+                BIND ( CONCAT( 
+                    \"The languages en, de, fr should be covered by each property of each SKOS concept | \",
+                    \"The property '\",
+                    xsd:string( ?p ),
+                    \"' has \",
+                    xsd:string( ?en ),
+                    \" english value(s), \",
+                    xsd:string( ?de ),
+                    \" german value(s), and \",
+                    xsd:string( ?fr ),
+                    \" french value(s)\",
+                    \".\") 
+                    AS ?violationMessage ) . 
+            }
+            """ ;
+    ] .
+    
+# Labeling and Documentation Issues - No Common Language
+# ---------------------
+skosqc2spin:LabelingAndDocumentationIssues-NoCommonLanguage
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "Labeling and Documentation Issues - No Common Language" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX skosqc2spin: <http://constraints.org/skosqc2spin#>
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?this ;
+                    rdfs:label ?violationMessage .
+            }
+            WHERE {	  	
+				# data
+				# ----
+				?this 
+				    a [rdfs:subClassOf* skos:Concept] .
+
+				# validation
+				# ----------
+				# at least 1 literal in the same common language: en
+				BIND ( skosqc2spin:cardinalityPropertyValuesInCommonLanguage( ?this, "en" ) AS ?cardinalityCommonLanguage ) .
+				FILTER ( ?cardinalityCommonLanguage = 0 ) .
+
+				# violation message
+                # -----------------
+                BIND ( CONCAT( 
+                    \"Each SKOS concept must have at least 1 literal in the same common language (en) | \",
+                    \"The SKOS concept '\",
+                    xsd:string( ?this ),
+                    \"' has \",
+                    xsd:string( ?cardinalityCommonLanguage ),
+                    \" literals in the same common language (en).\",
+                    \"\") 
+                    AS ?violationMessage ) . 
+            }
+            """ ;
+    ] .
+
+# Labeling and Documentation Issues - Undocumented Concepts
+# ---------------------
+skosqc2spin:LabelingAndDocumentationIssues-UndocumentedConcepts
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "Labeling and Documentation Issues - Undocumented Concepts" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX skosqc2spin: <http://constraints.org/skosqc2spin#>
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?this ;
+                    rdfs:label ?violationMessage ;
+                    spin:violationPath skos:note ;
+                    spin:violationPath skos:changeNote ;
+                    spin:violationPath skos:definition ;
+                    spin:violationPath skos:editorialNote ;
+                    spin:violationPath skos:example ;
+                    spin:violationPath skos:historyNote ;
+                    spin:violationPath skos:scopeNote .
+            }
+            WHERE {	  
+			    # constraint
+				# ----------
+
+						
+				# data
+				# ----
+				?this a ?class .
+				?class rdfs:subClassOf* skos:Concept .
+				
+				# validation
+				# ----------
+				FILTER NOT EXISTS { 
+				    { { ?this skos:note ?x } UNION { ?this skos:changeNote ?x } . }
+				    UNION 
+				    { { ?this skos:definition ?x } UNION { ?this skos:editorialNote ?x } . }
+				    UNION 
+				    { { ?this skos:example ?x } UNION { ?this skos:historyNote ?x } . }
+				    UNION 
+				    { ?this skos:scopeNote ?x } .
+				}  
+
+                # violation message
+                # -----
+                BIND ( CONCAT( 
+                    \"The concept '\", 
+                    xsd:string( ?this ), 
+                    \"' does not use one of skos:note, skos:changeNote, skos:definition, skos:editorialNote, skos:example, skos:historyNote, or skos:scopeNote.\") 
+                    AS ?violationMessage ) . 
+            }
+            """ ;
+    ] .
+
+# Labeling and Documentation Issues - Overlapping Labels
+# ---------------------
+skosqc2spin:LabelingAndDocumentationIssues-OverlappingLabels
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "Labeling and Documentation Issues - Overlapping Labels" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX skosqc2spin: <http://constraints.org/skosqc2spin#>
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?this ;
+                    rdfs:label ?violationMessage ;
+                    spin:violationPath ?p .
+            }
+            WHERE {		
+				# data
+				# ----
+				?this 
+				    a [rdfs:subClassOf* skos:Concept] ;
+				    skos:inScheme ?conceptScheme ;
+				    ?p ?label1 .
+				BIND ( ( STR ( ?label1 ) ) AS ?l1 ) .
+				BIND ( ( LANG ( ?label1 ) ) AS ?lang1 ) .
+				?concept 
+				    a [rdfs:subClassOf* skos:Concept] ;
+				    skos:inScheme ?conceptScheme ;
+				    ?p ?label2 .
+				BIND ( ( STR ( ?label2 ) ) AS ?l2 ) .
+				BIND ( ( LANG ( ?label2 ) ) AS ?lang2 ) .
+				?conceptScheme
+				    a [rdfs:subClassOf* skos:ConceptScheme] .
+				    
+				# validation
+				# ----------
+				FILTER ( ?this != ?concept ) . 
+				FILTER ( ?l1 = ?l2 ) .
+				FILTER ( ?lang1 = ?lang2 ) . 
+
+                # violation message
+                # -----
+                BIND ( CONCAT( 
+                    \"The concept '\", 
+                    xsd:string( ?this ), 
+                    \"' and the concept '\",
+                    xsd:string( ?concept ), 
+                    \"', belonging to the same concept scheme '\",
+                    xsd:string( ?conceptScheme ), 
+                    \"', have the same preferred lexical label '\",
+                    xsd:string( ?l1 ), 
+                    \"' in the given language '\",
+                    xsd:string( ?lang1 ), 
+                    \"'. | Further explanation: Two concepts cannot have the same preferred lexical label in a given language when they belong to the same concept scheme. \",
+                    \"This could indicate missing disambiguation information and thus lead to problems in autocompletion application.\"
+                    ) AS ?violationMessage ) . 
+            }
+            """ ;
+    ] .
+    
+# Labeling and Documentation Issues - Missing Labels
+# ---------------------
+skosqc2spin:LabelingAndDocumentationIssues-MissingLabels
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "Labeling and Documentation Issues - Missing Labels" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX skosqc2spin: <http://constraints.org/skosqc2spin#>
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?this ;
+                    rdfs:label ?violationMessage ;
+                    spin:violationPath skos:prefLabel ;
+                    spin:violationPath skos:altLabel ;
+                    spin:violationPath rdfs:label ;
+                    spin:violationPath dcterms:title .
+            }
+            WHERE {	  	
+				# data
+				# ----
+				{ { ?this a [rdfs:subClassOf* skos:Concept] } UNION { ?this a [rdfs:subClassOf* skos:ConceptScheme] } . }
+			    UNION 
+			    { { ?this a [rdfs:subClassOf* skos:Collection] } UNION { ?this a [rdfs:subClassOf* skos:OrderedCollection] } . }
+   
+				# validation
+				# ----------
+				FILTER NOT EXISTS {
+			        { { ?this skos:prefLabel ?l } UNION { ?this skos:altLabel ?l } . }
+			        UNION 
+			        { { ?this rdfs:label ?l } UNION { ?this dcterms:title ?l } . }
+			    } 
+
+                # violation message
+                # -----
+                BIND ( CONCAT( 
+                    \"'\",
+                    xsd:string( ?this ), 
+                    \"' is not labeled.\",
+                    \" | Further explanation: SKOS classes ( Concept, ConceptScheme, Collection, OrderedCollection ) should be labeled ( with e.g. skos:prefLabel, skos:altLabel, rdfs:label, dcterms:title )\", 
+                    \", to make the vocabulary more convenient for humans to use.\"
+                    ) AS ?violationMessage ) . 
+            }
+            """ ;
+    ] .
+    
+# Labeling and Documentation Issues - Empty Labels
+# ---------------------
+skosqc2spin:LabelingAndDocumentationIssues-EmptyLabels
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "Labeling and Documentation Issues - Empty Labels" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX skosqc2spin: <http://constraints.org/skosqc2spin#>
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?this ;
+                    rdfs:label ?violationMessage ;
+                    spin:violationPath ?p .
+            }
+            WHERE {	  	
+				# data
+				# ----
+				?this ?p ?l .
+   
+				# validation
+				# ----------
+				FILTER( STR( ?l ) = "" ) 
+
+                # violation message
+                # -----
+                BIND ( CONCAT( 
+                    \"The property '\",  
+                    xsd:string( ?p ), 
+                    \"' points to an empty label.\",
+                    \" | Further explanation: Labels are needed to contain textual information to be useful.\"
+                    ) AS ?violationMessage ) . 
+            }
+            """ ;
+    ] .
+    
+# Labeling and Documentation Issues - Ambiguous Notation References
+# ---------------------
+skosqc2spin:LabelingAndDocumentationIssues-AmbiguousNotationReferences-New
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "Labeling and Documentation Issues - Ambiguous Notation References" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX skosqc2spin: <http://constraints.org/skosqc2spin#>
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?this ;
+                    rdfs:label ?violationMessage ;
+                    spin:violationPath skos:notation .
+            }
+            WHERE {	  	
+				# data
+				# ----
+				?this 
+				    #a [rdfs:subClassOf* skos:Concept] ;
+				    skos:inScheme ?conceptScheme ;
+				    skos:notation ?l .
+				#BIND ( ( STR ( ?literal1 ) ) AS ?l1 ) .
+				#BIND ( ( LANG ( ?literal1 ) ) AS ?lang1 ) .
+				
+				#FILTER EXISTS {
+					?concept 
+					    #a [rdfs:subClassOf* skos:Concept] ;
+					    skos:inScheme ?conceptScheme ;
+					    skos:notation ?l .
+					#BIND ( ( STR ( ?literal2 ) ) AS ?l2 ) .
+					#BIND ( ( LANG ( ?literal2 ) ) AS ?lang2 ) .
+					#?conceptScheme
+					#    a [rdfs:subClassOf* skos:ConceptScheme] .
+	            
+	                #FILTER ( ?this != ?concept ) . 
+					#FILTER ( ?l1 = ?l2 ) .
+					#FILTER ( ?lang1 = ?lang2 ) . 
+				#}
+				
+				
+				#?this
+				#    #a [rdfs:subClassOf* skos:Concept] ;
+				#    skos:notation ?literal1 ;
+				#    skos:inScheme ?conceptScheme .
+				#BIND ( ( STR ( ?literal ) ) AS ?l1 ) .
+				
+				#BIND ( skosqc2spin:cardinalityXXX( skos:notation, ?l, ?conceptScheme ) AS ?c ) .
+				# BIND ( ( STR ( ?this ) ) AS ?c ) .
+				#FILTER EXISTS {
+				#    ?concept 
+				#        skos:notation ?literal2 ;
+				#        skos:inScheme ?conceptScheme .
+				#    BIND ( ( STR ( ?literal2 ) ) AS ?l2 ) .
+				#    #FILTER ( ?this != ?concept ) .
+				#    #FILTER ( ?conceptScheme1 = ?conceptScheme2 ) .
+				#    #FILTER ( ?l1 = ?l2 ) .
+				#    # BIND ( ( STR ( ?concept ) ) AS ?c ) .
+				#}
+				#BIND ( ( STR ( ?concept ) ) AS ?c ) .
+				#BIND( ( IF( BOUND( ?this ), ?concept, ""^^xsd:string ) ) AS ?c ) .
+				#BIND ( ( STR ( ?concept ) ) AS ?c )
+				
+				#?subject
+				#    a [rdfs:subClassOf* skos:Concept] ;
+				#    skos:inScheme ?conceptScheme ;
+				#    skos:notation ?literal1 .
+				#BIND ( ( STR ( ?literal1 ) ) AS ?l1 ) .
+				#FILTER EXISTS {
+				#    ?concept 
+				#	    a [rdfs:subClassOf* skos:Concept] ;
+				#	    skos:inScheme ?conceptScheme ;
+				#	    skos:notation
+				#	#FILTER ( ?subject != ?concept ) . 
+				#	?conceptScheme
+				#        a [rdfs:subClassOf* skos:ConceptScheme] .
+				#}
+				
+				#    skos:notation ?literal2 .
+				#BIND ( ( STR ( ?literal2 ) ) AS ?l2 ) .
+				#?conceptScheme
+				#    a [rdfs:subClassOf* skos:ConceptScheme] .
+				    
+				# validation
+				# ----------
+				#FILTER ( ?this != ?concept ) . 
+				#FILTER ( ?l1 = ?l2 ) . 
+
+                # violation message
+                # -----
+                BIND ( CONCAT( 
+                    \"The concept '\",  
+                    xsd:string( ?this ), 
+                    \"' and the concept '\",
+                    xsd:string( ?concept ), 
+                    \"' with the same the concept scheme '\",
+                    xsd:string( ?conceptScheme ), 
+                    \"' have the identical skos:notation literal '\",
+                    xsd:string( ?l1 ), 
+                    \"'. | Further explanation: Concepts with the same concept scheme should not have identical skos:notation literals.\"
+                    ) AS ?violationMessage ) . 
+            }
+            """ ;
+    ] .
+    
+              
+
+
+    
+skosqc2spin:cardinalityPropertyValuesOfSpecificLanguage
+    rdf:type spin:Function ;
+    rdfs:subClassOf spin:Functions ;
+    rdfs:label "cardinality property value of specific language" ;
+    rdfs:comment "cardinality property value of specific language" ;
+    spin:constraint [
+        rdf:type spl:Argument ;
+        spl:predicate sp:arg1 ;
+        spl:valueType rdf:subject ;
+        rdfs:comment "subject" ; 
+    ] ;
+    spin:constraint [
+        rdf:type spl:Argument ;
+        spl:predicate sp:arg2 ;
+        spl:valueType rdf:Property ;
+        rdfs:comment "property" ; 
+    ] ;
+    spin:constraint [
+        rdf:type spl:Argument ;
+        spl:predicate sp:arg3 ;
+        spl:valueType xsd:string ;
+        rdfs:comment "language" ; 
+    ] ;
+    spin:body [
+        rdf:type sp:Select ;
+        sp:text """
+            SELECT ( COUNT ( ?arg1 ) AS ?cardinality)
+            WHERE {
+                ?arg1 ?arg2 ?literal1 .
+                BIND ( ( LANG ( ?literal1 ) ) AS ?language1 ) .
+                FILTER ( ?language1 = ?arg3 ) .
+            }
+        """ ;
+    ] ;
+    spin:returnType xsd:nonNegativeInteger .
+    
+skosqc2spin:cardinalityPropertyValuesInCommonLanguage
+    rdf:type spin:Function ;
+    rdfs:subClassOf spin:Functions ;
+    rdfs:label "cardinality property values in common language" ;
+    rdfs:comment "cardinality property values in common language" ;
+    spin:constraint [
+        rdf:type spl:Argument ;
+        spl:predicate sp:arg1 ;
+        spl:valueType rdf:subject ;
+        rdfs:comment "subject" ; 
+    ] ;
+    spin:constraint [
+        rdf:type spl:Argument ;
+        spl:predicate sp:arg2 ;
+        spl:valueType xsd:string ;
+        rdfs:comment "language" ; 
+    ] ;
+    spin:body [
+        rdf:type sp:Select ;
+        sp:text """
+            SELECT ( COUNT ( ?arg1 ) AS ?cardinality)
+            WHERE {
+                ?arg1 ?p ?literal .
+                FILTER ( ?p != rdf:type ) .
+                BIND ( ( LANG ( ?literal ) ) AS ?language ) .
+                FILTER ( ?language = ?arg2 ) .
+            }
+        """ ;
+    ] ;
+    spin:returnType xsd:nonNegativeInteger .
+    
+skosqc2spin:cardinalityXXX
+    rdf:type spin:Function ;
+    rdfs:subClassOf spin:Functions ;
+    rdfs:label "" ;
+    rdfs:comment "" ;
+    spin:constraint [
+        rdf:type spl:Argument ;
+        spl:predicate sp:arg2 ;
+        spl:valueType rdf:Property ;
+        rdfs:comment "property" ; 
+    ] ;
+    spin:constraint [
+        rdf:type spl:Argument ;
+        spl:predicate sp:arg2 ;
+        spl:valueType xsd:string ;
+        rdfs:comment "literal" ; 
+    ] ;
+    spin:constraint [
+        rdf:type spl:Argument ;
+        spl:predicate sp:arg3 ;
+        spl:valueType rdfs:Resource ;
+        rdfs:comment "concept scheme" ; 
+    ] ;
+    spin:body [
+        rdf:type sp:Select ;
+        sp:text """
+            SELECT ( COUNT ( ?subject ) AS ?cardinality)
+            WHERE {
+                ?subject 
+                    skos:inScheme ?arg3 ;
+                    ?arg2 ?arg2 .
+            }
+        """ ;
+    ] ;
+    spin:returnType xsd:nonNegativeInteger .

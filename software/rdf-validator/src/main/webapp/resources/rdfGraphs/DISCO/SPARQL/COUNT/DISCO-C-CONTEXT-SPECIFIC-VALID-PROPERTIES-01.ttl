@@ -1,0 +1,1 @@
+?subject disco:containsVariable ?o .

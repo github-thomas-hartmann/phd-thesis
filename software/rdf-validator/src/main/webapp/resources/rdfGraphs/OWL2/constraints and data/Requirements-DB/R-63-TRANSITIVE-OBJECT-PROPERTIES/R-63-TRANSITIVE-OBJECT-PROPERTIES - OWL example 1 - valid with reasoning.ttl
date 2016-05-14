@@ -1,0 +1,34 @@
+# constraints
+# -----
+:ancestorOf a owl:TransitiveProperty . 
+
+# valid data
+# -----
+:Carter
+    :ancestorOf :Lois .
+:Lois
+    :ancestorOf :Meg .
+	
+# inferred data
+# -----
+# :Carter
+#     :ancestorOf :Meg .
+
+
+# triples needed for validation
+# -----
+:Carter
+	a owl:Thing .
+:Lois
+	a owl:Thing . 
+:Meg
+	a owl:Thing . 
+	
+# triples needed for reasoning
+# -----
+:Carter
+	a owl2spin:ToInfer .
+:Lois
+	a owl2spin:ToInfer . 
+:Meg
+	a owl2spin:ToInfer . 

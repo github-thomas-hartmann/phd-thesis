@@ -1,0 +1,11 @@
+# DATA-CUBE-C-EXISTENTIAL-QUANTIFICATIONS-04: Slice Keys must be declared (IC-7)
+# -----
+# Every qb:SliceKey must be associated with (qb:sliceKey) a qb:DataStructureDefinition
+
+
+# invalid data
+# -----
+
+
+# valid data
+# -----

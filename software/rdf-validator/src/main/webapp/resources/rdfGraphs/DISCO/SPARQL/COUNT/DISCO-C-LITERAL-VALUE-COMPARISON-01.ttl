@@ -1,0 +1,4 @@
+?subject 
+    disco:startDate ?startDate ;
+    disco:endDate ?endDate .
+FILTER ( ?startDate > ?endDate ) . 

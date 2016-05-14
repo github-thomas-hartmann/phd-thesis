@@ -1,0 +1,15 @@
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lc@{}}
+           & \multicolumn{1}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-2}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{SKOS-C-LANGUAGE-TAG-CARDINALITY-04}}
+	\\ \midrule
+    \emph{http://linguistic.linkeddata.es/sparql} & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://linguistic.linkeddata.es/sparql}}
+    \label{tab:evaluation-linguistic.linkeddata.es-sparql}
+    \end{center}
+\end{table}

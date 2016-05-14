@@ -1,0 +1,41 @@
+# constraint
+# -----
+:descriptionTemplate 
+	a dsp:DescriptionTemplate ; 
+	dsp:resourceClass :Publication ; 
+	dsp:statementTemplate [
+		a dsp:NonLiteralStatementTemplate ;
+		dsp:minOccur "1"^^xsd:nonNegativeInteger ; 
+		dsp:maxOccur "infinity"^^xsd:string ; 
+		dsp:property :author ; 
+		dsp:nonLiteralConstraint [ 
+			a dsp:NonLiteralConstraint ;
+			dsp:valueClass :Person ] ] .
+        
+# valid data
+# ----- 
+:Alices-Adventures-In-Wonderland
+    a :Publication ;
+    :author :Lewis-Carroll .
+:Lewis-Carroll
+    a :Person .  
+        
+# invalid data
+# -----      
+:Huckleberry-Finn
+    a :Publication ;
+    :author :Mark-Twain .  
+    
+:The-Lord-Of-The-Rings
+    a :Publication .       
+
+        
+        
+        
+# triples needed for validation
+# -----
+:Alices-Adventures-In-Wonderland a owl:Thing .
+:Lewis-Carroll a owl:Thing .
+:Huckleberry-Finn a owl:Thing .
+:Mark-Twain a owl:Thing .
+:The-Lord-Of-The-Rings a owl:Thing .

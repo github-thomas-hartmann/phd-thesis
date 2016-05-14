@@ -1,0 +1,18 @@
+	?subject a disco:DataFile .
+	
+	OPTIONAL { ?subject dcterms:provenance ?provenance . }
+	FILTER ( ! BOUND( ?provenance ) ) .
+	
+	# violation message
+	# -----------------
+	BIND ( CONCAT( 
+		"DISCO-C-PROVENANCE-04" )
+		AS ?violationMessage ) . 
+	
+	# violation source
+	# ----------------
+	BIND ( CONCAT( "DISCO-C-PROVENANCE-04" )AS ?violationSource ) . 
+	
+	# severity level
+	# --------------
+	BIND ( ( 'INFO' ) AS ?severityLevel ) .

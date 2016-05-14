@@ -1,0 +1,4 @@
+?subject a disco:DataFile .
+
+OPTIONAL { ?subject disco:caseQuantity ?caseQuantity . }
+FILTER ( ! BOUND( ?caseQuantity ) ) .

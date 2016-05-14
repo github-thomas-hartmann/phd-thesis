@@ -1,0 +1,225 @@
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: 	  <http://www.w3.org/2002/07/owl#> . 
+@prefix foaf:     <http://xmlns.com/foaf/0.1/#> .
+@prefix spin:     <http://spinrdf.org/spin#> .
+@prefix sp: 	  <http://spinrdf.org/sp#> .
+@prefix spl:      <http://spinrdf.org/spl#> . 
+@prefix spinx:    <http://spinrdf.org/spinx#> . 
+@prefix kennedys: <http://topbraid.org/examples/kennedys#> .
+@prefix ex: 	  <http://www.example.org/ex#> .
+@prefix wine:     <http://www.example.org/wine#> .
+@prefix functions:<http://www.example.org/functions#> .
+@prefix templates:<http://www.example.org/templates#> .
+@prefix fn:       <http://www.w3.org/2005/xpath-functions#> .
+
+[]
+	a owl:Ontology ;
+	owl:imports <http://www.w3.org/2000/01/rdf-schema> ;
+    owl:imports <http://spinrdf.org/spin> ;
+    owl:imports <http://spinrdf.org/spl> ;
+	owl:imports <http://spinrdf.org/spinx> ;
+    owl:imports <http://topbraid.org/functions-smf> ;
+    owl:imports <http://topbraid.org/functions-afn> ;
+    owl:imports <http://topbraid.org/functions-fn> ;
+	owl:imports <http://www.w3.org/2005/xpath-functions> .
+
+functions:squareInline
+      a       spin:Function ;
+      rdfs:label "square inline"^^xsd:string ;
+      rdfs:subClassOf spin:Functions ;
+      spin:constraint
+              [ a       spl:Argument ;
+                rdfs:comment "The value to compute the square of"^^xsd:string ;
+                spl:predicate sp:arg1 ;
+                spl:valueType xsd:string
+              ] ;
+      spin:returnType xsd:string ;
+      spinx:javaScriptCode
+              "return arg1;"^^xsd:string .
+
+# ---------------
+# qualified cardinality ( object properties )
+# -----
+
+#	SELECT ( COUNT ( ?this ) AS ?cardinality )
+#	WHERE {
+#       ?this ?arg1 ?object .
+#		?object rdf:type ?arg2 . }		
+functions:qualifiedCardinalityObjectProperties
+    a spin:Function ;
+    rdfs:subClassOf spin:Functions ;
+    rdfs:comment "qualified cardinality" ;
+    rdfs:label "qualified cardinality" ;
+    spin:constraint
+        [   a spl:Argument ;
+            rdfs:comment "OPE" ;
+            spl:predicate sp:arg1 ] ;
+	spin:constraint
+		[   a spl:Argument ;
+            rdfs:comment "CE" ;
+            spl:predicate sp:arg2 ] ;
+    spin:body [ 
+    	a sp:Select ;
+            sp:resultVariables ( 
+			    [   sp:expression [ 
+				    a sp:Count ;
+                    sp:expression [ sp:varName "this" ] ] ;
+                    sp:varName "cardinality" ] ) ;
+        sp:where ( 
+		    [   sp:subject [ sp:varName "this" ] ;
+                sp:predicate [ sp:varName "arg1" ] ;
+                sp:object [ sp:varName "object" ] ] 
+			[   sp:subject [ sp:varName "object" ] ;
+                sp:predicate rdf:type ;
+                sp:object [ sp:varName "arg2" ] ] ) ] .
+				
+# -----
+
+# ---------------
+# qualified cardinality ( data properties )
+# -----
+
+#	SELECT ( COUNT ( ?this ) AS ?cardinality )
+#	WHERE {
+#       ?this ?arg1 ?object .
+#       BIND ( ( IF( ?arg2 = rdfs:Literal, xsd:string, ?arg2 ) ) AS ?DR ) .	--> as sp:datatype ( ?object ) = xsd:string if datatype is rdfs:Literal
+#       BIND ( ( sp:datatype ( ?object ) ) AS ?datatype ) . }
+#       FILTER ( ?datatype = ?DR ) . }		
+functions:qualifiedCardinalityDataProperties
+    a spin:Function ;
+    rdfs:subClassOf spin:Functions ;
+    rdfs:comment "qualified cardinality" ;
+    rdfs:label "qualified cardinality" ;
+    spin:constraint
+        [   a spl:Argument ;
+            rdfs:comment "DPE" ;
+            spl:predicate sp:arg1 ] ;
+	spin:constraint
+		[   a spl:Argument ;
+            rdfs:comment "DR" ;
+            spl:predicate sp:arg2 ] ;
+    spin:body [ 
+    	a sp:Select ;
+            sp:resultVariables ( 
+			    [   sp:expression [ 
+				    a sp:Count ;
+                    sp:expression [ sp:varName "this" ] ] ;
+                    sp:varName "cardinality" ] ) ;
+        sp:where ( 
+		    [   sp:subject [ sp:varName "this" ] ;
+                sp:predicate [ sp:varName "arg1" ] ;
+                sp:object [ sp:varName "object" ] ] 		
+			[   a sp:Bind ;
+                sp:expression [ 
+				    a sp:if ;
+                    sp:arg1  
+					    [   a sp:eq ;
+                            sp:arg1 [ sp:varName "arg2" ] ;
+                            sp:arg2 rdfs:Literal ] ;
+                    sp:arg2 xsd:string ;
+                    sp:arg3 [ sp:varName "arg2" ] ] ;
+                    sp:variable [ sp:varName "DR" ] ] 
+			[   a sp:Bind;
+				sp:variable [ sp:varName "datatype" ];
+				sp:expression [
+					a sp:datatype;
+					sp:arg1 [ sp:varName "object" ] ] ] 
+			[   a sp:Filter;
+				sp:expression [ 
+					a sp:eq;
+				    sp:arg1 [ sp:varName "datatype" ];
+					sp:arg2 [ sp:varName "DR" ] ] ]	) ] .
+				
+# -----
+			  
+functions:maxCardinalityLabel
+      a       spin:Function ;
+      rdfs:subClassOf 	spin:Functions ;
+      rdfs:comment "Gets the number of values of a given property at the current subject (?this)." ;
+      rdfs:label "cardinality"^^xsd:string ;
+      spin:constraint
+              [ a       spl:Argument ;
+                rdfs:comment "max" ;
+                spl:predicate sp:arg1
+              ] ;
+	  spin:constraint
+              [ a       spl:Argument ;
+                rdfs:comment "property" ;
+                spl:predicate sp:arg2
+              ] ;
+#      spin:body
+ #             [ a       sp:Select ;
+#                sp:text """
+#                    SELECT (fn:concat(?arg1,?arg2) AS ?result)
+#                    WHERE {
+#                        ?this ?arg2 ?object .
+#						#?x ?p ?y .
+#						FILTER ( fn:concat(?arg1, ?arg2) ) .
+#                   }"""
+#              ] .
+    spin:body [ 
+		a sp:Select ;
+        sp:resultVariables ( [ 
+			sp:expression [ 
+				a fn:concat ;
+                sp:arg1 [ sp:varName "arg1"^^xsd:string ] ;
+                sp:arg2  [ sp:varName "arg2"^^xsd:string ] ] ;
+            sp:varName "result"^^xsd:string ] ) ;
+		sp:where (
+			[   a sp:Filter ;
+                sp:expression [
+					a fn:concat ;
+                    sp:arg1  [ sp:varName "arg1"^^xsd:string ] ;
+                    sp:arg2  [ sp:varName "arg2"^^xsd:string ] ] ] ) ] .
+			  
+functions:concat
+      a       spin:Function ;
+      rdfs:subClassOf 	spin:Functions ;
+      rdfs:comment "" ;
+      rdfs:label ""^^xsd:string ;
+      spin:constraint
+              [ a       spl:Argument ;
+                rdfs:comment "" ;
+                spl:predicate sp:arg1
+              ] ;
+	  spin:constraint
+              [ a       spl:Argument ;
+                rdfs:comment "" ;
+                spl:predicate sp:arg2
+              ] ;
+      spin:body
+              [ a       sp:Construct ;
+                #sp:text """
+                #    CONSTRUCT {fn:concat(?arg1, ?arg2) AS ?result}
+				#	WHERE {
+				#		fn:concat(?arg1, ?arg2) .
+				#	}"""
+              ] .
+
+functions:maxCardinalityLabel
+      a       spin:Function ;
+      rdfs:subClassOf 	spin:Functions ;
+      rdfs:comment "Gets the number of values of a given property at the current subject (?this)." ;
+      rdfs:label "cardinality"^^xsd:string ;
+      spin:constraint
+              [ a       spl:Argument ;
+                rdfs:comment "max" ;
+                spl:predicate sp:arg1
+              ] ;
+	  spin:constraint
+              [ a       spl:Argument ;
+                rdfs:comment "property" ;
+                spl:predicate sp:arg2
+              ] ;
+#      spin:body
+ #             [ a       sp:Select ;
+#                sp:text """
+#                    SELECT (fn:concat(?arg1,?arg2) AS ?result)
+#                    WHERE {
+#                        ?this ?arg2 ?object .
+#						#?x ?p ?y .
+#						FILTER ( fn:concat(?arg1, ?arg2) ) .
+#                   }"""
+#              ] .

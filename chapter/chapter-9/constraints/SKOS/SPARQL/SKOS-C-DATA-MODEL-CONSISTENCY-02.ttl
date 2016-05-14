@@ -1,0 +1,4 @@
+# SKOS-C-DATA-MODEL-CONSISTENCY-02
+# -----
+# Labeling and Documentation Issues - Mapping Clashes: 
+# Covers condition S46 from the SKOS reference document, that has not been defined formally.

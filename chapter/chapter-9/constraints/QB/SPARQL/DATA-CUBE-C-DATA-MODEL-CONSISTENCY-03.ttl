@@ -1,0 +1,17 @@
+    ?subject qb:sliceStructure [qb:componentProperty ?dim] .
+  	FILTER NOT EXISTS { ?subject ?dim [] . }
+	
+	# violation message
+	# -----------------
+	BIND ( CONCAT( 
+		"DATA-CUBE-C-DATA-MODEL-CONSISTENCY-03 | ",
+		"Every qb:Slice must have a value for every dimension declared in its qb:sliceStructure." )
+		AS ?violationMessage ) .  
+		
+	# violation source
+	# ----------------
+	BIND ( CONCAT( "DATA-CUBE-C-DATA-MODEL-CONSISTENCY-03" )AS ?violationSource ) .
+	
+	# severity level
+	# --------------
+	BIND ( ( 'ERROR' ) AS ?severityLevel ) .

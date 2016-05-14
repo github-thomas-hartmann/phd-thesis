@@ -1,0 +1,106 @@
+# SKOS-C-STRUCTURE-06
+# -----
+# Structural Issues - Unidirectionally Related Concepts:
+# Reciprocal relations (skos:broader/skos:narrower, skos:hasTopConcept/skos:topConceptOf, 
+# skos:narrowerTransitive/skos:broaderTransitive, skos:narrowMatch/skos:broadMatch )
+# should be included in the controlled vocabularies to achieve better search
+# results using SPARQL in systems without reasoner support.
+# Implementation: This issue is checked without inference of owl:inverseOf
+# properties. We iterate over all triples and check for each property if an
+# inverse property is defined in the SKOS ontology and if the respective
+# statement using this property is included in the vocabulary. If not, the
+# resources associated with this property are returned.
+
+:SubSubConcept 
+    a owl:Class ;
+    rdfs:subClassOf :SubConcept .
+:SubConcept 
+    a owl:Class ;
+    rdfs:subClassOf skos:Concept .
+
+# invalid data
+# -----
+:unidirectionally-related-concepts-c1
+    a :SubSubConcept ;
+    skos:definition "definition"@en , "definition"@de, "definition"@fr ;
+    skos:broader :unidirectionally-related-concepts-c2 .
+:unidirectionally-related-concepts-c2
+    a :SubSubConcept ;
+    skos:definition "definition"@en , "definition"@de, "definition"@fr .
+    
+:unidirectionally-related-concepts-c8
+    a :SubSubConcept ;
+    skos:definition "definition"@en , "definition"@de, "definition"@fr ;
+    skos:hasTopConcept :unidirectionally-related-concepts-c9 .
+:unidirectionally-related-concepts-c9
+    a :SubSubConcept ;
+    skos:definition "definition"@en , "definition"@de, "definition"@fr .
+    
+:unidirectionally-related-concepts-c10
+    a :SubSubConcept ;
+    skos:definition "definition"@en , "definition"@de, "definition"@fr ;
+    skos:narrowerTransitive :unidirectionally-related-concepts-c11 .
+:unidirectionally-related-concepts-c11
+    a :SubSubConcept ;
+    skos:definition "definition"@en , "definition"@de, "definition"@fr .
+    
+:unidirectionally-related-concepts-c12
+    a :SubSubConcept ;
+    skos:definition "definition"@en , "definition"@de, "definition"@fr ;
+    skos:narrowMatch :unidirectionally-related-concepts-c13 .
+:unidirectionally-related-concepts-c13
+    a :SubSubConcept ;
+    skos:definition "definition"@en , "definition"@de, "definition"@fr .
+    
+:unidirectionally-related-concepts-c14
+    a :SubSubConcept ;
+    skos:definition "definition"@en , "definition"@de, "definition"@fr ;
+    skos:narrower :unidirectionally-related-concepts-c15 .
+:unidirectionally-related-concepts-c15
+    a :SubSubConcept ;
+    skos:definition "definition"@en , "definition"@de, "definition"@fr .
+    
+:unidirectionally-related-concepts-c16
+    a :SubSubConcept ;
+    skos:definition "definition"@en , "definition"@de, "definition"@fr ;
+    skos:topConceptOf :unidirectionally-related-concepts-c17 .
+:unidirectionally-related-concepts-c17
+    a :SubSubConcept ;
+    skos:definition "definition"@en , "definition"@de, "definition"@fr .
+    
+:unidirectionally-related-concepts-c18
+    a :SubSubConcept ;
+    skos:definition "definition"@en , "definition"@de, "definition"@fr ;
+    skos:broaderTransitive :unidirectionally-related-concepts-c19 .
+:unidirectionally-related-concepts-c19
+    a :SubSubConcept ;
+    skos:definition "definition"@en , "definition"@de, "definition"@fr .
+    
+:unidirectionally-related-concepts-c20
+    a :SubSubConcept ;
+    skos:definition "definition"@en , "definition"@de, "definition"@fr ;
+    skos:broadMatch :unidirectionally-related-concepts-c21 .
+:unidirectionally-related-concepts-c21
+    a :SubSubConcept ;
+    skos:definition "definition"@en , "definition"@de, "definition"@fr .
+
+# valid data
+# -----
+:unidirectionally-related-concepts-c4
+    a :SubSubConcept ;
+    skos:definition "definition"@en , "definition"@de, "definition"@fr ;
+    skos:broader :unidirectionally-related-concepts-c5 .
+:unidirectionally-related-concepts-c5
+    a :SubSubConcept ;
+    skos:definition "definition"@en , "definition"@de, "definition"@fr ;
+    skos:broader :unidirectionally-related-concepts-c6 ;
+    skos:narrower :unidirectionally-related-concepts-c4 .
+:unidirectionally-related-concepts-c6
+    a :SubSubConcept ;
+    skos:definition "definition"@en , "definition"@de, "definition"@fr ;
+    skos:broader :unidirectionally-related-concepts-c7 ;
+    skos:narrower :unidirectionally-related-concepts-c5 .
+:unidirectionally-related-concepts-c7
+    a :SubSubConcept ;
+    skos:definition "definition"@en , "definition"@de, "definition"@fr ;
+    skos:narrower :unidirectionally-related-concepts-c6 .  

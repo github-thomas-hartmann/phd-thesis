@@ -1,0 +1,20 @@
+# constraints
+# -----
+:Organization 
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty :name ] .
+
+# invalid data
+# -----
+:dcmi 
+    a :Organization .
+    
+    
+    
+
+    
+# triples needed for validation
+# -----
+:dcmi rdf:type owl:Thing , owl2spin:ToInfer .

@@ -1,0 +1,11 @@
+# DATA-CUBE-C-EXISTENTIAL-QUANTIFICATIONS-02: Concept dimensions have code lists (IC-5)
+# -----
+# Every dimension with range skos:Concept must have a qb:codeList.
+
+
+# invalid data
+# -----
+
+
+# valid data
+# -----

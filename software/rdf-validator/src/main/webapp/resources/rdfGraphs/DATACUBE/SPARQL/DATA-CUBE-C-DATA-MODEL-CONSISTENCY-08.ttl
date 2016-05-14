@@ -1,0 +1,24 @@
+#	?subject qb:dataSet/qb:structure ?dsd ;
+	?subject qb:dataSet ?dataSet .
+	?dataSet qb:structure ?dsd ;
+    ?subject qb:measureType ?measure .
+#   ?dsd qb:component/qb:componentProperty qb:measureType .
+    ?dsd qb:component ?component .
+    ?component qb:componentProperty qb:measureType .
+    FILTER NOT EXISTS { ?subject ?measure [] . }
+	
+	# violation message
+	# -----------------
+	BIND ( CONCAT( 
+		"DATA-CUBE-C-DATA-MODEL-CONSISTENCY-08 | ",
+		"Measure dimension consistent: ",
+		"In a qb:DataSet which uses a Measure dimension then each qb:Observation must have a value for the measure corresponding to its given qb:measureType." )
+		AS ?violationMessage ) .  
+		
+	# violation source
+	# ----------------
+	BIND ( CONCAT( "DATA-CUBE-C-DATA-MODEL-CONSISTENCY-08" )AS ?violationSource ) .
+	
+	# severity level
+	# --------------
+	BIND ( ( 'ERROR' ) AS ?severityLevel ) .

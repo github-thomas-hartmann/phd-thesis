@@ -1,0 +1,23 @@
+#   ?subject qb:dataSet/qb:structure/qb:component/qb:componentProperty ?dim .
+	?subject qb:dataSet ?dataSet .
+    ?dataSet qb:structure ?structure .
+    ?structure qb:component ?component .
+    ?component qb:componentProperty ?dim .
+    ?dim a qb:DimensionProperty .
+    FILTER NOT EXISTS { ?subject ?dim [] . }
+	
+	# violation message
+	# -----------------
+	BIND ( CONCAT( 
+		"DATA-CUBE-C-DATA-MODEL-CONSISTENCY-04 | ",
+		"All dimensions required: ",
+		"Every qb:Observation has a value for each dimension declared in its associated qb:DataStructureDefinition. " )
+		AS ?violationMessage ) .  
+		
+	# violation source
+	# ----------------
+	BIND ( CONCAT( "DATA-CUBE-C-DATA-MODEL-CONSISTENCY-04" )AS ?violationSource ) .
+	
+	# severity level
+	# --------------
+	BIND ( ( 'ERROR' ) AS ?severityLevel ) .

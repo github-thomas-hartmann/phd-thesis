@@ -1,0 +1,19 @@
+# Property Ranges
+# -----
+
+
+# valid data
+# -----
+:conceptScheme
+    a skos:ConceptScheme ;
+    skos:hasTopConcept :concept .
+:concept
+    a skos:Concept .
+        
+# invalid data
+# -----
+:conceptScheme_2
+    a skos:ConceptScheme ;
+    skos:hasTopConcept :concept_2 .
+:concept_2
+    a skos:ConceptScheme .

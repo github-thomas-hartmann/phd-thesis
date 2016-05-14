@@ -1,0 +1,15 @@
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lc@{}}
+           & \multicolumn{1}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-2}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{SKOS-C-LANGUAGE-TAG-CARDINALITY-04}}
+	\\ \midrule
+    \emph{https://open-data.europa.eu/sparqlep} & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{https://open-data.europa.eu/sparqlep}}
+    \label{tab:evaluation-https---open-data.europa.eu-sparqlep}
+    \end{center}
+\end{table}

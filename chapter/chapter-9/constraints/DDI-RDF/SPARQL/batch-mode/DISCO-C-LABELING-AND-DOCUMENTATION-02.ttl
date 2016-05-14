@@ -1,0 +1,4 @@
+?subject a disco:Study .
+
+OPTIONAL { ?subject dcterms:description ?description . }
+FILTER ( ! BOUND( ?description ) ) .

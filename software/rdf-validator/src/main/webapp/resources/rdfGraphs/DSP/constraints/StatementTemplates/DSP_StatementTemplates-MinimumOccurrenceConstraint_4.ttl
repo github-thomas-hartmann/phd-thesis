@@ -1,0 +1,22 @@
+# ---------------
+# Statement Templates - Minimum occurrence constraint
+
+
+	# Allowed values non-negative integer
+	# -----
+	:bookDescriptionTemplate 
+		a dsp:DescriptionTemplate ;
+		dsp:standalone "true"^^xsd:boolean ; 
+		dsp:minOccur "1"^^xsd:nonNegativeInteger ; 
+		dsp:maxOccur "infinity"^^xsd:nonNegativeInteger ; 
+		dsp:resourceClass swrc:Book ; 
+		dsp:statementTemplate [
+			a dsp:NonLiteralStatementTemplate ;
+			dsp:minOccur "1" ; # --> constraint violation 
+			dsp:maxOccur "5"^^xsd:nonNegativeInteger ; 
+			dsp:property dcterms:subject ; 
+			dsp:nonLiteralConstraint [ 
+				a dsp:NonLiteralConstraint ;
+				dsp:valueClass skos:Concept ] ] .
+	
+# -----

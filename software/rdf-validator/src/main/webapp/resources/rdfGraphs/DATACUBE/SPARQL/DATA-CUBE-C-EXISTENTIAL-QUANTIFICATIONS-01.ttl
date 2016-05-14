@@ -1,0 +1,16 @@
+	?subject a qb:DimensionProperty .
+	FILTER NOT EXISTS { ?subject rdfs:range [] . }
+
+	# violation message
+	# -----------------
+	BIND ( CONCAT( 
+		"DATA-CUBE-C-EXISTENTIAL-QUANTIFICATIONS-01" )
+		AS ?violationMessage ) . 
+	
+	# violation source
+	# ----------------
+	BIND ( CONCAT( "DATA-CUBE-C-EXISTENTIAL-QUANTIFICATIONS-01" )AS ?violationSource ) . 
+	
+	# severity level
+	# --------------
+	BIND ( ( 'ERROR' ) AS ?severityLevel ) .

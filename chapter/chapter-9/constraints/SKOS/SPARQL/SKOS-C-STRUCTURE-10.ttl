@@ -1,0 +1,31 @@
+# SKOS-C-STRUCTURE-10
+# -----
+# Structural Issues - Reflexive Relations:
+# Concepts related to themselves.
+
+  	
+	# data
+	# ----
+	?subject a [rdfs:subClassOf* skos:Concept] .
+		
+	# validation
+	# ----------
+	?subject ?p ?subject .
+
+	# violation message
+	# -----
+	BIND ( CONCAT( 
+		"Reflexive concepts are not allowed. | The concept '", 
+		xsd:string( ?subject ), 
+		"' is related to itself via the property '",
+		xsd:string( ?p ),
+		"'.") 
+		AS ?violationMessage ) . 
+	
+	# violation source
+	# ----------------
+	BIND ( CONCAT( "SKOS-C-STRUCTURE-10" )AS ?violationSource ) .
+	
+	# severity level
+	# --------------
+	BIND ( ( 'WARNING' ) AS ?severityLevel ) .	

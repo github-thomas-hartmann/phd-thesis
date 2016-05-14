@@ -1,0 +1,1814 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>	
+
+<!DOCTYPE rdf:RDF [
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+	<!ENTITY XMLSchemaMetamodelOntology "http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#" >
+]>
+	
+<rdf:RDF 
+     xmlns="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#"
+	 xml:base="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl"
+	 xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	 xmlns:owl="http://www.w3.org/2002/07/owl#"
+	 xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	 xmlns:XSDMetamodelOntology="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#">
+	
+	<owl:Ontology rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl">
+		<owl:versionIRI rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1:1.0.0.owl"/>
+		<owl:imports rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology:1.0.0.owl"/>
+	</owl:Ontology>
+	
+	
+	<!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Schema"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#elementFormDefault_Schema_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">qualified</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#targetNamespace_Schema_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">ddi:physicaldataproduct_proprietary:3_1</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Schema_Import"/>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Import1-Import_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Import2-Import_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Import3-Import_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+						</owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Schema_ComplexType"/>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DataItemAddressType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DataItemType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+						</owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Schema_Element"/>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#ProprietaryRecordLayout-Element_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DataItemAddress-Element_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DefaultNumericDataType-Element_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DefaultTextDataType-Element_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DefaultDateTimeDataType-Element_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#CodedDataAsNumeric-Element_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#CodedDataAsText-Element_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#VariableReference-Element_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DefaultVariableSchemeReference-Element_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#ProprietaryDataType-Element_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#ProprietaryOutputFormat-Element_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DataItem-Element_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+						</owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Import1-Import_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Import1-Import_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Import"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#namespace_Import_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">http://www.w3.org/XML/1998/namespace</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#schemaLocation_Import_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">xml.xsd</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Import2-Import_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Import2-Import_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Import"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#namespace_Import_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">ddi:reusable:3_1</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#schemaLocation_Import_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">reusable.xsd</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Import3-Import_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Import3-Import_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Import"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#namespace_Import_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">ddi:physicaldataproduct:3_1</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#schemaLocation_Import_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">physicaldataproduct.xsd</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ComplexType"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#name_ComplexType_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">ProprietaryRecordLayoutType</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_ComplexType_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_ComplexType_ComplexContent"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">A record layout for data in proprietary system files.</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ComplexContent"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_ComplexContent_Extension"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Extension"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#base_Extension_Type"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct:3_1.owl#BaseRecordLayoutType-Type_ddi:physicaldataproduct:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Extension_Sequence"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Sequence"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#sequence"/>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#CharacterSet-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#ArrayBase-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Software-Element-Reference3-ddi:reusable:3_1_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DataItemAddress-Element-Reference4_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DefaultNumericDataType-Element-Reference5_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DefaultTextDataType-Element-Reference6_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DefaultDateTimeDataType-Element-Reference7_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Choice8-Choice_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DefaultVariableSchemeReference-Element-Reference9_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#ProprietaryInfo-Element-Reference10-ddi:reusable:3_1_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DataItem-Element-Reference11_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+						</owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Sequence_Element"/>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#CharacterSet-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#ArrayBase-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Software-Element-Reference3-ddi:reusable:3_1_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DataItemAddress-Element-Reference4_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DefaultNumericDataType-Element-Reference5_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DefaultTextDataType-Element-Reference6_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DefaultDateTimeDataType-Element-Reference7_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DefaultVariableSchemeReference-Element-Reference9_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#ProprietaryInfo-Element-Reference10-ddi:reusable:3_1_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DataItem-Element-Reference11_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+						</owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Sequence_Choice"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Choice8-Choice_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#CharacterSet-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#CharacterSet-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#minOccurs_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">0</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#name_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">CharacterSet</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#type_Element_Type"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:reusable:3_1.owl#CodeValueType-Type_ddi:reusable:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Element_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_CharacterSet-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_CharacterSet-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_CharacterSet-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_CharacterSet-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_CharacterSet-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_CharacterSet-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Character set used in the data file (e.g., US ASCII, EBCDIC, UTF-8). This is a required field. If the character set is not known, for example for some proprietary data files, enter "unspecified".</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#ArrayBase-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#ArrayBase-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#minOccurs_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">0</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#name_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">ArrayBase</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#type_Element_Type"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/2001/XMLSchema.owl#integer-Type_http://www.w3.org/2001/XMLSchema-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Element_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_ArrayBase-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_ArrayBase-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_ArrayBase-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_ArrayBase-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_ArrayBase-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_ArrayBase-Element_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Sets the array base for any arrays used in the definition (that is, whether the first value is in position 0 or 1, etc.). This may be the data array in a delimited data file or the measure array for measures that are bundled and stored in a single location. Array base is generally set to either 0 or 1. There is no override provided as systems processing a record would use a consistent array base.</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Software-Element-Reference3-ddi:reusable:3_1_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Software-Element-Reference3-ddi:reusable:3_1_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ref_Element_Element"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:reusable:3_1.owl#Software-Element_ddi:reusable:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Element_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_Software-Element-Reference3-ddi:reusable:3_1_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_Software-Element-Reference3-ddi:reusable:3_1_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_Software-Element-Reference3-ddi:reusable:3_1_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_Software-Element-Reference3-ddi:reusable:3_1_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_Software-Element-Reference3-ddi:reusable:3_1_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_Software-Element-Reference3-ddi:reusable:3_1_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Software used by this record layout.</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DataItemAddress-Element-Reference4_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DataItemAddress-Element-Reference4_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#minOccurs_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">0</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ref_Element_Element"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DataItemAddress-Element_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Element_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_DataItemAddress-Element-Reference4_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_DataItemAddress-Element-Reference4_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_DataItemAddress-Element-Reference4_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_DataItemAddress-Element-Reference4_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_DataItemAddress-Element-Reference4_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_DataItemAddress-Element-Reference4_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Provides minimum information on data item address system, such as variable ID or Name, etc.</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DefaultNumericDataType-Element-Reference5_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DefaultNumericDataType-Element-Reference5_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#minOccurs_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">0</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ref_Element_Element"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DefaultNumericDataType-Element_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Element_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_DefaultNumericDataType-Element-Reference5_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_DefaultNumericDataType-Element-Reference5_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_DefaultNumericDataType-Element-Reference5_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_DefaultNumericDataType-Element-Reference5_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_DefaultNumericDataType-Element-Reference5_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_DefaultNumericDataType-Element-Reference5_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Declares the most common data type used for numeric data.</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DefaultTextDataType-Element-Reference6_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DefaultTextDataType-Element-Reference6_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#minOccurs_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">0</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ref_Element_Element"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DefaultTextDataType-Element_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Element_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_DefaultTextDataType-Element-Reference6_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_DefaultTextDataType-Element-Reference6_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_DefaultTextDataType-Element-Reference6_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_DefaultTextDataType-Element-Reference6_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_DefaultTextDataType-Element-Reference6_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_DefaultTextDataType-Element-Reference6_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Declares the most common data type used for textual data.</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DefaultDateTimeDataType-Element-Reference7_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DefaultDateTimeDataType-Element-Reference7_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#minOccurs_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">0</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ref_Element_Element"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DefaultDateTimeDataType-Element_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Element_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_DefaultDateTimeDataType-Element-Reference7_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_DefaultDateTimeDataType-Element-Reference7_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_DefaultDateTimeDataType-Element-Reference7_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_DefaultDateTimeDataType-Element-Reference7_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_DefaultDateTimeDataType-Element-Reference7_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_DefaultDateTimeDataType-Element-Reference7_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Declares the most common data type used for date-time data.</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DefaultVariableSchemeReference-Element-Reference9_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DefaultVariableSchemeReference-Element-Reference9_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ref_Element_Element"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DefaultVariableSchemeReference-Element_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Element_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_DefaultVariableSchemeReference-Element-Reference9_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_DefaultVariableSchemeReference-Element-Reference9_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_DefaultVariableSchemeReference-Element-Reference9_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_DefaultVariableSchemeReference-Element-Reference9_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_DefaultVariableSchemeReference-Element-Reference9_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_DefaultVariableSchemeReference-Element-Reference9_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">References the VariableScheme of the variables in the record. Can be overridden at the level of the DataItem.</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#ProprietaryInfo-Element-Reference10-ddi:reusable:3_1_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#ProprietaryInfo-Element-Reference10-ddi:reusable:3_1_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#minOccurs_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">0</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ref_Element_Element"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:reusable:3_1.owl#ProprietaryInfo-Element_ddi:reusable:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Element_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_ProprietaryInfo-Element-Reference10-ddi:reusable:3_1_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_ProprietaryInfo-Element-Reference10-ddi:reusable:3_1_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_ProprietaryInfo-Element-Reference10-ddi:reusable:3_1_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_ProprietaryInfo-Element-Reference10-ddi:reusable:3_1_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_ProprietaryInfo-Element-Reference10-ddi:reusable:3_1_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_ProprietaryInfo-Element-Reference10-ddi:reusable:3_1_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Contains information proprietary to the software package which produced the data file. This is expressed as a set of name-value pairs.</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DataItem-Element-Reference11_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DataItem-Element-Reference11_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#maxOccurs_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">unbounded</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#minOccurs_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">0</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ref_Element_Element"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DataItem-Element_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Element_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_DataItem-Element-Reference11_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_DataItem-Element-Reference11_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_DataItem-Element-Reference11_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_DataItem-Element-Reference11_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_DataItem-Element-Reference11_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_DataItem-Element-Reference11_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Describes a data item in the record.</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Choice8-Choice_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Choice8-Choice_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Choice"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#minOccurs_Choice_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">0</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Choice_Element"/>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#CodedDataAsNumeric-Element-Reference1_Choice8-Choice_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#CodedDataAsText-Element-Reference2_Choice8-Choice_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+						</owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#CodedDataAsNumeric-Element-Reference1_Choice8-Choice_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#CodedDataAsNumeric-Element-Reference1_Choice8-Choice_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ref_Element_Element"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#CodedDataAsNumeric-Element_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Element_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_CodedDataAsNumeric-Element-Reference1_Choice8-Choice_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_CodedDataAsNumeric-Element-Reference1_Choice8-Choice_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_CodedDataAsNumeric-Element-Reference1_Choice8-Choice_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_CodedDataAsNumeric-Element-Reference1_Choice8-Choice_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_CodedDataAsNumeric-Element-Reference1_Choice8-Choice_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_CodedDataAsNumeric-Element-Reference1_Choice8-Choice_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Indicates that coded data should be treated as numeric, and defines the numeric type</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#CodedDataAsText-Element-Reference2_Choice8-Choice_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#CodedDataAsText-Element-Reference2_Choice8-Choice_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ref_Element_Element"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#CodedDataAsText-Element_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Element_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_CodedDataAsText-Element-Reference2_Choice8-Choice_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_CodedDataAsText-Element-Reference2_Choice8-Choice_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_CodedDataAsText-Element-Reference2_Choice8-Choice_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_CodedDataAsText-Element-Reference2_Choice8-Choice_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_CodedDataAsText-Element-Reference2_Choice8-Choice_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_CodedDataAsText-Element-Reference2_Choice8-Choice_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Indicates that coded data should be treated as text, and defines the text type</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DataItemAddressType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DataItemAddressType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ComplexType"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#name_ComplexType_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">DataItemAddressType</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_ComplexType_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_DataItemAddressType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_ComplexType_Sequence"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Sequence2-Sequence_DataItemAddressType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_DataItemAddressType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_DataItemAddressType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_DataItemAddressType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_DataItemAddressType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_DataItemAddressType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Provides minimum information on data item address system, such as variable ID or Name, etc.</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Sequence2-Sequence_DataItemAddressType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Sequence2-Sequence_DataItemAddressType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Sequence"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#sequence"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Description-Element-Reference1-ddi:reusable:3_1_Sequence2-Sequence_DataItemAddressType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Sequence_Element"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Description-Element-Reference1-ddi:reusable:3_1_Sequence2-Sequence_DataItemAddressType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Description-Element-Reference1-ddi:reusable:3_1_Sequence2-Sequence_DataItemAddressType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Description-Element-Reference1-ddi:reusable:3_1_Sequence2-Sequence_DataItemAddressType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#maxOccurs_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">unbounded</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ref_Element_Element"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:reusable:3_1.owl#Description-Element_ddi:reusable:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Element_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_Description-Element-Reference1-ddi:reusable:3_1_Sequence2-Sequence_DataItemAddressType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_Description-Element-Reference1-ddi:reusable:3_1_Sequence2-Sequence_DataItemAddressType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_Description-Element-Reference1-ddi:reusable:3_1_Sequence2-Sequence_DataItemAddressType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_Description-Element-Reference1-ddi:reusable:3_1_Sequence2-Sequence_DataItemAddressType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_Description-Element-Reference1-ddi:reusable:3_1_Sequence2-Sequence_DataItemAddressType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_Description-Element-Reference1-ddi:reusable:3_1_Sequence2-Sequence_DataItemAddressType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Description of the data item address</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DataItemType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DataItemType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ComplexType"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#name_ComplexType_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">DataItemType</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_ComplexType_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_DataItemType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_ComplexType_Sequence"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Sequence2-Sequence_DataItemType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_DataItemType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_DataItemType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_DataItemType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_DataItemType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_DataItemType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">A single point of data within the file, which may carry an over-ride of the specified default datatype.</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Sequence2-Sequence_DataItemType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Sequence2-Sequence_DataItemType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Sequence"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#sequence"/>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#VariableReference-Element-Reference1_Sequence2-Sequence_DataItemType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#ProprietaryDataType-Element-Reference2_Sequence2-Sequence_DataItemType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#ProprietaryOutputFormat-Element-Reference3_Sequence2-Sequence_DataItemType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#ProprietaryInfo-Element-Reference4-ddi:reusable:3_1_Sequence2-Sequence_DataItemType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+						</owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Sequence_Element"/>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#VariableReference-Element-Reference1_Sequence2-Sequence_DataItemType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#ProprietaryDataType-Element-Reference2_Sequence2-Sequence_DataItemType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#ProprietaryOutputFormat-Element-Reference3_Sequence2-Sequence_DataItemType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#ProprietaryInfo-Element-Reference4-ddi:reusable:3_1_Sequence2-Sequence_DataItemType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+						</owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#VariableReference-Element-Reference1_Sequence2-Sequence_DataItemType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#VariableReference-Element-Reference1_Sequence2-Sequence_DataItemType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ref_Element_Element"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#VariableReference-Element_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Element_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_VariableReference-Element-Reference1_Sequence2-Sequence_DataItemType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_VariableReference-Element-Reference1_Sequence2-Sequence_DataItemType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_VariableReference-Element-Reference1_Sequence2-Sequence_DataItemType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_VariableReference-Element-Reference1_Sequence2-Sequence_DataItemType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_VariableReference-Element-Reference1_Sequence2-Sequence_DataItemType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_VariableReference-Element-Reference1_Sequence2-Sequence_DataItemType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Reference to the variable description in the Logical Product</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#ProprietaryDataType-Element-Reference2_Sequence2-Sequence_DataItemType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#ProprietaryDataType-Element-Reference2_Sequence2-Sequence_DataItemType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#minOccurs_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">0</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ref_Element_Element"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#ProprietaryDataType-Element_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Element_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_ProprietaryDataType-Element-Reference2_Sequence2-Sequence_DataItemType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_ProprietaryDataType-Element-Reference2_Sequence2-Sequence_DataItemType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_ProprietaryDataType-Element-Reference2_Sequence2-Sequence_DataItemType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_ProprietaryDataType-Element-Reference2_Sequence2-Sequence_DataItemType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_ProprietaryDataType-Element-Reference2_Sequence2-Sequence_DataItemType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_ProprietaryDataType-Element-Reference2_Sequence2-Sequence_DataItemType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Allows an override of the default data type, using the language of the proprietary software. A controlled vocabulary is recommended.</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#ProprietaryOutputFormat-Element-Reference3_Sequence2-Sequence_DataItemType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#ProprietaryOutputFormat-Element-Reference3_Sequence2-Sequence_DataItemType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#minOccurs_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">0</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ref_Element_Element"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#ProprietaryOutputFormat-Element_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Element_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_ProprietaryOutputFormat-Element-Reference3_Sequence2-Sequence_DataItemType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_ProprietaryOutputFormat-Element-Reference3_Sequence2-Sequence_DataItemType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_ProprietaryOutputFormat-Element-Reference3_Sequence2-Sequence_DataItemType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_ProprietaryOutputFormat-Element-Reference3_Sequence2-Sequence_DataItemType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_ProprietaryOutputFormat-Element-Reference3_Sequence2-Sequence_DataItemType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_ProprietaryOutputFormat-Element-Reference3_Sequence2-Sequence_DataItemType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Indicates the proprietary output format.</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#ProprietaryInfo-Element-Reference4-ddi:reusable:3_1_Sequence2-Sequence_DataItemType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#ProprietaryInfo-Element-Reference4-ddi:reusable:3_1_Sequence2-Sequence_DataItemType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#minOccurs_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">0</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ref_Element_Element"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:reusable:3_1.owl#ProprietaryInfo-Element_ddi:reusable:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Element_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_ProprietaryInfo-Element-Reference4-ddi:reusable:3_1_Sequence2-Sequence_DataItemType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_ProprietaryInfo-Element-Reference4-ddi:reusable:3_1_Sequence2-Sequence_DataItemType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_ProprietaryInfo-Element-Reference4-ddi:reusable:3_1_Sequence2-Sequence_DataItemType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_ProprietaryInfo-Element-Reference4-ddi:reusable:3_1_Sequence2-Sequence_DataItemType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_ProprietaryInfo-Element-Reference4-ddi:reusable:3_1_Sequence2-Sequence_DataItemType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_ProprietaryInfo-Element-Reference4-ddi:reusable:3_1_Sequence2-Sequence_DataItemType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Contains proprietary information specific to the data item. This is expressed as a set of name-value pairs.</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#ProprietaryRecordLayout-Element_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#ProprietaryRecordLayout-Element_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#name_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">ProprietaryRecordLayout</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#substitutionGroup_Element_Element"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct:3_1.owl#BaseRecordLayout-Element_ddi:physicaldataproduct:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#type_Element_Type"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#ProprietaryRecordLayoutType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DataItemAddress-Element_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DataItemAddress-Element_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#name_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">DataItemAddress</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#type_Element_Type"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DataItemAddressType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Element_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_DataItemAddress-Element_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_DataItemAddress-Element_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_DataItemAddress-Element_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_DataItemAddress-Element_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_DataItemAddress-Element_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_DataItemAddress-Element_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Provides minimum information on data item address system such as uses variable ID or Name etc.</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DefaultNumericDataType-Element_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DefaultNumericDataType-Element_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#name_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">DefaultNumericDataType</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#type_Element_Type"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:reusable:3_1.owl#NumericRepresentationType-Type_ddi:reusable:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Element_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_DefaultNumericDataType-Element_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_DefaultNumericDataType-Element_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_DefaultNumericDataType-Element_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_DefaultNumericDataType-Element_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_DefaultNumericDataType-Element_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_DefaultNumericDataType-Element_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Declares the most common data type used for numeric data.</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DefaultTextDataType-Element_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DefaultTextDataType-Element_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#name_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">DefaultTextDataType</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#type_Element_Type"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:reusable:3_1.owl#TextRepresentationType-Type_ddi:reusable:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Element_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_DefaultTextDataType-Element_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_DefaultTextDataType-Element_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_DefaultTextDataType-Element_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_DefaultTextDataType-Element_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_DefaultTextDataType-Element_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_DefaultTextDataType-Element_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Declares the most common data type used for textual data.</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DefaultDateTimeDataType-Element_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DefaultDateTimeDataType-Element_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#name_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">DefaultDateTimeDataType</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#type_Element_Type"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:reusable:3_1.owl#DateTimeRepresentationType-Type_ddi:reusable:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Element_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_DefaultDateTimeDataType-Element_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_DefaultDateTimeDataType-Element_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_DefaultDateTimeDataType-Element_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_DefaultDateTimeDataType-Element_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_DefaultDateTimeDataType-Element_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_DefaultDateTimeDataType-Element_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Declares the most common data type used for date-time data.</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#CodedDataAsNumeric-Element_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#CodedDataAsNumeric-Element_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#name_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">CodedDataAsNumeric</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#type_Element_Type"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:reusable:3_1.owl#NumericRepresentationType-Type_ddi:reusable:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Element_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_CodedDataAsNumeric-Element_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_CodedDataAsNumeric-Element_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_CodedDataAsNumeric-Element_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_CodedDataAsNumeric-Element_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_CodedDataAsNumeric-Element_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_CodedDataAsNumeric-Element_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Indicates that coded data should be treated as numeric, and defines the numeric type</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#CodedDataAsText-Element_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#CodedDataAsText-Element_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#name_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">CodedDataAsText</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#type_Element_Type"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:reusable:3_1.owl#TextRepresentationType-Type_ddi:reusable:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Element_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_CodedDataAsText-Element_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_CodedDataAsText-Element_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_CodedDataAsText-Element_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_CodedDataAsText-Element_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_CodedDataAsText-Element_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_CodedDataAsText-Element_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Indicates that coded data should be treated as text, and defines the text type</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#VariableReference-Element_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#VariableReference-Element_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#name_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">VariableReference</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#type_Element_Type"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:reusable:3_1.owl#ReferenceType-Type_ddi:reusable:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Element_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_VariableReference-Element_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_VariableReference-Element_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_VariableReference-Element_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_VariableReference-Element_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_VariableReference-Element_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_VariableReference-Element_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Reference to the variable description in the Logical Product</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DefaultVariableSchemeReference-Element_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DefaultVariableSchemeReference-Element_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#name_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">DefaultVariableSchemeReference</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#type_Element_Type"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:reusable:3_1.owl#ReferenceType-Type_ddi:reusable:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Element_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_DefaultVariableSchemeReference-Element_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_DefaultVariableSchemeReference-Element_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_DefaultVariableSchemeReference-Element_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_DefaultVariableSchemeReference-Element_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_DefaultVariableSchemeReference-Element_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_DefaultVariableSchemeReference-Element_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#ProprietaryDataType-Element_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#ProprietaryDataType-Element_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#name_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">ProprietaryDataType</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#type_Element_Type"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:reusable:3_1.owl#CodeValueType-Type_ddi:reusable:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Element_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_ProprietaryDataType-Element_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_ProprietaryDataType-Element_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_ProprietaryDataType-Element_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_ProprietaryDataType-Element_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_ProprietaryDataType-Element_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_ProprietaryDataType-Element_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Allows an override of the default data type, using the language of the proprietary software. A controlled vocabulary is recommended.</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#ProprietaryOutputFormat-Element_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#ProprietaryOutputFormat-Element_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#name_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">ProprietaryOutputFormat</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#type_Element_Type"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:reusable:3_1.owl#CodeValueType-Type_ddi:reusable:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Element_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_ProprietaryOutputFormat-Element_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_ProprietaryOutputFormat-Element_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_ProprietaryOutputFormat-Element_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_ProprietaryOutputFormat-Element_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_ProprietaryOutputFormat-Element_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_ProprietaryOutputFormat-Element_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Indicates the proprietary output format.</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DataItem-Element_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DataItem-Element_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#name_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">DataItem</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#type_Element_Type"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#DataItemType-Type_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Element_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_DataItem-Element_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_DataItem-Element_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Annotation1-Annotation_DataItem-Element_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_DataItem-Element_ddi:physicaldataproduct_proprietary:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_DataItem-Element_ddi:physicaldataproduct_proprietary:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:physicaldataproduct_proprietary:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_DataItem-Element_ddi:physicaldataproduct_proprietary:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">A single point of data within the file, which may carry an over-ride of the specified default datatype.</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+</rdf:RDF>

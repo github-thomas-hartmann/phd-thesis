@@ -1,0 +1,10 @@
+?subject a disco:CategoryStatistics .
+
+OPTIONAL { ?subject disco:frequency ?frequency . }
+FILTER ( ! BOUND( ?frequency ) ) .
+
+OPTIONAL { ?subject disco:percentage ?percentage . }
+FILTER ( ! BOUND( ?percentage ) ) .
+
+OPTIONAL { ?subject disco:cumulativePercentage ?cumulativePercentage . }
+FILTER ( ! BOUND( ?cumulativePercentage ) ) .

@@ -1,0 +1,33 @@
+	{
+		# data
+		# ----
+		?subject 
+			skos:narrowerTransitive ?object .
+		?object
+			skos:broaderTransitive ?subject .
+		FILTER ( ?subject != ?object ) .
+			
+		# validation
+		# ----------
+		FILTER NOT EXISTS {
+			{ ?subject skos:narrower ?object } UNION { ?subject skos:narrowMatch ?object } 
+			{ ?object skos:broader ?subject } UNION { ?object skos:broadMatch ?subject }	
+		}
+	}
+	UNION
+	{
+		# data
+		# ----
+		?subject 
+			skos:broaderTransitive ?object .
+		?object
+			skos:narrowerTransitive ?subject .
+		FILTER ( ?subject != ?object ) .
+			
+		# validation
+		# ----------
+		FILTER NOT EXISTS {
+			{ ?subject skos:broader ?object } UNION { ?subject skos:broadMatch ?object } 
+			{ ?object skos:narrower ?subject } UNION { ?object skos:narrowMatch ?subject }	
+		}
+	} 	 

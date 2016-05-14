@@ -1,0 +1,41 @@
+﻿# namespace declarations
+# ----------------------
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?concept1 ?p ?literal ?conceptScheme
+WHERE {
+    ?concept1
+        rdf:type/rdfs:subClassOf* skos:Concept ;
+        skos:inScheme ?conceptScheme ;
+        ?p ?literal .
+	?conceptScheme
+            rdf:type/rdfs:subClassOf* skos:ConceptScheme .
+    FILTER ( ?p != rdf:type && ?p != skos:inScheme ) .
+    #FILTER EXISTS {
+    #    ?concept2 
+    #        rdf:type/rdfs:subClassOf* skos:Concept ;
+    #        skos:inScheme ?conceptScheme ;
+    #        ?p ?literal .
+        #?conceptScheme2 
+        #    rdf:type/rdfs:subClassOf* skos:ConceptScheme .
+    #    FILTER ( ?concept1 != ?concept2 ) .
+        #FILTER ( ?p1 = ?p2 ) .
+        #FILTER ( ?literal1 = ?literal2 ) .
+    #}
+    
+      {
+          SELECT ?concept2 ?p ?literal ?conceptScheme
+          WHERE {
+              ?concept2
+                  rdf:type/rdfs:subClassOf* skos:Concept ;
+                  skos:inScheme ?conceptScheme ;
+                  ?p ?literal .
+	          ?conceptScheme
+                  rdf:type/rdfs:subClassOf* skos:ConceptScheme .
+          } 
+      }
+    FILTER ( ?concept1 != ?concept2 ) .
+}

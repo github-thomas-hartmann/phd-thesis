@@ -1,0 +1,7 @@
+# SKOS-C-STRUCTURE-08
+# -----
+# Top Concepts Having Broader Concepts:
+# Concepts internal to the tree should not be indicated as top concepts.
+# Implementation: A SPARQL query finds all top concepts (being defined
+# by one of the properties skos:hasTopConcept or skos:topConceptOf ) 
+# having associated a broader concept.

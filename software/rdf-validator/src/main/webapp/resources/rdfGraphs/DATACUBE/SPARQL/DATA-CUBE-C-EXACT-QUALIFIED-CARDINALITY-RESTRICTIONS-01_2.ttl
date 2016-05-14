@@ -1,0 +1,24 @@
+PREFIX rdf:	 <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX qb:   <http://purl.org/linked-data/cube#> 
+PREFIX :     <http://data#>
+SELECT ?subject ?violationMessage ?violationSource ?severityLevel
+WHERE {	 
+	?subject 
+	    a qb:Observation ;
+	    qb:dataSet ?dataSet1 , ?dataSet2 .
+    FILTER ( ?dataSet1 != ?dataSet2 ) .
+    
+    # violation message
+    # -----
+    BIND ( CONCAT( 
+        "DATA-CUBE-C-EXACT-QUALIFIED-CARDINALITY-RESTRICTIONS-01" )
+        AS ?violationMessage ) . 
+        
+    # violation source
+	# ----------------
+	BIND ( CONCAT( "DATA-CUBE-C-EXACT-QUALIFIED-CARDINALITY-RESTRICTIONS-01" )AS ?violationSource ) . 
+	
+	# severity level
+	# --------------
+	BIND ( ( 'ERROR' ) AS ?severityLevel ) .
+}

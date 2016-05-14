@@ -1,0 +1,303 @@
+@charset "UTF-8";
+/**
+ * "Yet Another Multicolumn Layout" - (X)HTML/CSS Framework
+ *
+ * (en) Horizontal list navigation "Shiny Buttons"
+ * (de) Horizontale Navigationsliste "Shiny Buttons"
+ *
+ * @copyright       Copyright 2005-2007, Dirk Jesse
+ * @license         CC-A 2.0 (http://creativecommons.org/licenses/by/2.0/),
+ *                  YAML-C (http://www.yaml.de/en/license/license-conditions.html)
+ * @link            http://www.yaml.de
+ * @package         yaml
+ * @version         3.0.3
+ * @revision        $Revision: 118 $
+ * @lastmodified    $Date: 2007-08-18 16:03:42 +0200 (Sa, 18 Aug 2007) $
+ */
+
+@media all
+{
+	/* Homebutton */
+	#nav_main ul.homebutton {
+		/* (en|de) Bugfix: IE - Doubled Float Margin Bug */
+		display: inline;
+		float: left;
+		margin: 0;
+		padding: 0;
+		width:225px;
+	}
+	
+    #nav_main {
+	/* (en) containing floats in IE */
+    /* (de) Einfassen der Floats im IE */
+    width: 100%;
+	height:30px;
+	overflow: hidden;
+	/* (en) containing floats in all other browsers */
+    /* (de) Einfassen der Floats in allen anderen Browsern */
+    float: left;
+	display: inline;
+	/* border-top: 1px #333 solid; */
+    border-bottom: 1px #66645a solid;
+    line-height: 0;
+	background: #EAE5CE; /* old browsers */
+	background: -moz-linear-gradient(top, #EAE5CE 0%, #B0AA94 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#EAE5CE), color-stop(100%,#B0AA94)); /* webkit */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#EAE5CE', endColorstr='#B0AA94',GradientType=0 ); /* ie */
+  }
+  
+  #nav_main .homeButton {
+	padding:0;
+	margin:0;
+	border-left:none;
+  }
+  
+  #nav_main .homeButton a{
+	padding:9px;
+  }
+  
+  #nav_main ul {
+    /* (en|de) Bugfix: IE - Doubled Float Margin Bug */
+    display: inline;
+    float: left;
+    margin: 0;
+    /* (en) Left margin of the first button  */
+    /* (de) Abstand des ersten Buttons vom linken Rand  */
+    margin-left: 195px;
+    padding: 0;
+    border-left: 1px solid #66645A;
+  }
+
+  #nav_main ul li {
+  	/* Border off HR */
+    border-left: 1px #d7d2c3 solid;
+	border-right: 1px #66645a solid;
+    /* (en|de) Bugfix: IE - Doubled Float Margin Bug */
+    display: inline;
+  	float: left;
+  	font-size: 1.0em;
+  	line-height: 1em;
+  	list-style-type: none;
+  	margin: 0;
+  	padding: 0;
+  }
+  
+  #nav_main ul .navsearch{
+	/* SUCHBOX in navigation HR */
+	height: 23px;
+	background-color:#f6f4e7;
+	padding: 0px 8px 0 8px;
+  }
+  
+   #nav_main ul .navsearch #searchfield{
+	margin-top:3px;
+	vertical-align:top;
+	margin-right:5px;
+	width:140px;
+  }
+    
+  #nav_main ul .navsearch #submit{
+	vertical-align:top;
+  }
+
+  #nav_main ul li a,
+  #nav_main ul li strong {
+    text-shadow: 0px 1px 1px #fff;
+	color: #66645a;
+	display: block;
+	font-size: 1em;
+	font-weight: bold;
+	margin: 0;
+	padding: 9px 15px 9px 15px;
+	text-decoration: none;
+	text-align: center;
+	background-color: transparent;
+  }
+
+  #nav_main ul li a:focus,
+  #nav_main ul li a:hover,
+  #nav_main ul li a:active  {
+	text-shadow: none;
+	color:#FFF;
+	text-decoration: none;
+	/* gradien blue */
+	background: #8C99A6; /* old browsers */
+	background: -moz-linear-gradient(top, #8C99A6 0%, #475C71 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8C99A6), color-stop(100%,#475C71)); /* webkit */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8C99A6', endColorstr='#475C71',GradientType=0 ); /* ie */
+  }
+
+  #nav_main ul li#current {
+
+  }
+  #nav_main ul li#current a:focus { color:#fff;} 
+  #nav_main ul li#current a:hover {}
+
+  #nav_main ul li#current strong,
+  #nav_main ul li#current a,
+  #nav_main ul li#current a:active {
+	text-shadow: none;
+    color: #fff;
+    text-decoration: none;
+	/* gradient orange */
+	background: #FF9F23; /* old browsers */
+	background: -moz-linear-gradient(top, #FF9F23 0%, #FF6301 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FF9F23), color-stop(100%,#FF6301)); /* webkit */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FF9F23', endColorstr='#FF6301',GradientType=0 ); /* ie */
+}
+
+/*zweite horizontale Leiste*/
+
+  #nav_main2 {
+	/* (en) containing floats in IE */
+    /* (de) Einfassen der Floats im IE */
+    width: 100%;
+	height:24px;
+	overflow: hidden;
+	/* (en) containing floats in all other browsers */
+    /* (de) Einfassen der Floats in allen anderen Browsern */
+    float: left;
+	display: inline;
+    line-height: 0;
+	background-color: #EDE7CF;
+	background-image: url(../../../../img/shiny_buttons/menu2-bg.gif);
+	background-repeat: repeat-x;
+	background-position: right top;
+  }
+  
+  #nav_main2 ul {
+    /* (en|de) Bugfix: IE - Doubled Float Margin Bug */
+    display: inline;
+    float: left;
+    margin: 0;
+    /* (en) Left margin of the first button  */
+    /* (de) Abstand des ersten Buttons vom linken Rand  */
+    margin-left: 225px;
+    padding: 0;
+  }
+
+  #nav_main2 ul li {
+    /* (en|de) Bugfix: IE - Doubled Float Margin Bug */
+    display: inline;
+    float: left;
+    font-size: 1.0em;
+    line-height: 1em;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  #nav_main2 ul li a,
+  #nav_main2 ul li strong {
+	color: #000;
+	display: block;
+	font-size: 1em;
+	font-weight: bold;
+	margin: 0;
+	padding: 6px 15px 5px 15px;
+	text-decoration: none;
+	text-align: center;
+	background-color: transparent;
+	background-image: url(../../../../img/shiny_buttons/gs_button_2_normal.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+	border-bottom:none;
+  }
+
+  #nav_main2 ul li a:focus,
+  #nav_main2 ul li a:hover,
+  #nav_main2 ul li a:active  {
+	color: #940063;
+	text-decoration: none;
+	border-bottom:none;
+	background-image:url(../../../../img/shiny_buttons/gs_button_2_active.gif);
+  }
+
+  #nav_main2 ul li#current,
+  #nav_main2 ul li:hover{
+	background: url(../../../../img/shiny_buttons/gs_button_2_active.gif) top right;
+  }
+  #nav_main2 ul li#current a:focus { color:#000000;} 
+  #nav_main2 ul li#current a:hover { }
+
+  #nav_main2 ul li#current strong,
+  #nav_main2 ul li#current a,
+  #nav_main2 ul li#current a:active {
+	color: #000;
+	text-decoration: none;
+	border-bottom:1px solid #fff;
+	background: url(../../../../img/shiny_buttons/gs_button_2_active.gif) no-repeat left top;
+  }
+  
+  #nav_main2 ul li:hover {
+	background: url(../../../../img/shiny_buttons/gs_button_2_active.gif) top right;
+  }
+  
+  /*------------------------------*/
+  /*----- Nav_main-Elemente ------*/
+  /*------------------------------*/
+
+  /* globale Teile des Men�s: Sprachumschaltung, Sitemap, Kontakt */
+  
+  #nav_main ul li a.global_items {
+  }
+
+  #nav_main ul li a.global_items:focus,
+  #nav_main ul li a.global_items:hover {
+  	color:#fff;
+  	/* background-color: #fff; */
+    background-image: url(../../../../img/shiny_buttons/gs_over.png);
+    background-repeat: repeat-x;
+    background-position: left top;
+  }
+
+  #nav_main ul li#current a.global_items,
+  #nav_main ul li#current a.global_items:active {
+    color: #fff;
+    text-decoration: none;
+	/* background-color: #ff6700; */
+    background-image: url(../../../../img/shiny_buttons/gs_active.png);
+    background-repeat: repeat-x;
+    background-position: left top;
+  }
+  
+  #nav_main ul li .gesis_web {
+  	background-color: #b1a681;
+  }
+  
+  .gesis_web_separator {
+    float:right;
+    /* (en|de) Bugfix: IE - Doubled Float Margin Bug */
+    display: inline;
+	margin:0;
+	padding:0;
+	border-left: 1px solid #66645A;
+  }
+  
+  #nav_main .gesis_web_separator a {
+    text-shadow: 0px 1px 1px #fff;
+	color: #66645a;
+	display: block;
+	font-size: 1em;
+	font-weight: bold;
+	margin: 0;
+	padding: 15px;
+	text-decoration: none;
+	text-align: center;
+	background-color: transparent;
+	border-left: 1px solid #D7D2C3;
+  }
+
+  #nav_main .gesis_web_separator a:focus,
+  #nav_main .gesis_web_separator a:hover {
+	text-shadow: none;
+	color:#FFF;
+	text-decoration: none;
+	/* gradien blue */
+	background: #8C99A6; /* old browsers */
+	background: -moz-linear-gradient(top, #8C99A6 0%, #475C71 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8C99A6), color-stop(100%,#475C71)); /* webkit */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8C99A6', endColorstr='#475C71',GradientType=0 ); /* ie */
+  }
+  
+}

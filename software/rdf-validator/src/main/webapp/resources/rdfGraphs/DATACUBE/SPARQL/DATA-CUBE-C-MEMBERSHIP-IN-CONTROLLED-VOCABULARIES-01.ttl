@@ -1,0 +1,57 @@
+	{
+		?obs qb:dataSet/qb:structure/qb:component/qb:componentProperty ?dim .
+	    ?dim 
+	        a qb:DimensionProperty ;
+	        qb:codeList ?list .
+	    ?list a skos:ConceptScheme .
+	    ?obs ?dim ?subject .
+	    FILTER NOT EXISTS { 
+	    	?subject 
+	    	a skos:Concept ; 
+	    	skos:inScheme ?list . 
+	    }	
+	    
+	    # violation message
+		# -----------------
+		BIND ( CONCAT( 
+			"DATA-CUBE-C-MEMBERSHIP-IN-CONTROLLED-VOCABULARIES-01 | ",
+			"Codes from code list: ",
+			"If a dimension property has a qb:codeList, then the value of the dimension property on every qb:Observation must be in the code list." )
+			AS ?violationMessage ) .  
+			
+		# violation source
+		# ----------------
+		BIND ( CONCAT( "DATA-CUBE-C-MEMBERSHIP-IN-CONTROLLED-VOCABULARIES-01" )AS ?violationSource ) .
+		
+		# severity level
+		# --------------
+		BIND ( ( 'ERROR' ) AS ?severityLevel ) .  
+    }
+    UNION
+    {
+    	?obs qb:dataSet/qb:structure/qb:component/qb:componentProperty ?dim .
+	    ?dim a qb:DimensionProperty ;
+	        qb:codeList ?list .
+	    ?list a skos:Collection .
+	    ?obs ?dim ?subject .
+	    FILTER NOT EXISTS { 
+	    	?subject a skos:Concept . 
+	    	?list skos:member+ ?subject . 
+	    }
+	    
+	 	# violation message
+		# -----------------
+		BIND ( CONCAT( 
+			"DATA-CUBE-C-MEMBERSHIP-IN-CONTROLLED-VOCABULARIES-01 | ",
+			"Codes from code list: ",
+			"If a dimension property has a qb:codeList, then the value of the dimension property on every qb:Observation must be in the code list." )
+			AS ?violationMessage ) .  
+			
+		# violation source
+		# ----------------
+		BIND ( CONCAT( "DATA-CUBE-C-MEMBERSHIP-IN-CONTROLLED-VOCABULARIES-01" )AS ?violationSource ) .
+		
+		# severity level
+		# --------------
+		BIND ( ( 'ERROR' ) AS ?severityLevel ) .   
+    }

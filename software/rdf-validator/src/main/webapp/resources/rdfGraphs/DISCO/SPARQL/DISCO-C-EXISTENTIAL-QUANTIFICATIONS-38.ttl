@@ -1,0 +1,18 @@
+	{ ?subject a disco:Instrument . } UNION { ?subject a disco:Questionnaire . }
+	
+	OPTIONAL { ?subject disco:externalDocumentation ?externalDocumentation . }
+	FILTER ( ! BOUND( ?externalDocumentation ) ) .
+	
+	# violation message
+	# -----------------
+	BIND ( CONCAT( 
+		"DISCO-C-EXISTENTIAL-QUANTIFICATIONS-38" )
+		AS ?violationMessage ) . 
+	
+	# violation source
+	# ----------------
+	BIND ( CONCAT( "DISCO-C-EXISTENTIAL-QUANTIFICATIONS-8" )AS ?violationSource ) . 
+	
+	# severity level
+	# --------------
+	BIND ( ( 'INFO' ) AS ?severityLevel ) .

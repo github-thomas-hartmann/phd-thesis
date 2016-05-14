@@ -1,0 +1,10 @@
+# constraints
+# -----------
+
+:minimum-qualified-cardinality-restriction
+    a rdfcv:SimpleConstraint ;
+    rdfcv:contextClass :Publication ;
+    rdfcv:leftProperties ( :author ) ;
+    rdfcv:classes ( :Person ) ;
+    rdfcv:constrainingElement "minimum qualified cardinality restriction" ;
+    rdfcv:constrainingValue 1 .

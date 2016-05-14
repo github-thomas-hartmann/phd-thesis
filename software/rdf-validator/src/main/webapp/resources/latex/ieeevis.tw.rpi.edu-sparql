@@ -1,0 +1,18 @@
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lcccc@{}}
+           & \multicolumn{4}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-5}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{EXISTENTIAL-QUANTIFICATIONS-01}}
+           & \rot{\emph{EXISTENTIAL-QUANTIFICATIONS-02}}
+           & \rot{\emph{EXISTENTIAL-QUANTIFICATIONS-03}}
+           & \rot{\emph{EXISTENTIAL-QUANTIFICATIONS-04}}
+	\\ \midrule
+    \emph{http://ieeevis.tw.rpi.edu/sparql} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://ieeevis.tw.rpi.edu/sparql}}
+    \label{tab:evaluation-ieeevis.tw.rpi.edu-sparql}
+    \end{center}
+\end{table}

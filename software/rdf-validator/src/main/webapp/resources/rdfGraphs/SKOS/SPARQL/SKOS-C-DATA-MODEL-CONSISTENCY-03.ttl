@@ -1,0 +1,8 @@
+# SKOS-C-DATA-MODEL-CONSISTENCY-03
+# -----
+# Labeling and Documentation Issues - Mapping Relations Misuse: 
+# According to the SKOS reference documentation, mapping relations
+# (e.g., skos:broadMatch or skos:relatedMatch) should be asserted to concepts
+# being members of different concept schemes. This check finds concepts that
+# are related by a mapping property and are either members of the same
+# concept scheme or members of no concept scheme at all.

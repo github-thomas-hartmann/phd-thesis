@@ -1,0 +1,57 @@
+.tbox {
+	position:	absolute; 
+	display:	none; 
+	padding:	14px 17px; 
+	z-index:	900
+}
+
+.tinner {
+	padding:15px; 
+	-moz-border-radius:	5px; 
+	background: #fff url(../images/preload.gif) no-repeat 50% 50%; 
+	border-right:	1px solid #333; 
+	border-bottom:	1px solid #333;
+	border-radius: 15px;
+	
+	box-shadow: 2px 2px 10px #72777a;
+	-moz-box-shadow: 2px 2px 10px #72777a;
+	-webkit-box-shadow: 2px 2px 10px #72777a;
+	/* For IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";
+	/* For IE 5.5 - 7 */
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');
+}
+
+.tmask {
+	position:	absolute; 
+	display:	none; 
+	top:	0px; 
+	left:	0px; 
+	height:	100%; 
+	width:	100%; 
+	background:	#000; 
+	z-index:	800;
+}
+
+.tclose {
+	position:	absolute; 
+	background:	url(../images/close_icon2.png) no-repeat;
+	top:	-5px; 
+	right:	-5px; 
+	width:	30px; 
+	height:	30px; 
+	cursor:	pointer; 
+}
+
+/*
+.tclose:hover {
+	background-position:	0 -30px
+}
+*/
+
+#error {background:#ff6969; color:#fff; text-shadow:1px 1px #cf5454; border-right:1px solid #000; border-bottom:1px solid #000; padding:0}
+#error .tcontent {padding:10px 14px 11px; border:1px solid #ffb8b8; -moz-border-radius:5px; border-radius:5px}
+#success {background:#2ea125; color:#fff; text-shadow:1px 1px #1b6116; border-right:1px solid #000; border-bottom:1px solid #000; padding:10; -moz-border-radius:0; border-radius:0}
+#bluemask {background:#4195aa}
+#frameless {padding:0}
+#frameless .tclose {left:6px}

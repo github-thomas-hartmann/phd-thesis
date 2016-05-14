@@ -1,0 +1,12 @@
+PREFIX fn: <http://www.w3.org/2005/xpath-functions#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX dcterms: <http://purl.org/dc/terms#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX disco: <http://rdf-vocabulary.ddialliance.org/discovery#>
+PREFIX adms: <http://www.w3.org/ns/adms#>
+PREFIX ddicv: <http://rdf-vocabulary.ddialliance.org/DDICV#>
+PREFIX ddicv-sumstats: <http://rdf-vocabulary.ddialliance.org/DDICV/SummaryStatisticType#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX : <http://rdf-vocabulary.ddialliance.org/discovery/data#>

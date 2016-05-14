@@ -1,0 +1,6 @@
+WHERE {	 
+	?subject 
+	    a qb:Observation ;
+	    qb:dataSet ?dataSet1 , ?dataSet2 .
+    FILTER ( ?dataSet1 != ?dataSet2 ) .
+}

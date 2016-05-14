@@ -1,0 +1,362 @@
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lccccccccccc@{}}
+           & \multicolumn{11}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-12}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-01}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-02}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-03}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-04}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-05}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-06}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-07}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-08}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-09}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-10 (!)}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-11}}
+	\\ \midrule
+    \emph{http://oecd.270a.info/sparql} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & 21142838 (116) & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://oecd.270a.info/sparql}}
+    \label{tab:evaluation-oecd.270a.info-sparql}
+    \end{center}
+\end{table}
+
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lccccccccccc@{}}
+           & \multicolumn{11}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-12}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-01}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-02}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-03}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-04}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-05}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-06}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-07}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-08}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-09}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-10 (!)}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-11}}
+	\\ \midrule
+    \emph{RGRADAGE} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{RPERS} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{CRS1} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{RENRLAGE} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{RIOMARKERS} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{GENDER} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{RFIN1} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{TIGS$\_$IO} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{RENRL} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{TABLE2B} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{TABLE3A} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{TIVA$\_$OECD$\_$WTO} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{TABLE2A} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{STAN08BIS} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{RGRADSTY} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{STANI4} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{DACGEO} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://oecd.270a.info/sparql}} Data Sets
+    \label{tab:evaluation-0-oecd.270a.info-sparql}
+    \end{center}
+\end{table}
+
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lccccccccccc@{}}
+           & \multicolumn{11}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-12}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-01}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-02}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-03}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-04}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-05}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-06}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-07}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-08}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-09}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-10 (!)}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-11}}
+	\\ \midrule
+    \emph{KEI} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{REF$\_$TOTALOFFICIAL} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{TABLE1} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{FDI$\_$POSITION$\_$PARTNER} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{FDI$\_$FLOW$\_$PARTNER} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{RFIN2} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{HEALTH$\_$STAT} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{SNA$\_$TABLE620} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{SNA$\_$TABLE720} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{TABLE4} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{SNA$\_$TABLE710} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{SNA$\_$TABLE610} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{PT4} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{FATS$\_$IN3$\_$SERV} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{REG$\_$DEMO$\_$TL3} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{PT3} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ICTGRP} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://oecd.270a.info/sparql}} Data Sets
+    \label{tab:evaluation-1-oecd.270a.info-sparql}
+    \end{center}
+\end{table}
+
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lccccccccccc@{}}
+           & \multicolumn{11}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-12}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-01}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-02}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-03}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-04}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-05}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-06}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-07}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-08}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-09}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-10 (!)}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-11}}
+	\\ \midrule
+    \emph{ROVERAGE} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{PT2} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{MIG} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{REF$\_$TOTALRECPTS} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{REG$\_$INNO$\_$TL3} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{FATS$\_$OUT3$\_$SERV} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{DACSECTOR} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{RNENTAGE} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{REG$\_$LAB$\_$TL3} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{TABLE5} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{POP$\_$FIVE$\_$HIST} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{AMNE$\_$IN$\_$PARTNER} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{CPA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{QASA$\_$TABLE7PSD} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{FDI$\_$POSITION$\_$INDUSTRY} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{CSPCUBE} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{FDI$\_$FLOW$\_$INDUSTRY} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://oecd.270a.info/sparql}} Data Sets
+    \label{tab:evaluation-2-oecd.270a.info-sparql}
+    \end{center}
+\end{table}
+
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lccccccccccc@{}}
+           & \multicolumn{11}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-12}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-01}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-02}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-03}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-04}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-05}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-06}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-07}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-08}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-09}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-10 (!)}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-11}}
+	\\ \midrule
+    \emph{CSP2012} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{AMNE$\_$IN} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{REG$\_$DEMO$\_$TL2} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{MSTI$\_$PUB} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ANBERD$\_$REV4} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{MULTISYSTEM} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{AFA$\_$IN3} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{PT9} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{HEALTH$\_$REAC} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{HEALTH$\_$PROC} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{AFA$\_$IN3$\_$MANUF} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{7IA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{CITIES} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{AFA$\_$OUT3$\_$PARTNER} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{TIMELY$\_$BDS$\_$ISIC4} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{AIR$\_$EMISSIONS} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{SURVEYDATA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://oecd.270a.info/sparql}} Data Sets
+    \label{tab:evaluation-3-oecd.270a.info-sparql}
+    \end{center}
+\end{table}
+
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lccccccccccc@{}}
+           & \multicolumn{11}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-12}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-01}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-02}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-03}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-04}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-05}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-06}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-07}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-08}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-09}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-10 (!)}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-11}}
+	\\ \midrule
+    \emph{AFA$\_$CALC$\_$IN3} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{PT7} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{PT8} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{BPF1} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{MEI$\_$CPI$\_$WEIGHTS} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{RPOP} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{G20$\_$PRICES} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{HEALTH$\_$HCQI} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ULC$\_$EEQ} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{FSS} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{AMNE$\_$OUT$\_$PARTNER} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{GVC$\_$INDICATORS} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{PPP2005} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{HEALTH$\_$DEMR} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{EAR$\_$MEI} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{AFA$\_$OUT3} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{GREEN$\_$GROWTH} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://oecd.270a.info/sparql}} Data Sets
+    \label{tab:evaluation-4-oecd.270a.info-sparql}
+    \end{center}
+\end{table}
+
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lccccccccccc@{}}
+           & \multicolumn{11}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-12}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-01}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-02}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-03}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-04}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-05}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-06}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-07}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-08}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-09}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-10 (!)}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-11}}
+	\\ \midrule
+    \emph{DACIND} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{TABLE7B} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{PDYGTH} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{REF$\_$TOTAL$\_$ODF} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{HEALTH$\_$ECOR} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{FDI$\_$BOP$\_$IIP} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{7HA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{DACDEFL} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{AIR$\_$GHG} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{WATER$\_$ABSTRACT} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{REG$\_$ENV$\_$TL3} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{MUNW} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{SNA$\_$TABLE4} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{HEALTH$\_$LVNG} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{AMNE$\_$OUT} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ITF$\_$PASSENGER$\_$TRANSPORT} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{EDUGPS$\_$EAG2013$\_$A} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://oecd.270a.info/sparql}} Data Sets
+    \label{tab:evaluation-5-oecd.270a.info-sparql}
+    \end{center}
+\end{table}
+
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lccccccccccc@{}}
+           & \multicolumn{11}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-12}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-01}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-02}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-03}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-04}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-05}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-06}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-07}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-08}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-09}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-10 (!)}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-11}}
+	\\ \midrule
+    \emph{SOCX$\_$REF} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{DEC$\_$I} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{CS} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{G$\_$TYPE$\_$RATIO} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{AFA$\_$CALC$\_$OUT3} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{U$\_$D$\_$D} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{FIN$\_$IND$\_$FA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{WATER$\_$TREAT} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{MFP} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{7II$\_$INDIC} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{RMW} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{MW$\_$CURP} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{WILD$\_$LIFE} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & 5598086 & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ITCS$\_$EXCH} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{PPPGDP} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{AV$\_$AN$\_$WAGE} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & 1903860 & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{EDUGPS$\_$EAG2013$\_$B} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & 1977170 & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://oecd.270a.info/sparql}} Data Sets
+    \label{tab:evaluation-6-oecd.270a.info-sparql}
+    \end{center}
+\end{table}
+
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lccccccccccc@{}}
+           & \multicolumn{11}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-12}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-01}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-02}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-03}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-04}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-05}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-06}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-07}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-08}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-09}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-10 (!)}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-11}}
+	\\ \midrule
+    \emph{EDUGPS$\_$EAG2013$\_$C} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & 1661958 & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{MIN2AVE} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & 1746648 & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{EPL$\_$OV} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & 1255340 & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{FOREST} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & 626736 & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{CPL} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & 2746656 & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{EDUGPS$\_$EAG2013$\_$D} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & 506884 & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{G$\_$FUNCTION$\_$RATIO} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & 358176 & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{UN$\_$DEN} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & 97614 & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{EPL$\_$R} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & 863964 & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{EPL$\_$T} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & 863964 & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{CWB} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & 395042 & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{EPL$\_$CD} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & 23644 & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{DECOMP} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & 240000 & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{LEVEL} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & 183558 & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{WSECTOR} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & 78840 & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{WATER$\_$RESOURCES} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & 14698 & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{TALIS} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://oecd.270a.info/sparql}} Data Sets
+    \label{tab:evaluation-7-oecd.270a.info-sparql}
+    \end{center}
+\end{table}
+

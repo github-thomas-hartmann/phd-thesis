@@ -1,0 +1,29 @@
+# Property Ranges
+# -----
+
+
+# valid data
+# -----
+:observation
+    a qb:Observation ;
+    qb:dataSet :dataSet .
+:dataSet
+    a qb:DataSet .
+    
+:componentSpecification
+    a qb:ComponentSpecification ;
+    qb:order '0'^^xsd:int . 
+    
+
+        
+# invalid data
+# -----
+:dataSet_2
+    a qb:DataSet ;
+    qb:structure :dataStructureDefinition .
+:dataStructureDefinition
+    a qb:DataSet .
+    
+:componentSpecification_2
+    a qb:ComponentSpecification ;
+    qb:order '0'^^xsd:string .   

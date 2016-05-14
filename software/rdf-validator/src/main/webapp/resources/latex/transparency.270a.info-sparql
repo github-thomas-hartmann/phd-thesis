@@ -1,0 +1,40 @@
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lcccc@{}}
+           & \multicolumn{4}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-5}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{MINIMUM-QUALIFIED-CARDINALITY-RESTRICTIONS-02}}
+           & \rot{\emph{MAXIMUM-QUALIFIED-CARDINALITY-RESTRICTIONS-01}}
+           & \rot{\emph{EXACT-UNQUALIFIED-CARDINALITY-RESTRICTIONS-01}}
+           & \rot{\emph{EXACT-QUALIFIED-CARDINALITY-RESTRICTIONS-02}}
+	\\ \midrule
+    \emph{http://transparency.270a.info/sparql} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://transparency.270a.info/sparql}}
+    \label{tab:evaluation-transparency.270a.info-sparql}
+    \end{center}
+\end{table}
+
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lc@{}}
+           & \multicolumn{1}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-2}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{MAXIMUM-QUALIFIED-CARDINALITY-RESTRICTIONS-01}}
+	\\ \midrule
+    \emph{CPI2009} & $\checkmark$  \\
+    \emph{CPI2010} & $\checkmark$  \\
+    \emph{CPI2011} & $\checkmark$  \\
+    \emph{corruption-perceptions-index/2009/sources} & $\checkmark$  \\
+    \emph{corruption-perceptions-index/2010/sources} & $\checkmark$  \\
+    \emph{corruption-perceptions-index/2011/sources} & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://transparency.270a.info/sparql}} Data Sets
+    \label{tab:evaluation-0-transparency.270a.info-sparql}
+    \end{center}
+\end{table}
+

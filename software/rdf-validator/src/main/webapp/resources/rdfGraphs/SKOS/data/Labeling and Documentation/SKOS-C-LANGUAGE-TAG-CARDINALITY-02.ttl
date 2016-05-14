@@ -1,0 +1,47 @@
+#  SKOS-C-LANGUAGE-TAG-CARDINALITY-02
+# -----
+# Labeling and Documentation Issues - Incomplete Language Coverage:
+# Some concepts in a thesaurus are labeled in only one language, 
+# some in multiple languages. It may be desirable to have each concept
+# labeled in each of the languages that also are used on the other concepts.
+# This is not always possible, but incompleteness of language coverage for some
+# concepts can indicate shortcomings of the vocabulary.
+
+:SubSubConcept 
+    a owl:Class ;
+    rdfs:subClassOf :SubConcept .
+:SubConcept 
+    a owl:Class ;
+    rdfs:subClassOf skos:Concept .
+
+# invalid data
+# -----
+:incomplete-language-coverage-c1
+    a :SubSubConcept ;
+    skos:definition "1-en"@en .
+:incomplete-language-coverage-c2
+    a :SubSubConcept ;
+    skos:definition "2-de"@de .
+:incomplete-language-coverage-c3
+    a :SubSubConcept ;
+    skos:definition "3-fr"@fr .
+:incomplete-language-coverage-c4
+    a :SubSubConcept ;
+    skos:definition "4-en"@en ;
+    skos:definition "4-de"@de .
+:incomplete-language-coverage-c5
+    a :SubSubConcept ;
+    skos:definition "5-en"@en ;
+    skos:definition "5-fr"@fr .
+:incomplete-language-coverage-c6
+    a :SubSubConcept ;
+    skos:definition "6-de"@de ;
+    skos:definition "6-fr"@fr .
+
+# valid data
+# -----
+:incomplete-language-coverage-c10
+    a :SubSubConcept ;
+    skos:definition "10-en"@en ;
+    skos:definition "10-de"@de ;
+    skos:definition "10-fr"@fr .

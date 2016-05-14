@@ -1,0 +1,44 @@
+# SKOS-C-LABELING-AND-DOCUMENTATION-01
+# -----
+# Labeling and Documentation Issues - Undocumented Concepts:
+# The SKOS standard defines a number of properties useful for
+# documenting the meaning of the concepts in a thesaurus also in a human-
+# readable form. Intense use of these properties leads to a well-documented
+# thesaurus which should also improve its quality. 
+# Implementation: Iteration over all concepts
+# in the vocabulary and find those not using one of skos:note, skos:changeNote,
+# skos:definition, skos:editorialNote, skos:example, skos:historyNote, or skos:scopeNote.
+
+ 	
+	# data
+	# ----
+	?subject a [ rdfs:subClassOf* skos:Concept ] .
+	
+	# validation
+	# -----
+	FILTER NOT EXISTS { 
+		{ { ?subject skos:note ?x } UNION { ?subject skos:changeNote ?x } . }
+		UNION 
+		{ { ?subject skos:definition ?x } UNION { ?subject skos:editorialNote ?x } . }
+		UNION 
+		{ { ?subject skos:example ?x } UNION { ?subject skos:historyNote ?x } . }
+		UNION 
+		{ ?subject skos:scopeNote ?x } .
+	}  
+
+	# violation message
+	# -----
+	BIND ( CONCAT( 
+		"The concept '", 
+		xsd:string( ?subject ), 
+		"' does not use one of skos:note, skos:changeNote, skos:definition, skos:editorialNote, skos:example, skos:historyNote, or skos:scopeNote.",
+		" | The SKOS standard defines a number of properties useful for documenting the meaning of the concepts in a thesaurus also in a human-readable form. Intense use of these properties leads to a well-documented thesaurus which should also improve its quality.") 
+		AS ?violationMessage ) . 
+	
+	# violation source
+	# ----------------
+	BIND ( CONCAT( "SKOS-C-LABELING-AND-DOCUMENTATION-01" )AS ?violationSource ) .
+	
+	# severity level
+	# --------------
+	BIND ( ( 'INFO' ) AS ?severityLevel ) .	

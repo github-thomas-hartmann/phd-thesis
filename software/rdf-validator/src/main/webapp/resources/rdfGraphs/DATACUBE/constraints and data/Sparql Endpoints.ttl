@@ -1,0 +1,36 @@
+# SPARQL Endpoint
+# -----
+
+
+# European Central Bank:
+#:sparqlEndpoint void:sparqlEndpoint <http://ecb.270a.info/sparql> .
+
+# UNESCO Institute for Statistics:
+#:sparqlEndpoint void:sparqlEndpoint <http://uis.270a.info/sparql> .
+
+# International Monetary Fund
+#:sparqlEndpoint void:sparqlEndpoint <http://imf.270a.info/sparql> .
+
+# Swiss Federal Statistics Office
+#:sparqlEndpoint void:sparqlEndpoint <http://bfs.270a.info/sparql> .
+
+# Food and Agriculture Organization of the United Nations
+#:sparqlEndpoint void:sparqlEndpoint <http://fao.270a.info/sparql> .
+
+# Federal Reserve Board
+#:sparqlEndpoint void:sparqlEndpoint <http://frb.270a.info/sparql> .
+
+# Organisation for Economic Co-operation and Development
+#:sparqlEndpoint void:sparqlEndpoint <http://oecd.270a.info/sparql> .
+
+# Transparency International
+#:sparqlEndpoint void:sparqlEndpoint <http://transparency.270a.info/sparql> .
+
+# World Bank
+:sparqlEndpoint void:sparqlEndpoint <http://worldbank.270a.info/sparql> .
+
+# Bank for International Settlements
+#:sparqlEndpoint void:sparqlEndpoint <http://bis.270a.info/sparql> .
+
+# Australian Bureau of Statistics
+#:sparqlEndpoint void:sparqlEndpoint <http://abs.270a.info/sparql> .

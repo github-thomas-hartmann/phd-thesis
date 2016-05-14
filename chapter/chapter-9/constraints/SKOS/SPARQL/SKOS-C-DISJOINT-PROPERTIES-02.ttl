@@ -1,0 +1,5 @@
+# SKOS-C-DISJOINT-PROPERTIES-02
+# -----
+# Disjoint Labels Violation:
+# Covers condition S13 from the SKOS reference document stating that skos:prefLabel,
+# skos:altLabel and skos:hiddenLabel are pairwise disjoint properties.

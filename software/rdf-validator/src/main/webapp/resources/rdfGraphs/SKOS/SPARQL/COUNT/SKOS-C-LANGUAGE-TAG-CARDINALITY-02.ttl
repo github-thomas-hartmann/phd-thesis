@@ -1,0 +1,139 @@
+	{	
+		{
+			# data
+			# ----
+			?subject ?p ?l1 .
+			FILTER ( ?p != rdf:type ) .
+			BIND ( ( LANG ( ?l1 ) ) AS ?language1 ) .
+			FILTER ( ?language1 = "en" ) .
+		
+			# validation
+			# ----------
+			FILTER NOT EXISTS {
+  				?subject ?p ?l2 .
+    			BIND ( ( LANG ( ?l2 ) ) AS ?language2 ) .
+    			FILTER ( ?language2 = "de" ) .
+  			}
+  			FILTER NOT EXISTS {
+  				?subject ?p ?l3 .
+    			BIND ( ( LANG ( ?l3 ) ) AS ?language3 ) .
+    			FILTER ( ?language3 = "fr" ) .
+  			}
+		}
+		UNION
+		{
+			# data
+			# ----
+			?subject ?p ?l1 .
+			FILTER ( ?p != rdf:type ) .
+			BIND ( ( LANG ( ?l1 ) ) AS ?language1 ) .
+			FILTER ( ?language1 = "de" ) .
+		
+			# validation
+			# ----------
+			FILTER NOT EXISTS {
+  				?subject ?p ?l2 .
+    			BIND ( ( LANG ( ?l2 ) ) AS ?language2 ) .
+    			FILTER ( ?language2 = "en" ) .
+  			}
+  			FILTER NOT EXISTS {
+  				?subject ?p ?l3 .
+    			BIND ( ( LANG ( ?l3 ) ) AS ?language3 ) .
+    			FILTER ( ?language3 = "fr" ) .
+  			}
+		}
+	}
+	UNION
+	{
+		{
+			{
+				# data
+				# ----
+				?subject ?p ?l1 .
+				FILTER ( ?p != rdf:type ) .
+				BIND ( ( LANG ( ?l1 ) ) AS ?language1 ) .
+				FILTER ( ?language1 = "fr" ) .
+			
+				# validation
+				# ----------
+				FILTER NOT EXISTS {
+					?subject ?p ?l2 .
+					BIND ( ( LANG ( ?l2 ) ) AS ?language2 ) .
+					FILTER ( ?language2 = "en" ) .
+				}
+				FILTER NOT EXISTS {
+					?subject ?p ?l3 .
+					BIND ( ( LANG ( ?l3 ) ) AS ?language3 ) .
+					FILTER ( ?language3 = "de" ) .
+				}
+			}
+			UNION
+			{
+				# data
+				# ----
+				?subject ?p ?l1 .
+				FILTER ( ?p != rdf:type ) .
+				BIND ( ( LANG ( ?l1 ) ) AS ?language1 ) .
+				FILTER ( ?language1 = "de" ) .
+			
+				# validation
+				# ----------
+				FILTER EXISTS {
+					?subject ?p ?l2 .
+					BIND ( ( LANG ( ?l2 ) ) AS ?language2 ) .
+					FILTER ( ?language2 = "fr" ) .
+				}
+				FILTER NOT EXISTS {
+					?subject ?p ?l3 .
+					BIND ( ( LANG ( ?l3 ) ) AS ?language3 ) .
+					FILTER ( ?language3 = "en" ) .
+				}
+			}
+		}
+		UNION
+		{
+			{
+				# data
+				# ----
+				?subject ?p ?l1 .
+				FILTER ( ?p != rdf:type ) .
+				BIND ( ( LANG ( ?l1 ) ) AS ?language1 ) .
+				FILTER ( ?language1 = "en" ) .
+			
+				# validation
+				# ----------
+				FILTER EXISTS {
+					?subject ?p ?l2 .
+					BIND ( ( LANG ( ?l2 ) ) AS ?language2 ) .
+					FILTER ( ?language2 = "de" ) .
+				}
+				FILTER NOT EXISTS {
+					?subject ?p ?l3 .
+					BIND ( ( LANG ( ?l3 ) ) AS ?language3 ) .
+					FILTER ( ?language3 = "fr" ) .
+				}
+			}
+			UNION
+			{
+				# data
+				# ----
+				?subject ?p ?l1 .
+				FILTER ( ?p != rdf:type ) .
+				BIND ( ( LANG ( ?l1 ) ) AS ?language1 ) .
+				FILTER ( ?language1 = "en" ) .
+			
+				# validation
+				# ----------
+				FILTER EXISTS {
+					?subject ?p ?l2 .
+					BIND ( ( LANG ( ?l2 ) ) AS ?language2 ) .
+					FILTER ( ?language2 = "fr" ) .
+				}
+				FILTER NOT EXISTS {
+					?subject ?p ?l3 .
+					BIND ( ( LANG ( ?l3 ) ) AS ?language3 ) .
+					FILTER ( ?language3 = "de" ) .
+				}
+			}
+		}
+	} 

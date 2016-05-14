@@ -1,0 +1,874 @@
+@prefix : <http://purl.org/dc/elements/1.1#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@base <http://purl.org/dc/elements/1.1> .
+
+<http://purl.org/dc/elements/1.1> rdf:type owl:Ontology ;
+                                  
+                                  owl:imports <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/elements/1.1/.owl> .
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://purl.org/dc/elements/1.1#contributor
+
+:contributor rdf:type owl:ObjectProperty .
+
+
+
+###  http://purl.org/dc/elements/1.1#coverage
+
+:coverage rdf:type owl:ObjectProperty .
+
+
+
+###  http://purl.org/dc/elements/1.1#creator
+
+:creator rdf:type owl:ObjectProperty .
+
+
+
+###  http://purl.org/dc/elements/1.1#date
+
+:date rdf:type owl:ObjectProperty .
+
+
+
+###  http://purl.org/dc/elements/1.1#description
+
+:description rdf:type owl:ObjectProperty .
+
+
+
+###  http://purl.org/dc/elements/1.1#format
+
+:format rdf:type owl:ObjectProperty .
+
+
+
+###  http://purl.org/dc/elements/1.1#identifier
+
+:identifier rdf:type owl:ObjectProperty .
+
+
+
+###  http://purl.org/dc/elements/1.1#language
+
+:language rdf:type owl:ObjectProperty .
+
+
+
+###  http://purl.org/dc/elements/1.1#publisher
+
+:publisher rdf:type owl:ObjectProperty .
+
+
+
+###  http://purl.org/dc/elements/1.1#relation
+
+:relation rdf:type owl:ObjectProperty .
+
+
+
+###  http://purl.org/dc/elements/1.1#rights
+
+:rights rdf:type owl:ObjectProperty .
+
+
+
+###  http://purl.org/dc/elements/1.1#source
+
+:source rdf:type owl:ObjectProperty .
+
+
+
+###  http://purl.org/dc/elements/1.1#stringvalue
+
+:stringvalue rdf:type owl:ObjectProperty .
+
+
+
+###  http://purl.org/dc/elements/1.1#subject
+
+:subject rdf:type owl:ObjectProperty .
+
+
+
+###  http://purl.org/dc/elements/1.1#title
+
+:title rdf:type owl:ObjectProperty ;
+       
+       rdfs:label "Title"@en ;
+       
+       rdfs:comment "A name given to the resource."@en ;
+       
+       rdfs:isDefinedBy <http://purl.org/dc/elements/1.1/> ;
+	   
+	   skos:note "A second property with the same name as this property has been declared in the dcterms: namespace (http://purl.org/dc/terms/).  See the Introduction to the document 'DCMI Metadata Terms' (http://dublincore.org/documents/dcmi-terms/) for an explanation."@en ;
+	   
+	   dcterms:issued "1999-07-02"^^xsd:date ;
+	   
+	   dcterms:modified "2008-01-14"^^xsd:date ;
+	   
+	   dcterms:hasVersion <http://dublincore.org/usage/terms/history/#title-006> .
+
+
+
+###  http://purl.org/dc/elements/1.1#type
+
+:type rdf:type owl:ObjectProperty .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/elements/1.1/.owl#title-Element_http://purl.org/dc/elements/1.1/-Schema
+
+<http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/elements/1.1/.owl#title-Element_http://purl.org/dc/elements/1.1/-Schema> rdf:type owl:Class .
+
+
+
+###  http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/2001/XMLSchema.owl#string-Type_http://www.w3.org/2001/XMLSchema-Schema
+
+<http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/2001/XMLSchema.owl#string-Type_http://www.w3.org/2001/XMLSchema-Schema> rdf:type owl:Class .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  http://purl.org/dc/elements/1.1#contributor
+
+:contributor rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/elements/1.1/.owl#contributor-Element_http://purl.org/dc/elements/1.1/-Schema> ,
+                      owl:NamedIndividual ;
+             
+             :stringvalue :contributor-string .
+
+
+
+###  http://purl.org/dc/elements/1.1#contributor-string
+
+:contributor-string rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/2001/XMLSchema.owl#string-Type_http://www.w3.org/2001/XMLSchema-Schema> ,
+                             owl:NamedIndividual ;
+                    
+                    :stringvalue :contributor-string .
+
+
+
+###  http://purl.org/dc/elements/1.1#coverage
+
+:coverage rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/elements/1.1/.owl#coverage-Element_http://purl.org/dc/elements/1.1/-Schema> ,
+                   owl:NamedIndividual ;
+          
+          :stringvalue :coverage-string .
+
+
+
+###  http://purl.org/dc/elements/1.1#coverage-string
+
+:coverage-string rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/2001/XMLSchema.owl#string-Type_http://www.w3.org/2001/XMLSchema-Schema> ,
+                          owl:NamedIndividual .
+
+
+
+###  http://purl.org/dc/elements/1.1#creator
+
+:creator rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/elements/1.1/.owl#creator-Element_http://purl.org/dc/elements/1.1/-Schema> ,
+                  owl:NamedIndividual ;
+         
+         :stringvalue :creator-string .
+
+
+
+###  http://purl.org/dc/elements/1.1#creator-string
+
+:creator-string rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/2001/XMLSchema.owl#string-Type_http://www.w3.org/2001/XMLSchema-Schema> ,
+                         owl:NamedIndividual .
+
+
+
+###  http://purl.org/dc/elements/1.1#date
+
+:date rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/elements/1.1/.owl#date-Element_http://purl.org/dc/elements/1.1/-Schema> ,
+               owl:NamedIndividual ;
+      
+      :stringvalue :date-string .
+
+
+
+###  http://purl.org/dc/elements/1.1#date-string
+
+:date-string rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/2001/XMLSchema.owl#string-Type_http://www.w3.org/2001/XMLSchema-Schema> ,
+                      owl:NamedIndividual .
+
+
+
+###  http://purl.org/dc/elements/1.1#description
+
+:description rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/elements/1.1/.owl#description-Element_http://purl.org/dc/elements/1.1/-Schema> ,
+                      owl:NamedIndividual ;
+             
+             :stringvalue :description-string .
+
+
+
+###  http://purl.org/dc/elements/1.1#description-string
+
+:description-string rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/2001/XMLSchema.owl#string-Type_http://www.w3.org/2001/XMLSchema-Schema> ,
+                             owl:NamedIndividual .
+
+
+
+###  http://purl.org/dc/elements/1.1#format
+
+:format rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/elements/1.1/.owl#format-Element_http://purl.org/dc/elements/1.1/-Schema> ,
+                 owl:NamedIndividual ;
+        
+        :stringvalue :format-string .
+
+
+
+###  http://purl.org/dc/elements/1.1#format-string
+
+:format-string rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/2001/XMLSchema.owl#string-Type_http://www.w3.org/2001/XMLSchema-Schema> ,
+                        owl:NamedIndividual .
+
+
+
+###  http://purl.org/dc/elements/1.1#identifier
+
+:identifier rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/elements/1.1/.owl#identifier-Element_http://purl.org/dc/elements/1.1/-Schema> ,
+                     owl:NamedIndividual ;
+            
+            :stringvalue :identifier-string .
+
+
+
+###  http://purl.org/dc/elements/1.1#identifier-string
+
+:identifier-string rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/2001/XMLSchema.owl#string-Type_http://www.w3.org/2001/XMLSchema-Schema> ,
+                            owl:NamedIndividual .
+
+
+
+###  http://purl.org/dc/elements/1.1#language
+
+:language rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/elements/1.1/.owl#language-Element_http://purl.org/dc/elements/1.1/-Schema> ,
+                   owl:NamedIndividual ;
+          
+          :stringvalue :language-string .
+
+
+
+###  http://purl.org/dc/elements/1.1#language-string
+
+:language-string rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/2001/XMLSchema.owl#string-Type_http://www.w3.org/2001/XMLSchema-Schema> ,
+                          owl:NamedIndividual .
+
+
+
+###  http://purl.org/dc/elements/1.1#publisher
+
+:publisher rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/elements/1.1/.owl#publisher-Element_http://purl.org/dc/elements/1.1/-Schema> ,
+                    owl:NamedIndividual ;
+           
+           :stringvalue :publisher-string .
+
+
+
+###  http://purl.org/dc/elements/1.1#publisher-string
+
+:publisher-string rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/2001/XMLSchema.owl#string-Type_http://www.w3.org/2001/XMLSchema-Schema> ,
+                           owl:NamedIndividual .
+
+
+
+###  http://purl.org/dc/elements/1.1#relation
+
+:relation rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/elements/1.1/.owl#relation-Element_http://purl.org/dc/elements/1.1/-Schema> ,
+                   owl:NamedIndividual ;
+          
+          :stringvalue :relation-string .
+
+
+
+###  http://purl.org/dc/elements/1.1#relation-string
+
+:relation-string rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/2001/XMLSchema.owl#string-Type_http://www.w3.org/2001/XMLSchema-Schema> ,
+                          owl:NamedIndividual .
+
+
+
+###  http://purl.org/dc/elements/1.1#rights
+
+:rights rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/elements/1.1/.owl#rights-Element_http://purl.org/dc/elements/1.1/-Schema> ,
+                 owl:NamedIndividual ;
+        
+        :stringvalue :rights-string .
+
+
+
+###  http://purl.org/dc/elements/1.1#rights-string
+
+:rights-string rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/2001/XMLSchema.owl#string-Type_http://www.w3.org/2001/XMLSchema-Schema> ,
+                        owl:NamedIndividual .
+
+
+
+###  http://purl.org/dc/elements/1.1#source
+
+:source rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/elements/1.1/.owl#source-Element_http://purl.org/dc/elements/1.1/-Schema> ,
+                 owl:NamedIndividual ;
+        
+        :stringvalue :source-string .
+
+
+
+###  http://purl.org/dc/elements/1.1#source-string
+
+:source-string rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/2001/XMLSchema.owl#string-Type_http://www.w3.org/2001/XMLSchema-Schema> ,
+                        owl:NamedIndividual .
+
+
+
+###  http://purl.org/dc/elements/1.1#subject
+
+:subject rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/elements/1.1/.owl#subject-Element_http://purl.org/dc/elements/1.1/-Schema> ,
+                  owl:NamedIndividual ;
+         
+         :stringvalue :subject-string .
+
+
+
+###  http://purl.org/dc/elements/1.1#subject-string
+
+:subject-string rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/2001/XMLSchema.owl#string-Type_http://www.w3.org/2001/XMLSchema-Schema> ,
+                         owl:NamedIndividual .
+
+
+
+###  http://purl.org/dc/elements/1.1#title
+
+:title rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/elements/1.1/.owl#title-Element_http://purl.org/dc/elements/1.1/-Schema> ,
+                owl:NamedIndividual ;
+       
+       rdfs:label "Title"@en ;
+       
+       rdfs:comment "A name given to the resource."@en ;
+       
+       :stringvalue :title-string ;
+       
+       rdfs:isDefinedBy <http://purl.org/dc/elements/1.1/> .
+
+
+
+###  http://purl.org/dc/elements/1.1#title-string
+
+:title-string rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/2001/XMLSchema.owl#string-Type_http://www.w3.org/2001/XMLSchema-Schema> ,
+                       owl:NamedIndividual .
+
+
+
+###  http://purl.org/dc/elements/1.1#type
+
+:type rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/elements/1.1/.owl#type-Element_http://purl.org/dc/elements/1.1/-Schema> ,
+               owl:NamedIndividual ;
+      
+      :stringvalue :type-string .
+
+
+
+###  http://purl.org/dc/elements/1.1#type-string
+
+:type-string rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/2001/XMLSchema.owl#string-Type_http://www.w3.org/2001/XMLSchema-Schema> ,
+                      owl:NamedIndividual .
+
+
+
+
+
+#################################################################
+#
+#    Rules
+#
+#################################################################
+
+
+<urn:swrl#a> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+<urn:swrl#b> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+  <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                          rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                     rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                 <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/2001/XMLSchema.owl#string-Type_http://www.w3.org/2001/XMLSchema-Schema> ;
+                                                                 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#b>
+                                                               ] ;
+                                                     rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                rdf:rest rdf:nil ;
+                                                                rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                            <http://www.w3.org/2003/11/swrl#propertyPredicate> :stringvalue ;
+                                                                            <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a> ;
+                                                                            <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#b>
+                                                                          ]
+                                                              ]
+                                                   ] ;
+                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                      <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/elements/1.1/.owl#source-Element_http://purl.org/dc/elements/1.1/-Schema> ;
+                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a>
+                                                    ]
+                                        ] ;
+  <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                          rdf:rest rdf:nil ;
+                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                      <http://www.w3.org/2003/11/swrl#propertyPredicate> :source ;
+                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a> ;
+                                                      <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#b>
+                                                    ]
+                                        ]
+] .
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+  <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                      <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/elements/1.1/.owl#subject-Element_http://purl.org/dc/elements/1.1/-Schema> ;
+                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a>
+                                                    ] ;
+                                          rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                     rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                rdf:rest rdf:nil ;
+                                                                rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                            <http://www.w3.org/2003/11/swrl#propertyPredicate> :stringvalue ;
+                                                                            <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a> ;
+                                                                            <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#b>
+                                                                          ]
+                                                              ] ;
+                                                     rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                 <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/2001/XMLSchema.owl#string-Type_http://www.w3.org/2001/XMLSchema-Schema> ;
+                                                                 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#b>
+                                                               ]
+                                                   ]
+                                        ] ;
+  <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                          rdf:rest rdf:nil ;
+                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                      <http://www.w3.org/2003/11/swrl#propertyPredicate> :subject ;
+                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a> ;
+                                                      <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#b>
+                                                    ]
+                                        ]
+] .
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+  <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                          rdf:rest rdf:nil ;
+                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                      <http://www.w3.org/2003/11/swrl#propertyPredicate> :format ;
+                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a> ;
+                                                      <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#b>
+                                                    ]
+                                        ] ;
+  <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                          rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                     rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                rdf:rest rdf:nil ;
+                                                                rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                            <http://www.w3.org/2003/11/swrl#propertyPredicate> :stringvalue ;
+                                                                            <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a> ;
+                                                                            <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#b>
+                                                                          ]
+                                                              ] ;
+                                                     rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                 <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/2001/XMLSchema.owl#string-Type_http://www.w3.org/2001/XMLSchema-Schema> ;
+                                                                 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#b>
+                                                               ]
+                                                   ] ;
+                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                      <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/elements/1.1/.owl#format-Element_http://purl.org/dc/elements/1.1/-Schema> ;
+                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a>
+                                                    ]
+                                        ]
+] .
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+  <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                          rdf:rest rdf:nil ;
+                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                      <http://www.w3.org/2003/11/swrl#propertyPredicate> :identifier ;
+                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a> ;
+                                                      <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#b>
+                                                    ]
+                                        ] ;
+  <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                          rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                     rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                 <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/2001/XMLSchema.owl#string-Type_http://www.w3.org/2001/XMLSchema-Schema> ;
+                                                                 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#b>
+                                                               ] ;
+                                                     rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                rdf:rest rdf:nil ;
+                                                                rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                            <http://www.w3.org/2003/11/swrl#propertyPredicate> :stringvalue ;
+                                                                            <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a> ;
+                                                                            <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#b>
+                                                                          ]
+                                                              ]
+                                                   ] ;
+                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                      <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/elements/1.1/.owl#identifier-Element_http://purl.org/dc/elements/1.1/-Schema> ;
+                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a>
+                                                    ]
+                                        ]
+] .
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+  <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                          rdf:rest rdf:nil ;
+                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                      <http://www.w3.org/2003/11/swrl#propertyPredicate> :description ;
+                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a> ;
+                                                      <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#b>
+                                                    ]
+                                        ] ;
+  <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                          rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                     rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                rdf:rest rdf:nil ;
+                                                                rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                            <http://www.w3.org/2003/11/swrl#propertyPredicate> :stringvalue ;
+                                                                            <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a> ;
+                                                                            <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#b>
+                                                                          ]
+                                                              ] ;
+                                                     rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                 <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/2001/XMLSchema.owl#string-Type_http://www.w3.org/2001/XMLSchema-Schema> ;
+                                                                 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#b>
+                                                               ]
+                                                   ] ;
+                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                      <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/elements/1.1/.owl#description-Element_http://purl.org/dc/elements/1.1/-Schema> ;
+                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a>
+                                                    ]
+                                        ]
+] .
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+  <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                          rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                     rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                 <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/2001/XMLSchema.owl#string-Type_http://www.w3.org/2001/XMLSchema-Schema> ;
+                                                                 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#b>
+                                                               ] ;
+                                                     rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                rdf:rest rdf:nil ;
+                                                                rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                            <http://www.w3.org/2003/11/swrl#propertyPredicate> :stringvalue ;
+                                                                            <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a> ;
+                                                                            <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#b>
+                                                                          ]
+                                                              ]
+                                                   ] ;
+                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                      <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/elements/1.1/.owl#creator-Element_http://purl.org/dc/elements/1.1/-Schema> ;
+                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a>
+                                                    ]
+                                        ] ;
+  <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                          rdf:rest rdf:nil ;
+                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                      <http://www.w3.org/2003/11/swrl#propertyPredicate> :creator ;
+                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a> ;
+                                                      <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#b>
+                                                    ]
+                                        ]
+] .
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+  <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                      <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/elements/1.1/.owl#date-Element_http://purl.org/dc/elements/1.1/-Schema> ;
+                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a>
+                                                    ] ;
+                                          rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                     rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                 <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/2001/XMLSchema.owl#string-Type_http://www.w3.org/2001/XMLSchema-Schema> ;
+                                                                 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#b>
+                                                               ] ;
+                                                     rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                rdf:rest rdf:nil ;
+                                                                rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                            <http://www.w3.org/2003/11/swrl#propertyPredicate> :stringvalue ;
+                                                                            <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a> ;
+                                                                            <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#b>
+                                                                          ]
+                                                              ]
+                                                   ]
+                                        ] ;
+  <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                          rdf:rest rdf:nil ;
+                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                      <http://www.w3.org/2003/11/swrl#propertyPredicate> :date ;
+                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a> ;
+                                                      <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#b>
+                                                    ]
+                                        ]
+] .
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+  <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                          rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                     rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                 <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/2001/XMLSchema.owl#string-Type_http://www.w3.org/2001/XMLSchema-Schema> ;
+                                                                 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#b>
+                                                               ] ;
+                                                     rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                rdf:rest rdf:nil ;
+                                                                rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                            <http://www.w3.org/2003/11/swrl#propertyPredicate> :stringvalue ;
+                                                                            <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a> ;
+                                                                            <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#b>
+                                                                          ]
+                                                              ]
+                                                   ] ;
+                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                      <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/elements/1.1/.owl#language-Element_http://purl.org/dc/elements/1.1/-Schema> ;
+                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a>
+                                                    ]
+                                        ] ;
+  <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                          rdf:rest rdf:nil ;
+                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                      <http://www.w3.org/2003/11/swrl#propertyPredicate> :language ;
+                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a> ;
+                                                      <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#b>
+                                                    ]
+                                        ]
+] .
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+  <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                          rdf:rest rdf:nil ;
+                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                      <http://www.w3.org/2003/11/swrl#propertyPredicate> :contributor ;
+                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a> ;
+                                                      <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#b>
+                                                    ]
+                                        ] ;
+  <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                          rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                     rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                rdf:rest rdf:nil ;
+                                                                rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                            <http://www.w3.org/2003/11/swrl#propertyPredicate> :stringvalue ;
+                                                                            <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a> ;
+                                                                            <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#b>
+                                                                          ]
+                                                              ] ;
+                                                     rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                 <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/2001/XMLSchema.owl#string-Type_http://www.w3.org/2001/XMLSchema-Schema> ;
+                                                                 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#b>
+                                                               ]
+                                                   ] ;
+                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                      <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/elements/1.1/.owl#contributor-Element_http://purl.org/dc/elements/1.1/-Schema> ;
+                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a>
+                                                    ]
+                                        ]
+] .
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+  <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                      <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/elements/1.1/.owl#relation-Element_http://purl.org/dc/elements/1.1/-Schema> ;
+                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a>
+                                                    ] ;
+                                          rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                     rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                rdf:rest rdf:nil ;
+                                                                rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                            <http://www.w3.org/2003/11/swrl#propertyPredicate> :stringvalue ;
+                                                                            <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a> ;
+                                                                            <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#b>
+                                                                          ]
+                                                              ] ;
+                                                     rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                 <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/2001/XMLSchema.owl#string-Type_http://www.w3.org/2001/XMLSchema-Schema> ;
+                                                                 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#b>
+                                                               ]
+                                                   ]
+                                        ] ;
+  <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                          rdf:rest rdf:nil ;
+                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                      <http://www.w3.org/2003/11/swrl#propertyPredicate> :relation ;
+                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a> ;
+                                                      <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#b>
+                                                    ]
+                                        ]
+] .
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+  <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                          rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                     rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                rdf:rest rdf:nil ;
+                                                                rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                            <http://www.w3.org/2003/11/swrl#propertyPredicate> :stringvalue ;
+                                                                            <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a> ;
+                                                                            <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#b>
+                                                                          ]
+                                                              ] ;
+                                                     rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                 <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/2001/XMLSchema.owl#string-Type_http://www.w3.org/2001/XMLSchema-Schema> ;
+                                                                 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#b>
+                                                               ]
+                                                   ] ;
+                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                      <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/elements/1.1/.owl#type-Element_http://purl.org/dc/elements/1.1/-Schema> ;
+                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a>
+                                                    ]
+                                        ] ;
+  <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                          rdf:rest rdf:nil ;
+                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                      <http://www.w3.org/2003/11/swrl#propertyPredicate> :type ;
+                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a> ;
+                                                      <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#b>
+                                                    ]
+                                        ]
+] .
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+  <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                          rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                     rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                 <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/2001/XMLSchema.owl#string-Type_http://www.w3.org/2001/XMLSchema-Schema> ;
+                                                                 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#b>
+                                                               ] ;
+                                                     rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                rdf:rest rdf:nil ;
+                                                                rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                            <http://www.w3.org/2003/11/swrl#propertyPredicate> :stringvalue ;
+                                                                            <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a> ;
+                                                                            <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#b>
+                                                                          ]
+                                                              ]
+                                                   ] ;
+                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                      <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/elements/1.1/.owl#title-Element_http://purl.org/dc/elements/1.1/-Schema> ;
+                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a>
+                                                    ]
+                                        ] ;
+  <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                          rdf:rest rdf:nil ;
+                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                      <http://www.w3.org/2003/11/swrl#propertyPredicate> :title ;
+                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a> ;
+                                                      <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#b>
+                                                    ]
+                                        ]
+] .
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+  <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                          rdf:rest rdf:nil ;
+                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                      <http://www.w3.org/2003/11/swrl#propertyPredicate> :coverage ;
+                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a> ;
+                                                      <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#b>
+                                                    ]
+                                        ] ;
+  <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                      <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/elements/1.1/.owl#coverage-Element_http://purl.org/dc/elements/1.1/-Schema> ;
+                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a>
+                                                    ] ;
+                                          rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                     rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                rdf:rest rdf:nil ;
+                                                                rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                            <http://www.w3.org/2003/11/swrl#propertyPredicate> :stringvalue ;
+                                                                            <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a> ;
+                                                                            <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#b>
+                                                                          ]
+                                                              ] ;
+                                                     rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                 <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/2001/XMLSchema.owl#string-Type_http://www.w3.org/2001/XMLSchema-Schema> ;
+                                                                 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#b>
+                                                               ]
+                                                   ]
+                                        ]
+] .
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+  <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                          rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                     rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                 <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/2001/XMLSchema.owl#string-Type_http://www.w3.org/2001/XMLSchema-Schema> ;
+                                                                 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#b>
+                                                               ] ;
+                                                     rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                rdf:rest rdf:nil ;
+                                                                rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                            <http://www.w3.org/2003/11/swrl#propertyPredicate> :stringvalue ;
+                                                                            <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a> ;
+                                                                            <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#b>
+                                                                          ]
+                                                              ]
+                                                   ] ;
+                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                      <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/elements/1.1/.owl#rights-Element_http://purl.org/dc/elements/1.1/-Schema> ;
+                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a>
+                                                    ]
+                                        ] ;
+  <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                          rdf:rest rdf:nil ;
+                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                      <http://www.w3.org/2003/11/swrl#propertyPredicate> :rights ;
+                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a> ;
+                                                      <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#b>
+                                                    ]
+                                        ]
+] .
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+  <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                          rdf:rest rdf:nil ;
+                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                      <http://www.w3.org/2003/11/swrl#propertyPredicate> :publisher ;
+                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a> ;
+                                                      <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#b>
+                                                    ]
+                                        ] ;
+  <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                      <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/elements/1.1/.owl#publisher-Element_http://purl.org/dc/elements/1.1/-Schema> ;
+                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a>
+                                                    ] ;
+                                          rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                     rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                rdf:rest rdf:nil ;
+                                                                rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                            <http://www.w3.org/2003/11/swrl#propertyPredicate> :stringvalue ;
+                                                                            <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a> ;
+                                                                            <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#b>
+                                                                          ]
+                                                              ] ;
+                                                     rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                 <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/2001/XMLSchema.owl#string-Type_http://www.w3.org/2001/XMLSchema-Schema> ;
+                                                                 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#b>
+                                                               ]
+                                                   ]
+                                        ]
+] .
+
+###  Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net
+

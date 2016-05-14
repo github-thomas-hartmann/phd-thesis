@@ -1,0 +1,229 @@
+# SKOS-C-LANGUAGE-TAG-CARDINALITY-02
+# -----
+# Labeling and Documentation Issues - Incomplete Language Coverage:
+# Some concepts in a thesaurus are labeled in only one language, 
+# some in multiple languages. It may be desirable to have each concept
+# labeled in each of the languages that also are used on the other concepts.
+# This is not always possible, but incompleteness of language coverage for some
+# concepts can indicate shortcomings of the vocabulary.
+
+ 	
+	{	
+		{
+			# data
+			# ----
+			?subject
+				a [rdfs:subClassOf* skos:Concept] ;
+				?p ?l1 .
+			FILTER ( ?p != rdf:type ) .
+			BIND ( ( LANG ( ?l1 ) ) AS ?language1 ) .
+			FILTER ( ?language1 = "en" ) .
+		
+			# validation
+			# ----------
+			FILTER NOT EXISTS {
+  				?subject ?p ?l2 .
+    			BIND ( ( LANG ( ?l2 ) ) AS ?language2 ) .
+    			FILTER ( ?language2 = "de" ) .
+  			}
+  			FILTER NOT EXISTS {
+  				?subject ?p ?l3 .
+    			BIND ( ( LANG ( ?l3 ) ) AS ?language3 ) .
+    			FILTER ( ?language3 = "fr" ) .
+  			}
+
+			# violation message
+			# -----------------
+			BIND ( CONCAT( 
+				"The languages en, de, fr should be covered by each property of each concept | The concept '",
+				xsd:string( ?subject ),
+				"' only points to an English value via the property '",
+				xsd:string( ?p ),
+				"'.") 
+				AS ?violationMessage ) . 
+		}
+		UNION
+		{
+			# data
+			# ----
+			?subject
+				a [rdfs:subClassOf* skos:Concept] ;
+				?p ?l1 .
+			FILTER ( ?p != rdf:type ) .
+			BIND ( ( LANG ( ?l1 ) ) AS ?language1 ) .
+			FILTER ( ?language1 = "de" ) .
+		
+			# validation
+			# ----------
+			FILTER NOT EXISTS {
+  				?subject ?p ?l2 .
+    			BIND ( ( LANG ( ?l2 ) ) AS ?language2 ) .
+    			FILTER ( ?language2 = "en" ) .
+  			}
+  			FILTER NOT EXISTS {
+  				?subject ?p ?l3 .
+    			BIND ( ( LANG ( ?l3 ) ) AS ?language3 ) .
+    			FILTER ( ?language3 = "fr" ) .
+  			}
+
+			# violation message
+			# -----------------
+			BIND ( CONCAT( 
+				"The languages en, de, fr should be covered by each property of each concept | The concept '",
+				xsd:string( ?subject ),
+				"' only points to a German value via the property '",
+				xsd:string( ?p ),
+				"'.") 
+				AS ?violationMessage ) . 
+		}
+	}
+	UNION
+	{
+		{
+			{
+				# data
+				# ----
+				?subject
+					a [rdfs:subClassOf* skos:Concept] ;
+					?p ?l1 .
+				FILTER ( ?p != rdf:type ) .
+				BIND ( ( LANG ( ?l1 ) ) AS ?language1 ) .
+				FILTER ( ?language1 = "fr" ) .
+			
+				# validation
+				# ----------
+				FILTER NOT EXISTS {
+					?subject ?p ?l2 .
+					BIND ( ( LANG ( ?l2 ) ) AS ?language2 ) .
+					FILTER ( ?language2 = "en" ) .
+				}
+				FILTER NOT EXISTS {
+					?subject ?p ?l3 .
+					BIND ( ( LANG ( ?l3 ) ) AS ?language3 ) .
+					FILTER ( ?language3 = "de" ) .
+				}
+
+				# violation message
+				# -----------------
+				BIND ( CONCAT( 
+					"The languages en, de, fr should be covered by each property of each concept | The concept '",
+					xsd:string( ?subject ),
+					"' only points to a French value via the property '",
+					xsd:string( ?p ),
+					"'.") 
+					AS ?violationMessage ) . 
+			}
+			UNION
+			{
+				# data
+				# ----
+				?subject
+					a [rdfs:subClassOf* skos:Concept] ;
+					?p ?l1 .
+				FILTER ( ?p != rdf:type ) .
+				BIND ( ( LANG ( ?l1 ) ) AS ?language1 ) .
+				FILTER ( ?language1 = "de" ) .
+			
+				# validation
+				# ----------
+				FILTER EXISTS {
+					?subject ?p ?l2 .
+					BIND ( ( LANG ( ?l2 ) ) AS ?language2 ) .
+					FILTER ( ?language2 = "fr" ) .
+				}
+				FILTER NOT EXISTS {
+					?subject ?p ?l3 .
+					BIND ( ( LANG ( ?l3 ) ) AS ?language3 ) .
+					FILTER ( ?language3 = "en" ) .
+				}
+
+				# violation message
+				# -----------------
+				BIND ( CONCAT( 
+					"The languages en, de, fr should be covered by each property of each concept | The concept '",
+					xsd:string( ?subject ),
+					"' only points to a German and a French value via the property '",
+					xsd:string( ?p ),
+					"'.") 
+					AS ?violationMessage ) . 
+			}
+		}
+		UNION
+		{
+			{
+				# data
+				# ----
+				?subject
+					a [rdfs:subClassOf* skos:Concept] ;
+					?p ?l1 .
+				FILTER ( ?p != rdf:type ) .
+				BIND ( ( LANG ( ?l1 ) ) AS ?language1 ) .
+				FILTER ( ?language1 = "en" ) .
+			
+				# validation
+				# ----------
+				FILTER EXISTS {
+					?subject ?p ?l2 .
+					BIND ( ( LANG ( ?l2 ) ) AS ?language2 ) .
+					FILTER ( ?language2 = "de" ) .
+				}
+				FILTER NOT EXISTS {
+					?subject ?p ?l3 .
+					BIND ( ( LANG ( ?l3 ) ) AS ?language3 ) .
+					FILTER ( ?language3 = "fr" ) .
+				}
+
+				# violation message
+				# -----------------
+				BIND ( CONCAT( 
+					"The languages en, de, fr should be covered by each property of each concept | The concept '",
+					xsd:string( ?subject ),
+					"' only points to an Englisch and a German value via the property '",
+					xsd:string( ?p ),
+					"'.") 
+					AS ?violationMessage ) . 
+			}
+			UNION
+			{
+				# data
+				# ----
+				?subject
+					a [rdfs:subClassOf* skos:Concept] ;
+					?p ?l1 .
+				FILTER ( ?p != rdf:type ) .
+				BIND ( ( LANG ( ?l1 ) ) AS ?language1 ) .
+				FILTER ( ?language1 = "en" ) .
+			
+				# validation
+				# ----------
+				FILTER EXISTS {
+					?subject ?p ?l2 .
+					BIND ( ( LANG ( ?l2 ) ) AS ?language2 ) .
+					FILTER ( ?language2 = "fr" ) .
+				}
+				FILTER NOT EXISTS {
+					?subject ?p ?l3 .
+					BIND ( ( LANG ( ?l3 ) ) AS ?language3 ) .
+					FILTER ( ?language3 = "de" ) .
+				}
+
+				# violation message
+				# -----------------
+				BIND ( CONCAT( 
+					"The languages en, de, fr should be covered by each property of each concept | The concept '",
+					xsd:string( ?subject ),
+					"' only points to an Englisch and a French value via the property '",
+					xsd:string( ?p ),
+					"'.") 
+					AS ?violationMessage ) . 
+			}
+		}
+	} 
+	
+	# violation source
+	# ----------------
+	BIND ( CONCAT( "SKOS-C-LANGUAGE-TAG-CARDINALITY-02" )AS ?violationSource ) .
+	
+	# severity level
+	# --------------
+	BIND ( ( 'INFO' ) AS ?severityLevel ) .	

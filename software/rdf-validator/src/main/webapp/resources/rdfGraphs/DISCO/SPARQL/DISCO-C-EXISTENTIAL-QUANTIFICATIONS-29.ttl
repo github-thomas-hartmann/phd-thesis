@@ -1,0 +1,18 @@
+	?subject a disco:DataFile .
+	
+	OPTIONAL { ?subject disco:caseQuantity ?caseQuantity . }
+	FILTER ( ! BOUND( ?caseQuantity ) ) .
+	
+	# violation message
+	# -----------------
+	BIND ( CONCAT( 
+		"DISCO-C-EXISTENTIAL-QUANTIFICATIONS-29" )
+		AS ?violationMessage ) . 
+	
+	# violation source
+	# ----------------
+	BIND ( CONCAT( "DISCO-C-EXISTENTIAL-QUANTIFICATIONS-29" )AS ?violationSource ) . 
+	
+	# severity level
+	# --------------
+	BIND ( ( 'WARNING' ) AS ?severityLevel ) .

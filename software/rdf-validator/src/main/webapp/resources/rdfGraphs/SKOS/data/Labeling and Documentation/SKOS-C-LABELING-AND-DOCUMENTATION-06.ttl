@@ -1,0 +1,50 @@
+# SKOS-C-LABELING-AND-DOCUMENTATION-06
+# -----
+# Labeling and Documentation Issues - Ambiguous Notation References:
+# Concepts within the same concept scheme should not
+# have identical skos:notation literals.
+
+:SubSubConcept 
+    a owl:Class ;
+    rdfs:subClassOf :SubConcept .
+:SubConcept 
+    a owl:Class ;
+    rdfs:subClassOf skos:Concept .
+:SubSubConceptScheme 
+    a owl:Class ;
+    rdfs:subClassOf :SubConceptScheme .
+:SubConceptScheme 
+    a owl:Class ;
+    rdfs:subClassOf skos:ConceptScheme .
+
+# invalid data
+# -----
+:ambiguous-notation-references-c1
+    a :SubSubConcept ;
+    skos:inScheme :ambiguous-notation-references-cs1 ;
+    skos:definition "definition 1"@en , "definition 1"@de , "definition 1"@fr ;
+    skos:notation "notation"@en .
+:ambiguous-notation-references-c2
+    a :SubSubConcept ;
+    skos:inScheme :ambiguous-notation-references-cs1 ;
+    skos:definition "definition 2"@en , "definition 2"@de , "definition 2"@fr ;
+    skos:notation "notation"@en .
+:ambiguous-notation-references-cs1
+    a :SubSubConceptScheme ;
+    skos:definition "definition"@en , "definition"@de , "definition"@fr .
+
+# valid data
+# -----
+:ambiguous-notation-references-c3
+    a :SubSubConcept ;
+    skos:inScheme :ambiguous-notation-references-cs2 ;
+    skos:definition "definition 3"@en , "definition 3"@de , "definition 3"@fr ;
+    skos:notation "notation-3"@en .
+:ambiguous-notation-references-c4
+    a :SubSubConcept ;
+    skos:inScheme :ambiguous-notation-references-cs2 ;
+    skos:definition "definition 4"@en , "definition 4"@de , "definition 4"@fr ;
+    skos:notation "notation-4"@en .
+:ambiguous-notation-references-cs2
+    a :SubSubConceptScheme ;
+    skos:definition "definition"@en , "definition"@de , "definition"@fr .

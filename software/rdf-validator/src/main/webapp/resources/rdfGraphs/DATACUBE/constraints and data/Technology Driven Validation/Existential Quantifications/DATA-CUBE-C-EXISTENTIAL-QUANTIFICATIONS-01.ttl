@@ -1,0 +1,11 @@
+# DATA-CUBE-C-EXISTENTIAL-QUANTIFICATIONS-01: Dimensions have range (IC-4)
+# -----
+# Every dimension declared in a qb:DataStructureDefinition must have a declared rdfs:range.
+
+
+# invalid data
+# -----
+
+
+# valid data
+# -----

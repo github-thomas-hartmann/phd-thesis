@@ -1,0 +1,27 @@
+# Property Domains
+# -----
+
+
+# valid data
+# -----
+:property-domains-question
+    a disco:Question ;
+    disco:responseDomain :property-domains-responseDomain .
+:property-domains-responseDomain
+    a disco:Representation .
+    
+:property-domains-dataFile
+    a disco:DataFile ;
+    disco:caseQuantity '1'^^xsd:nonNegativeInteger .
+    
+# invalid data
+# -----
+:property-domains-variable
+    a disco:Variable ;
+    disco:responseDomain :property-domains-responseDomain .
+:property-domains-responseDomain
+    a disco:Representation .
+    
+:property-domains-categoryStatistics
+    a disco:SummaryStatistics ;
+    disco:frequency '1'^^xsd:nonNegativeInteger .

@@ -1,0 +1,63 @@
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: 	  <http://www.w3.org/2002/07/owl#> . 
+@prefix foaf:     <http://xmlns.com/foaf/0.1/#> .
+@prefix spin:     <http://spinrdf.org/spin#> .
+@prefix sp: 	  <http://spinrdf.org/sp#> .
+@prefix spl:      <http://spinrdf.org/spl#> . 
+@prefix spinx:    <http://spinrdf.org/spinx#> . 
+@prefix kennedys: <http://topbraid.org/examples/kennedys#> .
+@prefix ex: 	  <http://www.example.org/ex#> .
+@prefix wine:     <http://www.example.org/wine#> .
+@prefix dspFunctions:    <http://dublincore.org/dc-dsp/functions#> .
+@prefix templates:<http://www.example.org/templates#> .
+@prefix fn:       <http://www.w3.org/2005/xpath-functions#> .
+
+[]
+	a owl:Ontology ;
+	owl:imports <http://www.w3.org/2000/01/rdf-schema> ;
+    owl:imports <http://spinrdf.org/spin> ;
+    owl:imports <http://spinrdf.org/spl> ;
+	owl:imports <http://spinrdf.org/spinx> ;
+    owl:imports <http://topbraid.org/functions-smf> ;
+    owl:imports <http://topbraid.org/functions-afn> ;
+    owl:imports <http://topbraid.org/functions-fn> ;
+	owl:imports <http://www.w3.org/2005/xpath-functions> .
+
+# ---------------
+# cardinalityDescription
+# -----
+
+#	SELECT ( COUNT ( ?this ) AS ?cardinalityDescription )
+#	WHERE {
+#		?s rdf:type ?arg1 .
+#       FILTER ( ?arg1 != owl:Thing ) . }		
+dspFunctions:cardinalityDescription
+    a spin:Function ;
+    rdfs:subClassOf spin:Functions ;
+    rdfs:comment "" ;
+    rdfs:label "" ;
+	spin:constraint
+		[   a spl:Argument ;
+            rdfs:comment "C" ;
+            spl:predicate sp:arg1 ] ;
+    spin:body [ 
+    	a sp:Select ;
+            sp:resultVariables ( 
+			    [   sp:expression [ 
+				    a sp:Count ;
+                    sp:expression [ sp:varName "s" ] ] ;
+                    sp:varName "cardinalityDescription" ] ) ;
+        sp:where (  
+			[   sp:subject [ sp:varName "s" ] ;
+                sp:predicate rdf:type ;
+                sp:object [ sp:varName "arg1" ] ]
+#			[   a sp:Filter ;
+#				sp:expression [ 
+#					a sp:ne;
+#				    sp:arg1 [ sp:varName "arg1" ] ;
+#					sp:arg2 owl:Thing ] ]
+				) ] .
+				
+# -----

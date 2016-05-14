@@ -1,0 +1,23 @@
+# valid data
+# -----
+:table
+    a phdd:Table ;
+    phdd:isStructuredBy :tableStructure .
+:tableStructure
+    a phdd:TableStructure .
+    
+:tableDescription_2
+    a phdd:TableDescription ;  
+    phdd:caseQuantity '1'^^xsd:nonNegativeInteger .
+        
+# invalid data
+# -----
+:tableDescription
+    a phdd:TableDescription ;
+    phdd:inputProgram :inputProgram .
+:inputProgram
+    a phdd:Table . 
+    
+:delimitedColumnDescription
+    a phdd:DelimitedColumnDescription ;    
+    phdd:columnPosition '1'^^xsd:integer .

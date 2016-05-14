@@ -1,0 +1,33 @@
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> . 
+@prefix :         <http://www.example.org/OWL2InstanceData#> .
+
+
+# ---------------
+# Axioms - Data Property Axioms - Data Property Domain
+
+	# generic
+	# -----
+	# DataPropertyDomain( :DataPropertyDomain_DPE :DataPropertyDomain_CE )
+	:DataPropertyDomain_DPE rdfs:domain :DataPropertyDomain_CE  .
+	:DataPropertyDomain_I1
+		a owl:Thing ;
+#		a :DataPropertyDomain_CE ; # commented --> constraint violation
+        :DataPropertyDomain_DPE :DataPropertyDomain_I2 ; 
+        :DataPropertyDomain_DPE :DataPropertyDomain_I3 . 
+	:DataPropertyDomain_I2
+		a rdfs:Literal .
+	:DataPropertyDomain_I3
+		a rdfs:Literal .
+		
+    # concrete
+    # -----
+    :hasName rdfs:domain :Person . 
+    :Peter 
+        a owl:Thing ;
+#       a :Person ; # commented --> constraint violation
+        :hasName "Peter Griffin" . 
+		
+# -----

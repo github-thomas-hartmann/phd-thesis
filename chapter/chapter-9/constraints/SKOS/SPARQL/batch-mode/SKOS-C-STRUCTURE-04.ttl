@@ -1,0 +1,13 @@
+    ?subject skos:related ?sibling .
+    ?sibling skos:related ?subject .
+	{
+		?subject skos:broader ?TopConcept .
+		?sibling skos:broader ?TopConcept .                    
+		FILTER ( ?subject != ?sibling ) .  
+	}
+	UNION
+	{
+		?subject skos:narrower ?BottomConcept .
+		?sibling skos:narrower ?BottomConcept .
+		FILTER ( ?subject != ?sibling ) .	  
+	}

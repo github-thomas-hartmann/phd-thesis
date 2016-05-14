@@ -1,0 +1,42 @@
+# constraints
+# -----------
+[   a rdfcv:PropertyConstraint , rdfcv:SimpleConstraint ;
+    rdfcv:contextClass owl:Thing ;
+    rdfcv:leftProperties ( :parentOfInverse ) ;
+    rdfcv:rightProperties ( :parentOf ) ;
+    rdfcv:constrainingElement "inverse" ] .
+[   a rdfcv:PropertyConstraint , rdfcv:SimpleConstraint ;
+    rdfcv:contextClass owl:Thing ;
+    rdfcv:leftProperties ( :parentOf ) ;
+    rdfcv:rightProperties ( :parentOfInverse ) ;
+    rdfcv:constrainingElement "!=" ] .
+
+# invalid data
+# ------------
+:Worf
+    :parentOf :Alexander .
+:Alexander 
+    :parentOf :Worf .
+    
+    
+# constraints
+# -----------
+[   a rdfcv:PropertyConstraint , rdfcv:SimpleConstraint ;
+    rdfcv:contextClass :Publication ;
+    rdfcv:leftProperties ( :authorInverse ) ;
+    rdfcv:rightProperties ( :author ) ;
+    rdfcv:constrainingElement "inverse" ] .
+[   a rdfcv:PropertyConstraint , rdfcv:SimpleConstraint ;
+    rdfcv:contextClass :Publication ;
+    rdfcv:leftProperties ( :author ) ;
+    rdfcv:rightProperties ( :authorInverse ) ;
+    rdfcv:constrainingElement "!=" ] .
+
+# invalid data
+# ------------
+:The-Lord-Of-The-Rings
+    a :Publication ;
+    :author :Tolkien .
+:Tolkien 
+    a :Person ;
+    :author :The-Lord-Of-The-Rings .

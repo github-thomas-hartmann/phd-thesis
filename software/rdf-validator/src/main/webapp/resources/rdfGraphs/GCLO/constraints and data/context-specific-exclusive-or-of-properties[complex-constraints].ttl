@@ -1,0 +1,64 @@
+# constraints
+# -----------
+[   a rdfcv:ClassConstraint , rdfcv:SimpleConstraint ;
+    rdfcv:contextClass :Human ;
+    rdfcv:classes ( :I :J ) ;
+    rdfcv:constrainingElement "union" ] .
+
+[   a rdfcv:ClassConstraint , rdfcv:SimpleConstraint ;
+    rdfcv:contextClass :J ;
+    rdfcv:classes ( :C :H ) ;
+    rdfcv:constrainingElement "Intersection" ] .
+
+[   a rdfcv:ClassConstraint , rdfcv:SimpleConstraint ;
+    rdfcv:contextClass :I ;
+    rdfcv:classes ( :G :F ) ;
+    rdfcv:constrainingElement "Intersection" ] .
+
+[   a rdfcv:ClassConstraint , rdfcv:SimpleConstraint ;
+    rdfcv:contextClass :G ;
+    rdfcv:classes ( :C ) ;
+    rdfcv:constrainingElement "Complement" ] .
+[   a rdfcv:ClassConstraint , rdfcv:SimpleConstraint ;
+    rdfcv:contextClass :C ;
+    rdfcv:classes ( :A :B ) ;
+    rdfcv:constrainingElement "Intersection" ] .
+[   a rdfcv:PropertyConstraint , rdfcv:SimpleConstraint ;
+    rdfcv:contextClass :A ;
+    rdfcv:leftProperties ( :name ) ;
+    rdfcv:classes ( xsd:string ) ;
+    rdfcv:constrainingElement ">=" ;
+    rdfcv:constrainingValue "1" ] .
+[   a rdfcv:PropertyConstraint , rdfcv:SimpleConstraint ;
+    rdfcv:contextClass :B ;
+    rdfcv:leftProperties ( :name ) ;
+    rdfcv:classes ( xsd:string ) ;
+    rdfcv:constrainingElement "<=" ;
+    rdfcv:constrainingValue "1" ] .
+  
+[   a rdfcv:ClassConstraint , rdfcv:SimpleConstraint ;
+    rdfcv:contextClass :H ;
+    rdfcv:classes ( :F ) ;
+    rdfcv:constrainingElement "Complement" ] .  
+[   a rdfcv:ClassConstraint , rdfcv:SimpleConstraint ;
+    rdfcv:contextClass :F ;
+    rdfcv:classes ( :D :E ) ;
+    rdfcv:constrainingElement "Intersection" ] .
+[   a rdfcv:PropertyConstraint , rdfcv:SimpleConstraint ;
+    rdfcv:contextClass :D ;
+    rdfcv:leftProperties ( :givenName ) ;
+    rdfcv:classes ( xsd:string ) ;
+    rdfcv:constrainingElement ">=" ;
+    rdfcv:constrainingValue "1" ] .
+[   a rdfcv:PropertyConstraint , rdfcv:SimpleConstraint ;
+    rdfcv:contextClass :E ;
+    rdfcv:leftProperties ( :givenName ) ;
+    rdfcv:classes ( xsd:string ) ;
+    rdfcv:constrainingElement "<=" ;
+    rdfcv:constrainingValue "1" ] .
+
+# valid data
+# ------------
+
+# invalid data
+# ------------

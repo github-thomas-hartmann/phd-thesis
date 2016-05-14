@@ -1,0 +1,15 @@
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lc@{}}
+           & \multicolumn{1}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-2}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{SKOS-C-LABELING-AND-DOCUMENTATION-02}}
+	\\ \midrule
+    \emph{http://localhost:8081/openrdf-sesame/repositories/TheSoz} & $\checkmark$ (1)  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://localhost:8081/openrdf-sesame/repositories/TheSoz}}
+    \label{tab:evaluation-localhost-8081-openrdf-sesame-repositories-TheSoz}
+    \end{center}
+\end{table}

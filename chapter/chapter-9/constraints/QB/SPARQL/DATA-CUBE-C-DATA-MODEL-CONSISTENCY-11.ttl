@@ -1,0 +1,19 @@
+	?subject qb:slice ?slice .
+    ?slice qb:observation ?obs .
+    FILTER NOT EXISTS { ?obs qb:dataSet ?subject . }
+	
+	# violation message
+	# -----------------
+	BIND ( CONCAT( 
+		"DATA-CUBE-C-DATA-MODEL-CONSISTENCY-11 | ",
+		"Consistent data set links: ",
+		"If a qb:DataSet D has a qb:slice S, and S has an qb:observation O, then the qb:dataSet corresponding to O must be D." )
+		AS ?violationMessage ) .  
+		
+	# violation source
+	# ----------------
+	BIND ( CONCAT( "DATA-CUBE-C-DATA-MODEL-CONSISTENCY-11" )AS ?violationSource ) .
+	
+	# severity level
+	# --------------
+	BIND ( ( 'WARNING' ) AS ?severityLevel ) .

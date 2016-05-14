@@ -1,0 +1,26 @@
+# Linked Data Specific Issues - HTTP URI Scheme Violation
+# -----
+# In the context of Linked Data, we restrict ourselves to using HTTP URIs only and 
+# avoid other URI schemes such as URNs and DOIs.
+
+:SubSubConcept 
+    a owl:Class ;
+    rdfs:subClassOf :SubConcept .
+:SubConcept 
+    a owl:Class ;
+    rdfs:subClassOf skos:Concept .
+
+# valid data
+# ------------
+<http://data#c1>
+    a :SubSubConcept ;
+    skos:definition ""@en .
+<https://data#c2>
+    a :SubSubConcept ;
+    skos:definition ""@en .
+    
+# invalid data 
+# ----------
+<doi>
+    a :SubSubConcept ;
+    skos:definition ""@en . 

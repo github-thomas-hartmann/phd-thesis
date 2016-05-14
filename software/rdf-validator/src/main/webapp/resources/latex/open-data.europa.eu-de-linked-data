@@ -1,0 +1,20 @@
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lcccccc@{}}
+           & \multicolumn{6}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-7}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{count-conceptscheme}}
+           & \rot{\emph{count-concept}}
+           & \rot{\emph{count-broader}}
+           & \rot{\emph{count-narrower}}
+           & \rot{\emph{count-hasTopConcept}}
+           & \rot{\emph{count-inScheme}}
+	\\ \midrule
+    \emph{http://open-data.europa.eu/de/linked-data} & $\checkmark$ (1) & $\checkmark$ (1) & $\checkmark$ (1) & $\checkmark$ (1) & $\checkmark$ (1) & $\checkmark$ (1)  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://open-data.europa.eu/de/linked-data}}
+    \label{tab:evaluation-open-data.europa.eu-de-linked-data}
+    \end{center}
+\end{table}

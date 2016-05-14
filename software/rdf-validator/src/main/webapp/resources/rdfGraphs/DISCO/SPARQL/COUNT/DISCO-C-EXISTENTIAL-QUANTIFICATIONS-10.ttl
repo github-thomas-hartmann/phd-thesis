@@ -1,0 +1,4 @@
+?subject a disco:Study .
+
+OPTIONAL { ?subject disco:kindOfData ?kindOfData . }
+FILTER ( ! BOUND( ?kindOfData ) ) .

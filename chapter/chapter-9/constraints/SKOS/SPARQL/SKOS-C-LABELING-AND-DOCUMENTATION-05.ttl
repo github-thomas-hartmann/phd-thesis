@@ -1,0 +1,34 @@
+# SKOS-C-LABELING-AND-DOCUMENTATION-05
+# -----
+# Labeling and Documentation Issues - Empty Labels:
+# Labels also need to contain textual information to be useful, thus we
+# find all SKOS labels with length 0 (after removing whitespaces).
+
+ 	
+	# data
+	# ----
+	{ { ?subject a [rdfs:subClassOf* skos:Concept] } UNION { ?subject a [rdfs:subClassOf* skos:ConceptScheme] } . }
+	UNION 
+	{ { ?subject a [rdfs:subClassOf* skos:Collection] } UNION { ?subject a [rdfs:subClassOf* skos:OrderedCollection] } . }
+	?subject ?p ?literal .
+	BIND ( STR ( ?literal ) AS ?l ) .
+
+	# validation
+	# ----------
+	FILTER ( ?l = "" ) . 
+
+	# violation message
+	# -----
+	BIND ( CONCAT( 
+		"Labels are needed to contain textual information to be useful. | The property '",  
+		xsd:string( ?p ), 
+		"' points to an empty label."
+		) AS ?violationMessage ) . 
+	
+	# violation source
+	# ----------------
+	BIND ( CONCAT( "SKOS-C-LABELING-AND-DOCUMENTATION-05" )AS ?violationSource ) .
+	
+	# severity level
+	# --------------
+	BIND ( ( 'INFO' ) AS ?severityLevel ) .	

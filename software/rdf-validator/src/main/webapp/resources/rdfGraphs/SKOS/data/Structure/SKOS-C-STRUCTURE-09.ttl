@@ -1,0 +1,96 @@
+# SKOS-C-STRUCTURE-09
+# -----
+# Structural Issues - Hierarchical Redundancy:
+# As stated in the SKOS reference document, skos:broader and skos:narrower are not
+# transitive properties. However, they are sub-properties of skos:broaderTransitive
+# and skos:narrowerTransitive which enables inference of a transitive
+# closure. This, in fact, leaves it up to the user to interpret whether a 
+# vocabulary’s hierarchical structure is seen as transitive or not. In the former case,
+# this check can be useful. It finds pairs of concepts (A,B) that are directly
+# hierarchically related but there also exits an hierarchical path through a
+# concept C that connects A and B.
+
+:SubSubConcept 
+    a owl:Class ;
+    rdfs:subClassOf :SubConcept .
+:SubConcept 
+    a owl:Class ;
+    rdfs:subClassOf skos:Concept .
+
+# invalid data
+# -----
+:hierarchical-redundancy-A1
+    a :SubSubConcept ;
+    skos:definition ""@en ;
+    skos:broader :hierarchical-redundancy-B1 ;
+    skos:broader :hierarchical-redundancy-C1 .
+:hierarchical-redundancy-B1
+    a :SubSubConcept ;
+    skos:definition ""@en ;
+    skos:broader :hierarchical-redundancy-C1 .
+:hierarchical-redundancy-C1
+    a :SubSubConcept ;
+    skos:definition ""@en . 
+
+:hierarchical-redundancy-A2
+    a :SubSubConcept ;
+    skos:definition ""@en ;
+    skos:broader :hierarchical-redundancy-B2 ;
+    skos:broader :hierarchical-redundancy-F2 .
+:hierarchical-redundancy-B2
+    a :SubSubConcept ;
+    skos:definition ""@en ;
+    skos:broader :hierarchical-redundancy-C2 .
+:hierarchical-redundancy-C2
+    a :SubSubConcept ;
+    skos:definition ""@en ;
+    skos:broader :hierarchical-redundancy-D2 .
+:hierarchical-redundancy-D2
+    a :SubSubConcept ;
+    skos:definition ""@en ;
+    skos:broader :hierarchical-redundancy-E2 .
+:hierarchical-redundancy-E2
+    a :SubSubConcept ;
+    skos:definition ""@en ;
+    skos:broader :hierarchical-redundancy-F2 .
+:hierarchical-redundancy-F2
+    a :SubSubConcept ;
+    skos:definition ""@en .
+    
+:hierarchical-redundancy-A3
+    a :SubSubConcept ;
+    skos:definition ""@en ;
+    skos:narrower :hierarchical-redundancy-B3 ;
+    skos:narrower :hierarchical-redundancy-C3 .
+:hierarchical-redundancy-B3
+    a :SubSubConcept ;
+    skos:definition ""@en ;
+    skos:narrower :hierarchical-redundancy-C3 .
+:hierarchical-redundancy-C3
+    a :SubSubConcept ;
+    skos:definition ""@en . 
+
+:hierarchical-redundancy-A4
+    a :SubSubConcept ;
+    skos:definition ""@en ;
+    skos:narrower :hierarchical-redundancy-B4 ;
+    skos:narrower :hierarchical-redundancy-F4 .
+:hierarchical-redundancy-B4
+    a :SubSubConcept ;
+    skos:definition ""@en ;
+    skos:narrower :hierarchical-redundancy-C4 .
+:hierarchical-redundancy-C4
+    a :SubSubConcept ;
+    skos:definition ""@en ;
+    skos:narrower :hierarchical-redundancy-D4 .
+:hierarchical-redundancy-D4
+    a :SubSubConcept ;
+    skos:definition ""@en ;
+    skos:narrower :hierarchical-redundancy-E4 .
+:hierarchical-redundancy-E4
+    a :SubSubConcept ;
+    skos:definition ""@en ;
+    skos:narrower :hierarchical-redundancy-F4 .
+:hierarchical-redundancy-F4
+    a :SubSubConcept ;
+    skos:definition ""@en .

@@ -1,0 +1,22 @@
+# constraints
+# -----
+:addressCountry 
+    a owl:ObjectProperty ;	
+    rdfs:range :Country .
+
+# invalid data
+# -----
+:myAddress 
+    a :PostalAddress ;
+    :addressCountry :amsterdam .
+    
+:amsterdam a :Locality . # incorrect range class
+
+
+
+
+
+# triples needed for validation
+# -----
+:myAddress a owl:Thing .
+:amsterdam a owl:Thing .

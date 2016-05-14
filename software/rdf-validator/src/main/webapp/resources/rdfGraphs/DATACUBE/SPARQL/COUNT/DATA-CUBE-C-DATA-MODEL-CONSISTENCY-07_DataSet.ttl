@@ -1,0 +1,10 @@
+	?subject qb:dataSet ?dataSet .
+	?dataSet qb:structure ?dsd .
+	FILTER NOT EXISTS { 
+		?dsd qb:component ?c1 . 
+		?c1 qb:componentProperty qb:measureType . 
+	}
+	?dsd qb:component ?c2 .
+	?c2 qb:componentProperty ?measure .
+    ?measure a qb:MeasureProperty .
+    FILTER NOT EXISTS { ?subject ?measure [] . } 

@@ -1,0 +1,86 @@
+@prefix rdf: 		<http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: 		<http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: 		<http://www.w3.org/2001/XMLSchema#>.
+@prefix dc: 		<http://purl.org/dc/elements/1.1/>.
+@prefix dcterms:	<http://purl.org/dc/terms/>.
+@prefix skos: 		<http://www.w3.org/2004/02/skos/core#>.
+@prefix qb: 		<http://purl.org/linked-data/cube#>.
+@prefix owl: 		<http://www.w3.org/2002/07/owl#>.
+@prefix disco: 		<http://rdf-vocabulary.ddialliance.org/discovery#>.
+@prefix foaf: 		<http://xmlns.com/foaf/0.1/>.
+@prefix adms: 		<http://www.w3.org/ns/adms#>.
+@prefix org: 		<http://www.w3.org/ns/org#>.
+@prefix prov: 		<http://www.w3.org/ns/prov#>.
+@prefix missy:		<http://www.gesis.org/missy#>.
+
+# disco:StudyGroup
+# -----
+<urn:ddi:de.gesis:16650614-84f4-45fd-be3f-8043040d5483:0.1>
+	a disco:StudyGroup ;
+	skos:prefLabel "EU-SILC"@en .
+
+# disco:Study
+# -----
+<urn:ddi:de.gesis:study_EU-SILC-2011:0.1>
+	a disco:Study ;
+	disco:inGroup <urn:ddi:de.gesis:16650614-84f4-45fd-be3f-8043040d5483:0.1> ;
+	dcterms:title "European Union Statistics on Income and Living Conditions 2011"@en ;	# Study title
+	skos:prefLabel "2011"@en ;	# Study label
+	dcterms:spatial	# countries of the Study
+		<http://sws.geonames.org/2782113> ,
+		<http://sws.geonames.org/2264397> ,
+		<http://sws.geonames.org/3057568> ,
+		<http://sws.geonames.org/719819> ,
+		<http://sws.geonames.org/2510769> ,
+		<http://sws.geonames.org/3190538> ,
+		<http://sws.geonames.org/2802361> ,
+		<http://sws.geonames.org/2658434> ,
+		<http://sws.geonames.org/2629691> ,
+		<http://sws.geonames.org/732800> ,
+		<http://sws.geonames.org/2661886> ,
+		<http://sws.geonames.org/3077311> ,
+		<http://sws.geonames.org/453733> ,
+		<http://sws.geonames.org/597427> ,
+		<http://sws.geonames.org/2562770> ,
+		<http://sws.geonames.org/3202326> ,
+		<http://sws.geonames.org/3017382> ,
+		<http://sws.geonames.org/2960313> ,
+		<http://sws.geonames.org/798549> ,
+		<http://sws.geonames.org/2750405> ,
+		<http://sws.geonames.org/3144096> ,
+		<http://sws.geonames.org/3175395> ,
+		<http://sws.geonames.org/146669> ,
+		<http://sws.geonames.org/2963597> ,
+		<http://sws.geonames.org/2921044> ,
+		<http://sws.geonames.org/798544> ,
+		<http://sws.geonames.org/2623032> ,
+		<http://sws.geonames.org/458258> ,
+		<http://sws.geonames.org/660013> ,
+	dcterms:temporal <urn:ddi:de.gesis:dce1f227-299e-41e1-93ad-c8bd66311f6c:0.1> ;	# the year of the Study
+	disco:product	# datasets of the Study
+		<urn:ddi:de.gesis:logicalDataSet_EU-SILC-2011-cross-sec-p-reg-2011_rev1:0.1> .	
+
+# Temporal Coverage
+# -----
+<urn:ddi:de.gesis:dce1f227-299e-41e1-93ad-c8bd66311f6c:0.1>
+	a disco:PeriodOfTime ;
+	dcterms:date "2011"^^xsd:gYear .
+
+# disco:LogicalDataSet
+# -----
+<urn:ddi:de.gesis:logicalDataSet_EU-SILC-2011-cross-sec-p-reg-2011_rev1:0.1>
+	a disco:LogicalDataSet ; 
+	disco:variable
+		<urn:ddi:de.gesis:variable_EU-SILC-2011-cross-sec-p-reg-2011_rev1-RL010:0.1>  ,
+		<urn:ddi:de.gesis:variable_EU-SILC-2011-cross-sec-p-reg-2011_rev1-RL020:0.1>  ,
+		<urn:ddi:de.gesis:variable_EU-SILC-2011-cross-sec-p-reg-2011_rev1-RL030:0.1>  ,
+		<urn:ddi:de.gesis:variable_EU-SILC-2011-cross-sec-p-reg-2011_rev1-RL040:0.1>  ,
+		<urn:ddi:de.gesis:variable_EU-SILC-2011-cross-sec-p-reg-2011_rev1-RL050:0.1>  ,
+		<urn:ddi:de.gesis:variable_EU-SILC-2011-cross-sec-p-reg-2011_rev1-RL060:0.1>  .
+		
+<urn:ddi:de.gesis:variable_EU-SILC-2011-cross-sec-p-reg-2011_rev1-RL010:0.1>
+    a disco:Variable ;
+    disco:representation [
+        a disco:Representation , skos:OrderedCollection ;
+        skos:memberList ( [ :0 a skos:Concept ] [ :1 a skos:Concept ] [ :2 a skos:Concept ] ) .
+    ] .

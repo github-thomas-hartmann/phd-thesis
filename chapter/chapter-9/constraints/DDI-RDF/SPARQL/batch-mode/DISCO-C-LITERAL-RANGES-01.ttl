@@ -1,0 +1,2 @@
+?subject disco:percentage ?percentage .
+FILTER ( ?percentage >= 0 && ?percentage <= 100 ) .

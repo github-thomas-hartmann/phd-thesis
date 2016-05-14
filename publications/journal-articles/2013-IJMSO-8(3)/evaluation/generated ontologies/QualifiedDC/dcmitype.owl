@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>	
+
+<!DOCTYPE rdf:RDF [
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+	<!ENTITY XMLSchemaMetamodelOntology "http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#" >
+]>
+	
+<rdf:RDF 
+     xmlns="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#"
+	 xml:base="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl"
+	 xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	 xmlns:owl="http://www.w3.org/2002/07/owl#"
+	 xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	 xmlns:XSDMetamodelOntology="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#">
+	
+	<owl:Ontology rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl">
+		<owl:versionIRI rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/:1.0.0.owl"/>
+		<owl:imports rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology:1.0.0.owl"/>
+	</owl:Ontology>
+	
+	
+	<!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#http://purl.org/dc/dcmitype/-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#http://purl.org/dc/dcmitype/-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Schema"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#attributeFormDefault_Schema_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">unqualified</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#elementFormDefault_Schema_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">qualified</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#targetNamespace_Schema_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">http://purl.org/dc/dcmitype/</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Schema_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#Annotation1-Annotation_http://purl.org/dc/dcmitype/-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Schema_SimpleType"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#DCMIType-Type_http://purl.org/dc/dcmitype/-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#Annotation1-Annotation_http://purl.org/dc/dcmitype/-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#Annotation1-Annotation_http://purl.org/dc/dcmitype/-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#Documentation1-Documentation_Annotation1-Annotation_http://purl.org/dc/dcmitype/-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#Documentation1-Documentation_Annotation1-Annotation_http://purl.org/dc/dcmitype/-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#Documentation1-Documentation_Annotation1-Annotation_http://purl.org/dc/dcmitype/-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#xml:lang_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">en</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">
+      DCMI Type Vocabulary XML Schema
+      XML Schema for http://purl.org/dc/dcmitype/ namespace
+
+      Created 2008-02-11
+
+      Created by 
+
+      Tim Cole (t-cole3@uiuc.edu)
+      Tom Habing (thabing@uiuc.edu)
+      Jane Hunter (jane@dstc.edu.au)
+      Pete Johnston (p.johnston@ukoln.ac.uk),
+      Carl Lagoze (lagoze@cs.cornell.edu)
+
+      This schema defines a simpleType which enumerates
+      the allowable values for the DCMI Type Vocabulary.
+    </owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#DCMIType-Type_http://purl.org/dc/dcmitype/-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#DCMIType-Type_http://purl.org/dc/dcmitype/-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#SimpleType"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#name_SimpleType_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">DCMIType</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_SimpleType_Union"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#Union1-Union_DCMIType-Type_http://purl.org/dc/dcmitype/-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#Union1-Union_DCMIType-Type_http://purl.org/dc/dcmitype/-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#Union1-Union_DCMIType-Type_http://purl.org/dc/dcmitype/-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Union"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Union_SimpleType"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#SimpleType1-Type_Union1-Union_DCMIType-Type_http://purl.org/dc/dcmitype/-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#SimpleType1-Type_Union1-Union_DCMIType-Type_http://purl.org/dc/dcmitype/-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#SimpleType1-Type_Union1-Union_DCMIType-Type_http://purl.org/dc/dcmitype/-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#SimpleType"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_SimpleType_Restriction"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#Restriction1-Restriction_SimpleType1-Type_Union1-Union_DCMIType-Type_http://purl.org/dc/dcmitype/-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#Restriction1-Restriction_SimpleType1-Type_Union1-Union_DCMIType-Type_http://purl.org/dc/dcmitype/-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#Restriction1-Restriction_SimpleType1-Type_Union1-Union_DCMIType-Type_http://purl.org/dc/dcmitype/-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Restriction"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#base_Restriction_Type"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://www.w3.org/2001/XMLSchema.owl#Name-Type_http://www.w3.org/2001/XMLSchema-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Restriction_Enumeration"/>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#Enumeration1-Enumeration_Restriction1-Restriction_SimpleType1-Type_Union1-Union_DCMIType-Type_http://purl.org/dc/dcmitype/-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#Enumeration2-Enumeration_Restriction1-Restriction_SimpleType1-Type_Union1-Union_DCMIType-Type_http://purl.org/dc/dcmitype/-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#Enumeration3-Enumeration_Restriction1-Restriction_SimpleType1-Type_Union1-Union_DCMIType-Type_http://purl.org/dc/dcmitype/-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#Enumeration4-Enumeration_Restriction1-Restriction_SimpleType1-Type_Union1-Union_DCMIType-Type_http://purl.org/dc/dcmitype/-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#Enumeration5-Enumeration_Restriction1-Restriction_SimpleType1-Type_Union1-Union_DCMIType-Type_http://purl.org/dc/dcmitype/-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#Enumeration6-Enumeration_Restriction1-Restriction_SimpleType1-Type_Union1-Union_DCMIType-Type_http://purl.org/dc/dcmitype/-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#Enumeration7-Enumeration_Restriction1-Restriction_SimpleType1-Type_Union1-Union_DCMIType-Type_http://purl.org/dc/dcmitype/-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#Enumeration8-Enumeration_Restriction1-Restriction_SimpleType1-Type_Union1-Union_DCMIType-Type_http://purl.org/dc/dcmitype/-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#Enumeration9-Enumeration_Restriction1-Restriction_SimpleType1-Type_Union1-Union_DCMIType-Type_http://purl.org/dc/dcmitype/-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#Enumeration10-Enumeration_Restriction1-Restriction_SimpleType1-Type_Union1-Union_DCMIType-Type_http://purl.org/dc/dcmitype/-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#Enumeration11-Enumeration_Restriction1-Restriction_SimpleType1-Type_Union1-Union_DCMIType-Type_http://purl.org/dc/dcmitype/-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#Enumeration12-Enumeration_Restriction1-Restriction_SimpleType1-Type_Union1-Union_DCMIType-Type_http://purl.org/dc/dcmitype/-Schema"/>
+						</owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#Enumeration1-Enumeration_Restriction1-Restriction_SimpleType1-Type_Union1-Union_DCMIType-Type_http://purl.org/dc/dcmitype/-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#Enumeration1-Enumeration_Restriction1-Restriction_SimpleType1-Type_Union1-Union_DCMIType-Type_http://purl.org/dc/dcmitype/-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Enumeration"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#value_Enumeration_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Collection</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#Enumeration2-Enumeration_Restriction1-Restriction_SimpleType1-Type_Union1-Union_DCMIType-Type_http://purl.org/dc/dcmitype/-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#Enumeration2-Enumeration_Restriction1-Restriction_SimpleType1-Type_Union1-Union_DCMIType-Type_http://purl.org/dc/dcmitype/-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Enumeration"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#value_Enumeration_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Dataset</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#Enumeration3-Enumeration_Restriction1-Restriction_SimpleType1-Type_Union1-Union_DCMIType-Type_http://purl.org/dc/dcmitype/-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#Enumeration3-Enumeration_Restriction1-Restriction_SimpleType1-Type_Union1-Union_DCMIType-Type_http://purl.org/dc/dcmitype/-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Enumeration"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#value_Enumeration_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Event</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#Enumeration4-Enumeration_Restriction1-Restriction_SimpleType1-Type_Union1-Union_DCMIType-Type_http://purl.org/dc/dcmitype/-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#Enumeration4-Enumeration_Restriction1-Restriction_SimpleType1-Type_Union1-Union_DCMIType-Type_http://purl.org/dc/dcmitype/-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Enumeration"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#value_Enumeration_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Image</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#Enumeration5-Enumeration_Restriction1-Restriction_SimpleType1-Type_Union1-Union_DCMIType-Type_http://purl.org/dc/dcmitype/-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#Enumeration5-Enumeration_Restriction1-Restriction_SimpleType1-Type_Union1-Union_DCMIType-Type_http://purl.org/dc/dcmitype/-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Enumeration"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#value_Enumeration_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">MovingImage</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#Enumeration6-Enumeration_Restriction1-Restriction_SimpleType1-Type_Union1-Union_DCMIType-Type_http://purl.org/dc/dcmitype/-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#Enumeration6-Enumeration_Restriction1-Restriction_SimpleType1-Type_Union1-Union_DCMIType-Type_http://purl.org/dc/dcmitype/-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Enumeration"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#value_Enumeration_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">StillImage</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#Enumeration7-Enumeration_Restriction1-Restriction_SimpleType1-Type_Union1-Union_DCMIType-Type_http://purl.org/dc/dcmitype/-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#Enumeration7-Enumeration_Restriction1-Restriction_SimpleType1-Type_Union1-Union_DCMIType-Type_http://purl.org/dc/dcmitype/-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Enumeration"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#value_Enumeration_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">InteractiveResource</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#Enumeration8-Enumeration_Restriction1-Restriction_SimpleType1-Type_Union1-Union_DCMIType-Type_http://purl.org/dc/dcmitype/-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#Enumeration8-Enumeration_Restriction1-Restriction_SimpleType1-Type_Union1-Union_DCMIType-Type_http://purl.org/dc/dcmitype/-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Enumeration"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#value_Enumeration_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Service</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#Enumeration9-Enumeration_Restriction1-Restriction_SimpleType1-Type_Union1-Union_DCMIType-Type_http://purl.org/dc/dcmitype/-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#Enumeration9-Enumeration_Restriction1-Restriction_SimpleType1-Type_Union1-Union_DCMIType-Type_http://purl.org/dc/dcmitype/-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Enumeration"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#value_Enumeration_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Software</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#Enumeration10-Enumeration_Restriction1-Restriction_SimpleType1-Type_Union1-Union_DCMIType-Type_http://purl.org/dc/dcmitype/-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#Enumeration10-Enumeration_Restriction1-Restriction_SimpleType1-Type_Union1-Union_DCMIType-Type_http://purl.org/dc/dcmitype/-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Enumeration"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#value_Enumeration_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Sound</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#Enumeration11-Enumeration_Restriction1-Restriction_SimpleType1-Type_Union1-Union_DCMIType-Type_http://purl.org/dc/dcmitype/-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#Enumeration11-Enumeration_Restriction1-Restriction_SimpleType1-Type_Union1-Union_DCMIType-Type_http://purl.org/dc/dcmitype/-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Enumeration"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#value_Enumeration_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Text</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#Enumeration12-Enumeration_Restriction1-Restriction_SimpleType1-Type_Union1-Union_DCMIType-Type_http://purl.org/dc/dcmitype/-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/dcmitype/.owl#Enumeration12-Enumeration_Restriction1-Restriction_SimpleType1-Type_Union1-Union_DCMIType-Type_http://purl.org/dc/dcmitype/-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Enumeration"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#value_Enumeration_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">PhysicalObject</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+</rdf:RDF>

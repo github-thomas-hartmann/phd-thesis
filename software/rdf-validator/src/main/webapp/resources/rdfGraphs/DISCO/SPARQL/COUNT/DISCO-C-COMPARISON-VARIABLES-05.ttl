@@ -1,0 +1,4 @@
+?subject a disco:LogicalDataSet .
+
+OPTIONAL { ?subject disco:variable ?variable . }
+FILTER ( ! BOUND( ?variable ) ) .

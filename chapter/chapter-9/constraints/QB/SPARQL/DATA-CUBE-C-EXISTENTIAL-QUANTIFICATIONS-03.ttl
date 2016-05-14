@@ -1,0 +1,16 @@
+	?subject a qb:DataStructureDefinition .
+    FILTER NOT EXISTS { ?subject qb:component [ qb:componentProperty [ a qb:MeasureProperty ] ] . }
+
+	# violation message
+	# -----------------
+	BIND ( CONCAT( 
+		"DATA-CUBE-C-EXISTENTIAL-QUANTIFICATIONS-03" )
+		AS ?violationMessage ) . 
+	
+	# violation source
+	# ----------------
+	BIND ( CONCAT( "DATA-CUBE-C-EXISTENTIAL-QUANTIFICATIONS-03" )AS ?violationSource ) . 
+	
+	# severity level
+	# --------------
+	BIND ( ( 'ERROR' ) AS ?severityLevel ) .

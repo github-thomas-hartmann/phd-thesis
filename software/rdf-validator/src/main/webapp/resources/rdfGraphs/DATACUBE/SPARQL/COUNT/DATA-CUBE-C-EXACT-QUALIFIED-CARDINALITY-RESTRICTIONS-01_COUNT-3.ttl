@@ -1,0 +1,41 @@
+WHERE {	 
+	{
+		?subject a qb:Observation .	
+		FILTER NOT EXISTS { ?subject qb:dataSet ?dataSet . }
+		
+		# violation message
+        # -----
+        BIND ( CONCAT( 
+            "DATA-CUBE-C-EXACT-QUALIFIED-CARDINALITY-RESTRICTIONS-01" )
+            AS ?violationMessage ) . 
+            
+        # violation source
+		# ----------------
+		BIND ( CONCAT( "DATA-CUBE-C-EXACT-QUALIFIED-CARDINALITY-RESTRICTIONS-01" )AS ?violationSource ) . 
+		
+		# severity level
+		# --------------
+		BIND ( ( 'ERROR' ) AS ?severityLevel ) .
+	}
+	UNION
+	{
+		?subject 
+		    a qb:Observation ;
+		    qb:dataSet ?dataSet1 , ?dataSet2 .
+        FILTER ( ?dataSet1 != ?dataSet2 ) .
+        
+        # violation message
+        # -----
+        BIND ( CONCAT( 
+            "DATA-CUBE-C-EXACT-QUALIFIED-CARDINALITY-RESTRICTIONS-01" )
+            AS ?violationMessage ) . 
+            
+        # violation source
+		# ----------------
+		BIND ( CONCAT( "DATA-CUBE-C-EXACT-QUALIFIED-CARDINALITY-RESTRICTIONS-01" )AS ?violationSource ) . 
+		
+		# severity level
+		# --------------
+		BIND ( ( 'ERROR' ) AS ?severityLevel ) .
+	}
+}

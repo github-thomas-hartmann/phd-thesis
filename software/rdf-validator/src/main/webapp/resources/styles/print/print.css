@@ -1,0 +1,64 @@
+@charset "UTF-8";
+/*
+
+Erweiterte Druckstile für YAML
+
+*/
+
+@media print {
+/* (en) Enable URL output in print layout */
+  /* (de) Sichtbare Auszeichnung der URLs von Links */
+  @page { size:25.0cm 15.0cm; margin:1.5cm 1.5cm 2.0cm 1.5cm; }
+  
+	a[href]:after {
+		content:""
+	}
+	
+	body {
+		padding:0;
+		margin:0;
+	}
+
+	#page_margins {
+		min-width:10px;
+		padding:0;
+		margin:0;
+		float:none;
+	}
+	#page {
+		-moz-box-shadow: none;
+		background: none;
+		margin: 0;
+		padding: 0;
+		min-height: none;
+		width: auto;
+		float:none;
+		clear:both;
+	}
+	#col3, #col3_content {
+		margin:0;
+		padding:0;
+		float: none;
+		clear:both;
+	}
+	.floatbox {
+		float:none;   	
+		padding:0;
+		margin:0;
+	}
+	
+	#header {
+		float:none;
+	}
+	
+	#col1, #col2, #nav, #topnav, #footerlinks, #sociallinks {
+		display:none;
+		float:none;
+	}
+	
+	h1,h2,h3,h4,h5,h6 { page-break-after:auto; }
+	
+	#c10776 {
+		display:hidden;
+	}
+}

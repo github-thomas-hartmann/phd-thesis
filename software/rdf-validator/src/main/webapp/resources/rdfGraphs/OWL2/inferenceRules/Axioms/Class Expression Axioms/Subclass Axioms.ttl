@@ -1,0 +1,35 @@
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> . 
+@prefix owl2spin: <http://constraints.org/owl2#> .
+@prefix :         <http://www.example.org/OWL2InstanceData#> .
+
+
+# ---------------
+# Axioms - Class Expression Axioms - Subclass Axioms
+
+    # concrete
+    # -----    
+    # SubClassOf( :Baby :Child )
+    # SubClassOf( :Child :Person )     
+    # ClassAssertion( :Baby :Stewie ) 
+    :Baby rdfs:subClassOf :Child . 
+    :Child rdfs:subClassOf :Person . 
+    :Stewie 
+        a :Baby ;
+        a owl2spin:ToInfer . 
+    # --> 
+    # :Stewie 
+    #     a :Child .
+    #     a :Person .
+    
+    # concrete 
+    # -----
+    :Brian  
+        a :Dog ;
+        a owl:Thing , owl2spin:ToInfer .     
+    :Dog rdfs:subClassOf :Mammal .
+    # --> :Brian a :Mammal . 
+        
+# -----

@@ -1,0 +1,15 @@
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lc@{}}
+           & \multicolumn{1}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-2}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{SKOS-C-LANGUAGE-TAG-CARDINALITY-02}}
+	\\ \midrule
+    \emph{http://vocabulary.semantic-web.at/PoolParty/sparql/OpenData} & 265  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://vocabulary.semantic-web.at/PoolParty/sparql/OpenData}}
+    \label{tab:evaluation-vocabulary.semantic-web.at-PoolParty-sparql-OpenData}
+    \end{center}
+\end{table}

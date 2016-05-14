@@ -1,0 +1,293 @@
+# baseURI: http://constraints
+# imports: http://open-services.net/ns/core
+
+@prefix : <http://constraints#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/#> .
+@prefix oslc: <http://open-services.net/ns/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix se: <http://www.w3.org/2013/ShEx/Definition#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://constraints>
+  rdf:type owl:Ontology ;
+  owl:imports <http://open-services.net/ns/core> ;
+  owl:versionInfo "Created with TopBraid Composer"^^xsd:string ;
+.
+:Assignee
+  rdf:type owl:Class ;
+  rdfs:label "Assignee"^^xsd:string ;
+  rdfs:subClassOf :Person ;
+.
+:Employee
+  rdf:type owl:Class ;
+  spin:constraint [
+      rdf:type oslc:Property ;
+      oslc:occurs oslc:Exactly-one ;
+      oslc:propertyDefinition :familyName ;
+    ] ;
+  spin:constraint [
+      rdf:type oslc:Property ;
+      oslc:occurs oslc:One-or-many ;
+      oslc:propertyDefinition :givenName ;
+    ] ;
+  spin:constraint [
+      rdf:type oslc:Property ;
+      oslc:occurs oslc:Zero-or-many ;
+      oslc:propertyDefinition :phone ;
+    ] ;
+  spin:constraint [
+      rdf:type oslc:Property ;
+      oslc:occurs oslc:Zero-or-one ;
+      oslc:propertyDefinition :mbox ;
+    ] ;
+  spin:constraint [
+      rdf:type se:Property ;
+      se:min "1"^^xsd:nonNegativeInteger ;
+	  se:max "2"^^xsd:nonNegativeInteger ;
+      oslc:propertyDefinition foaf:givenName ;
+    ] ;
+  rdfs:label "Employee"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+.
+:Employee_Exactly-one
+  rdf:type :Employee ;
+  :familyName "1. family name"^^xsd:string ;
+  :familyName "2. family name"^^xsd:string ;
+  :givenName "given name"^^xsd:string ;
+  rdfs:label "Employee Exactly-one"^^xsd:string ;
+.
+:Employee_One-or-many
+  rdf:type :Employee ;
+  :familyName "family name"^^xsd:string ;
+  rdfs:label "Employee One-or-many"^^xsd:string ;
+.
+:Employee_Zero-or-one
+  rdf:type :Employee ;
+  :familyName "family name"^^xsd:string ;
+  :givenName "given name"^^xsd:string ;
+  :mbox "1. mbox"^^xsd:string ;
+  :mbox "2. mbox"^^xsd:string ;
+  rdfs:label "Employee Zero-or-many"^^xsd:string ;
+.
+:Issue
+  rdf:type owl:Class ;
+  spin:constraint [
+      rdf:type oslc:Property ;
+      oslc:allowedValues :assigned_unassigned ;
+      oslc:propertyDefinition :state ;
+    ] ;
+  spin:constraint [
+      rdf:type oslc:Property ;
+      oslc:propertyDefinition :related ;
+      oslc:range :Issue ;
+    ] ;
+  spin:constraint [
+      rdf:type oslc:Property ;
+      oslc:propertyDefinition :related ;
+      oslc:valueShape :Issue ;
+    ] ;
+  spin:constraint [
+      rdf:type oslc:Property ;
+      oslc:propertyDefinition :reportedOn ;
+      oslc:valueType xsd:dateTime ;
+    ] ;
+  rdfs:label "Issue"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+.
+:Issue_1
+  rdf:type :Issue ;
+  :state "assigned"^^xsd:string ;
+  rdfs:label "Issue 1"^^xsd:string ;
+.
+:Issue_2
+  rdf:type :Issue ;
+  :state "Constraint Violation"^^xsd:string ;
+  rdfs:label "Issue 2"^^xsd:string ;
+.
+:Issue_3
+  rdf:type :Issue ;
+  :reportedOn "Constraint Violation"^^xsd:string ;
+  rdfs:label "Issue 3"^^xsd:string ;
+.
+:Issue_4
+  rdf:type :Issue ;
+  :related :Issue_2 ;
+  rdfs:label "Issue 4"^^xsd:string ;
+.
+:Issue_5
+  rdf:type :Issue ;
+  :related :User_1 ;
+  rdfs:label "Issue 5"^^xsd:string ;
+.
+:Person
+  rdf:type owl:Class ;
+  rdfs:label "Person"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+.
+:Submitter
+  rdf:type owl:Class ;
+  rdfs:label "Submitter"^^xsd:string ;
+  rdfs:subClassOf :Person ;
+.
+:User
+  rdf:type owl:Class ;
+  spin:constraint [
+      rdf:type oslc:Property ;
+      oslc:maxSize 10 ;
+      oslc:propertyDefinition :name ;
+    ] ;
+  spin:constraint [
+      rdf:type oslc:Property ;
+      oslc:occurs oslc:Exactly-one ;
+      oslc:propertyDefinition :name ;
+    ] ;
+  rdfs:label "User"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+.
+:User_1
+  rdf:type :User ;
+  rdfs:label "User 1"^^xsd:string ;
+.
+:User_2
+  rdf:type :User ;
+  :name "TimBernersLee"^^xsd:string ;
+  rdfs:label "User 2"^^xsd:string ;
+.
+:User_3
+  rdf:type :User ;
+  :name "1. name"^^xsd:string ;
+  :name "2. name"^^xsd:string ;
+  rdfs:label "User 3"^^xsd:string ;
+.
+:assigned_unassigned
+  rdf:type oslc:AllowedValues ;
+  oslc:allowedValue "assigned"^^xsd:string ;
+  oslc:allowedValue "unassigned"^^xsd:string ;
+  rdfs:label "assigned_unassigned"^^xsd:string ;
+.
+:familyName
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "family name"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+:givenName
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "given name"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+:mbox
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "mbox"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+:name
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "name"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+:phone
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "phone"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+:related
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "related"^^xsd:string ;
+.
+:reportedBy
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "reported by"^^xsd:string ;
+.
+:reportedOn
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "reported on"^^xsd:string ;
+  rdfs:range xsd:dateTime ;
+.
+:state
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "state"^^xsd:string ;
+.
+foaf:givenName
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "given name"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+
+
+
+:Employee
+  rdf:type owl:Class ;
+  spin:constraint [
+      rdf:type se:Property ;
+      se:min "1"^^xsd:nonNegativeInteger ;
+      se:max ""^^xsd:nonNegativeInteger ;
+      oslc:propertyDefinition foaf:givenName ;
+    ] ;
+  spin:constraint [
+      rdf:type oslc:Property ;
+      oslc:propertyDefinition foaf:givenName ;
+      oslc:valueType xsd:string ;
+    ] ;
+  spin:constraint [
+      rdf:type se:Property ;
+      se:min "1"^^xsd:nonNegativeInteger ;
+      se:max "1"^^xsd:nonNegativeInteger ;
+      oslc:propertyDefinition foaf:familyName ;
+    ] ;
+  spin:constraint [
+      rdf:type oslc:Property ;
+      oslc:propertyDefinition foaf:familyName ;
+      oslc:valueType xsd:string ;
+    ] ;
+  spin:constraint [
+      rdf:type se:Property ;
+      se:min "0"^^xsd:nonNegativeInteger ;
+      se:max ""^^xsd:nonNegativeInteger ;
+      oslc:propertyDefinition foaf:phone ;
+    ] ;
+  spin:constraint [
+      rdf:type oslc:Property ;
+      oslc:propertyDefinition foaf:phone ;
+      oslc:valueType xsd:string ;
+    ] ;
+  spin:constraint [
+      rdf:type se:Property ;
+      se:min "0"^^xsd:nonNegativeInteger ;
+      se:max "1"^^xsd:nonNegativeInteger ;
+      oslc:propertyDefinition foaf:mbox ;
+    ] ;
+  spin:constraint [
+      rdf:type oslc:Property ;
+      oslc:propertyDefinition foaf:mbox ;
+      oslc:valueType xsd:string ;
+    ] ;
+  spin:constraint [
+      rdf:type se:Property ;
+      se:min "1"^^xsd:nonNegativeInteger ;
+	  se:max "2"^^xsd:nonNegativeInteger ;
+      oslc:propertyDefinition foaf:name ;
+    ] ;
+  spin:constraint [
+      rdf:type oslc:Property ;
+      oslc:propertyDefinition foaf:name ;
+      oslc:valueType xsd:string ;
+    ] ;
+  rdfs:label "Employee"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+.
+:Employee_Valid_1
+  rdf:type :Employee ;
+  foaf:givenName "given name"^^xsd:string ;
+  foaf:familyName "family name"^^xsd:string ;
+  foaf:name "name"^^xsd:string ;
+  rdfs:label "Employee_1"^^xsd:string ;
+.
+:Employee_Invalid_1
+  rdf:type :Employee ;
+  foaf:mbox "mbox 1"^^xsd:string ;
+  foaf:mbox "mbox 2"^^xsd:string ;
+  rdfs:label "Employee_1"^^xsd:string ;
+.

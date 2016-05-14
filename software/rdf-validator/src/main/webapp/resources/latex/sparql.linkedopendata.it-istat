@@ -1,0 +1,16 @@
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lcc@{}}
+           & \multicolumn{2}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-3}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{STRUCTURE-01}}
+           & \rot{\emph{STRUCTURE-02}}
+	\\ \midrule
+    \emph{http://sparql.linkedopendata.it/istat} & $\checkmark$ (1) & $\checkmark$ (1)  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://sparql.linkedopendata.it/istat}}
+    \label{tab:evaluation-sparql.linkedopendata.it-istat}
+    \end{center}
+\end{table}

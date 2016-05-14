@@ -1,0 +1,82 @@
+# SKOS-C-STRUCTURE-07
+# -----
+# Structural Issues - Omitted Top Concepts:
+# A vocabulary should provide entry points to the data to provide efficient access
+# and guidance for human users.
+# Implementation: For every ConceptScheme in the controlled vocabulary,
+# a SPARQL query is issued finding resources that are associated with
+# this ConceptScheme by one of the properties skos:hasTopConcept or
+# skos:topConceptOf. Top concepts are also concepts having no broader concept.
+
+  	
+	{
+		# data
+		# ----
+		?subject a [rdfs:subClassOf* skos:ConceptScheme] .
+		
+		# validation
+		# -----
+		FILTER NOT EXISTS {
+			?subject
+				skos:hasTopConcept ?concept .
+			?concept
+				a [rdfs:subClassOf* skos:Concept] .
+		}
+		FILTER NOT EXISTS {
+			?concept
+				a [rdfs:subClassOf* skos:Concept] ;
+				skos:topConceptOf ?subject .
+		}
+		
+		# violation message
+		# -----
+		BIND ( CONCAT( 
+			"The concept scheme '", 
+			xsd:string( ?subject ),
+			"' does not have any top concept. ",
+			"| A vocabulary should provide entry points to the data to provide efficient access and guidance for human users.") 
+			AS ?violationMessage ) . 
+			
+		# violation source
+		# ----------------
+		BIND ( CONCAT( "SKOS-C-STRUCTURE-07" )AS ?violationSource ) .
+		
+		# severity level
+		# --------------
+		BIND ( ( 'WARNING' ) AS ?severityLevel ) . 
+	}
+	UNION
+	{
+		# data
+		# ----
+		?subject a [rdfs:subClassOf* skos:Concept] .
+		
+		# validation
+		# -----
+		FILTER NOT EXISTS {
+			?subject skos:broader ?conceptScheme .
+		}
+		FILTER NOT EXISTS {
+			?subject skos:topConceptOf ?conceptScheme .
+		}
+		FILTER NOT EXISTS {
+			?conceptScheme skos:hasTopConcept ?subject .
+		}
+		
+		# violation message
+		# -----
+		BIND ( CONCAT( 
+			"The concept '", 
+			xsd:string( ?subject ),
+			"' does not have any broader concept or is not a top concept of a concept scheme. ",
+			"| A vocabulary should provide entry points to the data to provide efficient access and guidance for human users.") 
+			AS ?violationMessage ) .
+			
+		# violation source
+		# ----------------
+		BIND ( CONCAT( "SKOS-C-STRUCTURE-07" )AS ?violationSource ) .
+		
+		# severity level
+		# --------------
+		BIND ( ( 'WARNING' ) AS ?severityLevel ) . 
+	}

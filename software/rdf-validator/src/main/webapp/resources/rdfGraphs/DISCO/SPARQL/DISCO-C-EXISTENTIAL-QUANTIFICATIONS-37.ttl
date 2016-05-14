@@ -1,0 +1,20 @@
+	?subject 
+	    a skos:Concept ;
+	    skos:notation ?code .
+	
+	OPTIONAL { ?subject skos:prefLabel ?category . }
+	FILTER ( ! BOUND( ?category ) ) .
+	
+	# violation message
+	# -----------------
+	BIND ( CONCAT( 
+		"DISCO-C-EXISTENTIAL-QUANTIFICATIONS-37" )
+		AS ?violationMessage ) . 
+	
+	# violation source
+	# ----------------
+	BIND ( CONCAT( "DISCO-C-EXISTENTIAL-QUANTIFICATIONS-37" )AS ?violationSource ) . 
+	
+	# severity level
+	# --------------
+	BIND ( ( 'INFO' ) AS ?severityLevel ) .

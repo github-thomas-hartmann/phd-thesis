@@ -1,0 +1,20 @@
+# constraints
+# -----
+:ancestorOf a owl:TransitiveProperty . 
+
+# invalid data
+# -----
+:Carter
+	:ancestorOf :Lois .
+:Lois
+	:ancestorOf :Meg .
+	
+	
+# triples needed for validation
+# -----
+:Carter
+	a owl:Thing .
+:Lois
+	a owl:Thing . 
+:Meg
+	a owl:Thing . 

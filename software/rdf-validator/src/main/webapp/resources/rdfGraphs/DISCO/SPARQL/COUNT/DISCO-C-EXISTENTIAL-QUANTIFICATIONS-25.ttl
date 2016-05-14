@@ -1,0 +1,8 @@
+?subject a disco:Study .
+
+OPTIONAL { 
+    ?summaryStatistics disco:statisticsVariable ?variable .
+    ?logicalDataSet disco:variable ?variable .
+    ?subject disco:product ?logicalDataSet .  
+}
+FILTER ( ! BOUND( ?summaryStatistics ) ) .

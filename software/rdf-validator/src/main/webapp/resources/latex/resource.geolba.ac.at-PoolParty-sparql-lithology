@@ -1,0 +1,15 @@
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lc@{}}
+           & \multicolumn{1}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-2}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{SKOS-C-STRUCTURE-10}}
+	\\ \midrule
+    \emph{http://resource.geolba.ac.at/PoolParty/sparql/lithology} & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://resource.geolba.ac.at/PoolParty/sparql/lithology}}
+    \label{tab:evaluation-resource.geolba.ac.at-PoolParty-sparql-lithology}
+    \end{center}
+\end{table}

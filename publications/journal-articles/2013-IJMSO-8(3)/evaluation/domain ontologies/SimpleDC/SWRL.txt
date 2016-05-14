@@ -1,0 +1,104 @@
+contributor:
+contributor-Element_http://purl.org/dc/elements/1.1/-Schema(?a), 
+stringvalue(?a, ?b),
+string-Type_http://www.w3.org/2001/XMLSchema-Schema(?b)
+-> 
+contributor(?a,?b)
+----------
+coverage:
+coverage-Element_http://purl.org/dc/elements/1.1/-Schema(?a), 
+stringvalue(?a, ?b),
+string-Type_http://www.w3.org/2001/XMLSchema-Schema(?b)
+-> 
+coverage(?a,?b)
+----------
+creator:
+creator-Element_http://purl.org/dc/elements/1.1/-Schema(?a), 
+stringvalue(?a, ?b),
+string-Type_http://www.w3.org/2001/XMLSchema-Schema(?b)
+-> 
+creator(?a,?b)
+----------
+date:
+date:-Element_http://purl.org/dc/elements/1.1/-Schema(?a), 
+stringvalue(?a, ?b),
+string-Type_http://www.w3.org/2001/XMLSchema-Schema(?b)
+-> 
+date:(?a,?b)
+----------
+description:
+description-Element_http://purl.org/dc/elements/1.1/-Schema(?a), 
+stringvalue(?a, ?b),
+string-Type_http://www.w3.org/2001/XMLSchema-Schema(?b)
+-> 
+description(?a,?b)
+----------
+format:
+format-Element_http://purl.org/dc/elements/1.1/-Schema(?a), 
+stringvalue(?a, ?b),
+string-Type_http://www.w3.org/2001/XMLSchema-Schema(?b)
+-> 
+format(?a,?b)
+----------
+identifier:
+identifier-Element_http://purl.org/dc/elements/1.1/-Schema(?a), 
+stringvalue(?a, ?b),
+string-Type_http://www.w3.org/2001/XMLSchema-Schema(?b)
+-> 
+identifier(?a,?b)
+----------
+language:
+language-Element_http://purl.org/dc/elements/1.1/-Schema(?a), 
+stringvalue(?a, ?b),
+string-Type_http://www.w3.org/2001/XMLSchema-Schema(?b)
+-> 
+language(?a,?b)
+----------
+publisher:
+publisher-Element_http://purl.org/dc/elements/1.1/-Schema(?a), 
+stringvalue(?a, ?b),
+string-Type_http://www.w3.org/2001/XMLSchema-Schema(?b)
+-> 
+publisher(?a,?b)
+----------
+relation:
+relation-Element_http://purl.org/dc/elements/1.1/-Schema(?a), 
+stringvalue(?a, ?b),
+string-Type_http://www.w3.org/2001/XMLSchema-Schema(?b)
+-> 
+relation(?a,?b)
+----------
+rights:
+rights-Element_http://purl.org/dc/elements/1.1/-Schema(?a), 
+stringvalue(?a, ?b),
+string-Type_http://www.w3.org/2001/XMLSchema-Schema(?b)
+-> 
+rights(?a,?b)
+----------
+source:
+source-Element_http://purl.org/dc/elements/1.1/-Schema(?a), 
+stringvalue(?a, ?b),
+string-Type_http://www.w3.org/2001/XMLSchema-Schema(?b)
+-> 
+source(?a,?b)
+----------
+subject:
+subject-Element_http://purl.org/dc/elements/1.1/-Schema(?a), 
+stringvalue(?a, ?b),
+string-Type_http://www.w3.org/2001/XMLSchema-Schema(?b)
+-> 
+subject(?a,?b)
+----------
+title:
+title-Element_http://purl.org/dc/elements/1.1/-Schema(?a), 
+stringvalue(?a, ?b),
+string-Type_http://www.w3.org/2001/XMLSchema-Schema(?b)
+-> 
+title(?a,?b)
+----------
+type:
+type-Element_http://purl.org/dc/elements/1.1/-Schema(?a), 
+stringvalue(?a, ?b),
+string-Type_http://www.w3.org/2001/XMLSchema-Schema(?b)
+-> 
+type(?a,?b)

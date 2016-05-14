@@ -1,0 +1,11 @@
+# DATA-CUBE-C-EXACT-QUALIFIED-CARDINALITY-RESTRICTIONS-02: Unique DSD (IC-2)
+# -----
+# Every qb:DataSet has (qb:structure) exactly one associated qb:DataStructureDefinition
+
+
+# invalid data
+# -----
+
+
+# valid data
+# -----

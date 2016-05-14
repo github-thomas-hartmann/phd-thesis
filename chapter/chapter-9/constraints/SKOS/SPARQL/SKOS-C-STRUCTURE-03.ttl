@@ -1,0 +1,42 @@
+# SKOS-C-STRUCTURE-03
+# -----
+# Structural Issues - Cyclic Hierarchical Relations:
+# Although perfectly consistent with the SKOS data model, cyclic relations may reveal
+# a logical problem in the thesaurus. Consider the following example: 
+# decision --> problem resolution --> problem --> decision: here the cycle is
+# closed). The concepts are connected using skos:broader relationships
+# (indicated with -->). Due to the fact that a thesaurus is in many cases a product
+# of consensus between the contributors (or just the decision of one dedicated
+# thesaurus manager), it will be almost impossible to automatically resolve
+# the cycle (i.e. deleting an edge).
+# Implementation: Construction of a graph having all concepts as nodes
+# and the set of edges being skos:broader relations.
+
+ 	
+	# data
+	# ----
+	?subject a [rdfs:subClassOf* skos:Concept] .
+		
+	# validation
+	# ----------
+	?subject skos:broader* ?o .
+	?o skos:broader* ?subject .
+	FILTER ( ?subject != ?o ) .
+
+	# violation message
+	# -----
+	BIND ( CONCAT( 
+		"There is a cyclic relation between the concept '", 
+		xsd:string( ?subject ), 
+		"' and the concept '",
+		xsd:string( ?o ),
+		"'. | cyclic relations may reveal a logical problem in the thesaurus. ") 
+		AS ?violationMessage ) .
+	
+	# violation source
+	# ----------------
+	BIND ( CONCAT( "SKOS-C-STRUCTURE-03" )AS ?violationSource ) .
+	
+	# severity level
+	# --------------
+	BIND ( ( 'WARNING' ) AS ?severityLevel ) .	

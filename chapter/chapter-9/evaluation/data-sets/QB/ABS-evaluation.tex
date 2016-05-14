@@ -1,0 +1,1609 @@
+% This is LLNCS.DEM the demonstration file of
+% the LaTeX macro package from Springer-Verlag
+% for Lecture Notes in Computer Science,
+% version 2.4 for LaTeX2e as of 16. April 2010
+%
+\documentclass{llncs}
+
+% allows for temporary adjustment of side margins
+\usepackage{chngpage}
+
+% just makes the table prettier (see \toprule, \bottomrule, etc. commands below)
+\usepackage{booktabs}
+
+\usepackage[utf8]{inputenc}
+%\usepackage[font=small,skip=0pt]{caption}
+
+% footnotes
+\usepackage{scrextend}
+
+% colors
+\usepackage[usenames, dvipsnames]{color}
+
+% underline
+\usepackage{tikz}
+\newcommand{\udensdot}[1]{%
+    \tikz[baseline=(todotted.base)]{
+        \node[inner sep=1pt,outer sep=0pt] (todotted) {#1};
+        \draw[densely dotted] (todotted.south west) -- (todotted.south east);
+    }%
+}%
+
+\newcommand{\uloosdot}[1]{%
+    \tikz[baseline=(todotted.base)]{
+        \node[inner sep=1pt,outer sep=0pt] (todotted) {#1};
+        \draw[loosely dotted] (todotted.south west) -- (todotted.south east);
+    }%
+}%
+
+\newcommand{\udash}[1]{%
+    \tikz[baseline=(todotted.base)]{
+        \node[inner sep=1pt,outer sep=0pt] (todotted) {#1};
+        \draw[dashed] (todotted.south west) -- (todotted.south east);
+    }%
+}%
+
+\newcommand{\udensdash}[1]{%
+    \tikz[baseline=(todotted.base)]{
+        \node[inner sep=1pt,outer sep=0pt] (todotted) {#1};
+        \draw[densely dashed] (todotted.south west) -- (todotted.south east);
+    }%
+}%
+
+\newcommand{\uloosdash}[1]{%
+    \tikz[baseline=(todotted.base)]{
+        \node[inner sep=1pt,outer sep=0pt] (todotted) {#1};
+        \draw[loosely dashed] (todotted.south west) -- (todotted.south east);
+    }%
+}%
+
+% URL handling
+\usepackage{url}
+\urlstyle{same}
+
+%\usepackage{makeidx}  % allows for indexgeneration
+
+%\usepackage{amsmath}
+\usepackage{amsmath, amssymb}
+\usepackage{mathabx}
+\usepackage{caption} 
+\captionsetup[table]{skip=10pt}
+
+% monospace within text
+\newcommand{\ms}[1]{\texttt{#1}}
+
+% examples
+\usepackage{fancyvrb}
+\DefineVerbatimEnvironment{ex}{Verbatim}{numbers=left,numbersep=2mm,frame=single,fontsize=\scriptsize}
+
+\usepackage{xspace}
+% Einfache und doppelte Anfuehrungszeichen
+\newcommand{\qs}{``} 
+\newcommand{\qe}{''\xspace} 
+\newcommand{\sqs}{`} 
+\newcommand{\sqe}{'\xspace} 
+
+% checkmark
+\usepackage{tikz}
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;} 
+
+% Xs
+\usepackage{pifont}
+
+% Tabellenabstände kleiner
+\setlength{\intextsep}{10pt} % Vertical space above & below [h] floats
+\setlength{\textfloatsep}{10pt} % Vertical space below (above) [t] ([b]) floats
+% \setlength{\abovecaptionskip}{0pt}
+% \setlength{\belowcaptionskip}{0pt}
+
+\usepackage{tabularx}
+\newcommand{\hr}{\hline\noalign{\smallskip}} % für die horizontalen linien in tabellen
+
+% Todos
+\usepackage[colorinlistoftodos]{todonotes}
+\newcommand{\ke}[1]{\todo[size=\small, color=orange!40]{\textbf{Kai:} #1}}
+\newcommand{\tb}[1]{\todo[size=\small, color=green!40]{\textbf{Thomas:} #1}}
+\newcommand{\er}[1]{\todo[size=\small, color=red!40]{\textbf{Erman:} #1}}
+\newcommand{\an}[1]{\todo[size=\small, color=blue!40]{\textbf{Andy:} #1}}
+
+\newenvironment{table-1cols}{
+  \scriptsize
+  \sffamily
+  \vspace{0.3cm}
+  \begin{tabular}{l}
+  \hline
+  \textbf{Requirements} \\
+  \hline
+
+}{
+  \hline
+  \end{tabular}
+  \linebreak
+}
+
+\newenvironment{table-2cols}{
+  \scriptsize
+  \sffamily
+  \vspace{0.3cm}
+  \begin{tabular}{l|l}
+  \hline
+  \textbf{Requirements} & \textbf{Covering DSCLs} \\
+  \hline
+
+}{
+  \hline
+  \end{tabular}
+  \linebreak
+}
+
+\newenvironment{complexity}{
+  %\scriptsize
+  %\sffamily
+  %\vspace{0.3cm}
+  \begin{tabular}{l|l}
+  \hline
+  \textbf{Complexity Class} & \textbf{Complexity} \\
+  \hline
+
+}{
+  \hline
+  \end{tabular}
+  \linebreak
+}
+
+\newenvironment{DL}{
+  %\scriptsize
+  %\sffamily
+  \vspace{0cm}
+  \begin{tabular}{r l}
+
+}{
+  \end{tabular}
+  %\linebreak
+}
+
+
+\newenvironment{evaluation}{
+  %\scriptsize
+  %\sffamily
+  %\vspace{0.3cm}
+  \begin{tabular}{l|c|c|c|c|c|c}
+  \hline
+  \textbf{Constraint Class} & \textbf{DSP} & \textbf{OWL2-DL} & \textbf{OWL2-QL} & \textbf{ReSh} & \textbf{ShEx} & \textbf{SPIN} \\
+  \hline
+
+}{
+  \hline
+  \end{tabular}
+  \linebreak
+}
+
+\newenvironment{constraint-languages-complexity}{
+  %\scriptsize
+  %\sffamily
+  %\vspace{0.3cm}
+  \begin{tabular}{l|c|c|c|c|c|c}
+  \hline
+  \textbf{Complexity Class} & \textbf{DSP} & \textbf{OWL2-DL} & \textbf{OWL2-QL} & \textbf{ReSh} & \textbf{ShEx} & \textbf{SPIN} \\
+  \hline
+
+}{
+  \hline
+  \end{tabular}
+  \linebreak
+}
+
+\newenvironment{user-fiendliness}{
+  %\scriptsize
+  %\sffamily
+  %\vspace{0.3cm}
+  \begin{tabular}{l|c|c|c|c|c}
+  \hline
+  \textbf{criterion} & \textbf{DSP} & \textbf{OWL2} & \textbf{ReSh} & \textbf{ShEx} & \textbf{SPIN} \\
+  \hline
+
+}{
+  \hline
+  \end{tabular}
+  \linebreak
+}
+
+\setcounter{secnumdepth}{5}
+
+% tables
+\usepackage{array,graphicx}
+\usepackage{booktabs}
+\usepackage{pifont}
+\newcommand*\rot{\rotatebox{90}}
+\newcommand*\OK{\ding{51}}
+\usepackage{booktabs}
+\newcommand*\ON[0]{$\surd$}
+
+\usepackage{tablefootnote}
+
+\usepackage{float}
+
+\begin{document}
+\renewcommand{\arraystretch}{1.3}
+%
+%
+\title{Evaluation of the Australian Bureau of Statistics (ABS) RDF Data Sets}
+\subtitle{}
+
+\titlerunning{XXXXX}  % abbreviated title (for running head)
+%                                     also used for the TOC unless
+%                                     \toctitle is used
+%
+\author{Thomas Bosch\inst{1} \and Benjamin Zapilko\inst{1} \and Joachim Wackerow\inst{1} \and Kai Eckert\inst{2}}
+%
+\authorrunning{} % abbreviated author list (for running head)
+%
+%%%% list of authors for the TOC (use if author list has to be modified)
+\institute{GESIS – Leibniz Institute for the Social Sciences, Germany\\
+\email{\{firstname.lastname\}@gesis.org},\\ 
+\and
+University of Mannheim, Germany \\
+\email{kai@informatik.uni-mannheim.de} 
+}
+
+\maketitle              % typeset the title of the contribution
+
+\begin{abstract}
+Evaluation of the Australian Bureau of Statistics (ABS) RDF Data Sets
+
+
+\keywords{RDF Validation, RDF Constraints, DDI-RDF Discovery Vocabulary, Disco, RDF Data Cube Vocabulary, Linked Data, Semantic Web}
+\end{abstract}
+
+\section{Data Model Consistency}
+
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lccccccccccc@{}}
+           & \multicolumn{11}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-12}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-01}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-02}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-03}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-04}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-05}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-06}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-07}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-08}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-09}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-10 (!)}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-11}}
+	\\ \midrule
+    \emph{http://abs.270a.info/sparql} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ (6) & 6997098 (246) & $\checkmark$ & $\checkmark$ (8) & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://abs.270a.info/sparql}}
+    \label{tab:evaluation-abs.270a.info-sparql}
+    \end{center}
+\end{table}
+
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lccccccccccc@{}}
+           & \multicolumn{11}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-12}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-01}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-02}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-03}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-04}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-05}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-06}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-07}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-08}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-09}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-10 (!)}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-11}}
+	\\ \midrule
+    \emph{POP$\_$PROJ$\_$REGION$\_$2012$\_$2061} & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & \ding{55} & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{IIP$\_$DSID5671} & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & \ding{55} & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T32} & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & \ding{55} & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T32$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T31} & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & \ding{55} & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T31$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B10} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B10$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B10$\_$SA1$\_$SA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{MERCH$\_$EXP} & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & \ding{55} & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$NRP9$\_$ASGS} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T29} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T29$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{MERCH$\_$IMP} & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & \ding{55} & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B17} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B17$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B17$\_$SA1$\_$SA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://abs.270a.info/sparql}} Data Sets
+    \label{tab:evaluation-0-abs.270a.info-sparql}
+    \end{center}
+\end{table}
+
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lccccccccccc@{}}
+           & \multicolumn{11}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-12}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-01}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-02}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-03}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-04}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-05}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-06}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-07}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-08}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-09}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-10 (!)}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-11}}
+	\\ \midrule
+    \emph{ABS$\_$CENSUS2011$\_$B12} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B12$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B12$\_$SA1$\_$SA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T30} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T30$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B41} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B41$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B41$\_$SA1$\_$SA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T12$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T12} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T03} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T03$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B45} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B45$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B45$\_$SA1$\_$SA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B40} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B40$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://abs.270a.info/sparql}} Data Sets
+    \label{tab:evaluation-1-abs.270a.info-sparql}
+    \end{center}
+\end{table}
+
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lccccccccccc@{}}
+           & \multicolumn{11}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-12}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-01}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-02}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-03}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-04}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-05}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-06}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-07}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-08}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-09}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-10 (!)}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-11}}
+	\\ \midrule
+    \emph{ABS$\_$CENSUS2011$\_$B40$\_$SA1$\_$SA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B04} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B04$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B04$\_$SA1$\_$SA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{LF} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B23} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B23$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B23$\_$SA1$\_$SA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T04} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T04$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B16} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B16$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B16$\_$SA1$\_$SA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B11} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B11$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B11$\_$SA1$\_$SA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T24} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://abs.270a.info/sparql}} Data Sets
+    \label{tab:evaluation-2-abs.270a.info-sparql}
+    \end{center}
+\end{table}
+
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lccccccccccc@{}}
+           & \multicolumn{11}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-12}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-01}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-02}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-03}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-04}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-05}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-06}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-07}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-08}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-09}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-10 (!)}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-11}}
+	\\ \midrule
+    \emph{ABS$\_$CENSUS2011$\_$T24$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T09} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T09$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T06} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T06$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B20} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B20$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B20$\_$SA1$\_$SA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B22} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B22$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B22$\_$SA1$\_$SA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{TOUR$\_$ACCOM} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T16} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T16$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T17} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T17$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B08} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://abs.270a.info/sparql}} Data Sets
+    \label{tab:evaluation-3-abs.270a.info-sparql}
+    \end{center}
+\end{table}
+
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lccccccccccc@{}}
+           & \multicolumn{11}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-12}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-01}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-02}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-03}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-04}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-05}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-06}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-07}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-08}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-09}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-10 (!)}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-11}}
+	\\ \midrule
+    \emph{ABS$\_$CENSUS2011$\_$B08$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B08$\_$SA1$\_$SA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B07} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B07$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B07$\_$SA1$\_$SA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B05} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B05$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B05$\_$SA1$\_$SA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B44} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B44$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B44$\_$SA1$\_$SA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T05} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T05$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B18$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B18} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B18$\_$SA1$\_$SA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B42} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://abs.270a.info/sparql}} Data Sets
+    \label{tab:evaluation-4-abs.270a.info-sparql}
+    \end{center}
+\end{table}
+
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lccccccccccc@{}}
+           & \multicolumn{11}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-12}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-01}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-02}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-03}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-04}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-05}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-06}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-07}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-08}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-09}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-10 (!)}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-11}}
+	\\ \midrule
+    \emph{ABS$\_$CENSUS2011$\_$B42$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T25$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T25} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B13$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B13} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B13$\_$SA1$\_$SA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T14$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T14} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B24$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B24} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B24$\_$SA1$\_$SA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B03$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B03} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B03$\_$SA1$\_$SA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T08$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T08} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B21$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://abs.270a.info/sparql}} Data Sets
+    \label{tab:evaluation-5-abs.270a.info-sparql}
+    \end{center}
+\end{table}
+
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lccccccccccc@{}}
+           & \multicolumn{11}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-12}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-01}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-02}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-03}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-04}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-05}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-06}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-07}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-08}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-09}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-10 (!)}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-11}}
+	\\ \midrule
+    \emph{ABS$\_$CENSUS2011$\_$B21} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B21$\_$SA1$\_$SA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B19$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B19} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B19$\_$SA1$\_$SA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B06$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B06} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B06$\_$SA1$\_$SA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T10$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T10} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T15$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T15} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{LENDING$\_$INDUSTRY} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T07} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T07$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T19$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T19} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://abs.270a.info/sparql}} Data Sets
+    \label{tab:evaluation-6-abs.270a.info-sparql}
+    \end{center}
+\end{table}
+
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lccccccccccc@{}}
+           & \multicolumn{11}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-12}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-01}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-02}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-03}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-04}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-05}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-06}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-07}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-08}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-09}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-10 (!)}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-11}}
+	\\ \midrule
+    \emph{ABS$\_$CENSUS2011$\_$B01$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B01} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B01$\_$SA1$\_$SA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B09$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B09} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B09$\_$SA1$\_$SA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B46$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B46} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B46$\_$SA1$\_$SA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B36$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B36} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B36$\_$SA1$\_$SA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T13$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T13} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ERP$\_$QUARTERLY} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$NRP9$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B14$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://abs.270a.info/sparql}} Data Sets
+    \label{tab:evaluation-7-abs.270a.info-sparql}
+    \end{center}
+\end{table}
+
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lccccccccccc@{}}
+           & \multicolumn{11}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-12}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-01}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-02}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-03}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-04}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-05}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-06}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-07}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-08}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-09}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-10 (!)}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-11}}
+	\\ \midrule
+    \emph{ABS$\_$CENSUS2011$\_$B14} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B14$\_$SA1$\_$SA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T20$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T20} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{POP$\_$PROJ$\_$2011} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{HF} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B34$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B34} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B34$\_$SA1$\_$SA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{LENDING$\_$BY$\_$PURPOSE} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T18} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T18$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B26$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B26} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B26$\_$SA1$\_$SA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T11$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T11} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://abs.270a.info/sparql}} Data Sets
+    \label{tab:evaluation-8-abs.270a.info-sparql}
+    \end{center}
+\end{table}
+
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lccccccccccc@{}}
+           & \multicolumn{11}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-12}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-01}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-02}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-03}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-04}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-05}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-06}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-07}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-08}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-09}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-10 (!)}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-11}}
+	\\ \midrule
+    \emph{ABS$\_$CENSUS2011$\_$T22$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T22} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T23$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T23} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B15$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B15} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B15$\_$SA1$\_$SA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T01$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T01} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T21$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T21} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T33$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T33} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B33$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B33} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B33$\_$SA1$\_$SA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T28$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://abs.270a.info/sparql}} Data Sets
+    \label{tab:evaluation-9-abs.270a.info-sparql}
+    \end{center}
+\end{table}
+
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lccccccccccc@{}}
+           & \multicolumn{11}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-12}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-01}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-02}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-03}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-04}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-05}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-06}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-07}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-08}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-09}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-10 (!)}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-11}}
+	\\ \midrule
+    \emph{ABS$\_$CENSUS2011$\_$T28} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B32$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B32} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B32$\_$SA1$\_$SA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B28$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B28} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B28$\_$SA1$\_$SA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B37$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B37} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B37$\_$SA1$\_$SA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{CPI} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B43$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B38$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B38} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B38$\_$SA1$\_$SA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B39$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B39} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://abs.270a.info/sparql}} Data Sets
+    \label{tab:evaluation-10-abs.270a.info-sparql}
+    \end{center}
+\end{table}
+
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lccccccccccc@{}}
+           & \multicolumn{11}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-12}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-01}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-02}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-03}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-04}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-05}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-06}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-07}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-08}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-09}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-10 (!)}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-11}}
+	\\ \midrule
+    \emph{ABS$\_$CENSUS2011$\_$B39$\_$SA1$\_$SA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$ERP$\_$COB$\_$STATE} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B25$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B25} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B25$\_$SA1$\_$SA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T26$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T26} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{RT} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B35$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B35} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B35$\_$SA1$\_$SA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T34$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T34} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B31$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B31} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B31$\_$SA1$\_$SA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T27$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://abs.270a.info/sparql}} Data Sets
+    \label{tab:evaluation-11-abs.270a.info-sparql}
+    \end{center}
+\end{table}
+
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lccccccccccc@{}}
+           & \multicolumn{11}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-12}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-01}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-02}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-03}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-04}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-05}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-06}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-07}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-08}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-09}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-10 (!)}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-11}}
+	\\ \midrule
+    \emph{ABS$\_$CENSUS2011$\_$T27} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ERP$\_$COB} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{BOP} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B30$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B30} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B30$\_$SA1$\_$SA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{QBIS} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$ABORIGINAL$\_$POPPROJ$\_$INDREGION} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABORIGINAL$\_$POP$\_$PROJ} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABORIGINAL$\_$POP$\_$PROJ$\_$REMOTE} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{PPI$\_$1} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T02$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T02} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B29$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B29} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B29$\_$SA1$\_$SA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B27$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://abs.270a.info/sparql}} Data Sets
+    \label{tab:evaluation-12-abs.270a.info-sparql}
+    \end{center}
+\end{table}
+
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lccccccccccc@{}}
+           & \multicolumn{11}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-12}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-01}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-02}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-03}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-04}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-05}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-06}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-07}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-08}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-09}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-10 (!)}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-11}}
+	\\ \midrule
+    \emph{ABS$\_$CENSUS2011$\_$B27} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B27$\_$SA1$\_$SA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{NEWMVSALES} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B02$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B02} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B02$\_$SA1$\_$SA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$ANNUAL$\_$ERP$\_$ASGS} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ITPI$\_$IMPORT} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{CAPEX} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ITPI$\_$EXPORT} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{PETROLEUM$\_$EXPLORATION} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{PPI$\_$SOP} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{INTERSTATEMIGRATION$\_$FY} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{INTERSTATEMIGRATION$\_$CY} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{MINING$\_$EXPLORATION} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{LABOUR$\_$PRICE$\_$INDEX} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{ABS$\_$ANNUAL$\_$ERP$\_$LGA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://abs.270a.info/sparql}} Data Sets
+    \label{tab:evaluation-13-abs.270a.info-sparql}
+    \end{center}
+\end{table}
+
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lccccccccccc@{}}
+           & \multicolumn{11}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-12}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-01}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-02}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-03}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-04}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-05}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-06}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-07}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-08}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-09}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-10 (!)}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-11}}
+	\\ \midrule
+    \emph{LENDING$\_$FINANCE$\_$SUMMARY} & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & \ding{55}  
+ & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & -  
+ & $\checkmark$  \\
+    \emph{NETOVERSEASMIGRATION$\_$FY} & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & \ding{55}  
+ & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & -  
+ & $\checkmark$  \\
+    \emph{NETOVERSEASMIGRATION$\_$CY} & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & \ding{55}  
+ & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & -  
+ & $\checkmark$  \\
+    \emph{ABS$\_$ERP$\_$COB$\_$MAG$\_$SEXRATIO} & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & \ding{55}  
+ & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & -  
+ & $\checkmark$  \\
+    \emph{RES$\_$PROP$\_$INDEX} & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & \ding{55}  
+ & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & -  
+ & $\checkmark$  \\
+    \emph{ABS$\_$NOM$\_$VISA$\_$CY} & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & \ding{55}  
+ & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & -  
+ & $\checkmark$  \\
+    \emph{ABS$\_$NOM$\_$VISA$\_$FY} & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & \ding{55}  
+ & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & -  
+ & $\checkmark$  \\
+    \emph{RES$\_$DWELL} & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & \ding{55}  
+ & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & -  
+ & $\checkmark$  \\
+    \emph{ALC} & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & 3765282  
+ & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & -  
+ & $\checkmark$  \\
+    \emph{IAS$\_$2} & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & 2547072  
+ & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & -  
+ & $\checkmark$  \\
+    \emph{RES$\_$DWEL$\_$ST} & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & 341550  
+ & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & -  
+ & $\checkmark$  \\
+    \emph{IAS$\_$4} & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & 266064  
+ & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & -  
+ & $\checkmark$  \\
+    \emph{IAS$\_$5} & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & 43374  
+ & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & -  
+ & $\checkmark$  \\
+    \emph{IAS$\_$3} & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & 19500  
+ & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & -  
+ & $\checkmark$  \\
+    \emph{POPULATION$\_$CLOCK$\_$FY} & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & 14256  
+ & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & $\checkmark$  
+ & -  
+ & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://abs.270a.info/sparql}} Data Sets
+    \label{tab:evaluation-14-abs.270a.info-sparql}
+    \end{center}
+\end{table}
+
+\section{Existential Quantifications}
+
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lcccc@{}}
+           & \multicolumn{4}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-5}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{EXISTENTIAL-QUANTIFICATIONS-01}}
+           & \rot{\emph{EXISTENTIAL-QUANTIFICATIONS-02}}
+           & \rot{\emph{EXISTENTIAL-QUANTIFICATIONS-03}}
+           & \rot{\emph{EXISTENTIAL-QUANTIFICATIONS-04}}
+	\\ \midrule
+    \emph{http://abs.270a.info/sparql} & 7 & $\checkmark$ & $\checkmark$ & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://abs.270a.info/sparql}}
+    \label{tab:evaluation-abs.270a.info-sparql}
+    \end{center}
+\end{table}
+
+\section{Cardinality Restrictions}
+
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lcccc@{}}
+           & \multicolumn{4}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-5}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{MINIMUM-QUALIFIED-CARDINALITY-RESTRICTIONS-02}}
+           & \rot{\emph{MAXIMUM-QUALIFIED-CARDINALITY-RESTRICTIONS-01}}
+           & \rot{\emph{EXACT-UNQUALIFIED-CARDINALITY-RESTRICTIONS-01}}
+           & \rot{\emph{EXACT-QUALIFIED-CARDINALITY-RESTRICTIONS-02}}
+	\\ \midrule
+    \emph{http://abs.270a.info/sparql} & \ding{55} & $\checkmark$ (2) & $\checkmark$ & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://abs.270a.info/sparql}}
+    \label{tab:evaluation-abs.270a.info-sparql}
+    \end{center}
+\end{table}
+
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lc@{}}
+           & \multicolumn{1}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-2}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{MAXIMUM-QUALIFIED-CARDINALITY-RESTRICTIONS-01}}
+	\\ \midrule
+    \emph{POP$\_$PROJ$\_$REGION$\_$2012$\_$2061} & \ding{55}  \\
+    \emph{IIP$\_$DSID5671} & \ding{55}  \\
+    \emph{ABS$\_$CENSUS2011$\_$T32} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T32$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T31} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T31$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B10} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B10$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B10$\_$SA1$\_$SA} & $\checkmark$  \\
+    \emph{MERCH$\_$EXP} & $\checkmark$  \\
+    \emph{ABS$\_$NRP9$\_$ASGS} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T29} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T29$\_$LGA} & $\checkmark$  \\
+    \emph{MERCH$\_$IMP} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B17} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B17$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B17$\_$SA1$\_$SA} & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://abs.270a.info/sparql}} Data Sets
+    \label{tab:evaluation-0-abs.270a.info-sparql}
+    \end{center}
+\end{table}
+
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lc@{}}
+           & \multicolumn{1}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-2}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{MAXIMUM-QUALIFIED-CARDINALITY-RESTRICTIONS-01}}
+	\\ \midrule
+    \emph{ABS$\_$CENSUS2011$\_$B12} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B12$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B12$\_$SA1$\_$SA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T30} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T30$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B41} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B41$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B41$\_$SA1$\_$SA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T12$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T12} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T03} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T03$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B45} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B45$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B45$\_$SA1$\_$SA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B40} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B40$\_$LGA} & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://abs.270a.info/sparql}} Data Sets
+    \label{tab:evaluation-1-abs.270a.info-sparql}
+    \end{center}
+\end{table}
+
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lc@{}}
+           & \multicolumn{1}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-2}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{MAXIMUM-QUALIFIED-CARDINALITY-RESTRICTIONS-01}}
+	\\ \midrule
+    \emph{ABS$\_$CENSUS2011$\_$B40$\_$SA1$\_$SA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B04} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B04$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B04$\_$SA1$\_$SA} & $\checkmark$  \\
+    \emph{LF} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B23} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B23$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B23$\_$SA1$\_$SA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T04} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T04$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B16} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B16$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B16$\_$SA1$\_$SA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B11} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B11$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B11$\_$SA1$\_$SA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T24} & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://abs.270a.info/sparql}} Data Sets
+    \label{tab:evaluation-2-abs.270a.info-sparql}
+    \end{center}
+\end{table}
+
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lc@{}}
+           & \multicolumn{1}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-2}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{MAXIMUM-QUALIFIED-CARDINALITY-RESTRICTIONS-01}}
+	\\ \midrule
+    \emph{ABS$\_$CENSUS2011$\_$T24$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T09} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T09$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T06} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T06$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B20} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B20$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B20$\_$SA1$\_$SA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B22} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B22$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B22$\_$SA1$\_$SA} & $\checkmark$  \\
+    \emph{TOUR$\_$ACCOM} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T16} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T16$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T17} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T17$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B08} & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://abs.270a.info/sparql}} Data Sets
+    \label{tab:evaluation-3-abs.270a.info-sparql}
+    \end{center}
+\end{table}
+
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lc@{}}
+           & \multicolumn{1}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-2}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{MAXIMUM-QUALIFIED-CARDINALITY-RESTRICTIONS-01}}
+	\\ \midrule
+    \emph{ABS$\_$CENSUS2011$\_$B08$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B08$\_$SA1$\_$SA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B07} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B07$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B07$\_$SA1$\_$SA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B05} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B05$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B05$\_$SA1$\_$SA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B44} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B44$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B44$\_$SA1$\_$SA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T05} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T05$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B18$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B18} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B18$\_$SA1$\_$SA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B42} & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://abs.270a.info/sparql}} Data Sets
+    \label{tab:evaluation-4-abs.270a.info-sparql}
+    \end{center}
+\end{table}
+
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lc@{}}
+           & \multicolumn{1}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-2}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{MAXIMUM-QUALIFIED-CARDINALITY-RESTRICTIONS-01}}
+	\\ \midrule
+    \emph{ABS$\_$CENSUS2011$\_$B42$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T25$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T25} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B13$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B13} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B13$\_$SA1$\_$SA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T14$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T14} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B24$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B24} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B24$\_$SA1$\_$SA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B03$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B03} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B03$\_$SA1$\_$SA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T08$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T08} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B21$\_$LGA} & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://abs.270a.info/sparql}} Data Sets
+    \label{tab:evaluation-5-abs.270a.info-sparql}
+    \end{center}
+\end{table}
+
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lc@{}}
+           & \multicolumn{1}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-2}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{MAXIMUM-QUALIFIED-CARDINALITY-RESTRICTIONS-01}}
+	\\ \midrule
+    \emph{ABS$\_$CENSUS2011$\_$B21} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B21$\_$SA1$\_$SA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B19$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B19} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B19$\_$SA1$\_$SA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B06$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B06} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B06$\_$SA1$\_$SA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T10$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T10} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T15$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T15} & $\checkmark$  \\
+    \emph{LENDING$\_$INDUSTRY} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T07} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T07$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T19$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T19} & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://abs.270a.info/sparql}} Data Sets
+    \label{tab:evaluation-6-abs.270a.info-sparql}
+    \end{center}
+\end{table}
+
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lc@{}}
+           & \multicolumn{1}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-2}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{MAXIMUM-QUALIFIED-CARDINALITY-RESTRICTIONS-01}}
+	\\ \midrule
+    \emph{ABS$\_$CENSUS2011$\_$B01$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B01} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B01$\_$SA1$\_$SA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B09$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B09} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B09$\_$SA1$\_$SA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B46$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B46} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B46$\_$SA1$\_$SA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B36$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B36} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B36$\_$SA1$\_$SA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T13$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T13} & $\checkmark$  \\
+    \emph{ERP$\_$QUARTERLY} & $\checkmark$  \\
+    \emph{ABS$\_$NRP9$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B14$\_$LGA} & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://abs.270a.info/sparql}} Data Sets
+    \label{tab:evaluation-7-abs.270a.info-sparql}
+    \end{center}
+\end{table}
+
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lc@{}}
+           & \multicolumn{1}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-2}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{MAXIMUM-QUALIFIED-CARDINALITY-RESTRICTIONS-01}}
+	\\ \midrule
+    \emph{ABS$\_$CENSUS2011$\_$B14} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B14$\_$SA1$\_$SA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T20$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T20} & $\checkmark$  \\
+    \emph{POP$\_$PROJ$\_$2011} & $\checkmark$  \\
+    \emph{HF} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B34$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B34} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B34$\_$SA1$\_$SA} & $\checkmark$  \\
+    \emph{LENDING$\_$BY$\_$PURPOSE} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T18} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T18$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B26$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B26} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B26$\_$SA1$\_$SA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T11$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T11} & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://abs.270a.info/sparql}} Data Sets
+    \label{tab:evaluation-8-abs.270a.info-sparql}
+    \end{center}
+\end{table}
+
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lc@{}}
+           & \multicolumn{1}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-2}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{MAXIMUM-QUALIFIED-CARDINALITY-RESTRICTIONS-01}}
+	\\ \midrule
+    \emph{ABS$\_$CENSUS2011$\_$T22$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T22} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T23$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T23} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B15$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B15} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B15$\_$SA1$\_$SA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T01$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T01} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T21$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T21} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T33$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T33} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B33$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B33} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B33$\_$SA1$\_$SA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T28$\_$LGA} & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://abs.270a.info/sparql}} Data Sets
+    \label{tab:evaluation-9-abs.270a.info-sparql}
+    \end{center}
+\end{table}
+
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lc@{}}
+           & \multicolumn{1}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-2}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{MAXIMUM-QUALIFIED-CARDINALITY-RESTRICTIONS-01}}
+	\\ \midrule
+    \emph{ABS$\_$CENSUS2011$\_$T28} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B32$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B32} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B32$\_$SA1$\_$SA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B28$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B28} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B28$\_$SA1$\_$SA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B37$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B37} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B37$\_$SA1$\_$SA} & $\checkmark$  \\
+    \emph{CPI} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B43$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B38$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B38} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B38$\_$SA1$\_$SA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B39$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B39} & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://abs.270a.info/sparql}} Data Sets
+    \label{tab:evaluation-10-abs.270a.info-sparql}
+    \end{center}
+\end{table}
+
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lc@{}}
+           & \multicolumn{1}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-2}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{MAXIMUM-QUALIFIED-CARDINALITY-RESTRICTIONS-01}}
+	\\ \midrule
+    \emph{ABS$\_$CENSUS2011$\_$B39$\_$SA1$\_$SA} & $\checkmark$  \\
+    \emph{ABS$\_$ERP$\_$COB$\_$STATE} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B25$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B25} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B25$\_$SA1$\_$SA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T26$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T26} & $\checkmark$  \\
+    \emph{RT} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B35$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B35} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B35$\_$SA1$\_$SA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T34$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T34} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B31$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B31} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B31$\_$SA1$\_$SA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T27$\_$LGA} & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://abs.270a.info/sparql}} Data Sets
+    \label{tab:evaluation-11-abs.270a.info-sparql}
+    \end{center}
+\end{table}
+
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lc@{}}
+           & \multicolumn{1}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-2}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{MAXIMUM-QUALIFIED-CARDINALITY-RESTRICTIONS-01}}
+	\\ \midrule
+    \emph{ABS$\_$CENSUS2011$\_$T27} & $\checkmark$  \\
+    \emph{ERP$\_$COB} & $\checkmark$  \\
+    \emph{BOP} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B30$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B30} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B30$\_$SA1$\_$SA} & $\checkmark$  \\
+    \emph{QBIS} & $\checkmark$  \\
+    \emph{ABS$\_$ABORIGINAL$\_$POPPROJ$\_$INDREGION} & $\checkmark$  \\
+    \emph{ABORIGINAL$\_$POP$\_$PROJ} & $\checkmark$  \\
+    \emph{ABORIGINAL$\_$POP$\_$PROJ$\_$REMOTE} & $\checkmark$  \\
+    \emph{PPI$\_$1} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T02$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$T02} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B29$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B29} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B29$\_$SA1$\_$SA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B27$\_$LGA} & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://abs.270a.info/sparql}} Data Sets
+    \label{tab:evaluation-12-abs.270a.info-sparql}
+    \end{center}
+\end{table}
+
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lc@{}}
+           & \multicolumn{1}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-2}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{MAXIMUM-QUALIFIED-CARDINALITY-RESTRICTIONS-01}}
+	\\ \midrule
+    \emph{ABS$\_$CENSUS2011$\_$B27} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B27$\_$SA1$\_$SA} & $\checkmark$  \\
+    \emph{NEWMVSALES} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B02$\_$LGA} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B02} & $\checkmark$  \\
+    \emph{ABS$\_$CENSUS2011$\_$B02$\_$SA1$\_$SA} & $\checkmark$  \\
+    \emph{ABS$\_$ANNUAL$\_$ERP$\_$ASGS} & $\checkmark$  \\
+    \emph{ITPI$\_$IMPORT} & $\checkmark$  \\
+    \emph{CAPEX} & $\checkmark$  \\
+    \emph{ITPI$\_$EXPORT} & $\checkmark$  \\
+    \emph{PETROLEUM$\_$EXPLORATION} & $\checkmark$  \\
+    \emph{PPI$\_$SOP} & $\checkmark$  \\
+    \emph{INTERSTATEMIGRATION$\_$FY} & $\checkmark$  \\
+    \emph{INTERSTATEMIGRATION$\_$CY} & $\checkmark$  \\
+    \emph{MINING$\_$EXPLORATION} & $\checkmark$  \\
+    \emph{LABOUR$\_$PRICE$\_$INDEX} & $\checkmark$  \\
+    \emph{ABS$\_$ANNUAL$\_$ERP$\_$LGA} & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://abs.270a.info/sparql}} Data Sets
+    \label{tab:evaluation-13-abs.270a.info-sparql}
+    \end{center}
+\end{table}
+
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lc@{}}
+           & \multicolumn{1}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-2}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{MAXIMUM-QUALIFIED-CARDINALITY-RESTRICTIONS-01}}
+	\\ \midrule
+    \emph{LENDING$\_$FINANCE$\_$SUMMARY} & $\checkmark$  \\
+    \emph{NETOVERSEASMIGRATION$\_$FY} & $\checkmark$  \\
+    \emph{NETOVERSEASMIGRATION$\_$CY} & $\checkmark$  \\
+    \emph{ABS$\_$ERP$\_$COB$\_$MAG$\_$SEXRATIO} & $\checkmark$  \\
+    \emph{RES$\_$PROP$\_$INDEX} & $\checkmark$  \\
+    \emph{ABS$\_$NOM$\_$VISA$\_$CY} & $\checkmark$  \\
+    \emph{ABS$\_$NOM$\_$VISA$\_$FY} & $\checkmark$  \\
+    \emph{RES$\_$DWELL} & $\checkmark$  \\
+    \emph{ALC} & $\checkmark$  \\
+    \emph{IAS$\_$2} & $\checkmark$  \\
+    \emph{RES$\_$DWEL$\_$ST} & $\checkmark$  \\
+    \emph{IAS$\_$4} & $\checkmark$  \\
+    \emph{IAS$\_$5} & $\checkmark$  \\
+    \emph{IAS$\_$3} & $\checkmark$  \\
+    \emph{POPULATION$\_$CLOCK$\_$FY} & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://abs.270a.info/sparql}} Data Sets
+    \label{tab:evaluation-14-abs.270a.info-sparql}
+    \end{center}
+\end{table}
+
+\section{Structure}
+
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lcc@{}}
+           & \multicolumn{2}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-3}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{STRUCTURE-01}}
+           & \rot{\emph{STRUCTURE-02}}
+	\\ \midrule
+    \emph{http://abs.270a.info/sparql} & $\checkmark$ & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://abs.270a.info/sparql}}
+    \label{tab:evaluation-abs.270a.info-sparql}
+    \end{center}
+\end{table}
+
+\section{Further Constraints}
+
+%\bibliography{../../literature/literature}{}
+\bibliographystyle{plain}
+\setcounter{tocdepth}{1}
+%\listoftodos
+\end{document}

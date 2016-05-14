@@ -1,0 +1,27 @@
+# Property Ranges
+# -----
+
+
+# valid data
+# -----
+:property-ranges-variable-1
+    a disco:Variable ;
+    disco:basedOn :property-ranges-representedVariable .
+:property-ranges-representedVariable
+    a disco:RepresentedVariable .
+    
+:property-ranges-dataFile
+    a disco:DataFile ;
+    disco:caseQuantity '1'^^xsd:nonNegativeInteger .
+    
+# invalid data
+# -----
+:property-ranges-variable-2
+    a disco:Variable ;
+    disco:basedOn :property-ranges-variable-3 .
+:property-ranges-variable-3
+    a disco:Variable .
+    
+:property-ranges-categoryStatistics
+    a disco:CategoryStatistics ;
+    disco:frequency '1'^^xsd:integer .

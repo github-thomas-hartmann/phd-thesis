@@ -1,0 +1,30 @@
+# constraints
+# -----------
+[   a rdfcv:PropertyConstraint , rdfcv:SimpleConstraint ;
+    rdfcv:contextClass owl:Thing ;
+    rdfcv:leftProperties ( :parentOf ) ;
+    rdfcv:constrainingElement "asymmetric" ] .
+
+# invalid data
+# ------------
+:Worf
+    :parentOf :Alexander .
+:Alexander 
+    :parentOf :Worf .
+    
+
+# constraints
+# -----------
+[   a rdfcv:PropertyConstraint , rdfcv:SimpleConstraint ;
+    rdfcv:contextClass :Publication ;
+    rdfcv:leftProperties ( :author ) ;
+    rdfcv:constrainingElement "asymmetric" ] .
+
+# invalid data
+# ------------
+:The-Lord-Of-The-Rings
+    a :Publication ;
+    :author :Tolkien .
+:Tolkien 
+    a :Person ;
+    :author :The-Lord-Of-The-Rings .

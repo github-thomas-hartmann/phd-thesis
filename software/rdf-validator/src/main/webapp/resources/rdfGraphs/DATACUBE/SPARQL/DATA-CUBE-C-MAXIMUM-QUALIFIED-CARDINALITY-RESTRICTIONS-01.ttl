@@ -1,0 +1,18 @@
+    ?subject 
+        a qb:Observation ;
+        qb:dataSet ?dataSet , ?ds .
+    FILTER ( ?dataSet != ?ds ) .
+    
+    # violation message
+    # -----
+    BIND ( CONCAT( 
+        "DATA-CUBE-C-MAXIMUM-QUALIFIED-CARDINALITY-RESTRICTIONS-01" )
+        AS ?violationMessage ) . 
+        
+    # violation source
+	# ----------------
+	BIND ( CONCAT( "DATA-CUBE-C-MAXIMUM-QUALIFIED-CARDINALITY-RESTRICTIONS-01" )AS ?violationSource ) . 
+	
+	# severity level
+	# --------------
+	BIND ( ( 'ERROR' ) AS ?severityLevel ) .

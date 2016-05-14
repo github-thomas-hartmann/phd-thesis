@@ -1,0 +1,9 @@
+accrualMethod:
+accrualMethod-Element_http://purl.org/dc/terms/-Schema(?a), 
+stringvalue(?a, ?b),
+string-Type_http://www.w3.org/2001/XMLSchema-Schema(?b)
+-> 
+Collection(?a),
+MethodOfAccrual(?b),
+accrualMethod(?a,?b)
+----------

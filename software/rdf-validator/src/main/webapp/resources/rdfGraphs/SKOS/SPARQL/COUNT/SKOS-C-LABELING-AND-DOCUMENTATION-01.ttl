@@ -1,0 +1,9 @@
+	FILTER NOT EXISTS { 
+		{ { ?subject skos:note ?x } UNION { ?subject skos:changeNote ?x } . }
+		UNION 
+		{ { ?subject skos:definition ?x } UNION { ?subject skos:editorialNote ?x } . }
+		UNION 
+		{ { ?subject skos:example ?x } UNION { ?subject skos:historyNote ?x } . }
+		UNION 
+		{ ?subject skos:scopeNote ?x } .
+	} 

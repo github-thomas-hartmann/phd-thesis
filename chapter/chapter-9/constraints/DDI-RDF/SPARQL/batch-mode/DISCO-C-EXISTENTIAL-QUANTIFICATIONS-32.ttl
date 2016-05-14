@@ -1,0 +1,4 @@
+?subject a disco:SummaryStatistics .
+
+OPTIONAL { ?subject disco:summaryStatisticsType ?summaryStatisticsType . }
+FILTER ( ! BOUND( ?summaryStatisticsType ) ) .

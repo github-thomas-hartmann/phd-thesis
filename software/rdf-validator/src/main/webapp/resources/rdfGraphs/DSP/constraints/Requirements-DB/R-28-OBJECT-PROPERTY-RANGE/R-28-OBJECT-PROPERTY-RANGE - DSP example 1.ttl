@@ -1,0 +1,31 @@
+# constraints
+# -----
+    :postalAddress
+        a dsp:DescriptionTemplate ;
+        dsp:minOccur "1"^^xsd:nonNegativeInteger ; 
+        dsp:maxOccur "infinity"^^xsd:string ; 
+        dsp:resourceClass :PostalAddress ; 
+        dsp:statementTemplate [
+            a dsp:NonLiteralStatementTemplate ;
+            dsp:minOccur "1"^^xsd:nonNegativeInteger ; 
+            dsp:maxOccur "infinity"^^xsd:string ; 
+            dsp:property :addressCountry ; 
+            dsp:nonLiteralConstraint [ 
+                a dsp:NonLiteralConstraint ;
+                dsp:valueClass :Country ] ] .
+
+# valid data
+# -----
+:myAddress 
+    a :PostalAddress ;
+    :addressCountry :netherlands .
+:netherlands a :Country .
+
+
+
+
+
+# triples needed for validation
+# -----
+:myAddress a owl:Thing .
+:netherlands a owl:Thing .

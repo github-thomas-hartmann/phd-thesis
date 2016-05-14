@@ -1,0 +1,8 @@
+    ?dataSet qb:structure ?subject .
+    
+    ?subject 
+        a qb:DataStructureDefinition;
+        qb:component ?componentSpec .
+    ?componentSpec qb:componentRequired "false"^^xsd:boolean ;
+        qb:componentProperty ?component .
+    FILTER NOT EXISTS { ?component a qb:AttributeProperty . }

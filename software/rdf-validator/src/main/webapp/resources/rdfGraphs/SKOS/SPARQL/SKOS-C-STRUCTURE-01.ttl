@@ -1,0 +1,51 @@
+# SKOS-C-STRUCTURE-01
+# -----
+# Structural Issues - Orphan Concepts:
+# An orphan concept is a concept without any associative or hierarchical relations. It might have
+# attached literals like e.g., labels, but is not connected to any other resource,
+# lacking valuable context information. A controlled vocabulary that contains
+# many orphan concepts is less usable for search and retrieval use cases, 
+# because, e.g., no hierarchical query expansion can be performed on search terms
+# to find documents with more general content.
+# Implementation: Iteration over all concepts in the vocabulary and re-
+# turning that don’t have associated resources using (sub-properties of) skos:semanticRelation.
+
+  	
+	# data
+	# ----
+	?subject a [rdfs:subClassOf* skos:Concept] .
+		
+	# validation
+	# ----------
+	FILTER NOT EXISTS {
+		?subject ?p ?o .
+		FILTER ( ?p IN ( 
+		skos:related,
+		skos:relatedMatch,
+		skos:broader,
+		skos:broadMatch,
+		skos:narrower,
+		skos:narrowMatch,
+		skos:closeMatch,
+		skos:exactMatch,
+		skos:relatedMatch,
+		skos:broadMatch,
+		skos:narrowMatch ) ) .	 
+	}
+	
+	# violation message
+	# -----
+	BIND ( CONCAT( 
+		"The concept '", 
+		xsd:string( ?subject ), 
+		"' does not have any associative or hierarchical relations.",
+		" | A controlled vocabulary that contains many orphan concepts is less usable for search and retrieval use cases. ") 
+		AS ?violationMessage ) . 
+	
+	# violation source
+	# ----------------
+	BIND ( CONCAT( "SKOS-C-STRUCTURE-01" )AS ?violationSource ) .
+	
+	# severity level
+	# --------------
+	BIND ( ( 'WARNING' ) AS ?severityLevel ) .	

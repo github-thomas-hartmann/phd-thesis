@@ -1,0 +1,12 @@
+	{
+        ?subject a ?conceptSchemeVariable .
+		FILTER NOT EXISTS { ?subject skos:hasTopConcept ?concept . }
+		FILTER NOT EXISTS { ?concept skos:topConceptOf ?subject . }
+	}
+	UNION
+	{
+        ?subject a ?conceptVariable .
+		FILTER NOT EXISTS { ?subject skos:broader ?conceptScheme . }
+		FILTER NOT EXISTS { ?subject skos:topConceptOf ?conceptScheme . }
+		FILTER NOT EXISTS { ?conceptScheme skos:hasTopConcept ?subject . }
+	}

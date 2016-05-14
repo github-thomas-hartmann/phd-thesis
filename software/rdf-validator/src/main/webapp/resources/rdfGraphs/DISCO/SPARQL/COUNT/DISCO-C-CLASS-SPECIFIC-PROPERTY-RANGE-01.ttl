@@ -1,0 +1,4 @@
+?subject 
+    a ?class ;
+    disco:questionText ?questionText .
+FILTER ( ?class != disco:Question ) .

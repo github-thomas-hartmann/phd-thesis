@@ -1,0 +1,56 @@
+# SKOS-C-LABELING-AND-DOCUMENTATION-02
+# -----
+# Labeling and Documentation Issues - Overlapping Labels:
+# This is a generalization of a recommendation in the SKOS primer,
+# that no two concepts have the same preferred lexical label in a given
+# language when they belong to the same concept scheme. This could indicate
+# missing disambiguation information and thus lead to problems in auto-completion application.
+
+  	
+	# data
+	# ----
+	?subject
+#		a [rdfs:subClassOf* skos:Concept] ;
+		skos:inScheme ?conceptScheme ;
+		?p ?label1 .
+	BIND ( ( STR ( ?label1 ) ) AS ?l1 ) .
+	BIND ( ( LANG ( ?label1 ) ) AS ?lang1 ) .
+	?concept 
+#		a [rdfs:subClassOf* skos:Concept] ;
+		skos:inScheme ?conceptScheme ;
+		?p ?label2 .
+	BIND ( ( STR ( ?label2 ) ) AS ?l2 ) .
+	BIND ( ( LANG ( ?label2 ) ) AS ?lang2 ) .
+#	?conceptScheme
+#		a [rdfs:subClassOf* skos:ConceptScheme] .
+		
+	# validation
+	# -----
+	FILTER ( ?subject != ?concept ) .
+	FILTER ( ?l1 = ?l2 ) .
+	FILTER ( ?lang1 = ?lang2 ) . 
+
+	# violation message
+	# -----
+	BIND ( CONCAT( 
+		"Two concepts cannot have the same preferred lexical label in a given language when they belong to the same concept scheme | '", 
+		"The concept '", 
+		xsd:string( ?subject ), 
+		"' and the concept '",
+		xsd:string( ?concept ), 
+		"', belonging to the same concept scheme '",
+		xsd:string( ?conceptScheme ), 
+		"', have the same preferred lexical label '",
+		xsd:string( ?l1 ), 
+		"' in the given language '",
+		xsd:string( ?lang1 ), 
+		"'.'"
+		) AS ?violationMessage ) . 
+	
+	# violation source
+	# ----------------
+	BIND ( CONCAT( "SKOS-C-LABELING-AND-DOCUMENTATION-02" )AS ?violationSource ) .
+	
+	# severity level
+	# --------------
+	BIND ( ( 'INFO' ) AS ?severityLevel ) .	

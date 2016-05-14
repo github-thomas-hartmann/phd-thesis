@@ -1,0 +1,39 @@
+# SKOS-C-LABELING-AND-DOCUMENTATION-03
+# -----
+# Labeling and Documentation Issues - Missing Labels:
+# To make the vocabulary more convenient for humans to use, instances
+# of SKOS classes (Concept, ConceptScheme, Collection) should be labeled
+# using e.g., skos:prefLabel, altLabel, rdfs:label, dc:title.
+
+:SubSubConcept 
+    a owl:Class ;
+    rdfs:subClassOf :SubConcept .
+:SubConcept 
+    a owl:Class ;
+    rdfs:subClassOf skos:Concept .
+:SubSubCollection
+    a owl:Class ;
+    rdfs:subClassOf :SubCollection .
+:SubCollection
+    a owl:Class ;
+    rdfs:subClassOf skos:Collection .
+
+# invalid data
+# -----
+:missing-labels-c1
+    a :SubSubConcept ;
+    skos:definition "definition"@en , "definition"@de, "definition"@fr .
+:missing-labels-c2
+    a :SubSubCollection ;
+    skos:definition "definition"@en , "definition"@de, "definition"@fr .
+
+# valid data
+# -----
+:missing-labels-c10
+    a :SubSubConcept ;
+    skos:definition "definition"@en , "definition"@de, "definition"@fr ;
+    rdfs:label "label"@en , "label"@de , "label"@fr .
+:missing-labels-c11
+    a :SubSubCollection ;
+    skos:definition "definition"@en , "definition"@de, "definition"@fr ;
+    rdfs:label "label"@en , "label"@de , "label"@fr .

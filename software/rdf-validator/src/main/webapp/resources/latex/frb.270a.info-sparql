@@ -1,0 +1,300 @@
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lccccccccccc@{}}
+           & \multicolumn{11}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-12}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-01}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-02}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-03}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-04}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-05}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-06}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-07}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-08}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-09}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-10 (!)}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-11}}
+	\\ \midrule
+    \emph{http://frb.270a.info/sparql} & $\checkmark$ & $\checkmark$ & $\checkmark$ & 14372 & 16175814 (42) & $\checkmark$ & $\checkmark$ (1) & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://frb.270a.info/sparql}}
+    \label{tab:evaluation-frb.270a.info-sparql}
+    \end{center}
+\end{table}
+
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lccccccccccc@{}}
+           & \multicolumn{11}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-12}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-01}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-02}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-03}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-04}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-05}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-06}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-07}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-08}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-09}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-10 (!)}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-11}}
+	\\ \midrule
+    \emph{Z1} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{OTHER} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{H8} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{IP$\_$MAJOR$\_$INDUSTRY$\_$GROUPS} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{IP$\_$DURABLE$\_$GOODS$\_$DETAIL} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{IP$\_$NONDURABLE$\_$GOODS$\_$DETAIL} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{IP$\_$MINING$\_$AND$\_$UTILITY$\_$DETAIL} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{IP$\_$MARKET$\_$GROUPS} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{IP$\_$SPECIAL$\_$AGGREGATES} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{IP$\_$GROSS$\_$VALUE$\_$STAGE$\_$OF$\_$PROCESS$\_$GROUPS} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{MVA} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{DIFF} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & 6725778 & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{CAP} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{CAPUTL} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{GVIP} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{RIW} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{KW} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://frb.270a.info/sparql}} Data Sets
+    \label{tab:evaluation-0-frb.270a.info-sparql}
+    \end{center}
+\end{table}
+
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lccccccccccc@{}}
+           & \multicolumn{11}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-12}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-01}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-02}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-03}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-04}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-05}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-06}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-07}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-08}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-09}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-10 (!)}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-11}}
+	\\ \midrule
+    \emph{H41} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{H15} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{discontinued} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{RATES} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{VOL} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{OUTST} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{OUTST$\_$YREND} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & 7395712 & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{OUTST$\_$OLD} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{RATES$\_$OLD} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{H10} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{H6$\_$M1} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{H6$\_$M2} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{H6$\_$MEMO} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{H6M3$\_$DISCONTINUED} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{MATURITY$\_$RISK} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{SIZE} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \emph{BASERATE} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \ding{55} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & - & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://frb.270a.info/sparql}} Data Sets
+    \label{tab:evaluation-1-frb.270a.info-sparql}
+    \end{center}
+\end{table}
+
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lccccccccccc@{}}
+           & \multicolumn{11}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-12}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-01}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-02}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-03}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-04}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-05}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-06}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-07}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-08}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-09}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-10 (!)}}
+           & \rot{\emph{DATA-MODEL-CONSISTENCY-11}}
+	\\ \midrule
+    \emph{TERMS$\_$SET} & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & \ding{55}  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & -  \\
+ & $\checkmark$  \\
+    \emph{PARTICIPATION} & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & 143010  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & -  \\
+ & $\checkmark$  \\
+    \emph{SBA} & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & 99724  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & -  \\
+ & $\checkmark$  \\
+    \emph{SUMMARY$\_$STATS} & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & 357060  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & -  \\
+ & $\checkmark$  \\
+    \emph{H3} & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & \ding{55}  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & -  \\
+ & $\checkmark$  \\
+    \emph{H3$\_$DISCONTINUED} & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & \ding{55}  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & -  \\
+ & $\checkmark$  \\
+    \emph{TERMS} & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & 14372  \\
+ & \ding{55}  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & -  \\
+ & $\checkmark$  \\
+    \emph{CCOUT} & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & \ding{55}  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & -  \\
+ & $\checkmark$  \\
+    \emph{OWNED} & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & \ding{55}  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & -  \\
+ & $\checkmark$  \\
+    \emph{HIST} & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & \ding{55}  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & -  \\
+ & $\checkmark$  \\
+    \emph{CHGDEL} & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & \ding{55}  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & -  \\
+ & $\checkmark$  \\
+    \emph{SLOOS} & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & \ding{55}  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & -  \\
+ & $\checkmark$  \\
+    \emph{REASONS} & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & \ding{55}  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & -  \\
+ & $\checkmark$  \\
+    \emph{DISCONTINUED} & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & 1270114  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & -  \\
+ & $\checkmark$  \\
+    \emph{FOR} & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & 184416  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & $\checkmark$  \\
+ & -  \\
+ & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://frb.270a.info/sparql}} Data Sets
+    \label{tab:evaluation-2-frb.270a.info-sparql}
+    \end{center}
+\end{table}
+

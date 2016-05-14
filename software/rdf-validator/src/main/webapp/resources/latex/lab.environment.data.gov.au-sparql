@@ -1,0 +1,18 @@
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lcccc@{}}
+           & \multicolumn{4}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-5}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{MINIMUM-QUALIFIED-CARDINALITY-RESTRICTIONS-02}}
+           & \rot{\emph{MAXIMUM-QUALIFIED-CARDINALITY-RESTRICTIONS-01}}
+           & \rot{\emph{EXACT-UNQUALIFIED-CARDINALITY-RESTRICTIONS-01}}
+           & \rot{\emph{EXACT-QUALIFIED-CARDINALITY-RESTRICTIONS-02}}
+	\\ \midrule
+    \emph{http://lab.environment.data.gov.au/sparql} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://lab.environment.data.gov.au/sparql}}
+    \label{tab:evaluation-lab.environment.data.gov.au-sparql}
+    \end{center}
+\end{table}

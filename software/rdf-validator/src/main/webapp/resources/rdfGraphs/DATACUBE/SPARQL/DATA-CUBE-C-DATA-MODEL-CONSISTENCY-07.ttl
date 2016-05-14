@@ -1,0 +1,22 @@
+    ?subject qb:dataSet/qb:structure ?dsd .
+    FILTER NOT EXISTS { ?dsd qb:component/qb:componentProperty qb:measureType . }
+
+    ?dsd qb:component/qb:componentProperty ?measure .
+    ?measure a qb:MeasureProperty .
+    FILTER NOT EXISTS { ?subject ?measure [] . } 
+	
+	# violation message
+	# -----------------
+	BIND ( CONCAT( 
+		"DATA-CUBE-C-DATA-MODEL-CONSISTENCY-07 | ",
+		"All measures present: ",
+		"In a qb:DataSet which does not use a Measure dimension then each individual qb:Observation must have a value for every declared measure." )
+		AS ?violationMessage ) .  
+		
+	# violation source
+	# ----------------
+	BIND ( CONCAT( "DATA-CUBE-C-DATA-MODEL-CONSISTENCY-07" )AS ?violationSource ) .
+	
+	# severity level
+	# --------------
+	BIND ( ( 'ERROR' ) AS ?severityLevel ) .

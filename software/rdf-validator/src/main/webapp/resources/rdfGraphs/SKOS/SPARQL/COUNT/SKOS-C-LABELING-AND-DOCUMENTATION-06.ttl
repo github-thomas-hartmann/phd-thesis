@@ -1,0 +1,7 @@
+	?subject 
+		skos:inScheme ?conceptScheme ;
+        skos:notation ?l .
+	?concept 
+		skos:inScheme ?conceptScheme ;
+        skos:notation ?l .
+    FILTER ( ?subject != ?concept ) .

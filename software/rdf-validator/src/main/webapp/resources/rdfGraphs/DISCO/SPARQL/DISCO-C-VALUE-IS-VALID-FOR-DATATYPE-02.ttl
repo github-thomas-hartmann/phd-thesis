@@ -1,0 +1,16 @@
+	?subject disco:frequency ?frequency .
+	FILTER ( ?frequency <= 0 ) .
+	
+	# violation message
+	# -----------------
+	BIND ( CONCAT( 
+		"DISCO-C-VALUE-IS-VALID-FOR-DATATYPE-02" )
+		AS ?violationMessage ) . 
+	
+	# violation source
+	# ----------------
+	BIND ( CONCAT( "DISCO-C-VALUE-IS-VALID-FOR-DATATYPE-02" )AS ?violationSource ) . 
+	
+	# severity level
+	# --------------
+	BIND ( ( 'ERROR' ) AS ?severityLevel ) .

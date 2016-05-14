@@ -1,0 +1,5 @@
+	FILTER NOT EXISTS {
+		{ { ?subject skos:prefLabel ?l } UNION { ?subject skos:altLabel ?l } . }
+		UNION 
+		{ { ?subject rdfs:label ?l } UNION { ?subject dcterms:title ?l } . }
+	} 

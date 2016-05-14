@@ -1,0 +1,28 @@
+# SKOS-C-STRUCTURE-10
+# -----
+# Structural Issues - Reflexive Relations:
+# Concepts related to themselves.
+
+:SubSubConcept 
+    a owl:Class ;
+    rdfs:subClassOf :SubConcept .
+:SubConcept 
+    a owl:Class ;
+    rdfs:subClassOf skos:Concept .
+
+# invalid data
+# -----
+:reflexive-relations-c1
+    a :SubSubConcept ;
+    skos:definition ""@en ;
+    skos:broader :reflexive-relations-c1 .
+    
+# valid data
+# -----
+:reflexive-relations-c2
+    a :SubSubConcept ;
+    skos:definition ""@en ;
+    skos:broader :reflexive-relations-c3 .
+:reflexive-relations-c3
+    a :SubSubConcept ;
+    skos:definition ""@en .

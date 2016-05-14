@@ -1,0 +1,11 @@
+# Structural Issues - Disconnected Concept Clusters
+# -----
+# Checking the connectivity of the graph, it is possible to identify all weakly connected
+# components. These data sets form islands in the vocabulary and might be
+# caused by incomplete data acquisition, forgotten test data, out-dated terms and the like.
+# Implementation: Creation of an undirected graph that includes all non-
+# orphan concepts as nodes and all semantic relations as edges. Tarjan’s
+# algorithm then finds and returns all weakly connected components.
+
+
+# Not yet implemented

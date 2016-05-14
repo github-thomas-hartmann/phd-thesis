@@ -1,0 +1,4 @@
+?subject a disco:LogicalDataSet .
+
+OPTIONAL { ?subject disco:dataFile ?dataFile . }
+FILTER ( ! BOUND( ?dataFile ) ) .

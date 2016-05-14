@@ -1,0 +1,20 @@
+	?subject qb:dataSet/qb:structure/qb:component ?component .
+    ?component qb:componentRequired "true"^^xsd:boolean ;
+        qb:componentProperty ?attr .
+    FILTER NOT EXISTS { ?subject ?attr [] . }
+	
+	# violation message
+	# -----------------
+	BIND ( CONCAT( 
+		"DATA-CUBE-C-DATA-MODEL-CONSISTENCY-06 | ",
+		"Required attributes: ",
+		"Every qb:Observation has a value for each declared attribute that is marked as required." )
+		AS ?violationMessage ) .  
+		
+	# violation source
+	# ----------------
+	BIND ( CONCAT( "DATA-CUBE-C-DATA-MODEL-CONSISTENCY-06" )AS ?violationSource ) .
+	
+	# severity level
+	# --------------
+	BIND ( ( 'ERROR' ) AS ?severityLevel ) .

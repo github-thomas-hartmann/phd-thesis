@@ -1,0 +1,140 @@
+code.n3
+{
+	display: block;
+	line-height: 1.5;
+	padding: 0.1em;
+	background: #fefefe;
+	/*border: 1px solid #ccc;*/
+	font-size: 82.5%;
+}
+
+code.n3 .n3-bracket,
+code.n3 .n3-brace,
+code.n3 .n3-punc
+{
+	color: #900;
+	font-weight: bold;
+}
+
+code.n3 .n3-atrule
+{
+	color: #000;
+	font-weight: bold;
+}
+
+code.n3 .n3-comment
+{
+	color: #693;
+	font-style: italic;
+}
+
+code.n3 .n3-isof
+{
+	color: #009;
+	font-style: italic;
+}
+
+code.n3 .n3-sparqlword,
+code.n3 .n3-sparqlordering,
+code.n3 .n3-sparqloperator
+{
+	color: #000;
+	font-weight: bold;
+	font-style: italic;
+}
+
+code.n3 .n3-uri,
+code.n3 .n3-uri a:link,
+code.n3 .n3-uri a:visited
+{
+	color: #00c;
+}
+
+code.n3 span.n3-uri a:hover
+{
+	background: #ccf;
+}
+
+code.n3 .n3-uri-start,
+code.n3 .n3-uri-end
+{
+}
+
+code.n3 .n3-curie,
+code.n3 .n3-curie a:link,
+code.n3 .n3-curie a:visited
+{
+	color: #009;
+	font-weight: bold;
+}
+
+code.n3 span.n3-curie a:hover span.n3-curie-prefix,
+code.n3 span.n3-curie a:hover span.n3-curie-colon,
+code.n3 span.n3-curie a:hover span.n3-curie-suffix
+{
+	background: #cfc;
+}
+
+code.n3 .n3-bnode
+{
+	color: #090;
+	font-weight: bold;
+}
+
+code.n3 .n3-shorthand
+{
+	color: #009;
+	font-weight: bold;
+	font-style: italic;
+}
+
+code.n3 .n3-variable
+{
+	color: #090;
+	font-style: italic;
+	font-weight: bold;
+}
+
+code.n3 .n3-lit
+{
+	color: #c0c;
+}
+
+code.n3 .n3-number
+{
+	color: #c0c;
+	font-weight: bold;
+}
+
+code.n3 .n3-boolean
+{
+	color: #c0c;
+	font-weight: bold;
+	font-style: italic;
+}
+
+code.n3 .n3-language
+{
+	color: #f00;
+}
+
+#save_output
+{
+	margin-top: 0.33em;
+}
+
+#save_output a:link,
+#save_output a:visited
+{
+	color: #666;
+}
+
+#save_output.fresh a:link,
+#save_output.fresh a:visited
+{
+	color: green;
+}
+
+code.n3 .lh15{
+	line-height: 1.5em
+}

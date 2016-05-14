@@ -1,0 +1,24 @@
+	?subject a disco:Study .
+	
+	OPTIONAL { 
+	    ?categoryStatistics disco:statisticsCategory ?concept .
+	    ?concept skos:inScheme ?conceptScheme .
+	    ?variable disco:representation ?conceptScheme .
+	    ?logicalDataSet disco:variable ?variable .
+	    ?subject disco:product ?logicalDataSet .   
+	}
+	FILTER ( ! BOUND( ?categoryStatistics ) ) .
+	
+	# violation message
+	# -----------------
+	BIND ( CONCAT( 
+		"DISCO-C-EXISTENTIAL-QUANTIFICATIONS-26" )
+		AS ?violationMessage ) . 
+	
+	# violation source
+	# ----------------
+	BIND ( CONCAT( "DISCO-C-EXISTENTIAL-QUANTIFICATIONS-26" )AS ?violationSource ) . 
+	
+	# severity level
+	# --------------
+	BIND ( ( 'INFO' ) AS ?severityLevel ) .

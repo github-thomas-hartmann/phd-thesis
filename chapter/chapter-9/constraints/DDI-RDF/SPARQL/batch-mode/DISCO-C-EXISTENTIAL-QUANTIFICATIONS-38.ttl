@@ -1,0 +1,4 @@
+{ ?subject a disco:Instrument . } UNION { ?subject a disco:Questionnaire . }
+
+OPTIONAL { ?subject disco:externalDocumentation ?externalDocumentation . }
+FILTER ( ! BOUND( ?externalDocumentation ) ) .

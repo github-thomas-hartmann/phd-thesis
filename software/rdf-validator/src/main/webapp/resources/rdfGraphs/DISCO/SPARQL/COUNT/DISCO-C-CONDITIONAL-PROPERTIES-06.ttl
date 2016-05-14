@@ -1,0 +1,7 @@
+?subject 
+    a skos:Concept .
+?categoryStatistics disco:statisticsCategory ?subject .
+
+{ OPTIONAL { ?subject disco:isValid ?isValid . } FILTER ( ! BOUND( ?isValid ) ) . }
+UNION
+{ OPTIONAL { ?subject skos:notation ?code . } FILTER ( ! BOUND( ?code ) ) . }

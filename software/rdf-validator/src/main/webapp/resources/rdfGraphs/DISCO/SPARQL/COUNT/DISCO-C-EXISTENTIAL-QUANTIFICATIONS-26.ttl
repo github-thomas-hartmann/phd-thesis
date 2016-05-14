@@ -1,0 +1,10 @@
+?subject a disco:Study .
+
+OPTIONAL { 
+    ?categoryStatistics disco:statisticsCategory ?concept .
+    ?concept skos:inScheme ?conceptScheme .
+    ?variable disco:representation ?conceptScheme .
+    ?logicalDataSet disco:variable ?variable .
+    ?subject disco:product ?logicalDataSet .   
+}
+FILTER ( ! BOUND( ?categoryStatistics ) ) .

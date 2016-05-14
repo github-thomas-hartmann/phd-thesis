@@ -1,0 +1,21 @@
+	?subject 
+	    a skos:Concept .
+	?categoryStatistics disco:statisticsCategory ?subject .
+	
+	{ OPTIONAL { ?subject disco:isValid ?isValid . } FILTER ( ! BOUND( ?isValid ) ) . }
+	UNION
+	{ OPTIONAL { ?subject skos:notation ?code . } FILTER ( ! BOUND( ?code ) ) . }
+	
+	# violation message
+	# -----------------
+	BIND ( CONCAT( 
+		"DISCO-C-CONDITIONAL-PROPERTIES-06" )
+		AS ?violationMessage ) . 
+	
+	# violation source
+	# ----------------
+	BIND ( CONCAT( "DISCO-C-CONDITIONAL-PROPERTIES-06" )AS ?violationSource ) . 
+	
+	# severity level
+	# --------------
+	BIND ( ( 'ERROR' ) AS ?severityLevel ) .

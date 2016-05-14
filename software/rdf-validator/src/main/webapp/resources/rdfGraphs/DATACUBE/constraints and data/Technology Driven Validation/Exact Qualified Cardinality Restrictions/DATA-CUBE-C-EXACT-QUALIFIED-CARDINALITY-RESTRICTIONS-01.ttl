@@ -1,0 +1,17 @@
+# DATA-CUBE-C-EXACT-QUALIFIED-CARDINALITY-RESTRICTIONS-01: Unique data set (IC-1)
+# -----
+# Every qb:Observation has (qb:dataSet) exactly one associated qb:DataSet
+
+
+# valid data
+# -----
+:observation 
+    a qb:Observation ;
+    qb:dataSet :dataSet . 
+:dataSet 
+    a qb:DataSet .
+
+# invalid data
+# -----
+:observation_2 
+    a qb:Observation .

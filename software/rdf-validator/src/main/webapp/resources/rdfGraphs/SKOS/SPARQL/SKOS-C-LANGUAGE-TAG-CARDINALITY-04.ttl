@@ -1,0 +1,44 @@
+# SKOS-C-LANGUAGE-TAG-CARDINALITY-04
+# -----
+# SKOS Semi-Formal Consistency Issues - Inconsistent Preferred Labels:
+# According to the SKOS reference document, a resource has
+# no more than one value of skos:prefLabel per language tag.
+
+	
+	# data
+	# ----
+	?subject skos:prefLabel ?label1 .
+	?subject skos:prefLabel ?label2 .
+	
+	BIND ( ( STR ( ?label1 ) ) AS ?label1Str ) .
+	BIND ( ( STR ( ?label2 ) ) AS ?label2Str ) . 
+	BIND ( ( LANG ( ?label1 ) ) AS ?language1 ) . 
+	BIND ( ( LANG ( ?label2 ) ) AS ?language2 ) . 
+	
+	# validation
+	# ----------
+	FILTER ( ?label1 != ?label2 ) .
+	FILTER ( ?label1Str != ?label2Str ) .
+	FILTER ( ?language1 = ?language2 ) .
+
+	# violation message
+	# -----
+	BIND ( CONCAT( 
+		"A resource has no more than one value of skos:prefLabel per language tag | The resource '", 
+		xsd:string( ?subject ),
+		"' has more than one value of skos:prefLabel: '",
+		xsd:string( ?label1Str ), 
+		"' and '",
+		xsd:string( ?label2Str ),
+		"' for the language tag '",
+		xsd:string( ?language1 ), 
+		"'." 
+		) AS ?violationMessage ) . 
+	
+	# violation source
+	# ----------------
+	BIND ( CONCAT( "SKOS-C-LANGUAGE-TAG-CARDINALITY-04" )AS ?violationSource ) .
+	
+	# severity level
+	# --------------
+	BIND ( ( 'INFO' ) AS ?severityLevel ) .	

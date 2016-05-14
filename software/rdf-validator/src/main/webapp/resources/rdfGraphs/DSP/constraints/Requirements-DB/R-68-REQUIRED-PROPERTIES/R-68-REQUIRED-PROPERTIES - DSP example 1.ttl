@@ -1,0 +1,26 @@
+# constraints
+# -----
+    :organizationDescriptionTemplate
+        a dsp:DescriptionTemplate ;
+        dsp:minOccur "1"^^xsd:nonNegativeInteger ; 
+        dsp:maxOccur "infinity"^^xsd:string ; 
+        dsp:resourceClass :Organization ; 
+        dsp:statementTemplate [
+            a dsp:NonLiteralStatementTemplate ;
+            dsp:minOccur "1"^^xsd:nonNegativeInteger ; 
+            dsp:maxOccur "infinity"^^xsd:string ; 
+            dsp:property :name ] .
+
+# valid data
+# -----
+:dcmi 
+    a :Organization ;
+    :name "Dublin Core Metadata Initiative" .
+    
+    
+    
+    
+    
+# triples needed for validation
+# -----
+:dcmi a owl:Thing .

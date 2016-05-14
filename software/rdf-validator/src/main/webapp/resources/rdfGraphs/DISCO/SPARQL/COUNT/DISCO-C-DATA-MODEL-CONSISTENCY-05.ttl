@@ -1,0 +1,19 @@
+?subject
+  a disco:SummaryStatistics ;
+  disco:statisticsVariable ?variable ;
+  disco:summaryStatisticType ddicv-sumstats:NumberOfCases ;
+  rdf:value ?totalCases .
+  
+?validCasesResource
+  a disco:SummaryStatistics ;
+  disco:statisticsVariable ?variable ;
+  disco:summaryStatisticType ddicv-sumstats:ValidCases ;
+  rdf:value ?validCases .
+  
+?inValidCasesResource
+  a disco:SummaryStatistics ;
+  disco:statisticsVariable ?variable ;
+  disco:summaryStatisticType ddicv-sumstats:InvalidCases ;
+  rdf:value ?invalidCases .
+  
+FILTER ( ?totalCases != ( ?validCases + ?invalidCases ) ) . 

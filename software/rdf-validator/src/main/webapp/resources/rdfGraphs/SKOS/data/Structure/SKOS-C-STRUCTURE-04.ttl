@@ -1,0 +1,70 @@
+# SKOS-C-STRUCTURE-04
+# -----
+# Structural Issues - Valueless Associative Relations:
+# Two concepts are sibling, but also connected by an associative relation. 
+# In that context, the associative relation is not necessary. See ISO DIS 25964-1, 11.3.2.2
+# Implementation: Identification of all pairs of concepts that have the same
+# broader or narrower concepts, i.e. they are sibling terms. All siblings
+# that are related by a skos:related property are returned.
+
+:SubSubConcept 
+    a owl:Class ;
+    rdfs:subClassOf :SubConcept .
+:SubConcept 
+    a owl:Class ;
+    rdfs:subClassOf skos:Concept .
+
+:TopConcept
+    a owl:Class ;
+    a :SubSubConcept ;
+    skos:definition ""@en . 
+:BottomConcept
+    a owl:Class ;
+    a :SubSubConcept ;
+    skos:definition ""@en . 
+:TopConcept2
+    a owl:Class ;
+    a :SubSubConcept ;
+    skos:definition ""@en . 
+:BottomConcept2
+    a owl:Class ;
+    a :SubSubConcept ;
+    skos:definition ""@en . 
+
+# valid data
+# -----
+:valueless-associative-relations-sibling1
+    a :SubSubConcept ;
+    skos:definition ""@en ;
+    skos:related :valueless-associative-relations-sibling2 ;
+    skos:broader :TopConcept ;
+    skos:narrower :BottomConcept .
+:valueless-associative-relations-sibling2
+    a :SubSubConcept ;
+    skos:definition ""@en ;
+    skos:related :valueless-associative-relations-sibling1 ;
+    skos:broader :TopConcept2 ;
+    skos:narrower :BottomConcept2 .    
+    
+# invalid data
+# -----
+:valueless-associative-relations-sibling3
+    a :SubSubConcept ;
+    skos:related :valueless-associative-relations-sibling4 ;
+    skos:definition ""@en ;
+    skos:broader :TopConcept .
+:valueless-associative-relations-sibling4
+    a :SubSubConcept ;
+    skos:related :valueless-associative-relations-sibling3 ;
+    skos:definition ""@en ;
+    skos:broader :TopConcept .
+:valueless-associative-relations-sibling5
+    a :SubSubConcept ;
+    skos:related :valueless-associative-relations-sibling6 ;
+    skos:definition ""@en ;
+    skos:narrower :BottomConcept .
+:valueless-associative-relations-sibling6
+    a :SubSubConcept ;
+    skos:related :valueless-associative-relations-sibling5 ;
+    skos:definition ""@en ;
+    skos:narrower :BottomConcept .

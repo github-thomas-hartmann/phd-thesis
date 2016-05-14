@@ -1,0 +1,9 @@
+	FILTER NOT EXISTS { 
+		{ { ?subject skos:related ?x } UNION { ?subject skos:relatedMatch ?x } }
+		UNION 
+		{ { ?subject skos:broader ?x } UNION { ?subject skos:broadMatch ?x } }
+		UNION 
+		{ { ?subject skos:narrower ?x } UNION { ?subject skos:narrowMatch ?x } }
+		UNION 
+		{ { ?subject skos:closeMatch ?x } UNION { ?subject skos:exactMatch ?x } }
+	} 

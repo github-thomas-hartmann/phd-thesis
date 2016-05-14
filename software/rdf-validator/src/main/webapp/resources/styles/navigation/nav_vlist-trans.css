@@ -1,0 +1,172 @@
+@charset "UTF-8";
+/* ######################################################################################################
+** # "Yet Another Multicolum Layout" (c) by Dirk Jesse (http://www.yaml.de) #############################
+** # "YAML for TYPO3" (c) by Dieter Bunkerd (http://yaml.t3net.de) ######################################
+** ######################################################################################################
+**
+**  Datei       : nav_vlist.css
+**  Funktion    : Formatierung der Subnavigation.
+**  Checked with http://jigsaw.w3.org/css-validator/ 13.8.07 - DB
+*/
+
+@media all
+{
+
+  #submenu {
+    width: 100%;
+    overflow: hidden;
+    margin: 30px 0 0 0;
+    list-style-type: none;
+  }
+
+  #submenu ul { list-style-type: none; margin:0; padding: 0; }
+  
+  #submenu li {
+	  float:left;
+	  width: 100%;
+	  margin:0;
+	  padding: 0;
+	  list-style:none;
+	  /* color first level */
+	  background-color:#aca690;
+  }
+
+  #submenu a,
+  #submenu strong {
+    display:block;
+    text-decoration: none;
+    color: #fff;
+	border-bottom: 1px solid #FFFFFF;
+  }
+
+/* Just in case the skiplink anchor gets into THIS menu, because the tab-navigation was turned off */
+/* PLEASE LEAVE THE FOLLING SETTING IN PLACE */  
+  #submenu a#navigation {border-bottom:0; padding:0;}
+
+  #submenu li span {
+	display:block;
+	background-image: url(../../../../img/widgets/gs_menu_close.png);
+	background-repeat: no-repeat;
+	background-position: right -5px;
+	padding-right: 30px;
+    width: 85%;
+  }
+  
+  #submenu li span.menuOpened {
+	background-image: url(../../../../img/widgets/gs_menu_open.png);
+  }
+  
+  #submenu li span.externalIcon {
+	background-image:url(../../../../img/icons/gs_external.png); 
+	background-position: right -5px;
+  }
+
+  /* Level 1 */
+  #submenu li#active,
+  #submenu li strong {
+	color: #fff;
+	padding: 6px 0 5px 10px;
+	/* Gradient submenu active */
+	background: #FF9F23; /* old browsers */
+	background: -moz-linear-gradient(top, #FF9F23 0%, #FF6301 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FF9F23), color-stop(100%,#FF6301)); /* webkit */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FF9F23', endColorstr='#FF6301',GradientType=0 ); /* ie */
+  }
+
+  #submenu li a {
+	background-color:transparent;
+	color: #fff;
+  padding: 6px 5px 5px 10px;
+	margin:0;
+  }
+  
+  #submenu li a:focus,
+  #submenu li a:hover,
+  #submenu li a:active {
+	color: #fff;
+	/* padding: 6px 12px 5px 12px */
+	/* Gradient submenu hover blue */
+	background: #8C99A6; /* old browsers */
+	background: -moz-linear-gradient(top, #8C99A6 0%, #475C71 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8C99A6), color-stop(100%,#475C71)); /* webkit */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8C99A6', endColorstr='#475C71',GradientType=0 ); /* ie */
+  }
+
+  /* Level 2 */
+  #submenu li ul li a,
+  #submenu li ul li#active,
+  #submenu li ul li strong,
+  #submenu li ul li span {
+	  	/* TEST LINIE 
+	border-left: 5px solid #FFFFFF;*/
+	  }
+  #submenu li ul li a {
+	/* color second level */
+	color: #496177;
+    background-color: #dcd6be;
+	/* TEST LINIE
+	border-left: 5px solid #FFFFFF; */
+  }
+  #submenu li ul li a:focus,
+  #submenu li ul li a:hover,
+  #submenu li ul li a:active {
+	  /* TEST LINIE 
+	border-left: 5px solid #FFFFFF;*/
+	}
+
+  /* Level 3 */
+  #submenu li ul li ul li a,
+  #submenu li ul li ul li#active,
+  #submenu li ul li ul li strong,
+  #submenu li ul li ul li span {}
+
+  #submenu li ul li ul li a {
+	/* color third level */
+    background-color: #eee9d2; 
+  }
+  
+  #submenu li ul li ul li a:focus,
+  #submenu li ul li ul li a:hover,
+  #submenu li ul li ul li a:active {
+	  	/* TEST LINIE 
+	border-left: 5px solid #FFFFFF;*/
+	  }
+
+  /* Level 4 */
+  #submenu li ul li ul li ul li a,
+  #submenu li ul li ul li ul li#active,
+  #submenu li ul li ul li ul li strong,
+  #submenu li ul li ul li ul li span { }
+
+  #submenu li ul li ul li ul li a {
+  /* color fourth level */
+	color: #496177;
+	background-color: #fff;
+  }
+  #submenu li ul li ul li ul li a:focus,
+  #submenu li ul li ul li ul li a:hover,
+  #submenu li ul li ul li ul li a:active { }
+    
+  /* Level 5 */
+  #submenu li ul li ul li ul li ul li a,
+  #submenu li ul li ul li ul li ul li#active,
+  #submenu li ul li ul li ul li ul li strong,
+  #submenu li ul li ul li ul li ul li span { }
+
+  #submenu li ul li ul li ul li ul li a {
+	/* color fifth level */
+	background-color: #fff;
+  }
+  #submenu li ul li ul li ul li ul li a:focus,
+  #submenu li ul li ul li ul li ul li a:hover,
+  #submenu li ul li ul li ul li ul li a:active { }
+  
+}
+
+/* ##########################
+** ### Accessible menu ######
+** ##########################
+*/
+@media screen, print {
+#submenu dfn, #submenu .hidden {position:absolute; left:-1000em; width:20em;}
+}

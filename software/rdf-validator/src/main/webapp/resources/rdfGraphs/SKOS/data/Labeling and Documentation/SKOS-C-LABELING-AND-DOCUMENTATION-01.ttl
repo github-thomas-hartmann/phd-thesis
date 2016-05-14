@@ -1,0 +1,47 @@
+# SKOS-C-LABELING-AND-DOCUMENTATION-01
+# -----
+# Labeling and Documentation Issues - Undocumented Concepts:
+# The SKOS standard defines a number of properties useful for
+# documenting the meaning of the concepts in a thesaurus also in a human-
+# readable form. Intense use of these properties leads to a well-documented
+# thesaurus which should also improve its quality. 
+# Implementation: Iteration over all concepts
+# in the vocabulary and find those not using one of skos:note, skos:changeNote,
+# skos:definition, skos:editorialNote, skos:example, skos:historyNote, or skos:scopeNote.
+
+:SubSubConcept 
+    a owl:Class ;
+    rdfs:subClassOf :SubConcept .
+:SubConcept 
+    a owl:Class ;
+    rdfs:subClassOf skos:Concept .
+
+# invalid data
+# -----
+:undocumented-concepts-c1
+    a :SubSubConcept ;
+    rdfs:label "1"@en, "1"@de, "1"@fr .
+    
+# valid data
+# -----
+:undocumented-concepts-c2
+    a :SubSubConcept ;
+    skos:note "note"@en , "note"@de , "note"@fr .
+:undocumented-concepts-c3
+    a :SubSubConcept ;
+    skos:changeNote "change note"@en , "change note"@de , "change note"@fr .    
+:undocumented-concepts-c4
+    a :SubSubConcept ;
+    skos:definition "definition"@en , "definition"@de , "definition"@fr .
+:undocumented-concepts-c5
+    a :SubSubConcept ;
+    skos:editorialNote "editorial note"@en , "editorial note"@de , "editorial note"@fr .
+:undocumented-concepts-c6
+    a :SubSubConcept ;
+    skos:example "example"@en , "example"@de , "example"@fr .
+:undocumented-concepts-c7
+    a :SubSubConcept ;
+    skos:historyNote "history note"@en , "history note"@de , "history note"@fr .
+:undocumented-concepts-c8
+    a :SubSubConcept ;
+    skos:scopeNote "scope note"@en , "scope note"@de , "scope note"@fr .

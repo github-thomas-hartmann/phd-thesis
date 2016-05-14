@@ -1,0 +1,1044 @@
+@prefix : <http://rdf-vocabulary.ddialliance.org/discovery#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://rdf-vocabulary.ddialliance.org/discovery> .
+
+<http://rdf-vocabulary.ddialliance.org/discovery> rdf:type owl:Ontology ;
+                                                  
+                                                  owl:imports <http://purl.org/dc/terms> ,
+                                                              <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:datacollection:3_1.owl> ,
+                                                              <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:logicalproduct:3_1.owl> ,
+                                                              <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:reusable:3_1.owl> ,
+                                                              <http://www.w3.org/2004/02/skos/core> .
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://rdf-vocabulary.ddialliance.org/discovery#question
+
+:question rdf:type owl:ObjectProperty .
+
+
+
+###  http://rdf-vocabulary.ddialliance.org/discovery#valuestring
+
+:valuestring rdf:type owl:ObjectProperty .
+
+
+
+
+
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+
+###  http://rdf-vocabulary.ddialliance.org/discovery#questionText
+
+:questionText rdf:type owl:DatatypeProperty .
+
+
+
+###  http://rdf-vocabulary.ddialliance.org/discovery#test
+
+:test rdf:type owl:DatatypeProperty .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://rdf-vocabulary.ddialliance.org/discovery#Question
+
+:Question rdf:type owl:Class .
+
+
+
+###  http://rdf-vocabulary.ddialliance.org/discovery#Variable
+
+:Variable rdf:type owl:Class .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  http://rdf-vocabulary.ddialliance.org/discovery#q1-1
+
+:q1-1 rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:datacollection:3_1.owl#QuestionItem-Element_ddi:datacollection:3_1-Schema> ,
+               owl:NamedIndividual ;
+      
+      <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#type_Element_Type> :q1-2 .
+
+
+
+###  http://rdf-vocabulary.ddialliance.org/discovery#q1-10
+
+:q1-10 rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:reusable:3_1.owl#VersionableType-Type_ddi:reusable:3_1-Schema> ,
+                owl:NamedIndividual ;
+       
+       <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_ComplexType_ComplexContent> :q1-11 .
+
+
+
+###  http://rdf-vocabulary.ddialliance.org/discovery#q1-11
+
+:q1-11 rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:reusable:3_1.owl#ComplexContent1-ComplexContent_VersionableType-Type_ddi:reusable:3_1-Schema> ,
+                owl:NamedIndividual ;
+       
+       <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_ComplexContent_Extension> :q1-12 .
+
+
+
+###  http://rdf-vocabulary.ddialliance.org/discovery#q1-12
+
+:q1-12 rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:reusable:3_1.owl#Extension1-Extension_ComplexContent1-ComplexContent_VersionableType-Type_ddi:reusable:3_1-Schema> ,
+                owl:NamedIndividual ;
+       
+       <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#base_Extension_Type> :q1-13 .
+
+
+
+###  http://rdf-vocabulary.ddialliance.org/discovery#q1-13
+
+:q1-13 rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:reusable:3_1.owl#AbstractVersionableType-Type_ddi:reusable:3_1-Schema> ,
+                owl:NamedIndividual ;
+       
+       <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_ComplexType_ComplexContent> :q1-14 .
+
+
+
+###  http://rdf-vocabulary.ddialliance.org/discovery#q1-14
+
+:q1-14 rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:reusable:3_1.owl#ComplexContent1-ComplexContent_AbstractVersionableType-Type_ddi:reusable:3_1-Schema> ,
+                owl:NamedIndividual ;
+       
+       <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_ComplexContent_Extension> :q1-15 .
+
+
+
+###  http://rdf-vocabulary.ddialliance.org/discovery#q1-15
+
+:q1-15 rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:reusable:3_1.owl#Extension1-Extension_ComplexContent1-ComplexContent_AbstractVersionableType-Type_ddi:reusable:3_1-Schema> ,
+                owl:NamedIndividual ;
+       
+       <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#base_Extension_Type> :q1-16 .
+
+
+
+###  http://rdf-vocabulary.ddialliance.org/discovery#q1-16
+
+:q1-16 rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:reusable:3_1.owl#AbstractIdentifiableType-Type_ddi:reusable:3_1-Schema> ,
+                owl:NamedIndividual ;
+       
+       <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_ComplexType_Attribute> :q1-17 .
+
+
+
+###  http://rdf-vocabulary.ddialliance.org/discovery#q1-17
+
+:q1-17 rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:reusable:3_1.owl#id-Attribute_AbstractIdentifiableType-Type_ddi:reusable:3_1-Schema> ,
+                owl:NamedIndividual ;
+       
+       <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#value_Attribute_String> "questionID" .
+
+
+
+###  http://rdf-vocabulary.ddialliance.org/discovery#q1-2
+
+:q1-2 rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:datacollection:3_1.owl#QuestionItemType-Type_ddi:datacollection:3_1-Schema> ,
+               owl:NamedIndividual ;
+      
+      <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_ComplexType_ComplexContent> :q1-3 .
+
+
+
+###  http://rdf-vocabulary.ddialliance.org/discovery#q1-3
+
+:q1-3 rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:datacollection:3_1.owl#ComplexContent2-ComplexContent_QuestionItemType-Type_ddi:datacollection:3_1-Schema> ,
+               owl:NamedIndividual ;
+      
+      <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_ComplexContent_Extension> :q1-4 .
+
+
+
+###  http://rdf-vocabulary.ddialliance.org/discovery#q1-4
+
+:q1-4 rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:datacollection:3_1.owl#Extension1-Extension_ComplexContent2-ComplexContent_QuestionItemType-Type_ddi:datacollection:3_1-Schema> ,
+               owl:NamedIndividual ;
+      
+      <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#base_Extension_Type> :q1-10 ;
+      
+      <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Extension_Sequence> :q1-5 .
+
+
+
+###  http://rdf-vocabulary.ddialliance.org/discovery#q1-5
+
+:q1-5 rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:datacollection:3_1.owl#Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_QuestionItemType-Type_ddi:datacollection:3_1-Schema> ,
+               owl:NamedIndividual ;
+      
+      <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Sequence_Element> :q1-6 ,
+                                                                                                                           :q1-8 .
+
+
+
+###  http://rdf-vocabulary.ddialliance.org/discovery#q1-6
+
+:q1-6 rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:datacollection:3_1.owl#QuestionItemName-Element-Reference1_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_QuestionItemType-Type_ddi:datacollection:3_1-Schema> ,
+               owl:NamedIndividual ;
+      
+      <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ref_Element_Element> :q1-7 .
+
+
+
+###  http://rdf-vocabulary.ddialliance.org/discovery#q1-7
+
+:q1-7 rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:datacollection:3_1.owl#QuestionItemName-Element_ddi:datacollection:3_1-Schema> ,
+               owl:NamedIndividual ;
+      
+      <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#value_Element_String> "questionName" .
+
+
+
+###  http://rdf-vocabulary.ddialliance.org/discovery#q1-8
+
+:q1-8 rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:datacollection:3_1.owl#QuestionText-Element-Reference2_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_QuestionItemType-Type_ddi:datacollection:3_1-Schema> ,
+               owl:NamedIndividual ;
+      
+      <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ref_Element_Element> :q1-9 .
+
+
+
+###  http://rdf-vocabulary.ddialliance.org/discovery#q1-9
+
+:q1-9 rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:datacollection:3_1.owl#QuestionText-Element_ddi:datacollection:3_1-Schema> ,
+               owl:NamedIndividual ;
+      
+      <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#value_Element_String> "questionText" .
+
+
+
+###  http://rdf-vocabulary.ddialliance.org/discovery#v1-1
+
+:v1-1 rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:logicalproduct:3_1.owl#Variable-Element_ddi:logicalproduct:3_1-Schema> ,
+               owl:NamedIndividual ;
+      
+      <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#type_Element_Type> :v1-2 .
+
+
+
+###  http://rdf-vocabulary.ddialliance.org/discovery#v1-10
+
+:v1-10 rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:logicalproduct:3_1.owl#Description-Element-Reference3-ddi:reusable:3_1_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_VariableType-Type_ddi:logicalproduct:3_1-Schema> ,
+                <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:logicalproduct:3_1.owl#QuestionReference-Element-Reference6_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_VariableType-Type_ddi:logicalproduct:3_1-Schema> ,
+                owl:NamedIndividual ;
+       
+       <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ref_Element_Element> :v1-11 .
+
+
+
+###  http://rdf-vocabulary.ddialliance.org/discovery#v1-11
+
+:v1-11 rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:logicalproduct:3_1.owl#QuestionReference-Element_ddi:logicalproduct:3_1-Schema> ,
+                <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:reusable:3_1.owl#Description-Element_ddi:reusable:3_1-Schema> ,
+                owl:NamedIndividual ;
+       
+       <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#value_Element_String> "variableDescription" ;
+       
+       <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#type_Element_Type> :v1-12 .
+
+
+
+###  http://rdf-vocabulary.ddialliance.org/discovery#v1-12
+
+:v1-12 rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:reusable:3_1.owl#ReferenceType-Type_ddi:reusable:3_1-Schema> ,
+                owl:NamedIndividual ;
+       
+       <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_ComplexType_Sequence> :v1-13 .
+
+
+
+###  http://rdf-vocabulary.ddialliance.org/discovery#v1-13
+
+:v1-13 rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:reusable:3_1.owl#Sequence2-Sequence_ReferenceType-Type_ddi:reusable:3_1-Schema> ,
+                owl:NamedIndividual ;
+       
+       <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Sequence_Choice> :v1-14 .
+
+
+
+###  http://rdf-vocabulary.ddialliance.org/discovery#v1-14
+
+:v1-14 rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:reusable:3_1.owl#Choice3-Choice_Sequence2-Sequence_ReferenceType-Type_ddi:reusable:3_1-Schema> ,
+                owl:NamedIndividual ;
+       
+       <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Choice_Sequence> :v1-15 .
+
+
+
+###  http://rdf-vocabulary.ddialliance.org/discovery#v1-15
+
+:v1-15 rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:reusable:3_1.owl#Sequence2-Sequence_Choice3-Choice_Sequence2-Sequence_ReferenceType-Type_ddi:reusable:3_1-Schema> ,
+                owl:NamedIndividual ;
+       
+       <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Sequence_Element> :v1-16 .
+
+
+
+###  http://rdf-vocabulary.ddialliance.org/discovery#v1-16
+
+:v1-16 rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:reusable:3_1.owl#ID-Element-Reference1_Sequence2-Sequence_Choice3-Choice_Sequence2-Sequence_ReferenceType-Type_ddi:reusable:3_1-Schema> ,
+                owl:NamedIndividual ;
+       
+       <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ref_Element_Element> :v1-17 .
+
+
+
+###  http://rdf-vocabulary.ddialliance.org/discovery#v1-17
+
+:v1-17 rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:reusable:3_1.owl#ID-Element_ddi:reusable:3_1-Schema> ,
+                owl:NamedIndividual ;
+       
+       <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#value_Element_String> "questionID" .
+
+
+
+###  http://rdf-vocabulary.ddialliance.org/discovery#v1-2
+
+:v1-2 rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:logicalproduct:3_1.owl#VariableType-Type_ddi:logicalproduct:3_1-Schema> ,
+               owl:NamedIndividual ;
+      
+      <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_ComplexType_ComplexContent> :v1-3 .
+
+
+
+###  http://rdf-vocabulary.ddialliance.org/discovery#v1-3
+
+:v1-3 rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:logicalproduct:3_1.owl#ComplexContent2-ComplexContent_VariableType-Type_ddi:logicalproduct:3_1-Schema> ,
+               owl:NamedIndividual ;
+      
+      <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_ComplexContent_Extension> :v1-4 .
+
+
+
+###  http://rdf-vocabulary.ddialliance.org/discovery#v1-4
+
+:v1-4 rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:logicalproduct:3_1.owl#Extension1-Extension_ComplexContent2-ComplexContent_VariableType-Type_ddi:logicalproduct:3_1-Schema> ,
+               owl:NamedIndividual ;
+      
+      <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Extension_Sequence> :v1-5 .
+
+
+
+###  http://rdf-vocabulary.ddialliance.org/discovery#v1-5
+
+:v1-5 rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:logicalproduct:3_1.owl#Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_VariableType-Type_ddi:logicalproduct:3_1-Schema> ,
+               owl:NamedIndividual ;
+      
+      <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Sequence_Element> :v1-10 ,
+                                                                                                                           :v1-6 ,
+                                                                                                                           :v1-8 .
+
+
+
+###  http://rdf-vocabulary.ddialliance.org/discovery#v1-6
+
+:v1-6 rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:logicalproduct:3_1.owl#Label-Element-Reference2-ddi:reusable:3_1_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_VariableType-Type_ddi:logicalproduct:3_1-Schema> ,
+               owl:NamedIndividual ;
+      
+      <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ref_Element_Element> :v1-7 .
+
+
+
+###  http://rdf-vocabulary.ddialliance.org/discovery#v1-7
+
+:v1-7 rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:reusable:3_1.owl#Label-Element_ddi:reusable:3_1-Schema> ,
+               owl:NamedIndividual ;
+      
+      <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#value_Element_String> "variableLabel" .
+
+
+
+###  http://rdf-vocabulary.ddialliance.org/discovery#v1-8
+
+:v1-8 rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:logicalproduct:3_1.owl#VariableName-Element-Reference1_Sequence1-Sequence_Extension1-Extension_ComplexContent2-ComplexContent_VariableType-Type_ddi:logicalproduct:3_1-Schema> ,
+               owl:NamedIndividual ;
+      
+      <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ref_Element_Element> :v1-9 .
+
+
+
+###  http://rdf-vocabulary.ddialliance.org/discovery#v1-9
+
+:v1-9 rdf:type <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:logicalproduct:3_1.owl#VariableName-Element_ddi:logicalproduct:3_1-Schema> ,
+               owl:NamedIndividual ;
+      
+      <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#value_Element_String> "variableName" .
+
+
+
+
+
+#################################################################
+#
+#    Rules
+#
+#################################################################
+
+
+<urn:swrl#a> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+<urn:swrl#f> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+<urn:swrl#b> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+<urn:swrl#c> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+<urn:swrl#d> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+<urn:swrl#e> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+<urn:swrl#domain> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+<urn:swrl#range> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+<urn:swrl#f1> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+<urn:swrl#c2> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+<urn:swrl#d2> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+<urn:swrl#f2> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+<urn:swrl#g2> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+<urn:swrl#i2> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+<urn:swrl#j2> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+<urn:swrl#i1> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+<urn:swrl#j1> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+<urn:swrl#b1> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+<urn:swrl#c1> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+<urn:swrl#b2> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+<urn:swrl#e2> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+<urn:swrl#h2> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+<urn:swrl#k2> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+<urn:swrl#a1> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+<urn:swrl#a2> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+<urn:swrl#g1> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+<urn:swrl#h1> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+<urn:swrl#d1> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+<urn:swrl#e1> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+<urn:swrl#k1> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+<urn:swrl#l1> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+<urn:swrl#question> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+<urn:swrl#variable> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+<urn:swrl#questionID> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+  <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                          rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                     rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                 <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_ComplexContent_Extension> ;
+                                                                 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#b> ;
+                                                                 <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#c>
+                                                               ] ;
+                                                     rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Extension_Sequence> ;
+                                                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#c> ;
+                                                                                       <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#d>
+                                                                                     ] ;
+                                                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                            rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                       rdf:rest rdf:nil ;
+                                                                                                                       rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                                                                                   <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#value_Element_String> ;
+                                                                                                                                   <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#f> ;
+                                                                                                                                   <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#range>
+                                                                                                                                 ]
+                                                                                                                     ] ;
+                                                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                        <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#type_Element_Type> ;
+                                                                                                                        <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#a> ;
+                                                                                                                        <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#domain>
+                                                                                                                      ]
+                                                                                                          ] ;
+                                                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ref_Element_Element> ;
+                                                                                                             <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#e> ;
+                                                                                                             <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#f>
+                                                                                                           ]
+                                                                                               ] ;
+                                                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Sequence_Element> ;
+                                                                                                  <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#d> ;
+                                                                                                  <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#e>
+                                                                                                ]
+                                                                                    ]
+                                                                         ] ;
+                                                                rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                            <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_ComplexType_ComplexContent> ;
+                                                                            <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a> ;
+                                                                            <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#b>
+                                                                          ]
+                                                              ]
+                                                   ] ;
+                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                      <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:datacollection:3_1.owl#QuestionText-Element_ddi:datacollection:3_1-Schema> ;
+                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#f>
+                                                    ]
+                                        ] ;
+  <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                          rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                     rdf:rest rdf:nil ;
+                                                     rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                 <http://www.w3.org/2003/11/swrl#propertyPredicate> :questionText ;
+                                                                 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#domain> ;
+                                                                 <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#range>
+                                                               ]
+                                                   ] ;
+                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                      <http://www.w3.org/2003/11/swrl#classPredicate> :Question ;
+                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#domain>
+                                                    ]
+                                        ]
+] .
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+  <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                          rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                     rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                            <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_ComplexType_ComplexContent> ;
+                                                                            <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a> ;
+                                                                            <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#b>
+                                                                          ] ;
+                                                                rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Extension_Sequence> ;
+                                                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#c> ;
+                                                                                       <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#d>
+                                                                                     ] ;
+                                                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                            rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                       rdf:rest rdf:nil ;
+                                                                                                                       rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                                                                                   <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#value_Element_String> ;
+                                                                                                                                   <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#f> ;
+                                                                                                                                   <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#range>
+                                                                                                                                 ]
+                                                                                                                     ] ;
+                                                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                        <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#type_Element_Type> ;
+                                                                                                                        <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#a> ;
+                                                                                                                        <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#domain>
+                                                                                                                      ]
+                                                                                                          ] ;
+                                                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ref_Element_Element> ;
+                                                                                                             <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#e> ;
+                                                                                                             <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#f>
+                                                                                                           ]
+                                                                                               ] ;
+                                                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Sequence_Element> ;
+                                                                                                  <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#d> ;
+                                                                                                  <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#e>
+                                                                                                ]
+                                                                                    ]
+                                                                         ]
+                                                              ] ;
+                                                     rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                 <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_ComplexContent_Extension> ;
+                                                                 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#b> ;
+                                                                 <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#c>
+                                                               ]
+                                                   ] ;
+                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                      <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:logicalproduct:3_1.owl#VariableName-Element_ddi:logicalproduct:3_1-Schema> ;
+                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#f>
+                                                    ]
+                                        ] ;
+  <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                      <http://www.w3.org/2003/11/swrl#classPredicate> :Variable ;
+                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#domain>
+                                                    ] ;
+                                          rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                     rdf:rest rdf:nil ;
+                                                     rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                 <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.w3.org/2004/02/skos/core#notation> ;
+                                                                 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#domain> ;
+                                                                 <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#range>
+                                                               ]
+                                                   ]
+                                        ]
+] .
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+  <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                          rdf:rest rdf:nil ;
+                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                      <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:logicalproduct:3_1.owl#VariableName-Element_ddi:logicalproduct:3_1-Schema> ;
+                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a>
+                                                    ]
+                                        ] ;
+  <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                          rdf:rest rdf:nil ;
+                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                      <http://www.w3.org/2003/11/swrl#classPredicate> :Variable ;
+                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a>
+                                                    ]
+                                        ]
+] .
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+  <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                          rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                     rdf:rest rdf:nil ;
+                                                     rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                 <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://purl.org/dc/terms#description> ;
+                                                                 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#domain> ;
+                                                                 <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#range>
+                                                               ]
+                                                   ] ;
+                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                      <http://www.w3.org/2003/11/swrl#classPredicate> :Variable ;
+                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#domain>
+                                                    ]
+                                        ] ;
+  <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                          rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                     rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Extension_Sequence> ;
+                                                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#c> ;
+                                                                                       <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#d>
+                                                                                     ] ;
+                                                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ref_Element_Element> ;
+                                                                                                             <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#e> ;
+                                                                                                             <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#f>
+                                                                                                           ] ;
+                                                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                        <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#type_Element_Type> ;
+                                                                                                                        <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#a> ;
+                                                                                                                        <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#domain>
+                                                                                                                      ] ;
+                                                                                                            rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                       rdf:rest rdf:nil ;
+                                                                                                                       rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                                                                                   <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#value_Element_String> ;
+                                                                                                                                   <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#f> ;
+                                                                                                                                   <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#range>
+                                                                                                                                 ]
+                                                                                                                     ]
+                                                                                                          ]
+                                                                                               ] ;
+                                                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Sequence_Element> ;
+                                                                                                  <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#d> ;
+                                                                                                  <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#e>
+                                                                                                ]
+                                                                                    ]
+                                                                         ] ;
+                                                                rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                            <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_ComplexType_ComplexContent> ;
+                                                                            <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a> ;
+                                                                            <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#b>
+                                                                          ]
+                                                              ] ;
+                                                     rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                 <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_ComplexContent_Extension> ;
+                                                                 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#b> ;
+                                                                 <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#c>
+                                                               ]
+                                                   ] ;
+                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                      <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:reusable:3_1.owl#Description-Element_ddi:reusable:3_1-Schema> ;
+                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#f>
+                                                    ]
+                                        ]
+] .
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+  <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                          rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                     rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                rdf:rest rdf:nil ;
+                                                                rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                            <http://www.w3.org/2003/11/swrl#propertyPredicate> :question ;
+                                                                            <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#question> ;
+                                                                            <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#variable>
+                                                                          ]
+                                                              ] ;
+                                                     rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                 <http://www.w3.org/2003/11/swrl#classPredicate> :Variable ;
+                                                                 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#variable>
+                                                               ]
+                                                   ] ;
+                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                      <http://www.w3.org/2003/11/swrl#classPredicate> :Question ;
+                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#question>
+                                                    ]
+                                        ] ;
+  <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                      <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:logicalproduct:3_1.owl#QuestionReference-Element_ddi:logicalproduct:3_1-Schema> ;
+                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#f1>
+                                                    ] ;
+                                          rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                     rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Choice_Sequence> ;
+                                                                                                  <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#i1> ;
+                                                                                                  <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#j1>
+                                                                                                ] ;
+                                                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_ComplexContent_Extension> ;
+                                                                                                             <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#b1> ;
+                                                                                                             <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#c1>
+                                                                                                           ] ;
+                                                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                        <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_ComplexContent_Extension> ;
+                                                                                                                        <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#b2> ;
+                                                                                                                        <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#c2>
+                                                                                                                      ] ;
+                                                                                                            rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                       rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                                   <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_ComplexContent_Extension> ;
+                                                                                                                                   <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#e2> ;
+                                                                                                                                   <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#f2>
+                                                                                                                                 ] ;
+                                                                                                                       rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                                  rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                                              <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_ComplexContent_Extension> ;
+                                                                                                                                              <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#h2> ;
+                                                                                                                                              <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#i2>
+                                                                                                                                            ] ;
+                                                                                                                                  rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                                             rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                                                        rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                                                                   rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                                                                              rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                                                                                          <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_ComplexType_ComplexContent> ;
+                                                                                                                                                                                          <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#d2> ;
+                                                                                                                                                                                          <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#e2>
+                                                                                                                                                                                        ] ;
+                                                                                                                                                                              rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                                                                                         rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                                                                                                     <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_ComplexType_ComplexContent> ;
+                                                                                                                                                                                                     <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#g2> ;
+                                                                                                                                                                                                     <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#h2>
+                                                                                                                                                                                                   ] ;
+                                                                                                                                                                                         rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                                                                                                    rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                                                                                                                <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_ComplexType_Sequence> ;
+                                                                                                                                                                                                                <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#g1> ;
+                                                                                                                                                                                                                <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#h1>
+                                                                                                                                                                                                              ] ;
+                                                                                                                                                                                                    rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                                                                                                               rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                                                                                                                           <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Extension_Sequence> ;
+                                                                                                                                                                                                                           <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#c1> ;
+                                                                                                                                                                                                                           <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#d1>
+                                                                                                                                                                                                                         ] ;
+                                                                                                                                                                                                               rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                                                                                                                          rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                                                                                                                                     rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                                                                                                                                                 <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Sequence_Element> ;
+                                                                                                                                                                                                                                                 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#d1> ;
+                                                                                                                                                                                                                                                 <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#e1>
+                                                                                                                                                                                                                                               ] ;
+                                                                                                                                                                                                                                     rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                                                                                                                                                rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                                                                                                                                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                                                                                                                                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ref_Element_Element> ;
+                                                                                                                                                                                                                                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#e1> ;
+                                                                                                                                                                                                                                                                       <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#f1>
+                                                                                                                                                                                                                                                                     ] ;
+                                                                                                                                                                                                                                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                                                                                                                                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                                                                                                                                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ref_Element_Element> ;
+                                                                                                                                                                                                                                                                                  <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#k1> ;
+                                                                                                                                                                                                                                                                                  <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#l1>
+                                                                                                                                                                                                                                                                                ] ;
+                                                                                                                                                                                                                                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                                                                                                                                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                                                                                                                                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#type_Element_Type> ;
+                                                                                                                                                                                                                                                                                             <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#f1> ;
+                                                                                                                                                                                                                                                                                             <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#g1>
+                                                                                                                                                                                                                                                                                           ] ;
+                                                                                                                                                                                                                                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                                                                                                                                                                                            rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                                                                                                                                                                                                       rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                                                                                                                                                                                                                  rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                                                                                                                                                                                                                                                                              <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#value_Attribute_String> ;
+                                                                                                                                                                                                                                                                                                                              <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#k2> ;
+                                                                                                                                                                                                                                                                                                                              <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#questionID>
+                                                                                                                                                                                                                                                                                                                            ] ;
+                                                                                                                                                                                                                                                                                                                  rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                                                                                                                                                                                                                             rdf:rest rdf:nil ;
+                                                                                                                                                                                                                                                                                                                             rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                                                                                                                                                                                                                                                                                         <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#value_Element_String> ;
+                                                                                                                                                                                                                                                                                                                                         <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#l1> ;
+                                                                                                                                                                                                                                                                                                                                         <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#questionID>
+                                                                                                                                                                                                                                                                                                                                       ]
+                                                                                                                                                                                                                                                                                                                           ]
+                                                                                                                                                                                                                                                                                                                ] ;
+                                                                                                                                                                                                                                                                                                       rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                                                                                                                                                                                                                   <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#type_Element_Type> ;
+                                                                                                                                                                                                                                                                                                                   <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#a1> ;
+                                                                                                                                                                                                                                                                                                                   <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#variable>
+                                                                                                                                                                                                                                                                                                                 ]
+                                                                                                                                                                                                                                                                                                     ] ;
+                                                                                                                                                                                                                                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                                                                                                                                                                                                        <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#type_Element_Type> ;
+                                                                                                                                                                                                                                                                                                        <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#a2> ;
+                                                                                                                                                                                                                                                                                                        <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#question>
+                                                                                                                                                                                                                                                                                                      ]
+                                                                                                                                                                                                                                                                                          ]
+                                                                                                                                                                                                                                                                               ]
+                                                                                                                                                                                                                                                                    ]
+                                                                                                                                                                                                                                                         ] ;
+                                                                                                                                                                                                                                                rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                                                                                                                                                            <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Sequence_Element> ;
+                                                                                                                                                                                                                                                            <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#j1> ;
+                                                                                                                                                                                                                                                            <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#k1>
+                                                                                                                                                                                                                                                          ]
+                                                                                                                                                                                                                                              ]
+                                                                                                                                                                                                                                   ] ;
+                                                                                                                                                                                                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                                                                                                                                      <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Sequence_Choice> ;
+                                                                                                                                                                                                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#h1> ;
+                                                                                                                                                                                                                                      <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#i1>
+                                                                                                                                                                                                                                    ]
+                                                                                                                                                                                                                        ]
+                                                                                                                                                                                                             ]
+                                                                                                                                                                                                  ]
+                                                                                                                                                                                       ]
+                                                                                                                                                                            ] ;
+                                                                                                                                                                   rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                                                                               <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_ComplexType_ComplexContent> ;
+                                                                                                                                                                               <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a2> ;
+                                                                                                                                                                               <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#b2>
+                                                                                                                                                                             ]
+                                                                                                                                                                 ] ;
+                                                                                                                                                        rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                                                                    <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_ComplexType_ComplexContent> ;
+                                                                                                                                                                    <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a1> ;
+                                                                                                                                                                    <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#b1>
+                                                                                                                                                                  ]
+                                                                                                                                                      ] ;
+                                                                                                                                             rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                                                         <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_ComplexType_Attribute> ;
+                                                                                                                                                         <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#j2> ;
+                                                                                                                                                         <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#k2>
+                                                                                                                                                       ]
+                                                                                                                                           ]
+                                                                                                                                ]
+                                                                                                                     ]
+                                                                                                          ]
+                                                                                               ]
+                                                                                    ] ;
+                                                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#base_Extension_Type> ;
+                                                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#i2> ;
+                                                                                       <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#j2>
+                                                                                     ]
+                                                                         ] ;
+                                                                rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                            <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#base_Extension_Type> ;
+                                                                            <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#f2> ;
+                                                                            <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#g2>
+                                                                          ]
+                                                              ] ;
+                                                     rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                 <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#base_Extension_Type> ;
+                                                                 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#c2> ;
+                                                                 <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#d2>
+                                                               ]
+                                                   ]
+                                        ]
+] .
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+  <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                          rdf:rest rdf:nil ;
+                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                      <http://www.w3.org/2003/11/swrl#classPredicate> :Question ;
+                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a>
+                                                    ]
+                                        ] ;
+  <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                          rdf:rest rdf:nil ;
+                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                      <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:datacollection:3_1.owl#QuestionItem-Element_ddi:datacollection:3_1-Schema> ;
+                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a>
+                                                    ]
+                                        ]
+] .
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+  <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                          rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                     rdf:rest rdf:nil ;
+                                                     rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                 <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.w3.org/2004/02/skos/core#prefLabel> ;
+                                                                 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#domain> ;
+                                                                 <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#range>
+                                                               ]
+                                                   ] ;
+                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                      <http://www.w3.org/2003/11/swrl#classPredicate> :Question ;
+                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#domain>
+                                                    ]
+                                        ] ;
+  <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                      <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:datacollection:3_1.owl#QuestionItemName-Element_ddi:datacollection:3_1-Schema> ;
+                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#f>
+                                                    ] ;
+                                          rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                     rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Sequence_Element> ;
+                                                                                                  <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#d> ;
+                                                                                                  <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#e>
+                                                                                                ] ;
+                                                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                            rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                       rdf:rest rdf:nil ;
+                                                                                                                       rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                                                                                   <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#value_Element_String> ;
+                                                                                                                                   <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#f> ;
+                                                                                                                                   <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#range>
+                                                                                                                                 ]
+                                                                                                                     ] ;
+                                                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                        <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#type_Element_Type> ;
+                                                                                                                        <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#a> ;
+                                                                                                                        <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#domain>
+                                                                                                                      ]
+                                                                                                          ] ;
+                                                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ref_Element_Element> ;
+                                                                                                             <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#e> ;
+                                                                                                             <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#f>
+                                                                                                           ]
+                                                                                               ]
+                                                                                    ] ;
+                                                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Extension_Sequence> ;
+                                                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#c> ;
+                                                                                       <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#d>
+                                                                                     ]
+                                                                         ] ;
+                                                                rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                            <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_ComplexType_ComplexContent> ;
+                                                                            <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a> ;
+                                                                            <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#b>
+                                                                          ]
+                                                              ] ;
+                                                     rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                 <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_ComplexContent_Extension> ;
+                                                                 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#b> ;
+                                                                 <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#c>
+                                                               ]
+                                                   ]
+                                        ]
+] .
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+  <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                          rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                     rdf:rest rdf:nil ;
+                                                     rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                 <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.w3.org/2004/02/skos/core#prefLabel> ;
+                                                                 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#domain> ;
+                                                                 <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#range>
+                                                               ]
+                                                   ] ;
+                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                      <http://www.w3.org/2003/11/swrl#classPredicate> :Variable ;
+                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#domain>
+                                                    ]
+                                        ] ;
+  <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                      <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:reusable:3_1.owl#Label-Element_ddi:reusable:3_1-Schema> ;
+                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#f>
+                                                    ] ;
+                                          rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                     rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                 <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_ComplexContent_Extension> ;
+                                                                 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#b> ;
+                                                                 <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#c>
+                                                               ] ;
+                                                     rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ref_Element_Element> ;
+                                                                                                             <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#e> ;
+                                                                                                             <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#f>
+                                                                                                           ] ;
+                                                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                        <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#type_Element_Type> ;
+                                                                                                                        <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#a> ;
+                                                                                                                        <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#domain>
+                                                                                                                      ] ;
+                                                                                                            rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                       rdf:rest rdf:nil ;
+                                                                                                                       rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                                                                                   <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#value_Element_String> ;
+                                                                                                                                   <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#f> ;
+                                                                                                                                   <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#range>
+                                                                                                                                 ]
+                                                                                                                     ]
+                                                                                                          ]
+                                                                                               ] ;
+                                                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Sequence_Element> ;
+                                                                                                  <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#d> ;
+                                                                                                  <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#e>
+                                                                                                ]
+                                                                                    ] ;
+                                                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Extension_Sequence> ;
+                                                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#c> ;
+                                                                                       <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#d>
+                                                                                     ]
+                                                                         ] ;
+                                                                rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                            <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_ComplexType_ComplexContent> ;
+                                                                            <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a> ;
+                                                                            <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#b>
+                                                                          ]
+                                                              ]
+                                                   ]
+                                        ]
+] .
+
+###  Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net
+

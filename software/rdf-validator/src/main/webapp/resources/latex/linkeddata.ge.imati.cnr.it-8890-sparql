@@ -1,0 +1,15 @@
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lc@{}}
+           & \multicolumn{1}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-2}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{SKOS-C-LANGUAGE-TAG-CARDINALITY-04}}
+	\\ \midrule
+    \emph{http://linkeddata.ge.imati.cnr.it:8890/sparql} & $\checkmark$ (1)  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://linkeddata.ge.imati.cnr.it:8890/sparql}}
+    \label{tab:evaluation-linkeddata.ge.imati.cnr.it-8890-sparql}
+    \end{center}
+\end{table}

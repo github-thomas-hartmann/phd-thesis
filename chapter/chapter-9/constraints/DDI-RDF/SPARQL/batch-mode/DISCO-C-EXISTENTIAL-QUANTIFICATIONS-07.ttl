@@ -1,0 +1,4 @@
+?subject a disco:StudyGroup .
+
+OPTIONAL { ?subject disco:ddifile ?ddifile . }
+FILTER ( ! BOUND( ?ddifile ) ) .

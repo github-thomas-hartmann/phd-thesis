@@ -1,0 +1,21 @@
+# constraints
+# -----
+:Organization 
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty :name ] .
+
+# valid data
+# -----
+:dcmi 
+    a :Organization ;
+    :name "Dublin Core Metadata Initiative" .
+    
+    
+    
+    
+    
+# triples needed for validation
+# -----
+:dcmi a owl:Thing .

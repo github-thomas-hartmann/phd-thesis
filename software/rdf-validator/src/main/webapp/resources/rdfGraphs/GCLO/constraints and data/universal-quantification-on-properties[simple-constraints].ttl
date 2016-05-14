@@ -1,0 +1,26 @@
+# constraints
+# -----------
+[   a rdfcv:PropertyConstraint , rdfcv:SimpleConstraint ;
+    rdfcv:contextClass :Publication ;
+    rdfcv:leftProperties ( :author ) ;
+    rdfcv:classes ( :Person ) ;
+    rdfcv:constrainingElement "universal quantification" ] .
+
+# valid data
+# ----------
+:The-Lord-Of-The-Rings
+    a :Publication ;
+    :author :Tolkien .
+:Tolkien a :Person .
+
+# invalid data
+# ------------
+:The-Great-Gatsby
+    a :Publication ;
+    :author :F-Scott-Fitzgerald .
+    
+:Hamlet
+    a :Publication ;
+    :author :William-Shakespeare .
+:William-Shakespeare
+    a :Human .

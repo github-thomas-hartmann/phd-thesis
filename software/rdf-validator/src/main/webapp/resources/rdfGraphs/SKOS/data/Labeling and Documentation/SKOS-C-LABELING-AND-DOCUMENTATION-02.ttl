@@ -1,0 +1,48 @@
+# SKOS-C-LABELING-AND-DOCUMENTATION-02
+# -----
+# Labeling and Documentation Issues - Overlapping Labels:
+# This is a generalization of a recommendation in the SKOS primer,
+# that no two concepts have the same preferred lexical label in a given
+# language when they belong to the same concept scheme. This could indicate
+# missing disambiguation information and thus lead to problems in auto-completion application.
+
+:SubSubConcept 
+	a owl:Class ;
+    rdfs:subClassOf :SubConcept .
+:SubConcept 
+    a owl:Class ;
+    rdfs:subClassOf skos:Concept .
+:SubSubConceptScheme 
+    a owl:Class ;
+    rdfs:subClassOf :SubConceptScheme .
+:SubConceptScheme 
+    a owl:Class ;
+    rdfs:subClassOf skos:ConceptScheme .
+
+# invalid data
+# -----
+:overlapping-labels-concept1
+    a :SubSubConcept ;
+    skos:inScheme :overlapping-labels-conceptScheme1 ;
+    skos:definition "1"@en , "1"@de , "1"@fr .
+:overlapping-labels-concept2
+    a :SubSubConcept ;
+    skos:inScheme :overlapping-labels-conceptScheme1 ;
+    skos:definition "1"@en , "1"@de , "1"@fr .
+:overlapping-labels-conceptScheme1
+    a :SubSubConceptScheme ;
+    skos:definition "1"@en , "1"@de , "1"@fr .
+
+# valid data
+# -----
+:overlapping-labels-concept3
+    a :SubSubConcept ;
+    skos:inScheme :overlapping-labels-conceptScheme2 ;
+    skos:definition "3"@en , "3"@de , "3"@fr .
+:overlapping-labels-concept4
+    a :SubSubConcept ;
+    skos:inScheme :overlapping-labels-conceptScheme2 ;
+    skos:definition "4"@en , "4"@de , "4"@fr .
+:overlapping-labels-conceptScheme2
+    a :SubSubConceptScheme ;
+    skos:definition "2"@en , "2"@de , "2"@fr .

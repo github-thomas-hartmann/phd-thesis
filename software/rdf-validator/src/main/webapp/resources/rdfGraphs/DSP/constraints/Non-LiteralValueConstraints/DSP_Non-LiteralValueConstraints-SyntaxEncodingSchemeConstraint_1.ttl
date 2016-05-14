@@ -1,0 +1,26 @@
+# ---------------
+# Non-Literal Value Constraints - Syntax Encoding Scheme Constraint
+
+
+	:bookDescriptionTemplate 
+		a dsp:DescriptionTemplate ;
+		dsp:standalone "true"^^xsd:boolean ; 
+		dsp:minOccur "1"^^xsd:nonNegativeInteger ; 
+		dsp:maxOccur "infinity"^^xsd:nonNegativeInteger ; 
+		dsp:resourceClass swrc:Book ; 
+		dsp:statementTemplate [
+			a dsp:NonLiteralStatementTemplate ;
+			dsp:minOccur "1"^^xsd:nonNegativeInteger ; 
+			dsp:maxOccur "5"^^xsd:nonNegativeInteger ; 
+			dsp:property dcterms:subject ; 
+			dsp:nonLiteralConstraint [ 
+				a dsp:NonLiteralConstraint ;
+				dsp:valueClass skos:Concept ; 
+				dsp:vocabularyEncodingScheme :BookSubjects, :BookTopics, :BookCategories ;
+				dsp:valueStringConstraint [
+					a dsp:ValueStringConstraint ;
+					dsp:minOccur "1"^^xsd:nonNegativeInteger ; 
+					dsp:maxOccur "10"^^xsd:nonNegativeInteger ; 
+					dsp:syntaxEncodingSchemeOccurrence "optional"^^dsp:occurrence ] ] ] .
+	
+# -----

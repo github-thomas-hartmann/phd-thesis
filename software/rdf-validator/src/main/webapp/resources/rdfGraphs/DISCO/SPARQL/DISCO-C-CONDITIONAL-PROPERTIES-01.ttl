@@ -1,0 +1,21 @@
+	?subject 
+	    skos:notation ?notation ;
+	    skos:prefLabel ?label .
+	OPTIONAL {
+	    ?subject disco:isValid ?isValid .
+	}
+	FILTER ( ! BOUND( ?isValid ) ) .
+	
+	# violation message
+	# -----------------
+	BIND ( CONCAT( 
+		"DISCO-C-CONDITIONAL-PROPERTIES-01" )
+		AS ?violationMessage ) . 
+	
+	# violation source
+	# ----------------
+	BIND ( CONCAT( "DISCO-C-CONDITIONAL-PROPERTIES-01" )AS ?violationSource ) . 
+	
+	# severity level
+	# --------------
+	BIND ( ( 'ERROR' ) AS ?severityLevel ) .

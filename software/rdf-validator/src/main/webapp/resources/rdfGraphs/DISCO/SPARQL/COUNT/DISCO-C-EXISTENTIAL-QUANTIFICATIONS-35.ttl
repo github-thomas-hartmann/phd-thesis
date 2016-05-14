@@ -1,0 +1,4 @@
+?subject a disco:CategoryStatistics .
+
+OPTIONAL { ?subject disco:statisticsCategory ?code . }
+FILTER ( ! BOUND( ?code ) ) .

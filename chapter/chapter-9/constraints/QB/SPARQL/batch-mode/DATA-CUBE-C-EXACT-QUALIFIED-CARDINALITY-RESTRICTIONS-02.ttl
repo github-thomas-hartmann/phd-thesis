@@ -1,0 +1,11 @@
+	{
+		?subject a qb:DataSet .	
+		FILTER NOT EXISTS { ?subject qb:structure ?dsd . }
+	}
+	UNION
+	{
+		?subject 
+		    a qb:DataSet ;
+		    qb:structure ?dsd1 , ?dsd2 .
+        FILTER ( ?dsd1 != ?dsd2 ) .
+	}

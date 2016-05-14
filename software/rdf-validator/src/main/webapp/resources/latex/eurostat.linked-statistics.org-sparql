@@ -1,0 +1,15 @@
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lc@{}}
+           & \multicolumn{1}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-2}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{count-observation}}
+	\\ \midrule
+    \emph{http://eurostat.linked-statistics.org/sparql} & $\checkmark$ (1)  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://eurostat.linked-statistics.org/sparql}}
+    \label{tab:evaluation-eurostat.linked-statistics.org-sparql}
+    \end{center}
+\end{table}

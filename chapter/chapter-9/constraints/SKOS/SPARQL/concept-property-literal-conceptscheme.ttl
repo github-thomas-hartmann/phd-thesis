@@ -1,0 +1,18 @@
+﻿# namespace declarations
+# ----------------------
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?subject ?p ?literal ?lang ?conceptScheme
+WHERE {
+    ?subject
+        rdf:type/rdfs:subClassOf* skos:Concept ;
+        skos:inScheme ?conceptScheme ;
+        ?p ?literal .
+    FILTER ( ?p != rdf:type && ?p != skos:inScheme ) .
+    BIND ( ( LANG ( ?literal ) ) AS ?lang ) .
+	?conceptScheme
+            rdf:type/rdfs:subClassOf* skos:ConceptScheme .
+}

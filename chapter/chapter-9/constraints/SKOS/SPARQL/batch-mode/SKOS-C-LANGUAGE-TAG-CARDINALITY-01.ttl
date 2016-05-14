@@ -1,0 +1,2 @@
+	?subject ?p ?l . 
+	FILTER ( LANG ( ?l ) = "" ) . 

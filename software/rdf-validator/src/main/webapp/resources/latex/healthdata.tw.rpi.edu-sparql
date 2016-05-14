@@ -1,0 +1,16 @@
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lcc@{}}
+           & \multicolumn{2}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-3}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{STRUCTURE-01}}
+           & \rot{\emph{STRUCTURE-02}}
+	\\ \midrule
+    \emph{http://healthdata.tw.rpi.edu/sparql} & $\checkmark$ & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://healthdata.tw.rpi.edu/sparql}}
+    \label{tab:evaluation-healthdata.tw.rpi.edu-sparql}
+    \end{center}
+\end{table}

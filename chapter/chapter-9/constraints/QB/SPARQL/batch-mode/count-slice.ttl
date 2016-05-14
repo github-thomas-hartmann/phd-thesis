@@ -1,0 +1,2 @@
+#	?subject a [ rdfs:subClassOf* qb:Slice ] .
+    ?subject a qb:Slice .

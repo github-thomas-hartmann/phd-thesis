@@ -1,0 +1,99 @@
+# SKOS-C-STRUCTURE-05
+# -----
+# Structural Issues - Solely Transitively Related Concepts:
+# skos:broaderTransitive and skos:narrowerTransitive are, according to the SKOS reference document,
+# not used to make assertions, so they should not be the only relations hierarchically relating two concepts.
+# Implementation: Identification of all concept pairs that are related by
+# skos:broaderTransitive or skos:narrowerTransitive properties but not by
+# their skos:broader and skos:narrower sub-properties.
+
+ 	
+	{
+		# data
+		# ----
+		?subject 
+			a [rdfs:subClassOf* skos:Concept] ;
+			skos:narrowerTransitive ?object .
+		?object
+			a [rdfs:subClassOf* skos:Concept] ;
+			skos:broaderTransitive ?subject .
+		FILTER ( ?subject != ?object ) .
+			
+		# validation
+		# ----------
+		FILTER NOT EXISTS {
+			?subject ?narrower ?object .
+			FILTER ( ?narrower IN (
+			skos:narrower,
+			skos:narrowMatch ) ) .	 
+			
+			?object ?broader ?subject .
+			FILTER ( ?broader IN ( 
+			skos:broader,
+			skos:broadMatch ) ) .	
+		}
+
+		# violation message
+		# -----
+		BIND ( CONCAT( 
+			"The concept '", 
+			xsd:string( ?subject ),
+			"' is only related to the concept '", 
+			xsd:string( ?object ), 
+			"' by the transitive property skos:narrowerTransitive",
+			", but not by skos:narrower sub-properties. | skos:broaderTransitive and skos:narrowerTransitive are not used to make assertions, so they should not be the only relations hierarchically relating two concepts. ")
+			AS ?violationMessage ) . 
+			
+		# violation source
+		# ----------------
+		BIND ( CONCAT( "SKOS-C-STRUCTURE-05" )AS ?violationSource ) .
+		
+		# severity level
+		# --------------
+		BIND ( ( 'INFO' ) AS ?severityLevel ) .
+	}
+	UNION
+	{
+		# data
+		# ----
+		?subject 
+			a [rdfs:subClassOf* skos:Concept] ;
+			skos:broaderTransitive ?object .
+		?object
+			a [rdfs:subClassOf* skos:Concept] ;
+			skos:narrowerTransitive ?subject .
+		FILTER ( ?subject != ?object ) .
+			
+		# validation
+		# ----------
+		FILTER NOT EXISTS {
+			?subject ?broader ?object .
+			FILTER ( ?broader IN ( 
+			skos:broader,
+			skos:broadMatch ) ) . 
+			
+			?object ?narrower ?subject .
+			FILTER ( ?narrower IN (
+			skos:narrower,
+			skos:narrowMatch ) ) .		
+		}
+
+		# violation message
+		# -----
+		BIND ( CONCAT( 
+			"The concept '", 
+			xsd:string( ?subject ),
+			"' is only related to the concept '", 
+			xsd:string( ?object ), 
+			"' by the transitive property skos:broaderTransitive",
+			", but not by skos:broader sub-properties. | skos:broaderTransitive and skos:narrowerTransitive are not used to make assertions, so they should not be the only relations hierarchically relating two concepts. ")
+			AS ?violationMessage ) . 
+			
+		# violation source
+		# ----------------
+		BIND ( CONCAT( "SKOS-C-STRUCTURE-05" )AS ?violationSource ) .
+		
+		# severity level
+		# --------------
+		BIND ( ( 'INFO' ) AS ?severityLevel ) .
+	} 	 

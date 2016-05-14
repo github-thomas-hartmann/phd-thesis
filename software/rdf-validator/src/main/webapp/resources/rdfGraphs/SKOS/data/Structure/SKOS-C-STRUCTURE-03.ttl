@@ -1,0 +1,53 @@
+# SKOS-C-STRUCTURE-03
+# -----
+# Structural Issues - Cyclic Hierarchical Relations:
+# Although perfectly consistent with the SKOS data model, cyclic relations may reveal
+# a logical problem in the thesaurus. Consider the following example: 
+# decision --> problem resolution --> problem --> decision: here the cycle is
+# closed). The concepts are connected using skos:broader relationships
+# (indicated with -->). Due to the fact that a thesaurus is in many cases a product
+# of consensus between the contributors (or just the decision of one dedicated
+# thesaurus manager), it will be almost impossible to automatically resolve
+# the cycle (i.e. deleting an edge).
+# Implementation: Construction of a graph having all concepts as nodes
+# and the set of edges being skos:broader relations.
+
+:SubSubConcept 
+    a owl:Class ;
+    rdfs:subClassOf :SubConcept .
+:SubConcept 
+    a owl:Class ;
+    rdfs:subClassOf skos:Concept .
+
+# invalid data
+# -----
+:cyclic-hierarchical-relations-c1
+    a :SubSubConcept ;
+    skos:definition "definition"@en , "definition"@de, "definition"@fr ;
+    skos:broader :cyclic-hierarchical-relations-c2 .
+:cyclic-hierarchical-relations-c2
+    a :SubSubConcept ;
+    skos:definition "definition"@en , "definition"@de, "definition"@fr ;
+    skos:broader :cyclic-hierarchical-relations-c3 .
+:cyclic-hierarchical-relations-c3
+    a :SubSubConcept ;
+    skos:definition "definition"@en , "definition"@de, "definition"@fr ;
+    skos:broader :cyclic-hierarchical-relations-c1 .
+
+# valid data
+# -----
+:cyclic-hierarchical-relations-c4
+    a :SubSubConcept ;
+    skos:definition "definition"@en , "definition"@de, "definition"@fr ;
+    skos:broader :cyclic-hierarchical-relations-c5 .
+:cyclic-hierarchical-relations-c5
+    a :SubSubConcept ;
+    skos:definition "definition"@en , "definition"@de, "definition"@fr ;
+    skos:broader :cyclic-hierarchical-relations-c6 .
+:cyclic-hierarchical-relations-c6
+    a :SubSubConcept ;
+    skos:definition "definition"@en , "definition"@de, "definition"@fr ;
+    skos:broader :cyclic-hierarchical-relations-c7 .
+:cyclic-hierarchical-relations-c7
+    a :SubSubConcept ;
+    skos:definition "definition"@en , "definition"@de, "definition"@fr .   

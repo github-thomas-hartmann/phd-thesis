@@ -1,0 +1,699 @@
+@charset "UTF-8";
+/**
+ * GESIS Stylesheets
+ * based on YAML CSS Framework
+ * Filename: content.css
+ *
+ * @copyright       GESIS Leibniz Instuitute for the Social Sciences
+ * @link            http://www.gesis.org
+ * @version         1.0.0
+ */
+
+@media all {
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight:bold;
+	/* DEBUG HR Color prüfen */
+	color:#44596e;
+	margin-bottom:15px;
+	line-height: 1.3em;
+}
+
+h1 {
+	font-size: 180%;
+}
+
+h2 {
+	font-size: 150%
+}
+
+h3 {
+	font-size: 133.33%
+}
+
+h4 {
+	font-size: 116.67%
+}
+
+h5 {
+	font-size: 100%
+}
+
+h6 {
+	font-size: 100%;
+}
+
+p {
+	margin: 0 0 1em 0;
+}
+
+/* ### DEBUG HR ??? --> s (auch im footer) #### */
+
+a img {
+	display:block;
+}
+
+/* ### Lists | Listen  #### */
+
+ul, ol, dl {
+    line-height: 1.5em;
+}
+
+li {
+    margin-bottom: 5px;
+	line-height:18px;
+}
+
+ul li{
+	list-style-type:square;
+}
+
+dt {
+	font-weight: bold
+}
+
+dd {
+	margin: 0 0 1em 2em
+}
+
+/* ### text formatting | Textauszeichnung ### */
+
+cite {
+	font-style:italic
+}
+
+blockquote {
+	margin: 0 0 15px 30px
+}
+
+strong, b {
+	font-weight: bolder;
+}
+
+em, i {
+	font-style:italic;
+  }
+
+pre, code {
+	font-family: monospace;
+	font-size: 12px;
+}
+
+acronym, abbr {
+	border-bottom: none;
+}
+
+.indent {
+	padding-left: 2.5em;
+}
+
+/**
+   * Generic Content Classes
+   * (en) standard classes for positioning and highlighting
+   * (de) Standardklassen zur Positionierung und Hervorhebung
+   *
+   * @section content-generic-classes
+   */
+/* DEBUG HR */
+
+/*
+  .note {
+  	background: #dfd;
+  	padding: 1em;
+  	border-bottom: 1px #bdb dotted;
+  	border-bottom: 1px #dbb dotted;
+  }
+
+  .important {
+  	color: #C000;
+  	font-size: 90%;
+  	font-weight: bold;
+  }
+
+  .warning {
+  	background: #fdd;
+  	padding: 1em;
+  	border-bottom: 1px #dbb dotted;
+  	border-bottom: 1px #dbb dotted;
+  }
+  
+  .float_left {
+  	float: left;
+  	display:inline;
+  	margin-right: 1em;
+  	margin-bottom: 0.15em;
+  }
+  
+  .float_right {
+  	float: right;
+  	display:inline;
+  	margin-left: 1em;
+  	margin-bottom: 0.15em;
+  }
+  
+  */
+  
+  .center {
+  	text-align:center;
+  	margin: 0.5em auto
+  }
+  
+  .align-center {
+  	text-align:center;
+  }
+  
+  .align-right {
+  	text-align:right;
+  }
+
+/*------------------------------------------*/
+/*                 Links                    */
+/*------------------------------------------*/
+
+a[href] {
+	/* DEBUG HR color prüfen */
+	color: #44596E;
+	text-decoration:none;
+	border-bottom: 1px dotted #44596E;
+}
+
+a[href]:focus,
+a[href]:hover,
+a[href]:active {
+	color:#ff6100;
+	text-decoration:none;
+	border-bottom: 1px dotted #ff6100;
+	outline: none;
+}
+
+
+/**
+   * (en) Emphasizing external Hyperlinks via CSS
+   * (de) Hervorhebung externer Hyperlinks mit CSS
+   *
+   * @section             content-external-links
+   * @app-yaml-default    disabled
+   */
+
+  /*
+  #main a[href^="http://www.my-domain.com"],
+  #main a[href^="https://www.my-domain.com"]
+  {
+    padding-left: 12px;
+    background-: url('your_.gif');
+    background-repeat: no-repeat;
+    background-position: 0 0.45em;
+  }
+  */
+
+  /*------------------------------------------*/
+  /*                 Tabellen                 */
+  /*------------------------------------------*/
+
+table {
+	width:100%;
+	border-collapse:collapse;
+	margin:0 0 10px 0;
+}
+
+table p {	
+	margin:0;
+}
+
+/*
+.contenttable {
+	width:auto;
+}
+
+.contenttable th, .contenttable td {
+	padding: 10px;
+}
+*/
+
+/* Spalte dunkler färben 
+.col {
+	background: #f0eddb;
+}
+*/
+
+/* Spaltenlinien 
+.specCols td {
+	border-left: 2px solid #f0eddb;
+}
+*/
+
+th, td {
+	padding:5px;
+	/* DEBUG HR Grauwerte in den Styleguide */
+	background-color: #ededed;
+	vertical-align:top;
+	border:none;
+}
+
+thead td,  thead th,  tbody th {
+	background: #d9d9d9;
+}
+
+/* EVALUATE 
+tbody th.sub,
+thead th.sub {
+	font-size: 50%;
+}
+*/
+
+caption {
+	padding: 0 0 10px 0;
+}
+
+.tablegrid td,
+.tablegrid th {
+	border:solid 1px #d9d9d9;
+}
+
+/*------------------------------------------*/
+/*           Linien und Sonstiges           */
+/*------------------------------------------*/
+
+hr {
+	background:transparent;
+	margin: 10px 0 10px 0;
+	padding: 0;
+	border:0;
+	border-top: 1px #d9d9d9 solid;
+}
+
+/*------------------------------------------*/
+/*               Text mit Bild              */
+/*------------------------------------------*/
+
+/* DEBUG HR Imagewraps beschriften !!! */
+  
+.csc-textpic {
+	padding-bottom: 15px;
+}
+
+.csc-textpic,
+.csc-textpic-clear {
+	clear:both;
+}
+
+
+.csc-textpic a, .csc-textpic a:hover {
+	border-bottom:none;
+}
+
+.csc-textpic-caption{
+	font-style:italic;
+	font-size:10px;
+	margin:0px;
+	padding-bottom: 5px;
+}
+
+.csc-textpic dl {
+	margin: 0;
+}
+
+/* Im Text links */
+/* Neben dem Text links */
+.csc-textpic-intext-left .csc-textpic-imagewrap,
+.csc-textpic-intext-left-nowrap .csc-textpic-imagewrap {
+	float:left;
+	padding-right: 10px;
+}
+
+.csc-textpic-intext-left-nowrap .csc-textpic-text {
+	padding-left:5px;
+}
+
+/* Im Text rechts */
+/* Oben rechts */
+
+.csc-textpic-intext-right .csc-textpic-imagewrap,
+.csc-textpic-intext-right-nowrap .csc-textpic-imagewrap {
+	float:right;
+	padding-left: 10px;
+}
+
+.csc-textpic-right .csc-textpic-imagewrap {
+	float:right;
+}
+
+.csc-textpic-right .csc-textpic-text {
+	clear:both;
+}
+
+.csc-textpic-center .csc-textpic-imagewrap {
+	margin: 0 auto;
+}
+
+/* Spalten */
+
+.csc-textpic-imagecolumn {
+  float:left;
+  padding-right: 15px;
+}
+
+.csc-textpic-center .csc-textpic-wrap{
+    padding-top: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+        
+/*------------------------------------------*/
+/*            tx_dropdownsitemap            */
+/*------------------------------------------*/
+
+/* Einzüge für die Listen */
+  .tx-dropdownsitemap-pi1 ul {
+	padding:0;
+	margin:0;
+}
+
+.tx-dropdownsitemap-pi1 li {
+	padding:0;
+	margin:0;
+	list-style-type:none;
+}
+
+.tx-dropdownsitemap-pi1 li li {
+	padding:0 0 0 25px;
+}
+
+/* Anzeigeoptionen für die Listen */
+  .tx-dropdownsitemap-pi1 a {
+	font-weight:bold;
+}
+
+.tx-dropdownsitemap-pi1 li.open ol {
+	display:block;
+}
+
+.tx-dropdownsitemap-pi1 li.closed ol {
+	display:none;
+}
+
+.tx-dropdownsitemap-pi1 li.open ul {
+	display:block;
+}
+
+.tx-dropdownsitemap-pi1 li.closed ul {
+	display:none;
+}
+
+/* DEBUG HR löschen ??? */
+
+.tx-dropdownsitemap-pi1 div.level_2 {
+}
+
+.tx-dropdownsitemap-pi1 div.level_3 {
+}
+
+.tx-dropdownsitemap-pi1 div.level_4 {
+}
+
+.tx-dropdownsitemap-pi1 div.level_5 {
+}
+
+/* Hintergrundfarbe für die Listen */
+  .tx-dropdownsitemap-pi1 div {
+	padding:2px;
+	margin-bottom:5px;
+}
+
+.tx-dropdownsitemap-pi1 div.expAll {
+	text-align:left;
+}
+
+/* Bidler und Hover */
+  .tx-dropdownsitemap-pi1 img {
+	margin:2px 10px 3px 5px;
+	vertical-align:middle;
+	float: left;
+}
+
+.tx-dropdownsitemap-pi1 a:hover {
+	background:transparent;
+}
+
+.tx-dropdownsitemap-pi1 .closed {
+	clear:both;
+}
+
+/*------------------------------------------*/
+  /* Spezielle Formatierungen für Unterseiten */
+  /*------------------------------------------*/
+
+  /* Textausrichtung */
+  
+  /* DEBUG HR sind die Ausrichtungen doppelt ??? */
+     
+.text_right {
+	text-align:right;
+}
+
+.text_center {
+	text-align:center;
+}
+
+/* Mikrozensen */
+  
+  .td-dunkel {
+	  /* DEBUG HR color und Verwendung in Missy/GML prüfen */
+	background-color:#f0eddb;
+}
+
+/* Eurobarometer Auswahlmenüs */
+#ml select {
+	width: 220px;
+}
+
+span.red {
+	/* DEBUG HR color prüfen sonst orange */
+	color:red;
+}
+
+/*------------------------------------------*/
+/*             Literaturverweise            */
+/*------------------------------------------*/
+  
+/* DEBUG HR ist das in 3P nötig ??? */
+.litList {
+	padding: 0;
+	margin: 0;
+}
+
+.litEntry {
+	padding: 0 0 15px 0;
+	margin: 0;
+	list-style: none;
+}
+
+.litTitle {
+	font-style:italic;
+	font-weight:bold;
+}
+
+/*------------------------------------------*/
+/*               Projektseiten              */
+/*------------------------------------------*/
+
+/* DEBUG HR --> Literature gab es oben schon mal */
+  
+.projectDescription img {
+	padding: 0 15px 0 0;
+}
+
+.projectDescription .partner a, .projectDescription .partner a:hover {
+	border-bottom: none;
+	font-size:12px;
+}
+
+.literature ul {
+	list-style: url(none) none;
+	padding: 0;
+	margin: 0;
+}
+
+.literature li {
+	padding: 0 0 15px 0;
+}
+
+.projectContact p {
+	display: inline;
+}
+
+/*------------------------------------------*/
+/*               Eurobarometer              */
+/*------------------------------------------*/
+  
+
+div.divbox {
+	/* DEBUG HR color und Verwendung prüfen */
+	background-color:#ededed;
+	border:solid 1px #d9d9d9;
+	width:200px;
+	height:290px;
+	overflow:auto;
+	margin-bottom:10px;
+}
+
+div.divboxg {
+	/* DEBUG HR color prüfen */
+	background-color:#ededed;
+	border:solid 1px #d9d9d9;
+	width:200px;
+	height:400px;
+	overflow:auto;
+	margin-bottom:10px;
+}
+
+p.pstatic {
+	color:#000;
+	text-align:left;
+	padding:1px 1px 1px 1px;
+	font-size:100%;
+	font-weight:600;
+	margin:2px;
+}
+
+p.plink {
+	/* DEBUG HR Linkfarbe einheitlich machen */
+	color:#496177;
+	text-align:left;
+	padding:1px 1px 1px 23px;
+	text-indent:-11px;
+	font-size:100%;
+	font-weight:500; /* ??? */
+	cursor:pointer;
+	margin:2px;
+}
+
+p.pselect {
+	color:#fff;
+	text-align:left;
+	padding:1px 1px 1px 12px;
+	font-size:100%;
+	font-weight:500; /* ??? */
+	background-color:#FF6700;
+	cursor:pointer;
+	margin:2px;
+}
+
+/*------------------------------------------*/
+/*               RSS-Newsfeeds              */
+/*------------------------------------------*/
+  
+
+a.rssfeed {
+	/* background:url(/typo3conf/ext/chnewsfeeds/res/ico-rss.gif) no-repeat left 8px; */
+	padding:9px 9px 0 0;
+	display:block;
+	border-bottom: none;
+	float:right;
+	
+}
+
+a:hover.rssfeed {
+	border-bottom: none;
+}
+
+/*------------------------------------------*/
+/*                   Suche                  */
+/*------------------------------------------*/
+
+/* DEBUG HR --> Suche besser in Widgets ??? */
+
+.dialogue-container .hiturl h3 {
+    background-color: #d9d9d9;
+    margin-top: 10px;
+    padding-left: 5px;
+}
+
+.dialogue-container .hiturl h3:hover {
+	color:#ff6100;
+	text-decoration:none;
+	border-bottom: none;
+	outline: none;
+}
+
+.singlehit {
+  background-color:#fff;
+  padding: 5px;
+}
+
+/* DEBUG HR --> Pagebrowser aus News benutzen. evtl. Sysntax schöner machen!!! BILDER RAUS !!!!*/
+.hitpages {
+	border: 1px solid #c4beaf;
+	background: #F6F4E8 url(../../../../img/dbc/gradientSand.gif) repeat-x;
+	margin-right: 0;
+	padding: 0 5px;
+}
+
+.hitpagesSelectedItem {
+	border: 1px solid #c77d4d;
+	background: #F6F4E8 url(../../../../img/dbc/gradientOrange.gif) repeat-x;
+	color: #fff;
+	margin-right: 0;
+	padding: 0 5px;
+}
+
+a.hitpages, a.hitpages:hover {
+	/* DEBUG HR --> Borderfarbe prüfen */
+	border-bottom: 1px solid #c4beaf;
+}
+
+a.hitpagesSelectedItem, a.hitpagesSelectedItem:hover {
+	/* DEBUG HR --> Borderfarbe prüfen */
+	border-bottom: 1px solid #c77d4d;
+	color: #fff;
+}
+
+.hitpagesBar {
+	padding: 10px 0;
+}
+
+/* DEBUG HR --> Ist das nötig??? */
+/*
+.searchContent #submit{
+	vertical-align:middle;
+	padding: 0 0 5px;
+}
+
+.searchContent label{
+	float:none;
+	display:inline;
+}
+*/
+
+.highlight {
+  background-color: #ffb080;
+  padding: 0 3px 0 2px;
+}
+
+/*------------------------------------------*/
+/*                   Claim                  */
+/*------------------------------------------*/
+
+/* DEBUG HR --> Besser in Basemod mit Claim ??? */
+#claim {
+	position: absolute;
+	top: 0px;
+	right: 0px;	
+}
+
+/* Links für Projekte */
+
+/* DEBUG HR --> Besser zu Projekte oder allg. Links */
+h4 a {
+	font-size:14px;
+}
+
+#research img {
+	display: block;
+	margin:10px auto 10px auto;
+}
+
+
+/* ENDE VON CONTENT.CSS */
+}

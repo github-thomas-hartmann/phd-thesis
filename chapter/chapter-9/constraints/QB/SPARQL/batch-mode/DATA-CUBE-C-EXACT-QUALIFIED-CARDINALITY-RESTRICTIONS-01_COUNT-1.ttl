@@ -1,0 +1,4 @@
+WHERE {	 
+	?subject a qb:Observation .	
+	FILTER NOT EXISTS { ?subject qb:dataSet ?dataSet . }
+}

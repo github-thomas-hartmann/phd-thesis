@@ -1,0 +1,4 @@
+?subject a disco:SummaryStatistics .
+
+OPTIONAL { ?subject rdf:value ?value . }
+FILTER ( ! BOUND( ?value ) ) .

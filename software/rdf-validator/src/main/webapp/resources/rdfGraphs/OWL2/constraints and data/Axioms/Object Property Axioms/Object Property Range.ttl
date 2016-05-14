@@ -1,0 +1,36 @@
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> . 
+@prefix :         <http://www.example.org/OWL2InstanceData#> .
+
+
+# ---------------
+# Axioms - Object Property Axioms - Object Property Range
+
+	# generic
+	# -----
+	# ObjectPropertyRange( :ObjectPropertyRange_OPE :ObjectPropertyRange_CE )
+    :ObjectPropertyRange_OPE rdfs:range :ObjectPropertyRange_CE .
+    :ObjectPropertyRange_I1
+        a owl:Thing ;
+        :ObjectPropertyRange_OPE :ObjectPropertyRange_I2 ; 
+        :ObjectPropertyRange_OPE :ObjectPropertyRange_I3 . 
+    :ObjectPropertyRange_I2
+#       a :ObjectPropertyRange_CE ; # commented --> constraint violation
+        a owl:Thing .
+    :ObjectPropertyRange_I3
+#       a :ObjectPropertyRange_CE ; # commented --> constraint violation
+        a owl:Thing .
+        
+    # concrete
+    # -----
+    :hasDog rdfs:range :Dog .
+    :Peter 
+        a owl:Thing ;
+        :hasDog :Brian .
+    :Brian 
+#       a :Dog ; # commented --> constraint violation
+        a owl:Thing . 
+		
+# -----

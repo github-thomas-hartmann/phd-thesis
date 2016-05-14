@@ -1,0 +1,13 @@
+# ---------------
+# Statement Templates - Minimum occurrence constraint
+
+
+	# Allowed values non-negative integer
+	# -----
+	:ArtficialIntelligence
+		a swrc:Book, owl:Thing ;
+		dcterms:subject :ComputerScience . 
+	:ComputerScience
+		a skos:Concept, owl:Thing .
+	
+# -----

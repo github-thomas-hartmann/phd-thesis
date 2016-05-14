@@ -1,0 +1,17 @@
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lccc@{}}
+           & \multicolumn{3}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-4}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{DISCO-C-COMPARISON-VARIABLES-02}}
+           & \rot{\emph{DISCO-C-COMPARISON-VARIABLES-04}}
+           & \rot{\emph{DISCO-C-COMPARISON-VARIABLES-05}}
+	\\ \midrule
+    \emph{http://dwb-dev.nsd.uib.no/sparql} & 446806 & $\checkmark$ & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://dwb-dev.nsd.uib.no/sparql}}
+    \label{tab:evaluation-dwb-dev.nsd.uib.no-sparql}
+    \end{center}
+\end{table}

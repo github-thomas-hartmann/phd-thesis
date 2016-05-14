@@ -1,0 +1,18 @@
+	?subject a disco:Study .
+	
+	OPTIONAL { ?subject dcterms:description ?description . }
+	FILTER ( ! BOUND( ?description ) ) .
+	
+	# violation message
+	# -----------------
+	BIND ( CONCAT( 
+		"DISCO-C-LABELING-AND-DOCUMENTATION-02" )
+		AS ?violationMessage ) . 
+	
+	# violation source
+	# ----------------
+	BIND ( CONCAT( "DISCO-C-LABELING-AND-DOCUMENTATION-02" )AS ?violationSource ) . 
+	
+	# severity level
+	# --------------
+	BIND ( ( 'INFO' ) AS ?severityLevel ) .

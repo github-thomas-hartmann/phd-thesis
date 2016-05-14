@@ -1,0 +1,6 @@
+    ?subject qb:dataSet ?dataSet .
+    ?dataSet qb:structure ?structure .
+    ?structure qb:component ?component .
+    ?component qb:componentProperty ?dim .
+    ?dim a qb:DimensionProperty .
+    FILTER NOT EXISTS { ?subject ?dim [] . }

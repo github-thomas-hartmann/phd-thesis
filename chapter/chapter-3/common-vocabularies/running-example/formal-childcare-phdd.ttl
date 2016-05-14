@@ -1,0 +1,104 @@
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#>.
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl:     <http://www.w3.org/2002/07/owl#>.
+@prefix phdd:    <http://rdf-vocabulary.ddialliance.org/phdd#>.
+@prefix :    <http://rdf-vocabulary.ddialliance.org/phdd/data#>.
+
+:tableDescription 
+    a phdd:TableDescription ;
+    phdd:fileName 'formal-childcare-phdd'^^xsd:string .
+    
+:table
+    a phdd:Table ;
+    phdd:isDescripbedBy :tableDescription ;
+    phdd:isStructuredBy :delimitedTableStructure .
+    
+:delimitedTableStructure
+    a phdd:Delimited , phdd:TableStructure ;
+    phdd:characterSet 'ASCII'^^xsd:string ;
+    phdd:newLine 'CRLF'^^xsd:string ;
+    phdd:delimiter ','^^xsd:string ;
+    phdd:textQualifier 'double quote'^^xsd:string ;
+    phdd:consecutiveDelimitersAsOne 'false'^^xsd:boolean ;
+    phdd:namesOnFirstRow 'true'^^xsd:boolean ;
+    phdd:firstDataLine '2'^^xsd:positiveInteger ;
+    phdd:column :columnTime , :columnGeography , :columnAge , :columnDuration , :columnValue , :columnFlagsAndFootnotes .
+    
+:columnTime
+    a phdd:Column ;
+    phdd:isDescribedBy :columnDescriptionTime .
+    
+:columnDescriptionTime
+    a phdd:ColumnDescription , phdd:DelimitedColumnDescription ;
+    phdd:columnPosition '1'^^xsd:positiveInteger ;
+    phdd:recommendedDataType 'xsd:string'^^xsd:string ;
+    phdd:storageFormat 'VARCHAR'^^xsd:string ;
+    phdd:recommendedDisplayDataFormat 'string'^^xsd:string ;
+    phdd:decimalPositions '0'^^xsd:positiveInteger ;
+    phdd:recordNumber '1'^^xsd:positiveInteger .
+    
+:columnGeography
+    a phdd:Column ;
+    phdd:isDescribedBy :columnDescriptionGeography .
+    
+:columnDescriptionGeography
+    a phdd:ColumnDescription , phdd:DelimitedColumnDescription ;
+    phdd:columnPosition '2'^^xsd:positiveInteger ;
+    phdd:recommendedDataType 'xsd:string'^^xsd:string ;
+    phdd:storageFormat 'VARCHAR'^^xsd:string ;
+    phdd:recommendedDisplayDataFormat 'string'^^xsd:string ;
+    phdd:decimalPositions '0'^^xsd:positiveInteger ;
+    phdd:recordNumber '1'^^xsd:positiveInteger .
+    
+:columnAge
+    a phdd:Column ;
+    phdd:isDescribedBy :columnDescriptionAge .
+    
+:columnDescriptionAge
+    a phdd:ColumnDescription , phdd:DelimitedColumnDescription ;
+    phdd:columnPosition '3'^^xsd:positiveInteger ;
+    phdd:recommendedDataType 'xsd:string'^^xsd:string ;
+    phdd:storageFormat 'VARCHAR'^^xsd:string ;
+    phdd:recommendedDisplayDataFormat 'string'^^xsd:string ;
+    phdd:decimalPositions '0'^^xsd:positiveInteger ;
+    phdd:recordNumber '1'^^xsd:positiveInteger .
+    
+:columnDuration
+    a phdd:Column ;
+    phdd:isDescribedBy :columnDescriptionDuration .
+    
+:columnDescriptionDuration
+    a phdd:ColumnDescription , phdd:DelimitedColumnDescription ;
+    phdd:columnPosition '4'^^xsd:positiveInteger ;
+    phdd:recommendedDataType 'xsd:string'^^xsd:string ;
+    phdd:storageFormat 'VARCHAR'^^xsd:string ;
+    phdd:recommendedDisplayDataFormat 'string'^^xsd:string ;
+    phdd:decimalPositions '0'^^xsd:positiveInteger ;
+    phdd:recordNumber '1'^^xsd:positiveInteger .
+    
+:columnValue
+    a phdd:Column ;
+    phdd:isDescribedBy :columnDescriptionValue .
+    
+:columnDescriptionValue
+    a phdd:ColumnDescription , phdd:DelimitedColumnDescription ;
+    phdd:columnPosition '5'^^xsd:positiveInteger ;
+    phdd:recommendedDataType 'xsd:nonNegativeInteger'^^xsd:string ;
+    phdd:storageFormat 'TINYINT'^^xsd:string ;
+    phdd:recommendedDisplayDataFormat 'string'^^xsd:string ;
+    phdd:decimalPositions '0'^^xsd:positiveInteger ;
+    phdd:recordNumber '1'^^xsd:positiveInteger .
+    
+:columnFlagsAndFootnotes
+    a phdd:Column ;
+    phdd:isDescribedBy :columnDescriptionFlagsAndFootnotes .
+    
+:columnDescriptionFlagsAndFootnotes
+    a phdd:ColumnDescription , phdd:DelimitedColumnDescription ;
+    phdd:columnPosition '6'^^xsd:positiveInteger ;
+    phdd:recommendedDataType 'xsd:string'^^xsd:string ;
+    phdd:storageFormat 'CHAR (1)'^^xsd:string ;
+    phdd:recommendedDisplayDataFormat 'string'^^xsd:string ;
+    phdd:decimalPositions '0'^^xsd:positiveInteger ;
+    phdd:recordNumber '1'^^xsd:positiveInteger .

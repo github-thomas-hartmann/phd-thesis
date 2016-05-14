@@ -1,0 +1,4 @@
+#  SKOS-C-DATA-MODEL-CONSISTENCY-01
+# -----
+# Labeling and Documentation Issues - Relation Clashes: 
+# Covers condition S27 from the SKOS reference document, that has not been defined formally.

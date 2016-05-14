@@ -1,0 +1,4 @@
+?subject a disco:Question . 
+
+OPTIONAL { ?subject skos:prefLabel ?questionNumber . }
+FILTER ( ! BOUND( ?questionNumber ) ) .

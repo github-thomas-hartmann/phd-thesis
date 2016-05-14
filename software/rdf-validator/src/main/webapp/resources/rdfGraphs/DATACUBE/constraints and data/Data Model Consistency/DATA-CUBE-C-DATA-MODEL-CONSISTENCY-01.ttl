@@ -1,0 +1,11 @@
+# DATA-CUBE-C-DATA-MODEL-CONSISTENCY-01: Only attributes may be optional (IC-6)
+# -----
+# The only components of a qb:DataStructureDefinition that may be marked as optional, using qb:componentRequired are attributes.
+
+
+# invalid data
+# -----
+
+
+# valid data
+# -----

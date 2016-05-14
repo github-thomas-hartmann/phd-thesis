@@ -1,0 +1,50 @@
+# SKOS-C-STRUCTURE-07
+# -----
+# Structural Issues - Omitted Top Concepts:
+# A vocabulary should provide entry points to the data to provide efficient access
+# and guidance for human users.
+# Implementation: For every ConceptScheme in the controlled vocabulary,
+# a SPARQL query is issued finding resources that are associated with
+# this ConceptScheme by one of the properties skos:hasTopConcept or
+# skos:topConceptOf. Top concepts are also concepts having no broader concept.
+
+:SubSubConcept 
+    a owl:Class ;
+    rdfs:subClassOf :SubConcept .
+:SubConcept 
+    a owl:Class ;
+    rdfs:subClassOf skos:Concept .
+:SubSubConceptScheme 
+    a owl:Class ;
+    rdfs:subClassOf :SubConceptScheme .
+:SubConceptScheme 
+    a owl:Class ;
+    rdfs:subClassOf skos:ConceptScheme .
+
+# invalid data
+# -----
+:omitted-top-concepts-cs1
+    a :SubSubConceptScheme ;
+    skos:definition "definition"@en , "definition"@de, "definition"@fr .
+
+:omitted-top-concepts-c1
+    a :SubSubConcept ;
+    skos:definition "definition"@en , "definition"@de, "definition"@fr .
+    
+# valid data
+# -----
+:omitted-top-concepts-cs2
+    a :SubSubConceptScheme ;
+    skos:definition "definition"@en , "definition"@de, "definition"@fr ;
+    skos:hasTopConcept :omitted-top-concepts-c2 .
+:omitted-top-concepts-c2
+    a :SubSubConcept ;
+    skos:definition "definition"@en , "definition"@de, "definition"@fr .
+
+:omitted-top-concepts-cs3
+    a :SubSubConceptScheme ;
+    skos:definition "definition"@en , "definition"@de, "definition"@fr .
+:omitted-top-concepts-c3
+    a :SubSubConcept ;
+    skos:definition "definition"@en , "definition"@de, "definition"@fr ;
+    skos:topConceptOf :omitted-top-concepts-cs3 .

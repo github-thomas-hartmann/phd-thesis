@@ -1,0 +1,79 @@
+# SKOS-C-STRUCTURE-09
+# -----
+# Structural Issues - Hierarchical Redundancy:
+# As stated in the SKOS reference document, skos:broader and skos:narrower are not
+# transitive properties. However, they are sub-properties of skos:broaderTransitive
+# and skos:narrowerTransitive which enables inference of a transitive
+# closure. This, in fact, leaves it up to the user to interpret whether a 
+# vocabulary’s hierarchical structure is seen as transitive or not. In the former case,
+# this check can be useful. It finds pairs of concepts (A,B) that are directly
+# hierarchically related but there also exits an hierarchical path through a
+# concept C that connects A and B.
+
+	
+	# data 
+	# -----
+	?subject 
+		a [rdfs:subClassOf* skos:Concept] .
+			
+	{
+		?subject
+			skos:broader ?B ;
+			skos:broader ?C .
+		?B 
+			a [rdfs:subClassOf* skos:Concept] ; 
+			skos:broader* ?C .
+		?C
+			a [rdfs:subClassOf* skos:Concept] .	 
+			
+		FILTER ( ?subject != ?B ) .
+		FILTER ( ?subject != ?C ) .
+		FILTER ( ?B != ?C ) .
+
+		# violation message
+		# -----
+		BIND ( CONCAT( 
+			"skos:broader and skos:narrower are not transitive properties. | The concept '", 
+			xsd:string( ?subject ), 
+			"' is directly related ( skos:broader ) to the concept '", 
+			xsd:string( ?B ),
+			"' and transitively related ( skos:broader ) to the concept '", 
+			xsd:string( ?C ),
+			"'.") 
+			AS ?violationMessage ) .
+	}
+	UNION
+	{
+		?subject
+			skos:narrower ?B ;
+			skos:narrower ?C .
+		?B 
+			a [rdfs:subClassOf* skos:Concept] ; 
+			skos:narrower* ?C .
+		?C
+			a [rdfs:subClassOf* skos:Concept] .	 
+			
+		FILTER ( ?subject != ?B ) .
+		FILTER ( ?subject != ?C ) .
+		FILTER ( ?B != ?C ) .
+
+		# violation message
+		# -----
+		BIND ( CONCAT( 
+			"skos:broader and skos:narrower are not transitive properties. | The concept '", 
+			xsd:string( ?subject ), 
+			"' is directly related ( skos:narrower ) to the concept '", 
+			xsd:string( ?B ),
+			"' and transitively related ( skos:narrower ) to the concept '", 
+			xsd:string( ?C ),
+			"'.") 
+			AS ?violationMessage ) .
+	} 
+	
+	# violation source
+	# ----------------
+	BIND ( CONCAT( "SKOS-C-STRUCTURE-09" )AS ?violationSource ) .
+	
+	# severity level
+	# --------------
+	BIND ( ( 'INFO' ) AS ?severityLevel ) .	

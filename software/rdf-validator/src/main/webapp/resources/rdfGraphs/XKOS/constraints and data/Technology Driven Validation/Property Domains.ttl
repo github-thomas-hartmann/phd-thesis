@@ -1,0 +1,27 @@
+# Property Domains
+# -----
+
+
+# valid data
+# -----
+:conceptScheme-1
+    a skos:ConceptScheme ;
+    xkos:belongsTo :concept-1 .
+:concept-1
+    a skos:Concept .
+    
+:conceptScheme-3
+    a skos:ConceptScheme ;
+    xkos:numberOfLevels '1'^^xsd:positiveInteger .
+    
+# invalid data
+# -----
+:conceptScheme-2
+    a skos:ConceptScheme-2 ;
+    xkos:belongsTo :concept-2 .
+:concept-2
+    a skos:Concept .
+    
+:conceptScheme-4
+    a skos:ConceptScheme-4 ;
+    xkos:numberOfLevels '1'^^xsd:positiveInteger .

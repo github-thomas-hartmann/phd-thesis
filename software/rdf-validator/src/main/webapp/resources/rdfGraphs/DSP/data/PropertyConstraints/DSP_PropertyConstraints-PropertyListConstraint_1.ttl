@@ -1,0 +1,11 @@
+# ---------------
+# Property Constraints - Property List Constraint
+
+
+	:TimBernersLee
+		a foaf:Person, owl:Thing ;
+		foaf:name "Tim Berners-Lee"^^xsd:string ;
+		foaf:familyName "Berners-Lee"^^xsd:string ;
+		foaf:firstName "Tim"^^xsd:string .
+	
+# -----

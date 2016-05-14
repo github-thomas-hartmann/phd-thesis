@@ -1,0 +1,38 @@
+@prefix : <http://constraints#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/#> .
+@prefix oslc: <http://open-services.net/ns/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix se: <http://www.w3.org/2013/ShEx/Definition#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:Issue
+  rdf:type owl:Class ;
+  spin:constraint [
+      rdf:type oslc:Property ;
+      oslc:allowedValues :assigned_unassigned ;
+      oslc:propertyDefinition :state ] ;
+  rdfs:label "Issue"^^xsd:string ;
+  rdfs:subClassOf owl:Thing .
+
+:assigned_unassigned
+  rdf:type oslc:AllowedValues ;
+  oslc:allowedValue "assigned"^^xsd:string ;
+  oslc:allowedValue "unassigned"^^xsd:string ;
+  rdfs:label "assigned_unassigned"^^xsd:string .
+
+# valid data
+# ----------
+:Issue_1
+  a :Issue ;
+  :state "assigned"^^xsd:string ;
+  rdfs:label "Issue 1"^^xsd:string .
+
+# invalid data
+# ----------
+:Issue_2
+  a :Issue ;
+  :state "Constraint Violation"^^xsd:string ;
+  rdfs:label "Issue 2"^^xsd:string .

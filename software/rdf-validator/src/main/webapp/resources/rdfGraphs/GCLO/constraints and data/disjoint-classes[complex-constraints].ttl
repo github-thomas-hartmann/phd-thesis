@@ -1,0 +1,17 @@
+# constraints
+# -----------
+[   a rdfcv:ClassConstraint , rdfcv:SimpleConstraint ;
+    rdfcv:contextClass :IntersectionHologramHuman ;
+    rdfcv:classes ( :Hologram :Human ) ;
+    rdfcv:constrainingElement "Intersection" ] .
+[   a rdfcv:ClassConstraint , rdfcv:SimpleConstraint ;
+    rdfcv:contextClass owl:Thing ;
+    rdfcv:classes ( :IntersectionHologramHuman owl:Nothing ) ;
+    rdfcv:constrainingElement "Inclusion" ] .
+
+# invalid data
+# ------------
+:TheDoctor
+    a owl:Thing ;
+    a :Hologram ;
+    a :Human .

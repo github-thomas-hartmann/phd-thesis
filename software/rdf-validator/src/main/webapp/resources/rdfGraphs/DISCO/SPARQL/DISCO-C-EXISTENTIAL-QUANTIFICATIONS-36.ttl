@@ -1,0 +1,24 @@
+	?subject a disco:CategoryStatistics .
+	
+	OPTIONAL { ?subject disco:frequency ?frequency . }
+	FILTER ( ! BOUND( ?frequency ) ) .
+	
+	OPTIONAL { ?subject disco:percentage ?percentage . }
+	FILTER ( ! BOUND( ?percentage ) ) .
+	
+	OPTIONAL { ?subject disco:cumulativePercentage ?cumulativePercentage . }
+	FILTER ( ! BOUND( ?cumulativePercentage ) ) .
+	
+	# violation message
+	# -----------------
+	BIND ( CONCAT( 
+		"DISCO-C-EXISTENTIAL-QUANTIFICATIONS-36" )
+		AS ?violationMessage ) . 
+	
+	# violation source
+	# ----------------
+	BIND ( CONCAT( "DISCO-C-EXISTENTIAL-QUANTIFICATIONS-36" )AS ?violationSource ) . 
+	
+	# severity level
+	# --------------
+	BIND ( ( 'ERROR' ) AS ?severityLevel ) .

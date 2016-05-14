@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>	
+
+<!DOCTYPE rdf:RDF [
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+	<!ENTITY XMLSchemaMetamodelOntology "http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#" >
+]>
+	
+<rdf:RDF 
+     xmlns="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#"
+	 xml:base="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl"
+	 xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	 xmlns:owl="http://www.w3.org/2002/07/owl#"
+	 xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	 xmlns:XSDMetamodelOntology="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#">
+	
+	<owl:Ontology rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl">
+		<owl:versionIRI rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1:1.0.0.owl"/>
+		<owl:imports rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology:1.0.0.owl"/>
+	</owl:Ontology>
+	
+	
+	<!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#ddi:dcelements:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#ddi:dcelements:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Schema"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#attributeFormDefault_Schema_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">unqualified</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#elementFormDefault_Schema_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">qualified</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#targetNamespace_Schema_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">ddi:dcelements:3_1</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Schema_Import"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#Import1-Import_ddi:dcelements:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Schema_ComplexType"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#DCElementsType-Type_ddi:dcelements:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Schema_Element"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#DCElements-Element_ddi:dcelements:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#Import1-Import_ddi:dcelements:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#Import1-Import_ddi:dcelements:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Import"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#namespace_Import_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">http://purl.org/dc/elements/1.1/</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#schemaLocation_Import_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">simpledc20021212.xsd</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#DCElementsType-Type_ddi:dcelements:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#DCElementsType-Type_ddi:dcelements:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ComplexType"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#name_ComplexType_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">DCElementsType</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_ComplexType_Annotation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#Annotation1-Annotation_DCElementsType-Type_ddi:dcelements:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_ComplexType_Sequence"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#Sequence2-Sequence_DCElementsType-Type_ddi:dcelements:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#Annotation1-Annotation_DCElementsType-Type_ddi:dcelements:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#Annotation1-Annotation_DCElementsType-Type_ddi:dcelements:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Annotation"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Annotation_Documentation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_DCElementsType-Type_ddi:dcelements:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_DCElementsType-Type_ddi:dcelements:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#Documentation1-Documentation_Annotation1-Annotation_DCElementsType-Type_ddi:dcelements:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Documentation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#any_Documentation_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">The DCElementsType describes the contents of a Dublin Core reference, using the simple Dublin Core XML namespace.</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#Sequence2-Sequence_DCElementsType-Type_ddi:dcelements:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#Sequence2-Sequence_DCElementsType-Type_ddi:dcelements:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Sequence"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#sequence"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#Choice1-Choice_Sequence2-Sequence_DCElementsType-Type_ddi:dcelements:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Sequence_Choice"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#Choice1-Choice_Sequence2-Sequence_DCElementsType-Type_ddi:dcelements:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#Choice1-Choice_Sequence2-Sequence_DCElementsType-Type_ddi:dcelements:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#Choice1-Choice_Sequence2-Sequence_DCElementsType-Type_ddi:dcelements:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Choice"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#maxOccurs_Choice_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">unbounded</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#minOccurs_Choice_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">0</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#contains_Choice_Element"/>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#title-Element-Reference1-http://purl.org/dc/elements/1.1/_Choice1-Choice_Sequence2-Sequence_DCElementsType-Type_ddi:dcelements:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#creator-Element-Reference2-http://purl.org/dc/elements/1.1/_Choice1-Choice_Sequence2-Sequence_DCElementsType-Type_ddi:dcelements:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#subject-Element-Reference3-http://purl.org/dc/elements/1.1/_Choice1-Choice_Sequence2-Sequence_DCElementsType-Type_ddi:dcelements:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#description-Element-Reference4-http://purl.org/dc/elements/1.1/_Choice1-Choice_Sequence2-Sequence_DCElementsType-Type_ddi:dcelements:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#publisher-Element-Reference5-http://purl.org/dc/elements/1.1/_Choice1-Choice_Sequence2-Sequence_DCElementsType-Type_ddi:dcelements:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#contributor-Element-Reference6-http://purl.org/dc/elements/1.1/_Choice1-Choice_Sequence2-Sequence_DCElementsType-Type_ddi:dcelements:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#date-Element-Reference7-http://purl.org/dc/elements/1.1/_Choice1-Choice_Sequence2-Sequence_DCElementsType-Type_ddi:dcelements:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#type-Element-Reference8-http://purl.org/dc/elements/1.1/_Choice1-Choice_Sequence2-Sequence_DCElementsType-Type_ddi:dcelements:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#format-Element-Reference9-http://purl.org/dc/elements/1.1/_Choice1-Choice_Sequence2-Sequence_DCElementsType-Type_ddi:dcelements:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#identifier-Element-Reference10-http://purl.org/dc/elements/1.1/_Choice1-Choice_Sequence2-Sequence_DCElementsType-Type_ddi:dcelements:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#source-Element-Reference11-http://purl.org/dc/elements/1.1/_Choice1-Choice_Sequence2-Sequence_DCElementsType-Type_ddi:dcelements:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#language-Element-Reference12-http://purl.org/dc/elements/1.1/_Choice1-Choice_Sequence2-Sequence_DCElementsType-Type_ddi:dcelements:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#relation-Element-Reference13-http://purl.org/dc/elements/1.1/_Choice1-Choice_Sequence2-Sequence_DCElementsType-Type_ddi:dcelements:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#coverage-Element-Reference14-http://purl.org/dc/elements/1.1/_Choice1-Choice_Sequence2-Sequence_DCElementsType-Type_ddi:dcelements:3_1-Schema"/>
+							<rdf:Description rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#rights-Element-Reference15-http://purl.org/dc/elements/1.1/_Choice1-Choice_Sequence2-Sequence_DCElementsType-Type_ddi:dcelements:3_1-Schema"/>
+						</owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#title-Element-Reference1-http://purl.org/dc/elements/1.1/_Choice1-Choice_Sequence2-Sequence_DCElementsType-Type_ddi:dcelements:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#title-Element-Reference1-http://purl.org/dc/elements/1.1/_Choice1-Choice_Sequence2-Sequence_DCElementsType-Type_ddi:dcelements:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ref_Element_Element"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/elements/1.1/.owl#title-Element_http://purl.org/dc/elements/1.1/-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#creator-Element-Reference2-http://purl.org/dc/elements/1.1/_Choice1-Choice_Sequence2-Sequence_DCElementsType-Type_ddi:dcelements:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#creator-Element-Reference2-http://purl.org/dc/elements/1.1/_Choice1-Choice_Sequence2-Sequence_DCElementsType-Type_ddi:dcelements:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ref_Element_Element"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/elements/1.1/.owl#creator-Element_http://purl.org/dc/elements/1.1/-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#subject-Element-Reference3-http://purl.org/dc/elements/1.1/_Choice1-Choice_Sequence2-Sequence_DCElementsType-Type_ddi:dcelements:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#subject-Element-Reference3-http://purl.org/dc/elements/1.1/_Choice1-Choice_Sequence2-Sequence_DCElementsType-Type_ddi:dcelements:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ref_Element_Element"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/elements/1.1/.owl#subject-Element_http://purl.org/dc/elements/1.1/-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#description-Element-Reference4-http://purl.org/dc/elements/1.1/_Choice1-Choice_Sequence2-Sequence_DCElementsType-Type_ddi:dcelements:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#description-Element-Reference4-http://purl.org/dc/elements/1.1/_Choice1-Choice_Sequence2-Sequence_DCElementsType-Type_ddi:dcelements:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ref_Element_Element"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/elements/1.1/.owl#description-Element_http://purl.org/dc/elements/1.1/-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#publisher-Element-Reference5-http://purl.org/dc/elements/1.1/_Choice1-Choice_Sequence2-Sequence_DCElementsType-Type_ddi:dcelements:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#publisher-Element-Reference5-http://purl.org/dc/elements/1.1/_Choice1-Choice_Sequence2-Sequence_DCElementsType-Type_ddi:dcelements:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ref_Element_Element"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/elements/1.1/.owl#publisher-Element_http://purl.org/dc/elements/1.1/-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#contributor-Element-Reference6-http://purl.org/dc/elements/1.1/_Choice1-Choice_Sequence2-Sequence_DCElementsType-Type_ddi:dcelements:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#contributor-Element-Reference6-http://purl.org/dc/elements/1.1/_Choice1-Choice_Sequence2-Sequence_DCElementsType-Type_ddi:dcelements:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ref_Element_Element"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/elements/1.1/.owl#contributor-Element_http://purl.org/dc/elements/1.1/-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#date-Element-Reference7-http://purl.org/dc/elements/1.1/_Choice1-Choice_Sequence2-Sequence_DCElementsType-Type_ddi:dcelements:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#date-Element-Reference7-http://purl.org/dc/elements/1.1/_Choice1-Choice_Sequence2-Sequence_DCElementsType-Type_ddi:dcelements:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ref_Element_Element"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/elements/1.1/.owl#date-Element_http://purl.org/dc/elements/1.1/-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#type-Element-Reference8-http://purl.org/dc/elements/1.1/_Choice1-Choice_Sequence2-Sequence_DCElementsType-Type_ddi:dcelements:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#type-Element-Reference8-http://purl.org/dc/elements/1.1/_Choice1-Choice_Sequence2-Sequence_DCElementsType-Type_ddi:dcelements:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ref_Element_Element"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/elements/1.1/.owl#type-Element_http://purl.org/dc/elements/1.1/-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#format-Element-Reference9-http://purl.org/dc/elements/1.1/_Choice1-Choice_Sequence2-Sequence_DCElementsType-Type_ddi:dcelements:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#format-Element-Reference9-http://purl.org/dc/elements/1.1/_Choice1-Choice_Sequence2-Sequence_DCElementsType-Type_ddi:dcelements:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ref_Element_Element"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/elements/1.1/.owl#format-Element_http://purl.org/dc/elements/1.1/-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#identifier-Element-Reference10-http://purl.org/dc/elements/1.1/_Choice1-Choice_Sequence2-Sequence_DCElementsType-Type_ddi:dcelements:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#identifier-Element-Reference10-http://purl.org/dc/elements/1.1/_Choice1-Choice_Sequence2-Sequence_DCElementsType-Type_ddi:dcelements:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ref_Element_Element"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/elements/1.1/.owl#identifier-Element_http://purl.org/dc/elements/1.1/-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#source-Element-Reference11-http://purl.org/dc/elements/1.1/_Choice1-Choice_Sequence2-Sequence_DCElementsType-Type_ddi:dcelements:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#source-Element-Reference11-http://purl.org/dc/elements/1.1/_Choice1-Choice_Sequence2-Sequence_DCElementsType-Type_ddi:dcelements:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ref_Element_Element"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/elements/1.1/.owl#source-Element_http://purl.org/dc/elements/1.1/-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#language-Element-Reference12-http://purl.org/dc/elements/1.1/_Choice1-Choice_Sequence2-Sequence_DCElementsType-Type_ddi:dcelements:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#language-Element-Reference12-http://purl.org/dc/elements/1.1/_Choice1-Choice_Sequence2-Sequence_DCElementsType-Type_ddi:dcelements:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ref_Element_Element"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/elements/1.1/.owl#language-Element_http://purl.org/dc/elements/1.1/-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#relation-Element-Reference13-http://purl.org/dc/elements/1.1/_Choice1-Choice_Sequence2-Sequence_DCElementsType-Type_ddi:dcelements:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#relation-Element-Reference13-http://purl.org/dc/elements/1.1/_Choice1-Choice_Sequence2-Sequence_DCElementsType-Type_ddi:dcelements:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ref_Element_Element"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/elements/1.1/.owl#relation-Element_http://purl.org/dc/elements/1.1/-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#coverage-Element-Reference14-http://purl.org/dc/elements/1.1/_Choice1-Choice_Sequence2-Sequence_DCElementsType-Type_ddi:dcelements:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#coverage-Element-Reference14-http://purl.org/dc/elements/1.1/_Choice1-Choice_Sequence2-Sequence_DCElementsType-Type_ddi:dcelements:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ref_Element_Element"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/elements/1.1/.owl#coverage-Element_http://purl.org/dc/elements/1.1/-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#rights-Element-Reference15-http://purl.org/dc/elements/1.1/_Choice1-Choice_Sequence2-Sequence_DCElementsType-Type_ddi:dcelements:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#rights-Element-Reference15-http://purl.org/dc/elements/1.1/_Choice1-Choice_Sequence2-Sequence_DCElementsType-Type_ddi:dcelements:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#ref_Element_Element"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/http://purl.org/dc/elements/1.1/.owl#rights-Element_http://purl.org/dc/elements/1.1/-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+	
+	<!-- http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#DCElements-Element_ddi:dcelements:3_1-Schema -->
+	
+	<owl:Class rdf:about="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#DCElements-Element_ddi:dcelements:3_1-Schema">
+		<rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#Element"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#name_Element_String"/>
+				<owl:hasValue rdf:datatype="&xsd;string">DCElements</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/XMLSchemaMetamodelOntology.owl#type_Element_Type"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/XMLSchemaOntologies/ddi:dcelements:3_1.owl#DCElementsType-Type_ddi:dcelements:3_1-Schema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>	
+</rdf:RDF>

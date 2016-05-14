@@ -1,0 +1,18 @@
+    ?subject qb:component ?componentSpec .
+    ?componentSpec qb:componentRequired "false"^^xsd:boolean ;
+        qb:componentProperty ?component .
+    FILTER NOT EXISTS { ?component a qb:AttributeProperty . }
+
+	# violation message
+	# -----------------
+	BIND ( CONCAT( 
+		"DATA-CUBE-C-DATA-MODEL-CONSISTENCY-01" )
+		AS ?violationMessage ) . 
+	
+	# violation source
+	# ----------------
+	BIND ( CONCAT( "DATA-CUBE-C-DATA-MODEL-CONSISTENCY-01" )AS ?violationSource ) . 
+	
+	# severity level
+	# --------------
+	BIND ( ( 'WARNING' ) AS ?severityLevel ) .

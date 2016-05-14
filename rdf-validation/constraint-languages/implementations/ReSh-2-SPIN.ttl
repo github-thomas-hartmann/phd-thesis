@@ -1,0 +1,185 @@
+@prefix oslc: <http://open-services.net/ns/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix spl: <http://spinrdf.org/spl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix resh2spin: <http://constraints.org/resh2spin#> .
+
+owl:Thing 
+	spin:constraint 
+		[   a resh2spin:AllowedValues ] ,
+		[   a resh2spin:ValueShape ] ,
+		[   a resh2spin:OccursConstraint ] .
+		
+# AllowedValues
+# -------------
+resh2spin:AllowedValues
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "allowed values" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX resh2spin: <http://constraints.org/resh2spin#>
+            PREFIX oslc: <http://open-services.net/ns/core#>
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?subject ;
+                    rdfs:label ?violationMessage ;
+                    spin:violationPath ?propertyDefinition .
+            }
+            WHERE {
+	            # constraint
+	            # ----------	 
+	            #?resourceShape 
+	            #    a oslc:ResourceShape ;
+				#    oslc:property ?property .
+				#?property
+				#    #oslc:name ?propertyName ;
+				#    oslc:propertyDefinition ?propertyDefinition ;
+				#    oslc:allowedValue [] .
+            
+            	# data
+            	# ----
+                ?subject ?propertyDefinition ?value .
+                
+                # validation
+                # ----------
+                FILTER EXISTS { 
+	                [   a oslc:ResourceShape ;
+				        oslc:property [
+				            oslc:name ?propertyName ;
+				            oslc:propertyDefinition ?propertyDefinition ;
+				            oslc:allowedValue [] ] ] .
+                } .
+                FILTER NOT EXISTS { 
+	                [   a oslc:ResourceShape ;
+				        oslc:property [
+				            oslc:name ?propertyName ;
+				            oslc:propertyDefinition ?propertyDefinition ;
+				            oslc:allowedValue ?value ] ] .
+                } .
+
+#               violation message
+#               -----------------
+                BIND ( CONCAT(
+                    \"The value \", 
+                    xsd:string( ?value ),
+                    \" is not allowed for the property \", 
+                    xsd:string( ?propertyDefinition )
+                    ) AS ?violationMessage ) . 
+            }
+            """ ;
+    ] .
+    
+# ValueShape
+# -------------
+resh2spin:ValueShape
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "value shape" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX resh2spin: <http://constraints.org/resh2spin#>
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?subject ;
+                    rdfs:label ?violationMessage ;
+                    spin:violationPath ?propertyDefinition .
+            }
+            WHERE {
+	            # constraint
+	            # ----------	 
+	            ?resourceShape 
+	                a oslc:ResourceShape ;
+				    oslc:property ?property .
+				?property
+				    oslc:name ?propertyName ;
+				    oslc:propertyDefinition ?propertyDefinition ;
+				    oslc:valueShape ?valueShape .
+            
+            	# data
+            	# ----
+                ?subject ?propertyDefinition ?value .
+                
+                # validation
+                # ----------
+                FILTER ( spin:violatesConstraints(?value, ?valueShape) = 'false'^^xsd:boolean )
+
+#               violation message
+#               -----------------
+				BIND ( CONCAT(
+				    \"The value \", 
+				    xsd:string( ?value ), 
+				    \" of property \", 
+				    xsd:string( ?propertyDefinition ), 
+				    \" does not match the shape \", 
+				    xsd:string( ?valueShape )
+                    ) AS ?violationMessage ) . 
+            }
+            """ ;
+    ] .
+    
+# occurs constraint
+# -----------------
+resh2spin:OccursConstraint
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "occurs constraint" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX resh2spin: <http://constraints.org/resh2spin#>
+            PREFIX oslc: <http://open-services.net/ns/core#>
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?subject ;
+                    rdfs:label ?violationMessage ;
+                    spin:violationPath ?propertyDefinition .
+            }
+            WHERE {
+	            # constraint
+	            # ----------	 
+	            [ a oslc:ResourceShape ;
+			        oslc:property [
+			            oslc:name ?propertyName ;
+			            oslc:propertyDefinition ?propertyDefinition ;
+			            oslc:occurs ?occurs ] ] .
+            
+            	# data
+            	# ----
+                ?subject ?propertyDefinition ?value .
+                
+                # validation
+                # ----------
+                BIND ( spl:objectCount( ?subject, ?propertyDefinition ) AS ?count ) .
+                FILTER ( ( ?occurs = oslc:Exactly-one && ?count != 1 ) || 
+                         ( ?occurs = oslc:One-or-many && ?count < 1 ) || 
+                         ( ?occurs = oslc:Zero-or-one && ?count > 1 ) ) .
+                #BIND ( spl:object( ?occurs, oslc:minCount ) AS ?minCount ) .
+                #BIND ( spl:object( ?occurs, oslc:maxCount ) AS ?maxCount ) .
+                #FILTER ((bound(?minCount) && (?count < ?minCount)) || (bound(?maxCount) && (?count > ?maxCount))) .
+
+#               violation message
+#               -----------------
+				BIND ( CONCAT(
+					\"count: \", 
+				    xsd:string( ?count ),
+				    \"Property \", 
+				    xsd:string( ?propertyDefinition ), 
+				    \" does not match specified cardinality \", 
+				    xsd:string( ?occurs )
+                    ) AS ?violationMessage ) . 
+            }
+            """ ;
+    ] .

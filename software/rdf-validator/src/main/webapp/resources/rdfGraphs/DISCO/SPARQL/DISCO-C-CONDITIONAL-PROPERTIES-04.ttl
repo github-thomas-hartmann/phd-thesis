@@ -1,0 +1,27 @@
+	?subject a disco:StudyGroup .
+	
+	OPTIONAL { ?subject dcterms:abstract ?abstract . }
+	FILTER ( ! BOUND( ?abstract ) ) .
+	
+	OPTIONAL { ?subject disco:ddifile ?ddifile . }
+	FILTER ( ! BOUND( ?ddifile ) ) .
+	
+	OPTIONAL { ?subject dcterms:title ?title . }
+	FILTER ( ! BOUND( ?title ) ) .
+	
+	OPTIONAL { ?subject dcterms:alternative ?alternative . }
+	FILTER ( ! BOUND( ?alternative ) ) .
+	
+	# violation message
+	# -----------------
+	BIND ( CONCAT( 
+		"DISCO-C-CONDITIONAL-PROPERTIES-04" )
+		AS ?violationMessage ) . 
+	
+	# violation source
+	# ----------------
+	BIND ( CONCAT( "DISCO-C-CONDITIONAL-PROPERTIES-04" )AS ?violationSource ) . 
+	
+	# severity level
+	# --------------
+	BIND ( ( 'ERROR' ) AS ?severityLevel ) .

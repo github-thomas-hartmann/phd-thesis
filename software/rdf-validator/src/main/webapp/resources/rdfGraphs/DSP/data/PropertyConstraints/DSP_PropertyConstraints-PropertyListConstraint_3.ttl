@@ -1,0 +1,11 @@
+# ---------------
+# Property Constraints - Property List Constraint
+
+
+	# A property list constraint cannot occur together with a sub-property constraint
+	# -----
+	:TimBernersLee
+		a foaf:Person, owl:Thing ;
+		foaf:familyName "Berners-Lee"^^xsd:string .
+	
+# -----

@@ -1,0 +1,4 @@
+?subject a disco:DataFile .
+
+OPTIONAL { ?subject dcterms:description ?description . }
+FILTER ( ! BOUND( ?description ) ) .

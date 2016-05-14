@@ -1,0 +1,344 @@
+@charset "UTF-8";
+/**
+ * GESIS Stylesheets
+ * based on YAML CSS Framework
+ * Filename: basemod.css
+ *
+ * @copyright       GESIS Leibniz Instuitute for the Social Sciences
+ * @link            http://www.gesis.org
+ * @version         1.0.0
+ */
+
+@media all
+{
+  /*------------------------------*/
+  /*---- Basic page elements  ----*/
+  /*------------------------------*/
+   
+  html {
+    height:auto
+  }
+  
+  html * {
+  	font-size: 12px
+  }
+
+  body {
+  	text-align: center; /* for old browsers */
+  	background-color: #72777a;
+  	background-image: url(../../images/gs_fond.png);
+  	background-repeat: repeat-x;
+  	font-family: Arial, Verdana, Helvetica, sans-serif;
+  	font-size: 100%;
+  	color:#000;
+  	line-height:1.2em;
+  }
+  
+  #header, #nav, #main, #footer {
+    clear: both;
+  }
+
+  .page_margins {
+  	min-width: 1000px;
+  	margin: 0 auto;
+  	text-align:left 
+  }
+  
+  .page {
+  	width: 1000px;
+  	margin: 0 auto;
+  	min-height:600px;
+  }
+
+  /*------------------------------*/
+  /*------ Header elements -------*/
+  /*------------------------------*/
+  
+  #header {
+  	/* color: #000; */
+  	height: 80px;
+  	background-color: #58748f;
+  	background-image: url(../../images/gs_dachbalken.jpg);
+  	background-repeat: repeat-y;
+  	background-position: left top;
+  	height: 80px;
+    position: relative;
+  }
+  
+  #header a {
+	  border-bottom: none;
+  }
+
+  /*
+    #header .headline {
+    float:left;
+  }
+  */
+  
+  #header #banner {
+  	position: absolute;
+  	top: 0px;
+  	left: 160px;
+  }
+  
+  .headImg1 {
+	  display:inline;
+  }
+  
+  /*
+  #header er {
+  	font-size:2.5em;
+    line-height:65%;
+  	color:#000;
+  }
+  
+
+  #header span {
+  	color:#999;
+  }
+  */
+  
+  /*------------------------------*/
+  /*- Special homepage elements --*/
+  /*------------------------------*/
+
+  #intro {
+  	width:100%;
+  	height:250px;
+  	background-color: #ededed;
+  	background-image: url(../../../../img/header/gs_intro.jpg);
+  	background-repeat: no-repeat;
+  }
+  
+  #announcement {
+	  background-color:#58748f;
+	  height:40px;
+	  overflow:hidden;
+  }
+
+  #announcement h1, #announcement h1 a {
+	  font-size:20px;
+	  font-weight:bold;
+	  color:#fff;
+	  padding:7px 10px 0 10px;
+	  margin:0;
+	  border:none;
+  }  
+  
+  /*------------------------------*/
+  /*------ Topnav elements -------*/
+  /*------------------------------*/
+  
+  #topnav {
+    color: #fff;
+    background: transparent;
+  	position:absolute;
+  	top:10px;
+  	right:10px;
+  }
+  
+  #topnav li {
+  	display:inline;
+  	list-style-type: none;
+  }
+  
+  #topnav img {
+  	display:inline;
+  	padding:0 2px 0 2px;
+  	vertical-align: middle;
+  }
+  
+  #topnav form {
+  	display: inline;
+  	padding:0 0 0 15px;
+  	margin:0;
+  	background-color:transparent;
+  } 
+    
+  #topnav #searchfield {
+	  width:205px;
+  }
+  
+  #topnav #submit {
+	  padding-left:5px;
+  }
+  
+  #topnav a {
+  	color: #fff;
+  	font-weight: normal;
+  	background:transparent;
+  	text-decoration:none;
+  }
+  
+  #topnav a.language:hover,
+  #topnav a.language:active
+  #topnav a.language:focus {
+	 border:none
+  }
+	
+  #topnav a:focus,  #topnav a:hover,  #topnav a:active {
+	 border-bottom: 1px dotted #fff;
+  }
+
+  /*------------------------------*/
+  /*-------- Main elements -------*/
+  /*------------------------------*/
+  
+  #main {
+  	padding:0; 
+  	background-repeat: repeat-y;
+  	background-color:#fff;
+  	padding-bottom:15px;
+  }
+
+  /*------------------------------*/
+  /*------ Footer elements -------*/
+  /*------------------------------*/ 
+  
+  #footer {
+  	padding-top:5px;
+  	overflow: hidden;  
+  	color: #faf9f3;
+  }
+  
+  #copyright{
+  	float:left;
+  	padding-right:30px;
+  }
+  
+  #footerlinks{
+	 float:left;
+  }
+   
+  #footer a {
+    background:transparent;
+    border:none;
+    color: #faf9f3;
+  } 
+  
+  #footer a:hover, #footer a:focus, #footer a:active {
+    border-bottom: 1px dotted #faf9f3;
+  }
+  
+  #footer #socialLinks {
+	  float:right;
+  }
+  
+  #footer #socialLinks a,
+  #footer #socialLinks a:focus,
+  #footer #socialLinks a:active,
+  #footer #socialLinks a:hover {
+	  border:none;
+  } 
+  
+  #footer #socialLinks img{
+	  display:inline;
+	  padding-left:5px;
+  }
+  
+  #footer #socialLinks ul {
+	  padding:0;
+	  margin:0;
+  }
+  
+  #footer #socialLinks ul li {
+	  padding:0;
+	  margin:0;
+	  list-style-type:none;
+	  display:inline;
+	  vertical-align: top;
+  }  
+
+  /*------------------------------*/
+  /*-------- Col elements --------*/
+  /*------------------------------*/
+  
+  #col1 { 
+  	padding:0;
+  	width:225px;
+  }
+  #col1_content {
+	  padding: 0 0 10px 0;
+  }
+
+  #col2 {
+  	padding:0;
+  	width:250px;
+  }
+
+  #col2_content {
+    padding: 30px 15px 0 15px;
+  }
+
+  #col3 {
+  	margin:0;
+  	padding:0;
+  	margin-left: 235px;
+  }
+
+  #col3_content {
+    padding: 30px 15px 0 15px;
+  }
+  
+  #col1_content, #col2_content, #col3_content {
+    position:static;
+  }
+  
+  .floatbox{
+    padding-right:15px;
+  	overflow: auto;
+  	display:block;
+  	width:auto;
+  }
+
+  /*------------------------------*/
+  /* Partner and project elements */
+  /*------------------------------*/
+  
+.partner {
+	margin:15px 10px 0 10px;;
+	padding: 10px 0 0 0;
+	text-align:center;
+}
+
+.partner p, .partner a[HREF]{
+	font-size:10px;
+	line-height: 1.3em;
+	padding-bottom:10px;
+	border-bottom: none;
+}
+
+.partner a[HREF]:hover{
+	border-bottom: none;
+}
+
+.partner b{
+	font-size:10px;
+	font-weight:bolder;
+}
+
+.partner img {
+	padding-bottom: 10px;
+	margin:0 auto;
+}
+
+.projectDescription .partner, .projectDescription .partner p{
+	margin: 0;
+	padding: 0;
+	text-align:left;
+	border: none;
+	font-size: 12px;
+}
+
+.gefoerdert_logo {
+	padding: 0;
+}
+
+.wgl-logo {
+	padding-top: 25px;
+}
+
+/* No more styles from here */
+
+/* End of basemod.css */
+}

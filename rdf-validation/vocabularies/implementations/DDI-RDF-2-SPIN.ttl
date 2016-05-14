@@ -1,0 +1,219 @@
+﻿# namespace declarations
+# ----------------------
+@prefix fn:        <http://www.w3.org/2005/xpath-functions#> .
+@prefix sparql:    <http://www.w3.org/TR/2013/REC-sparql11-query-20130321/#> .
+@prefix xsd:        <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:        <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:       <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:        <http://www.w3.org/2002/07/owl#> .
+@prefix sp:         <http://spinrdf.org/sp#> .
+@prefix spin:       <http://spinrdf.org/spin#> .
+@prefix smf:        <http://topbraid.org/sparqlmotionfunctions#> .
+@prefix spif:       <http://spinrdf.org/spif#> . 
+@prefix spl:        <http://spinrdf.org/spl#> .
+@prefix spinowl:    <http://topbraid.org/spin/spinowl> .
+@prefix spinx:      <http://spinrdf.org/spinx#> . 
+@prefix functions:  <http://www.example.org/functions#> .
+@prefix templates:  <http://www.example.org/templates#> .
+@prefix sparql:     <http://www.w3.org/TR/sparql11-query/#> .
+@prefix disco2spin: <http://rdf-vocabulary.ddialliance.org/discovery/disco2spin#> .
+
+# class constraints
+# -----------------
+owl:Thing 
+	spin:constraint 
+		[   a disco2spin:DISCO-C-PROPERTY-DOMAIN-01_object-properties ] ,
+		[   a disco2spin:DISCO-C-PROPERTY-DOMAIN-01_data-properties ] ,
+		[   a disco2spin:DISCO-C-PROPERTY-RANGE-01_object-properties ] ,
+		[   a disco2spin:DISCO-C-PROPERTY-RANGE-01_data-properties ] .
+
+# DISCO-C-PROPERTY-DOMAIN-01
+# --------------------------
+disco2spin:DISCO-C-PROPERTY-DOMAIN-01_object-properties
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "DISCO-C-PROPERTY-DOMAIN-01|||||ERROR" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX disco2spin: <http://rdf-vocabulary.ddialliance.org/discovery/disco2spin#>
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?subject ;
+                    rdfs:label ?violationMessage ;
+                    spin:violationPath ?p .
+            }
+            WHERE {	  
+			    # constraint
+				# ----------
+				?p
+				    a rdf:Property , owl:ObjectProperty ;
+    				rdfs:domain ?domain .
+						
+				# data
+				# ----
+				?subject ?p ?o .
+				
+				# validation
+				# ----------
+				FILTER NOT EXISTS { ?subject a ?domain } .
+
+#               violation message
+#               -----------------
+                BIND ( CONCAT( 
+                    \"DISCO-C-PROPERTY-DOMAIN-01 | The individual '\", 
+                    xsd:string( ?subject ), 
+                    \"' has a '\", 
+                    xsd:string( ?p ), 
+                    \"' relationship, but is not assigned to the domain class '\", 
+                    xsd:string( ?domain ))
+                    AS ?violationMessage ) . 
+            }
+            """ ;
+    ] .
+    
+disco2spin:DISCO-C-PROPERTY-DOMAIN-01_data-properties
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "DISCO-C-PROPERTY-DOMAIN-01|||||ERROR" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX disco2spin: <http://rdf-vocabulary.ddialliance.org/discovery/disco2spin#>
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?subject ;
+                    rdfs:label ?violationMessage ;
+                    spin:violationPath ?p .
+            }
+            WHERE {	  
+			    # constraint
+				# ----------
+				?p
+				    a rdf:Property , owl:DatatypeProperty ;
+    				rdfs:domain ?domain .
+						
+				# data
+				# ----
+				?subject ?p ?o .
+				
+				# validation
+				# ----------
+				FILTER NOT EXISTS { ?subject a ?domain } .
+
+#               violation message
+#               -----------------
+                BIND ( CONCAT( 
+                    \"DISCO-C-PROPERTY-DOMAIN-01 | The individual '\", 
+                    xsd:string( ?subject ), 
+                    \"' has a '\", 
+                    xsd:string( ?p ), 
+                    \"' relationship, but is not assigned to the domain class '\", 
+                    xsd:string( ?domain ))
+                    AS ?violationMessage ) . 
+            }
+            """ ;
+    ] .
+    
+# DISCO-C-PROPERTY-RANGE-01
+# -------------------------
+disco2spin:DISCO-C-PROPERTY-RANGE-01_object-properties
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "DISCO-C-PROPERTY-RANGE-01|||||ERROR" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX disco2spin: <http://rdf-vocabulary.ddialliance.org/discovery/disco2spin#>
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?subject ;
+                    rdfs:label ?violationMessage ;
+                    spin:violationPath ?p .
+            }
+            WHERE {	  
+			    # constraint
+				# ----------
+				?p
+				    a rdf:Property , owl:ObjectProperty ;
+    				rdfs:range ?range .
+						
+				# data
+				# ----
+				?subject ?p ?o .
+				
+				# validation
+				# ----------
+				FILTER NOT EXISTS { ?o a ?range } .
+
+#               violation message
+#               -----------------
+                BIND ( CONCAT( 
+                    \"DISCO-C-PROPERTY-RANGE-01 | The individual '\", 
+                    xsd:string( ?subject ), 
+                    \"' has a '\", 
+                    xsd:string( ?p ), 
+                    \"' relationship to the object '\", 
+                    xsd:string( ?o ), 
+                    \"', which is not assigned to the range class '\", 
+                    xsd:string( ?range ))
+                    AS ?violationMessage ) . 
+            }
+            """ ;
+    ] .
+    
+disco2spin:DISCO-C-PROPERTY-RANGE-01_data-properties
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "DISCO-C-PROPERTY-RANGE-01|||||ERROR" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX disco2spin: <http://rdf-vocabulary.ddialliance.org/discovery/disco2spin#>
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?subject ;
+                    rdfs:label ?violationMessage ;
+                    spin:violationPath ?property .
+            }
+            WHERE {	  
+			    # constraint
+				# ----------
+				?property
+				    a rdf:Property , owl:DatatypeProperty ;
+    				rdfs:range ?dt .
+						
+				# data
+				# ----
+				?subject ?property ?literal .
+				
+				# validation
+				# ----------
+				BIND ( ( DATATYPE ( ?literal ) ) AS ?datatype ) . 
+				FILTER ( ?datatype != ?dt ) .
+
+#               violation message
+#               -----------------
+                BIND ( CONCAT( 
+                    \"DISCO-C-PROPERTY-RANGE-01 | The individual '\", 
+                    xsd:string( ?subject ), 
+                    \"' has a '\", 
+                    xsd:string( ?property ), 
+                    \"' relationship to the literal '\", 
+                    xsd:string( ?literal ), 
+                    \"', which is of the datatype '\", 
+                    xsd:string( ?datatype ),
+                    \"', but not of the range datatype '\", 
+                    xsd:string( ?dt ))
+                    AS ?violationMessage ) . 
+            }
+            """ ;
+    ] .

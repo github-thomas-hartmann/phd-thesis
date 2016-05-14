@@ -1,0 +1,6 @@
+?subject 
+    a skos:Concept ;
+    skos:notation ?code .
+
+OPTIONAL { ?subject skos:prefLabel ?category . }
+FILTER ( ! BOUND( ?category ) ) .

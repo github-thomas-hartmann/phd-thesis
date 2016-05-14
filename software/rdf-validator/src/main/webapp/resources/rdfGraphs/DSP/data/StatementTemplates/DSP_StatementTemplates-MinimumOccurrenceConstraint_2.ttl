@@ -1,0 +1,13 @@
+# ---------------
+# Statement Templates - Minimum occurrence constraint
+
+
+	# The minimum number of times this kind of statement must appear in the enclosing Description. 
+	# -----
+	:ArtficialIntelligence
+		a swrc:Book, owl:Thing ;
+		dcterms:subject :ComputerScience . # --> constraint violation 
+	:ComputerScience
+		a skos:Concept, owl:Thing .
+	
+# -----

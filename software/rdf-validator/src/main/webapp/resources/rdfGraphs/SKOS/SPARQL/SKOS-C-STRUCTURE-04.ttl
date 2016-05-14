@@ -1,0 +1,69 @@
+# SKOS-C-STRUCTURE-04
+# -----
+# Structural Issues - Valueless Associative Relations:
+# Two concepts are sibling, but also connected by an associative relation. 
+# In that context, the associative relation is not necessary. See ISO DIS 25964-1, 11.3.2.2
+# Implementation: Identification of all pairs of concepts that have the same
+# broader or narrower concepts, i.e. they are sibling terms. All siblings
+# that are related by a skos:related property are returned.
+
+  	
+	{
+		# data
+		# ---- 
+		?subject
+			skos:related ?sibling ;
+			skos:broader ?TopConcept .
+		?sibling 
+			skos:related ?subject ;
+			skos:broader ?TopConcept .                    
+		FILTER ( ?subject != ?sibling ) .
+	
+		# violation message
+		# -----
+		BIND ( CONCAT( 
+			"The concepts '", 
+			xsd:string( ?subject ), 
+			"' and '", 
+			xsd:string( ?sibling ),
+			"' are siblings (having the same broader concepts), but are also connected by a not necessary associative relation (skos:related).") 
+			AS ?violationMessage ) . 
+			
+		# violation source
+		# ----------------
+		BIND ( CONCAT( "SKOS-C-STRUCTURE-04" )AS ?violationSource ) .
+		
+		# severity level
+		# --------------
+		BIND ( ( 'INFO' ) AS ?severityLevel ) .	 
+	}
+	UNION
+	{
+		# data
+		# ---- 
+		?subject
+			skos:related ?sibling ;
+			skos:narrower ?BottomConcept .
+		?sibling 
+			skos:related ?subject ;
+			skos:narrower ?BottomConcept .
+		FILTER ( ?subject != ?sibling ) .	 
+	
+		# violation message
+		# -----
+		BIND ( CONCAT( 
+			"The concepts '", 
+			xsd:string( ?subject ), 
+			"' and '", 
+			xsd:string( ?sibling ),
+			"' are siblings (having the same narrower concepts), but are also connected by a not necessary associative relation (skos:related).") 
+			AS ?violationMessage ) .
+			
+		# violation source
+		# ----------------
+		BIND ( CONCAT( "SKOS-C-STRUCTURE-04" )AS ?violationSource ) .
+		
+		# severity level
+		# --------------
+		BIND ( ( 'INFO' ) AS ?severityLevel ) .	 
+	}

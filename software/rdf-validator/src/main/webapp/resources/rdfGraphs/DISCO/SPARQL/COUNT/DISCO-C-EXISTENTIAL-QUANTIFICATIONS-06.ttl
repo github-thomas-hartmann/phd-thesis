@@ -1,0 +1,4 @@
+?subject a disco:LogicalDataSet .
+
+OPTIONAL { ?subject disco:universe ?universe . }
+FILTER ( ! BOUND( ?universe ) ) .

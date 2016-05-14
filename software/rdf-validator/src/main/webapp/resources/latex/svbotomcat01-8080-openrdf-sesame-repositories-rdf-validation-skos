@@ -1,0 +1,15 @@
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lc@{}}
+           & \multicolumn{1}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-2}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{SKOS-C-STRUCTURE-05}}
+	\\ \midrule
+    \emph{http://svbotomcat01:8080/openrdf-sesame/repositories/rdf-validation-skos} & $\checkmark$ (1)  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://svbotomcat01:8080/openrdf-sesame/repositories/rdf-validation-skos}}
+    \label{tab:evaluation-svbotomcat01-8080-openrdf-sesame-repositories-rdf-validation-skos}
+    \end{center}
+\end{table}

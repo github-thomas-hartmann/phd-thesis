@@ -1,0 +1,4 @@
+?subject a disco:Variable .
+
+OPTIONAL { ?subject disco:universe ?universe . }
+FILTER ( ! BOUND( ?universe ) ) .

@@ -1,0 +1,35 @@
+# SKOS-C-STRUCTURE-05
+# -----
+# Structural Issues - Solely Transitively Related Concepts:
+# skos:broaderTransitive and skos:narrowerTransitive are, according to the SKOS reference document,
+# not used to make assertions, so they should not be the only relations hierarchically relating two concepts.
+# Implementation: Identification of all concept pairs that are related by
+# skos:broaderTransitive or skos:narrowerTransitive properties but not by
+# their skos:broader and skos:narrower sub-properties.
+
+:SubSubConcept 
+    a owl:Class ;
+    rdfs:subClassOf :SubConcept .
+:SubConcept 
+    a owl:Class ;
+    rdfs:subClassOf skos:Concept .
+
+# invalid data
+# -----
+:solely-transitively-related-concepts-c1
+    a :SubSubConcept ;
+    skos:narrowerTransitive :solely-transitively-related-concepts-c2 .
+:solely-transitively-related-concepts-c2
+    a :SubSubConcept ;
+    skos:broaderTransitive :solely-transitively-related-concepts-c1 .	
+    	
+# valid data
+# -----
+:solely-transitively-related-concepts-c3
+    a :SubSubConcept ;
+    skos:narrowerTransitive :solely-transitively-related-concepts-c4 ;
+    skos:narrower :solely-transitively-related-concepts-c4 .
+:solely-transitively-related-concepts-c4
+    a :SubSubConcept ;
+    skos:broaderTransitive :solely-transitively-related-concepts-c3 ;
+    skos:broader :solely-transitively-related-concepts-c3 .

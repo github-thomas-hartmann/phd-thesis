@@ -1,0 +1,67 @@
+	{
+		{
+			{
+				?subject skos:broader ?o .
+				FILTER NOT EXISTS {
+					?o skos:narrower ?subject .  
+				}
+			}
+			UNION
+			{
+				?subject skos:hasTopConcept ?o .
+				FILTER NOT EXISTS {
+					?o skos:topConceptOf ?subject .  
+				}
+			}
+		}
+		UNION
+		{
+			{
+				?subject skos:narrowerTransitive ?o .
+				FILTER NOT EXISTS {
+					?o skos:broaderTransitive ?subject .  
+				}
+			}
+			UNION
+			{
+				?subject skos:narrowMatch ?o .
+				FILTER NOT EXISTS {
+					?o skos:broadMatch ?subject .  
+				}
+			}
+		}
+	}
+	UNION
+	{
+		{
+			{
+				?subject skos:narrower ?o .
+				FILTER NOT EXISTS {
+					?o skos:broader ?subject .  
+				} 
+			}
+			UNION
+			{
+				?subject skos:topConceptOf ?o .
+				FILTER NOT EXISTS {
+					?o skos:hasTopConcept ?subject .  
+				}
+			}
+		}
+		UNION
+		{
+			{
+				?subject skos:broaderTransitive ?o .
+				FILTER NOT EXISTS {
+					?o skos:narrowerTransitive ?subject .  
+				}
+			}
+			UNION
+			{
+				?subject skos:broadMatch ?o .
+				FILTER NOT EXISTS {
+					?o skos:narrowMatch ?subject .  
+				}
+			}
+		}
+	}

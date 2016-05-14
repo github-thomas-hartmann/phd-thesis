@@ -1,0 +1,31 @@
+# namespace declarations
+# -----
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> . 
+@prefix :         <http://www.example.org/OWL2InstanceData#> .
+
+# constraints
+# -----
+:NumberPlayersPerWorldCupTeam
+    a rdfs:Datatype ;
+    owl:equivalentClass [
+        a rdfs:Datatype ;
+        owl:onDatatype xsd:nonNegativeInteger ;
+        owl:withRestrictions ( 
+            [ xsd:minInclusive "1"^^xsd:nonNegativeInteger ]
+            [ xsd:maxInclusive "23"^^xsd:nonNegativeInteger ] ) ] .
+:position rdfs:range :NumberPlayersPerWorldCupTeam .
+
+# valid data
+# -----
+:MarioGoetze
+    :position "19"^^:NumberPlayersPerWorldCupTeam .
+
+# triples needed for validation:
+# - automatically infered in future versions
+# - as every OWL individual is a owl:Thing
+# -----
+:MarioGoetze
+    a owl:Thing .

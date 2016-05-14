@@ -1,0 +1,2 @@
+?subject disco:frequency ?frequency .
+FILTER ( ?frequency <= 0 ) .

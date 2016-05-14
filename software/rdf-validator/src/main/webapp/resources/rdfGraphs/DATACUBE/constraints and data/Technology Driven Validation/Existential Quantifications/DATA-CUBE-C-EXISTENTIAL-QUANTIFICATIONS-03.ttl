@@ -1,0 +1,11 @@
+# DATA-CUBE-C-EXISTENTIAL-QUANTIFICATIONS-03: DSD includes measure (IC-3)
+# -----
+# Every qb:DataStructureDefinition must include (qb:component, qb:componentProperty) at least one declared measure.
+
+
+# invalid data
+# -----
+
+
+# valid data
+# -----

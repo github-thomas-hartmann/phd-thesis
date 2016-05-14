@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library>
+    <book id="_978-0152023980">
+        <isbn id="dd">978-0152023980</isbn>
+        <title>The Little Prince</title>
+        <author-ref id="Antoine-de-Saint-Exupéry"/>
+    </book>
+    <author id="Antoine-de-Saint-Exupéry">
+        <name>Antoine de Saint-Exupéry</name>
+    </author>
+</library>

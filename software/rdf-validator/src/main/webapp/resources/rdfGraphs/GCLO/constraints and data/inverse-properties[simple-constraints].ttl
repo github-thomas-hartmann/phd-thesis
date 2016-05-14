@@ -1,0 +1,29 @@
+# constraints
+# -----------
+[   a rdfcv:PropertyConstraint , rdfcv:SimpleConstraint ;
+    rdfcv:contextClass owl:Thing ;
+    rdfcv:leftProperties ( :captainOf ) ;
+    rdfcv:rightProperties ( :hasCaptain ) ;
+    rdfcv:constrainingElement "inverse" ] .
+
+# invalid data
+# ------------
+:Picard
+    :captainOf :Enterprise .
+    
+   
+# constraints
+# ----------- 
+[   a rdfcv:PropertyConstraint , rdfcv:SimpleConstraint ;
+    rdfcv:contextClass :Publication ;
+    rdfcv:leftProperties ( :authorOf ) ;
+    rdfcv:rightProperties ( :author ) ;
+    rdfcv:constrainingElement "inverse" ] .
+    
+# invalid data
+# --------------
+:The-Lord-Of-The-Rings
+    a :Publication ;
+    :author :Tolkien .
+:Tolkien 
+    a :Person .

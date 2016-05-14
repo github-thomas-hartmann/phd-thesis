@@ -1,0 +1,17 @@
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lcc@{}}
+           & \multicolumn{2}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-3}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{STRUCTURE-01}}
+           & \rot{\emph{STRUCTURE-02}}
+	\\ \midrule
+    \emph{http://www.icane.es/opendata/sparql} & $\checkmark$ & $\checkmark$  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://www.icane.es/opendata/sparql}}
+    \label{tab:evaluation-www.icane.es-opendata-sparql}
+    \end{center}
+\end{table}
+

@@ -1,0 +1,36 @@
+# SKOS Semi-Formal Consistency Issues - Inconsistent Preferred Labels
+# -----
+# According to the SKOS reference document, a resource has
+# no more than one value of skos:prefLabel per language tag.
+
+:SubSubConcept 
+    a owl:Class ;
+    rdfs:subClassOf :SubConcept .
+:SubConcept
+    a owl:Class ; 
+    rdfs:subClassOf skos:Concept .
+
+# invalid data
+# ------------
+:inconsistent-preferred-labels-c1
+    a :SubSubConcept ;
+    skos:definition ""@en ;
+    skos:prefLabel "label-1"@en ;
+    skos:prefLabel "label-2"@en .
+    
+# valid data 
+# ----------
+:inconsistent-preferred-labels-c2
+    a :SubSubConcept ;
+    skos:definition ""@en ;
+    skos:prefLabel "label-1"@en ;
+    skos:prefLabel "label-2"@de .
+:inconsistent-preferred-labels-c3
+    a :SubSubConcept ;
+    skos:definition ""@en ;
+    skos:prefLabel "label"@en .
+:inconsistent-preferred-labels-c4
+    a :SubSubConcept ;
+    skos:definition ""@en ;
+    skos:prefLabel "label"@en ;
+    skos:prefLabel "label"@en .

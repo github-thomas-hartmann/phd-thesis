@@ -1,0 +1,17 @@
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{@{}lccc@{}}
+           & \multicolumn{3}{c}{\textbf{Constraints}}
+    \\  \cmidrule{2-4}
+    \\       \textbf{Data Sets}
+           & \rot{\emph{DISCO-C-COMPARISON-VARIABLES-02}}
+           & \rot{\emph{DISCO-C-COMPARISON-VARIABLES-04}}
+           & \rot{\emph{DISCO-C-COMPARISON-VARIABLES-05}}
+	\\ \midrule
+    \emph{http://svko-missy:8181/openrdf-sesame/repositories/native-java-store} & 21040 & 18625 & 159  \\
+    \bottomrule
+    \end{tabular}
+    \caption{Evaluation of \emph{http://svko-missy:8181/openrdf-sesame/repositories/native-java-store}}
+    \label{tab:evaluation-svko-missy-8181-openrdf-sesame-repositories-native-java-store}
+    \end{center}
+\end{table}

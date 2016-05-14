@@ -1,0 +1,38 @@
+# SKOS-C-LABELING-AND-DOCUMENTATION-03
+# -----
+# Labeling and Documentation Issues - Missing Labels:
+# To make the vocabulary more convenient for humans to use, instances
+# of SKOS classes (Concept, ConceptScheme, Collection) should be labeled
+# using e.g., skos:prefLabel, altLabel, rdfs:label, dc:title.
+
+ 	
+	# data
+	# ----
+	{ { ?subject a [rdfs:subClassOf* skos:Concept] } UNION { ?subject a [rdfs:subClassOf* skos:ConceptScheme] } . }
+	UNION 
+	{ { ?subject a [rdfs:subClassOf* skos:Collection] } UNION { ?subject a [rdfs:subClassOf* skos:OrderedCollection] } . }
+
+	# validation
+	# -----
+	FILTER NOT EXISTS {
+		{ { ?subject skos:prefLabel ?l } UNION { ?subject skos:altLabel ?l } . }
+		UNION 
+		{ { ?subject rdfs:label ?l } UNION { ?subject dcterms:title ?l } . }
+	} 
+
+	# violation message
+	# -----
+	BIND ( CONCAT( 
+		"SKOS classes ( Concept, ConceptScheme, Collection, OrderedCollection ) should be labeled with e.g. skos:prefLabel, skos:altLabel, rdfs:label, dcterms:title '", 
+		"to make the vocabulary more convenient for humans to use. | ",  
+		xsd:string( ?subject ), 
+		"' is not labeled."
+		) AS ?violationMessage ) . 
+	
+	# violation source
+	# ----------------
+	BIND ( CONCAT( "SKOS-C-LABELING-AND-DOCUMENTATION-03" )AS ?violationSource ) .
+	
+	# severity level
+	# --------------
+	BIND ( ( 'INFO' ) AS ?severityLevel ) .	

@@ -1,0 +1,19 @@
+# Property Domains
+# -----
+
+
+# valid data
+# -----
+:observation
+    a qb:Observation ;
+    qb:dataSet :dataSet .
+:dataSet
+    a qb:DataSet .
+    
+# invalid data
+# -----
+:dataSet_2
+    a qb:DataStructureDefinition ;
+    qb:structure :dataStructureDefinition .
+:dataStructureDefinition
+    a qb:DataStructureDefinition .    

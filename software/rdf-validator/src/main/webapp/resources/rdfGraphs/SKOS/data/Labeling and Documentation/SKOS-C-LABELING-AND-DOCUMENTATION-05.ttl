@@ -1,0 +1,26 @@
+# SKOS-C-LABELING-AND-DOCUMENTATION-05
+# -----
+# Labeling and Documentation Issues - Empty Labels:
+# Labels also need to contain textual information to be useful, thus we
+# find all SKOS labels with length 0 (after removing whitespaces).
+
+:SubSubConcept 
+    a owl:Class ;
+    rdfs:subClassOf :SubConcept .
+:SubConcept
+    a owl:Class ; 
+    rdfs:subClassOf skos:Concept .
+
+# invalid data
+# -----
+:empty-labels-c1
+    a :SubSubConcept ;
+    skos:definition "definition"@en , "definition"@de, "definition"@fr ;
+    rdfs:label ""@en , ""@de , ""@fr .
+
+# valid data
+# -----
+:empty-labels-c10
+    a :SubSubConcept ;
+    skos:definition "definition"@en , "definition"@de, "definition"@fr ;
+    rdfs:label "label"@en , "label"@de , "label"@fr .

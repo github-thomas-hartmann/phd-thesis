@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns:eg="http://examplotron.org/0/" eg:assert="not(@*)">
+    <book id="_978-0152023980" 
+        eg:occurs="+" 
+        eg:assert="not(following-sibling::book/@id=@id) and @id=concat('_', isbn)">
+        <isbn eg:assert="not(@*)">978-0152023980</isbn>
+        <title eg:assert="not(@*)">The Little Prince</title>
+        <author-ref id="Antoine-de-Saint-Exupéry"  eg:occurs="*"/>
+    </book>
+    <author id="Antoine-de-Saint-Exupéry" 
+        eg:occurs="*"
+        eg:assert="not(following-sibling::author/@id=@id)">
+        <name eg:assert="not(@*)">Antoine de Saint-Exupéry</name>
+    </author>
+</library>

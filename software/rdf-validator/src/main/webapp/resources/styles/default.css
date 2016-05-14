@@ -1,0 +1,35 @@
+@charset "utf-8";
+/* CSS Document */
+
+@media all
+{
+	
+	
+/*------------------------------------------*/
+/*      Zusatzheader für Microsites         */
+/*------------------------------------------*/
+
+#microsite {
+	height: 50px;
+	background-color:#EEE9D2;
+	border-bottom:1px #fff solid;
+	background-image: url(../../../../../img/header/microsite/gs_ms_neutral_header.png);
+	background-repeat: no-repeat;
+}
+
+#microsite #micrositeClaim {
+    color: #66645A;
+	font-size: 18px;
+    left: 170px;
+    position: relative;
+    top: 22px;
+	font-weight:bold;
+}
+
+#header {
+    height:50px;
+}
+
+
+/* ab hier keine CSS-Regeln mehr */
+}

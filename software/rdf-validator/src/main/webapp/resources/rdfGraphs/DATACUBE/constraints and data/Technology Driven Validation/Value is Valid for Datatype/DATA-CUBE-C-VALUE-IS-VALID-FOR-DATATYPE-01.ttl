@@ -1,0 +1,11 @@
+# DATA-CUBE-C-VALUE-IS-VALID-FOR-DATATYPE-01: Datatype consistency (IC-0)
+# -----
+# The RDF graph must be consistent under RDF D-entailment using a datatype map containing all the datatypes used within the graph.
+
+
+# invalid data
+# -----
+
+
+# valid data
+# -----
