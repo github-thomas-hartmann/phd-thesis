@@ -1,0 +1,684 @@
+﻿# namespace declarations
+# ----------------------
+@prefix fn:        <http://www.w3.org/2005/xpath-functions#> .
+@prefix sparql:    <http://www.w3.org/TR/2013/REC-sparql11-query-20130321/#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:       <http://www.w3.org/2002/07/owl#> .
+@prefix sp:        <http://spinrdf.org/sp#> .
+@prefix spin:      <http://spinrdf.org/spin#> .
+@prefix smf:       <http://topbraid.org/sparqlmotionfunctions#> .
+@prefix spif:      <http://spinrdf.org/spif#> . 
+@prefix spl:       <http://spinrdf.org/spl#> .
+@prefix spinowl:   <http://topbraid.org/spin/spinowl> .
+@prefix spinx:     <http://spinrdf.org/spinx#> . 
+@prefix functions: <http://www.example.org/functions#> .
+@prefix templates: <http://www.example.org/templates#> .
+@prefix sparql:    <http://www.w3.org/TR/sparql11-query/#> .
+@prefix rdfcv2spin: <http://RDF-Constraints-Vocabulary.org/rdfcv2spin#>.
+@prefix rdfcv:      <http://RDF-Constraints-Vocabulary.org/rdfcv#> .
+
+# class constraints
+# if a constraint has been attached to owl:Thing, it will always execute that 
+# (SPINConstraints.runQueryOnClass uses SPINUtil.isRootClass which returns true for owl:Thing and rdfs:Resource)
+# -----------------
+owl:Thing 
+	spin:constraint 
+#	    [   a rdfcv2spin:CreateOWLThingClassAssignments ] ,
+		[   a rdfcv2spin:minimum-qualified-cardinality-restrictions-on-properties ] ,
+		[   a rdfcv2spin:disjoint-classes_2C ] ,
+		[   a rdfcv2spin:existential-quantification-on-properties ] ,
+		[   a rdfcv2spin:universal-quantification-on-properties ] ,
+		[   a rdfcv2spin:asymmetric-object-properties_complex-constraint ] ,
+		[   a rdfcv2spin:asymmetric-object-properties_complex-constraint_2 ] ,
+		[   a rdfcv2spin:asymmetric-object-properties_simple-constraint ] ,
+		[   a rdfcv2spin:asymmetric-object-properties_simple-constraint_2 ] ,
+		[   a rdfcv2spin:inverse-properties ] ,
+		[   a rdfcv2spin:inverse-properties_2 ] ,
+		[   a rdfcv2spin:inverse-properties_3 ] ,
+		[   a rdfcv2spin:inverse-properties_4 ] .
+
+# create OWL:Thing class assignments
+# ----
+rdfcv2spin:CreateOWLThingClassAssignments
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "create OWL:Thing class assignments" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            CONSTRUCT {
+                ?type a owl:Thing .
+            }
+            WHERE {
+                ?subject ?p ?o .
+	            #?instance a ?type .
+			    #FILTER NOT EXISTS {
+			    #    ?type rdfs:subClassOf ?anyClass .
+			    #}
+		    }
+            """ ;
+    ] .
+
+# reasoning
+# ---------
+#rdfcv2spin:ToInfer 
+#	spin:rule [
+#		a sp:Construct ;
+#        	sp:text """
+#            	CONSTRUCT {            
+#                	?this rdf:type owl:Thing .        
+#            	}
+#            	WHERE {            
+#                	?this ?p ?o .            
+#        		} """ ; ] .
+
+# minimum qualified cardinality restrictions on properties
+# --------------------------------------------------------
+rdfcv2spin:minimum-qualified-cardinality-restrictions-on-properties
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "minimum qualified cardinality restrictions on properties" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX rdfcv2spin: <http://RDF-Constraints-Vocabulary.org/rdfcv2spin#>
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?subject ;
+                    rdfs:label ?violationMessage ;
+                    spin:violationPath ?p1 .
+            }
+            WHERE {	  
+			    # constraint
+				# ----------
+				[   a rdfcv:PropertyConstraint , rdfcv:SimpleConstraint ;
+				    rdfcv:contextClass ?cc ;
+				    rdfcv:leftProperties ( ?p1 ) ;
+				    rdfcv:classes ( ?c1 ) ;
+				    rdfcv:constrainingElement ">=" ;
+				    rdfcv:constrainingValue ?cv ] .
+						
+				# data
+				# ----
+				?subject a ?cc .
+				#FILTER EXISTS {
+				#    ?subject ?p1 ?o1 .
+				#}
+				
+				# validation
+				# ----------
+				BIND ( rdfcv2spin:qualifiedCardinality( ?subject, ?p1, ?c1 ) AS ?c ) .
+				BIND( STRDT ( STR ( ?cv ), xsd:nonNegativeInteger ) AS ?MinimumCardinality )
+				BIND( STRDT ( STR ( ?c ), xsd:nonNegativeInteger ) AS ?cardinality )
+				FILTER ( ?cardinality < ?MinimumCardinality ) .	
+                    
+#               testing
+#               -------
+#                BIND ( CONCAT( 
+#                    \"context concept: \", 
+#                    xsd:string( ?contextClass ), 
+#                    \" | cardinality: \", 
+#                    xsd:string( ?cardinality ), 
+#                    \" | minimum cardinality: \", 
+#                    xsd:string( ?MinimumCardinality ), 
+#                    \" \" ) 
+#                    AS ?violationMessage ) . 
+
+#               violation message
+#               -----------------
+                BIND ( CONCAT( 
+                    \"minimum qualified cardinality restrictions on properties | The individual '\", 
+                    xsd:string( ?subject ), 
+                    \"' must be connected by '\", 
+                    xsd:string( ?p1 ), 
+                    \"' to at least \", 
+                    xsd:string( ?MinimumCardinality ),
+                    \" different individual(s) that are instances of '\", 
+                    xsd:string( ?c1 ),
+                    \"', but is connected to \",
+                    xsd:string( ?cardinality ),
+                    \" individual(s).\" ) 
+                    AS ?violationMessage ) . 
+            }
+            """ ;
+    ] .
+    
+# disjoint classes
+# ----------------
+rdfcv2spin:disjoint-classes_2C
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "disjoint classes" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX rdfcv2spin: <http://RDF-Constraints-Vocabulary.org/rdfcv2spin#>
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?subject ;
+                    rdfs:label ?violationMessage .
+            }
+            WHERE {	  
+			    # constraint
+				# ----------
+				[   a rdfcv:ClassConstraint , rdfcv:SimpleConstraint ;
+				    rdfcv:contextClass ?intersection ;
+				    rdfcv:classes ( ?c1 ?c2 ) ;
+				    rdfcv:constrainingElement "Intersection" ] .
+				[   a rdfcv:ClassConstraint , rdfcv:SimpleConstraint ;
+				    rdfcv:contextClass owl:Thing ;
+				    rdfcv:classes ( ?intersection owl:Nothing ) ;
+				    rdfcv:constrainingElement "Inclusion" ] .
+						
+				# data
+				# ----
+				?subject a owl:Thing .
+				
+				# validation
+				# ----------
+				?subject a ?c1 .
+				?subject a ?c2 . 
+
+#               violation message
+#               -----------------
+                BIND ( CONCAT( 
+                    \"Disjoint Classes | The individual '\", 
+                    xsd:string( ?subject ), 
+                    \"' is an instance of the disjoint classes '\", 
+                    xsd:string( ?c1 ),
+                    \"' and '\",
+                    xsd:string( ?c2 ),
+                    \"'.\"
+                    ) AS ?violationMessage ) . 
+            }
+            """ ;
+    ] .
+    
+# existential quantification on properties
+# ----------------------------------------
+rdfcv2spin:existential-quantification-on-properties
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "existential quantification on properties" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX rdfcv2spin: <http://RDF-Constraints-Vocabulary.org/rdfcv2spin#>
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?subject ;
+                    rdfs:label ?violationMessage ;
+                    spin:violationPath ?p1 .
+            }
+            WHERE {	  
+			    # constraint
+				# ----------
+				[   a rdfcv:PropertyConstraint , rdfcv:SimpleConstraint ;
+				    rdfcv:contextClass ?cc ;
+				    rdfcv:leftProperties ( ?p1 ) ;
+				    rdfcv:classes ( ?c1 ) ;
+				    rdfcv:constrainingElement "existential restrictions" ] .
+						
+				# data
+				# ----
+				?subject a ?cc .
+				
+				# validation
+				# ----------
+				FILTER NOT EXISTS { ?subject ?p1 ?o . ?o a ?c1 . }
+
+#               violation message
+#               -----------------
+                BIND ( CONCAT( 
+                    \"existential quantification on properties\"
+                    ) AS ?violationMessage ) . 
+            }
+            """ ;
+    ] .
+    
+# universal quantification on properties
+# ----------------------------------------
+rdfcv2spin:universal-quantification-on-properties
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "universal quantification on properties" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX rdfcv2spin: <http://RDF-Constraints-Vocabulary.org/rdfcv2spin#>
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?subject ;
+                    rdfs:label ?violationMessage ;
+                    spin:violationPath ?lp1 .
+            }
+            WHERE {	  
+			    # constraint
+				# ----------
+				[   a rdfcv:PropertyConstraint , rdfcv:SimpleConstraint ;
+				    rdfcv:contextClass ?cc ;
+				    rdfcv:leftProperties ( ?lp1 ) ;
+				    rdfcv:classes ( ?c1 ) ;
+				    rdfcv:constrainingElement "universal quantification" ] .
+						
+				# data
+				# ----
+				?subject a ?cc .
+				?subject ?lp1 ?o .
+				
+				# validation
+				# ----------
+				FILTER NOT EXISTS { ?o a ?c1 } .
+
+#               violation message
+#               -----------------
+                BIND ( CONCAT( 
+                    \"universal quantification on properties\"
+                    ) AS ?violationMessage ) . 
+            }
+            """ ;
+    ] .
+    
+# Asymmetric Object Properties
+# ----------------------------------------
+rdfcv2spin:asymmetric-object-properties_complex-constraint
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "asymmetric object properties" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX rdfcv2spin: <http://RDF-Constraints-Vocabulary.org/rdfcv2spin#>
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?subject ;
+                    rdfs:label ?violationMessage ;
+                    spin:violationPath ?propertyAsymmetric .
+            }
+            WHERE {	  
+			    # constraint
+				# ----------				    
+				[   a rdfcv:PropertyConstraint , rdfcv:SimpleConstraint ;
+				    rdfcv:contextClass ?cc ;
+				    rdfcv:leftProperties ( ?propertyInverse ) ;
+				    rdfcv:rightProperties ( ?propertyAsymmetric ) ;
+				    rdfcv:constrainingElement "inverse" ] .
+				[   a rdfcv:PropertyConstraint , rdfcv:SimpleConstraint ;
+				    rdfcv:contextClass ?cc ;
+				    rdfcv:leftProperties ( ?propertyAsymmetric ) ;
+				    rdfcv:rightProperties ( ?propertyInverse ) ;
+				    rdfcv:constrainingElement "!=" ] .
+						
+				# data
+				# ----
+				FILTER ( ?cc = owl:Thing ) .
+				?subject ?propertyAsymmetric ?object .
+				
+				# validation
+				# ----------
+				FILTER EXISTS { ?object ?propertyAsymmetric ?subject } .
+
+#               violation message
+#               -----------------
+                BIND ( CONCAT( 
+                    \"asymmetric object properties\"
+                    ) AS ?violationMessage ) . 
+            }
+            """ ;
+    ] .
+    
+rdfcv2spin:asymmetric-object-properties_complex-constraint_2
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "asymmetric object properties" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX rdfcv2spin: <http://RDF-Constraints-Vocabulary.org/rdfcv2spin#>
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?subject ;
+                    rdfs:label ?violationMessage ;
+                    spin:violationPath ?propertyAsymmetric .
+            }
+            WHERE {	  
+			    # constraint
+				# ----------				    
+				[   a rdfcv:PropertyConstraint , rdfcv:SimpleConstraint ;
+				    rdfcv:contextClass ?cc ;
+				    rdfcv:leftProperties ( ?propertyInverse ) ;
+				    rdfcv:rightProperties ( ?propertyAsymmetric ) ;
+				    rdfcv:constrainingElement "inverse" ] .
+				[   a rdfcv:PropertyConstraint , rdfcv:SimpleConstraint ;
+				    rdfcv:contextClass ?cc ;
+				    rdfcv:leftProperties ( ?propertyAsymmetric ) ;
+				    rdfcv:rightProperties ( ?propertyInverse ) ;
+				    rdfcv:constrainingElement "!=" ] .
+						
+				# data
+				# ----
+				?subject a ?cc .
+				?subject ?propertyAsymmetric ?object .
+				
+				# validation
+				# ----------
+				FILTER EXISTS { ?object ?propertyAsymmetric ?subject } .
+
+#               violation message
+#               -----------------
+                BIND ( CONCAT( 
+                    \"asymmetric object properties\"
+                    ) AS ?violationMessage ) . 
+            }
+            """ ;
+    ] .
+    
+rdfcv2spin:asymmetric-object-properties_simple-constraint
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "asymmetric object properties" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX rdfcv2spin: <http://RDF-Constraints-Vocabulary.org/rdfcv2spin#>
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?subject ;
+                    rdfs:label ?violationMessage ;
+                    spin:violationPath ?propertyAsymmetric .
+            }
+            WHERE {	  
+			    # constraint
+				# ----------				    
+				[   a rdfcv:PropertyConstraint , rdfcv:SimpleConstraint ;
+				    rdfcv:contextClass ?cc ;
+				    rdfcv:leftProperties ( ?propertyAsymmetric ) ;
+				    rdfcv:constrainingElement "asymmetric" ] .
+						
+				# data
+				# ----
+				FILTER ( ?cc = owl:Thing ) .
+				?subject ?propertyAsymmetric ?object .
+				
+				# validation
+				# ----------
+				FILTER EXISTS { ?object ?propertyAsymmetric ?subject } .
+
+#               violation message
+#               -----------------
+                BIND ( CONCAT( 
+                    \"asymmetric object properties (simple constraint)\"
+                    ) AS ?violationMessage ) . 
+            }
+            """ ;
+    ] .
+    
+rdfcv2spin:asymmetric-object-properties_simple-constraint_2
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "asymmetric object properties" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX rdfcv2spin: <http://RDF-Constraints-Vocabulary.org/rdfcv2spin#>
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?subject ;
+                    rdfs:label ?violationMessage ;
+                    spin:violationPath ?propertyAsymmetric .
+            }
+            WHERE {	  
+			    # constraint
+				# ----------				    
+				[   a rdfcv:PropertyConstraint , rdfcv:SimpleConstraint ;
+				    rdfcv:contextClass ?cc ;
+				    rdfcv:leftProperties ( ?propertyAsymmetric ) ;
+				    rdfcv:constrainingElement "asymmetric" ] .
+						
+				# data
+				# ----
+				?subject a ?cc .
+				?subject ?propertyAsymmetric ?object .
+				
+				# validation
+				# ----------
+				FILTER EXISTS { ?object ?propertyAsymmetric ?subject } .
+
+#               violation message
+#               -----------------
+                BIND ( CONCAT( 
+                    \"asymmetric object properties (simple constraint)\"
+                    ) AS ?violationMessage ) . 
+            }
+            """ ;
+    ] .
+    
+# inverse properties
+# ----------------------------------------
+rdfcv2spin:inverse-properties
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "inverse properties" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX rdfcv2spin: <http://RDF-Constraints-Vocabulary.org/rdfcv2spin#>
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?subject ;
+                    rdfs:label ?violationMessage ;
+                    spin:violationPath ?property , ?inverseProperty .
+            }
+            WHERE {	  
+			    # constraint
+				# ----------
+				[   a rdfcv:PropertyConstraint , rdfcv:SimpleConstraint ;
+				    rdfcv:contextClass ?cc ;
+				    rdfcv:leftProperties ( ?inverseProperty ) ;
+				    rdfcv:rightProperties ( ?property ) ;
+				    rdfcv:constrainingElement "inverse" ] .
+						
+				# data
+				# ----
+				?subject 
+				    a ?cc ;
+				    ?property ?object .
+				
+				# validation
+				# ----------
+				FILTER NOT EXISTS { ?object ?inverseProperty ?subject . }
+
+#               violation message
+#               -----------------
+                BIND ( CONCAT( 
+                    \"inverse properties\"
+                    ) AS ?violationMessage ) . 
+            }
+            """ ;
+    ] .
+    
+rdfcv2spin:inverse-properties_2
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "inverse properties" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX rdfcv2spin: <http://RDF-Constraints-Vocabulary.org/rdfcv2spin#>
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?subject ;
+                    rdfs:label ?violationMessage ;
+                    spin:violationPath ?property , ?inverseProperty .
+            }
+            WHERE {	  
+			    # constraint
+				# ----------
+				[   a rdfcv:PropertyConstraint , rdfcv:SimpleConstraint ;
+				    rdfcv:contextClass ?cc ;
+				    rdfcv:leftProperties ( ?inverseProperty ) ;
+				    rdfcv:rightProperties ( ?property ) ;
+				    rdfcv:constrainingElement "inverse" ] .
+						
+				# data
+				# ----
+				?subject 
+				    a ?cc ;
+				    ?inverseProperty ?object .
+				
+				# validation
+				# ----------
+				FILTER NOT EXISTS { ?object ?property ?subject . }
+
+#               violation message
+#               -----------------
+                BIND ( CONCAT( 
+                    \"inverse properties\"
+                    ) AS ?violationMessage ) . 
+            }
+            """ ;
+    ] .
+    
+rdfcv2spin:inverse-properties_3
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "inverse properties" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX rdfcv2spin: <http://RDF-Constraints-Vocabulary.org/rdfcv2spin#>
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?subject ;
+                    rdfs:label ?violationMessage ;
+                    spin:violationPath ?property , ?inverseProperty .
+            }
+            WHERE {	  
+			    # constraint
+				# ----------
+				[   a rdfcv:PropertyConstraint , rdfcv:SimpleConstraint ;
+				    rdfcv:contextClass ?cc ;
+				    rdfcv:leftProperties ( ?inverseProperty ) ;
+				    rdfcv:rightProperties ( ?property ) ;
+				    rdfcv:constrainingElement "inverse" ] .
+						
+				# data
+				# ----
+				FILTER ( ?cc = owl:Thing ) .
+				?subject ?property ?object .
+				
+				# validation
+				# ----------
+				FILTER NOT EXISTS { ?object ?inverseProperty ?subject . }
+
+#               violation message
+#               -----------------
+                BIND ( CONCAT( 
+                    \"inverse properties\"
+                    ) AS ?violationMessage ) . 
+            }
+            """ ;
+    ] .
+    
+rdfcv2spin:inverse-properties_4
+	a spin:ConstructTemplate ;
+    rdfs:subClassOf spin:ConstructTemplates ;
+    # spin:violationSource
+    spin:labelTemplate "inverse properties" ; 
+    spin:body [
+        rdf:type sp:Construct ;
+        sp:text """
+            PREFIX rdfcv2spin: <http://RDF-Constraints-Vocabulary.org/rdfcv2spin#>
+            CONSTRUCT {
+                _:cv 
+                	a spin:ConstraintViolation ;
+                    spin:violationRoot ?subject ;
+                    rdfs:label ?violationMessage ;
+                    spin:violationPath ?property , ?inverseProperty .
+            }
+            WHERE {	  
+			    # constraint
+				# ----------
+				[   a rdfcv:PropertyConstraint , rdfcv:SimpleConstraint ;
+				    rdfcv:contextClass ?cc ;
+				    rdfcv:leftProperties ( ?inverseProperty ) ;
+				    rdfcv:rightProperties ( ?property ) ;
+				    rdfcv:constrainingElement "inverse" ] .
+						
+				# data
+				# ----
+				FILTER ( ?cc = owl:Thing ) .
+				?subject ?inverseProperty ?object .
+				
+				# validation
+				# ----------
+				FILTER NOT EXISTS { ?object ?property ?subject . }
+
+#               violation message
+#               -----------------
+                BIND ( CONCAT( 
+                    \"inverse properties\"
+                    ) AS ?violationMessage ) . 
+            }
+            """ ;
+    ] .
+    
+rdfcv2spin:qualifiedCardinality
+    rdf:type spin:Function ;
+    rdfs:subClassOf spin:Functions ;
+    rdfs:label "qualified cardinality" ;
+    rdfs:comment "qualified cardinality" ;
+    spin:constraint [
+        rdf:type spl:Argument ;
+        spl:predicate sp:arg1 ;
+        spl:valueType rdf:subject ;
+        rdfs:comment "subject" ; 
+    ] ;
+    spin:constraint [
+        rdf:type spl:Argument ;
+        spl:predicate sp:arg2 ;
+        spl:valueType rdf:Property ;
+        rdfs:comment "property" ; 
+    ] ;
+    spin:constraint [
+        rdf:type spl:Argument ;
+        spl:predicate sp:arg3 ;
+        spl:valueType rdfs:Class ;
+        rdfs:comment "class" ; 
+    ] ;
+    spin:body [
+        rdf:type sp:Select ;
+        sp:text """
+            SELECT ( COUNT ( ?arg1 ) AS ?cardinality)
+            WHERE {
+                ?arg1 ?arg2 ?o .
+                ?o rdf:type ?arg3 .
+            }
+        """ ;
+    ] ;
+    spin:returnType xsd:nonNegativeInteger .

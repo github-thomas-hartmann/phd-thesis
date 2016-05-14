@@ -41,11 +41,11 @@
 * Evaluation results: [chapter/chapter-4/evaluation](https://github.com/github-thomas-hartmann/phd-thesis/tree/master/chapter/chapter-4/evaluation)
  
 ***Chapter 6: Consistent Validation across RDF-based Constraint Languages***
-* Constraint language implementations: [chapter-6/constraint-languages-implementations](https://github.com/github-thomas-hartmann/phd-thesis/tree/master/chapter/chapter-6/constraint-languages-implementations)
+* Constraint languages implementations: [chapter/chapter-6/constraint-languages-implementations](https://github.com/github-thomas-hartmann/phd-thesis/tree/master/chapter/chapter-6/constraint-languages-implementations)
 
 ***Chapter 7: Validation Framework for RDF-based Constraint Languages***
 *  Formal specification, HTML documentation, and UML class diagram of the RDF Constraints Vocabulary (RDF-CV): [chapter/chapter-7/rdf-constraints-vocabulary](https://github.com/github-thomas-hartmann/phd-thesis/tree/master/chapter/chapter-7/rdf-constraints-vocabulary)
-* Generic SPIN mappings for constraint types: [rdf-validation/constraint-languages/implementations/RDF-CV-2-SPIN.ttl](https://github.com/github-thomas-hartmann/phd-thesis/blob/master/rdf-validation/constraint-languages/implementations/RDF-CV-2-SPIN.ttl)
+* Generic SPIN mappings for constraint types: [chapter/chapter-7/generic-SPIN-mappings/RDF-CV-2-SPIN.ttl](https://github.com/github-thomas-hartmann/phd-thesis/blob/master/chapter/chapter-7/generic-SPIN-mappings/RDF-CV-2-SPIN.ttl)
 
 ***Chapter 8: The Role of Reasoning for RDF Validation***
 * Implementations for all constraint types expressible by OWL 2 QL, OWL 2 DL, and DSP as well as for major constraint types representable by ReSh and ShEx:
