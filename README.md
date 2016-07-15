@@ -4,7 +4,7 @@
 
 * Title: **Validation Framework for RDF-based Constraint Languages**
 * Author: **[Thomas Hartmann](http://www.dr-thomashartmann.de/)**
-* Date of Submission: 11.05.2016
+* Examination Date: 08.07.2016
 * University: [Karlsruhe Institute of Technology (KIT)](https://www.kit.edu/english/)
 * Chair: [Institute of Applied Informatics and Formal Description Methods](http://www.aifb.kit.edu/web/Hauptseite/en)
 * Department: [Department of Economics and Management](http://www.wiwi.kit.edu/english/index.php)
@@ -12,6 +12,9 @@
 * 2. Advisor: [Prof. Dr. Kai Eckert](https://www.hdm-stuttgart.de/forschung_transfer/forschungsthemen/metadatenmanagement/team/eckert), Stuttgart Media University
 
 ---
+
+***PhD Thesis Download***
+* Download: [http://dx.doi.org/10.5445/IR/1000056458](http://dx.doi.org/10.5445/IR/1000056458)
 
 ***Publications***
 * Complete set of publications: [publications](https://github.com/github-thomas-hartmann/phd-thesis/tree/master/publications)
