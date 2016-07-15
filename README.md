@@ -2,7 +2,7 @@
 
 ---
 
-* Title: **Validation Framework for RDF-based Constraint Languages**
+* Title: **[Validation Framework for RDF-based Constraint Languages](http://dx.doi.org/10.5445/IR/1000056458)**
 * Author: **[Thomas Hartmann](http://www.dr-thomashartmann.de/)**
 * Examination Date: 08.07.2016
 * University: [Karlsruhe Institute of Technology (KIT)](https://www.kit.edu/english/)
@@ -14,7 +14,7 @@
 ---
 
 ***PhD Thesis Download***
-* Download: [http://dx.doi.org/10.5445/IR/1000056458](http://dx.doi.org/10.5445/IR/1000056458)
+* [http://dx.doi.org/10.5445/IR/1000056458](http://dx.doi.org/10.5445/IR/1000056458)
 
 ***Publications***
 * Complete set of publications: [publications](https://github.com/github-thomas-hartmann/phd-thesis/tree/master/publications)
