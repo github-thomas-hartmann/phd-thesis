@@ -25,7 +25,19 @@
 ---
 
 ***RDF Validation Requirements Database***
-* [http://purl.org/net/rdf-validation](http://purl.org/net/rdf-validation)
+* official URL: [http://purl.org/net/rdf-validation](http://purl.org/net/rdf-validation)
+* static HTML version: 
+	* [URL](http://archive.kaiec.net/2017/rdf-validation)
+	* [dump](http://archive.kaiec.net/2017/rdf-validation.zip)
+* Drupal source code and database dump: [https://github.com/dcmi/reqbase](https://github.com/dcmi/reqbase)
+* XML dumps: 
+    * [case studies](http://archive.kaiec.net/2017/rdf-validation/case_studies.xml)
+    * [use cases](http://archive.kaiec.net/2017/rdf-validation/use_cases.xml)
+    * [requirements](http://archive.kaiec.net/2017/rdf-validation/requirements.xml)
+
+***Validation Environment***
+* Demo: [http://purl.org/net/rdfval-demo](http://purl.org/net/rdfval-demo)
+* Source code: [software/rdf-validator](https://github.com/github-thomas-hartmann/phd-thesis/tree/master/software/rdf-validator)
 
 ***Validation Environment***
 * Demo: [http://purl.org/net/rdfval-demo](http://purl.org/net/rdfval-demo)
